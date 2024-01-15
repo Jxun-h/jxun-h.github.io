@@ -11,22 +11,8 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Install / Update PaperMod</title>
-      <link>https://jxun-h.github.io/posts/papermod/papermod-installation/</link>
-      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/papermod/papermod-installation/</guid>
-      <description>Read aboout Install and Update instructions and sampled configuration templates</description>
-    </item>
-    <item>
-      <title>Features / Mods</title>
-      <link>https://jxun-h.github.io/posts/papermod/papermod-features/</link>
-      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/papermod/papermod-features/</guid>
-      <description>Learn About All Features in PaperMod</description>
-    </item>
     <item>
       <title>Markdown Syntax Guide For Ko</title>
       <link>https://jxun-h.github.io/posts/markdown-syntax.fr/</link>
@@ -40,27 +26,6 @@
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/markdown-syntax.fa/</guid>
       <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
-    </item>
-    <item>
-      <title>FAQs / How To&#39;s Guide</title>
-      <link>https://jxun-h.github.io/posts/papermod/papermod-faq/</link>
-      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/papermod/papermod-faq/</guid>
-      <description>We&amp;rsquo;ll try to answer frequently asked qestions by users.</description>
-    </item>
-    <item>
-      <title>Social-Icons / Share-Icons</title>
-      <link>https://jxun-h.github.io/posts/papermod/papermod-icons/</link>
-      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/papermod/papermod-icons/</guid>
-      <description>List of all Icons supported by PaperMod</description>
-    </item>
-    <item>
-      <title>Variables | Front Matter</title>
-      <link>https://jxun-h.github.io/posts/papermod/papermod-variables/</link>
-      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/papermod/papermod-variables/</guid>
-      <description>List of Front Matter variables used by PaperMod</description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>
@@ -102,11 +67,14 @@
       <link>https://jxun-h.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/about/</guid>
-      <description>안정적인 서비스 개발을 추구하는 Backend Developer 조형준입니다. Contact. Github : github.com/Jxun-h
-Tistory : dreamtreeits.tistory.com
-Email : its1108@kakao.com Introduction. 트레이드 오프를 고려해 균형잡힌 선택을 하려 노력합니다.
-안정적인 서비스를 만드는데 기여하고자 노력하는 백엔드 개발자입니다.
-또한 서비스가 안정적으로 운영되기 위한 방법에 대해 고민합니다.</description>
+      <description>짤막한 소개글</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>https://jxun-h.github.io/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/resume/</guid>
+      <description>이력서</description>
     </item>
   </channel>
 </rss>
