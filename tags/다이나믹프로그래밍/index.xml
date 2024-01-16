@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>다이나믹프로그래밍 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+    <description>Recent content in 다이나믹프로그래밍 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 4179 불! with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</link>
+      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</guid>
+      <description>📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.</description>
+    </item>
+  </channel>
+</rss>
