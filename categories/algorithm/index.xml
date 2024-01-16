@@ -22,6 +22,15 @@
 구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 + 재귀 유형의 문제 0 &amp;lt;= N &amp;lt;= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가,</description>
     </item>
     <item>
+      <title>[BOJ] 5568 카드 놓기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 5568 카드 놓기 💡 조건 및 풀이 카드의 장수는 4 &amp;lt;= N &amp;lt;= 10 각 카드에 숫자가 적혀있다. 1 &amp;lt;= 숫자 &amp;lt;= 99 N개의 카드 중에서 K개의 카드를 골라서 몇 가지 수를 만들 수 있을까? 브루트포스 유형의 문제 🔖 예제 및 실행결과 예제 6 3 72 2 12 7 2 1 실행결과 68 ⌨️ 문제 풀이 from itertools import permutaions
+permutations라는 순열 함수를 사용했다.
+리스트와 값을 넣으면 리스트에서 그만큼의 개수대로 숫자를 꺼낸다.</description>
+    </item>
+    <item>
       <title>[BOJ] 1620 나는야 포켓몬 마스터 이다솜 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
