@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>브루트포스 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/</link>
+    <description>Recent content in 브루트포스 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 31 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 5568 카드 놓기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 5568 카드 놓기 💡 조건 및 풀이 카드의 장수는 4 &amp;lt;= N &amp;lt;= 10 각 카드에 숫자가 적혀있다. 1 &amp;lt;= 숫자 &amp;lt;= 99 N개의 카드 중에서 K개의 카드를 골라서 몇 가지 수를 만들 수 있을까? 브루트포스 유형의 문제 🔖 예제 및 실행결과 예제 6 3 72 2 12 7 2 1 실행결과 68 ⌨️ 문제 풀이 from itertools import permutaions
+permutations라는 순열 함수를 사용했다.
+리스트와 값을 넣으면 리스트에서 그만큼의 개수대로 숫자를 꺼낸다.</description>
+    </item>
+  </channel>
+</rss>
