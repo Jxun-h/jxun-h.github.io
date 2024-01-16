@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>[BOJ] 4179 불! with Python | Jxun-h Dev Log</title>
-<meta name="keywords" content="DP, PS, 다이나믹프로그래밍, 알고리즘">
+<meta name="keywords" content="BFS, PS, 너비우선탐색, 알고리즘, 백준, BOJ">
 <meta name="description" content="📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.">
 <meta name="author" content="Jxun-h">
 <link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/">
@@ -60,7 +60,7 @@
 <meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-08-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-08-28T00:00:00+00:00" />
-
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -98,7 +98,7 @@
   "name": "[BOJ] 4179 불! with Python",
   "description": "📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.",
   "keywords": [
-    "DP", "PS", "다이나믹프로그래밍", "알고리즘"
+    "BFS", "PS", "너비우선탐색", "알고리즘", "백준", "BOJ"
   ],
   "articleBody": "\n📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다. 임시 배열을 만들어 불과 지훈이가 움직일 때 이동 가능한 경로를 모두 넣어주고 while 문이 종료되었을 때 큐에 삽입 지훈이가 지나간 곳은 '$'로 변경 불은 '$' 와 '.' 를, 지훈이는 오로지 '.' 만 갈 수 있게 처리. 지훈이가 움직일 때, Queue 에서 현재 지훈이의 좌표를 뽑아, 벽에 위치하고 있다면 탈출 성공. if x == 0 or y == 0 or x == r - 1 or y == c - 1: 더 이상 지훈이가 움직일 경로가 없다면 탈출 실패 if not J: 🖥 소스 코드 from sys import stdin from collections import deque dx, dy = [1, -1, 0, 0], [0, 0, 1, -1] r, c = map(int, stdin.readline().split()) board, res = [], 0 # 지환이와 불난 곳 저장할 변수 F, J = deque(), deque() for i in range(r): data = list(stdin.readline().rstrip()) for j in range(c): if data[j] == 'J': J.append((i, j)) if data[j] == 'F': F.append((i, j)) board.append(data) def bfs(): global F, J, res while 1: res += 1 temp = [] while F: x, y = F.popleft() for i in range(4): nx, ny = x + dx[i], y + dy[i] if -1 \u003c nx \u003c r and -1 \u003c ny \u003c c: if board[nx][ny] == '.' or board[nx][ny] == '$': temp.append((nx, ny)) board[nx][ny] = 'F' F = deque(temp) temp = [] while J: x, y = J.popleft() if x == 0 or y == 0 or x == r - 1 or y == c - 1: return res for i in range(4): nx, ny = dx[i] + x, dy[i] + y if -1 \u003c nx \u003c r and -1 \u003c ny \u003c c and board[nx][ny] == '.': temp.append((nx, ny)) board[x][y] = '$' board[nx][ny] = 'J' J = deque(temp) if not J: return False if bfs(): print(res) else: print('IMPOSSIBLE') 💾 느낀점 BFS 유형 문제에서 난이도가 실버2 ~ 골드4 로만 올라가도 헤매는 모습을 보였다. 방문처리용 배열의 다양한 사용법을 눈에 익히고 응용할 줄 알아야겠다. 방문처리용 배열을 사용하기 전, 메모리 초과가 뜰 각인지 잴 줄 알아야겠다. 문제를 나름대로 해석하고 압축하는 능력을 더 키워야겠다. ",
   "wordCount" : "412",
@@ -166,6 +166,11 @@
         </div>
         <ul id="menu">
             <li>
+                <a href="https://jxun-h.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
                 <a href="https://jxun-h.github.io/about/" title="About">
                     <span>About</span>
                 </a>
@@ -201,7 +206,7 @@
 </div>
   </header> 
   <div class="post-content"><br>
-<h2 id="-boj-4179-불httpswwwacmicpcnetproblem4179">📌 <a href="https://www.acmicpc.net/problem/4179">BOJ 4179 불!</a><a hidden class="anchor" aria-hidden="true" href="#-boj-4179-불httpswwwacmicpcnetproblem4179">#</a></h2>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem4179-target_blankboj-4179-불a">📌 <a href="https://www.acmicpc.net/problem/4179" target="_blank">BOJ 4179 불!</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem4179-target_blankboj-4179-불a">#</a></h2>
 <br>
 <h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
 <ol>
@@ -309,21 +314,18 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://jxun-h.github.io/tags/dp/">DP</a></li>
+      <li><a href="https://jxun-h.github.io/tags/bfs/">BFS</a></li>
       <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
-      <li><a href="https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">다이나믹프로그래밍</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89/">너비우선탐색</a></li>
       <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://jxun-h.github.io/posts/papermod/papermod-variables/">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/programmers-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88-with-python/">
     <span class="title">« Prev</span>
     <br>
-    <span>Variables | Front Matter</span>
-  </a>
-  <a class="next" href="https://jxun-h.github.io/posts/markdown-syntax/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Markdown Syntax Guide</span>
+    <span>[Programmers] 합승 택시 요금 with Python</span>
   </a>
 </nav>
 

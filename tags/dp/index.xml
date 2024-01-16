@@ -11,14 +11,14 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[BOJ] 4179 불! with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</link>
-      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</guid>
-      <description>📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.</description>
+      <title>[BOJ] 15486 퇴사 2 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</guid>
+      <description>📌 BOJ 15486 퇴사 2 💡 조건 및 풀이 퇴사가 남은 일 수 N. 1 &amp;lt;= N &amp;lt;= 1500000 T, P 의 길이는 N과 같으며, 1 &amp;lt;= Ti &amp;lt;= 50, 1 &amp;lt;= Pi &amp;lt;= 1000 N + 1 에 해당하는 날짜부터는 상담을 할 수 없다. DP 유형의 문제 상담을 통해 취한 이익 중, 가장 큰 값을 반환하는 문제. 🔖 예제 및 실행결과 예제 10 5 50 4 40 3 30 2 20 1 10 1 10 2 20 3 30 4 40 5 50 실행결과 90 ⌨️ 문제 풀이 편한 계산을 위해 dp를 n + 1의 크기만큼 생성했다.</description>
     </item>
   </channel>
 </rss>
