@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>분할정복 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5/</link>
+    <description>Recent content in 분할정복 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 31 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 4779 칸토어 집합 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 4779 칸토어 집합 💡 조건 및 풀이 칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.
+구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 + 재귀 유형의 문제 0 &amp;lt;= N &amp;lt;= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가,</description>
+    </item>
+  </channel>
+</rss>

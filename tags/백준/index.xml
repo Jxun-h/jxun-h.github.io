@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>백준 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/</link>
+    <description>Recent content in 백준 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 31 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 4779 칸토어 집합 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 4779 칸토어 집합 💡 조건 및 풀이 칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.
+구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 + 재귀 유형의 문제 0 &amp;lt;= N &amp;lt;= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가,</description>
+    </item>
+    <item>
+      <title>[BOJ] 1620 나는야 포켓몬 마스터 이다솜 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</guid>
+      <description>📌 BOJ 1620 나는야 포켓몬 마스터 이다솜 💡 조건 및 풀이 도감에 수록되어 있는 포켓몬의 수 N, 맞추어야할 문제의 개수 M 범위는 1 &amp;lt;= N, M &amp;lt;= 100000 이다. 자료구조를 이용하는 문제 문자열로 입력이 들어오면 도감에 수록된 포켓몬의 번호를 출력한다. 숫자로 입력이 들어오면 도감에 수록된 포켓몬의 이름을 출력한다. 🔖 예제 및 실행결과 예제 26 5 Bulbasaur Ivysaur Venusaur Charmander Charmeleon Charizard Squirtle Wartortle Blastoise Caterpie Metapod Butterfree Weedle Kakuna Beedrill Pidgey Pidgeotto Pidgeot Rattata Raticate Spearow Fearow Ekans Arbok Pikachu Raichu 25 Raichu 3 Pidgey Kakuna 실행결과 Pikachu 26 Venusaur 16 14 ⌨️ 문제 풀이 key - value 로 매핑되는 자료구조를 사용한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 18352 특정 거리의 도시 찾기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 18352 특정 거리의 도시 찾기 💡 조건 및 풀이 1번부터 N번까지의 도시와 M개의 단방향 도로가 존재. 모든 도로의 거리는 1. 특정한 도시 X로부터 출발하여 도달할 수 있는 모든 도시 중에서, 최단 거리가 정확히 K인 모든 도시들의 번호를 출력. BFS 유형의 문제 도달할 수 있는 도시 중에서, 최단 거리가 K인 도시가 하나도 존재하지 않으면 -1을 출력 🔖 예제 및 실행결과 예제 4 4 2 1 1 2 1 3 2 3 2 4 실행결과 4 ⌨️ 문제 풀이 모든 도시가 1부터 시작하기 때문에 graph 리스트의 길이를 n + 1로 한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 3273 두 수의 합 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 3273 두 수의 합 💡 조건 및 풀이 n개의 서로 다른 정수로 이루어진 수열 A가 있다. 1 &amp;lt;= A[i] &amp;lt;= 1000000 n의 크기는 1 &amp;lt;= n &amp;lt;= 100000 x의 크기는 1 &amp;lt;= x &amp;lt;= 2000000 sort + binary search 유형의 문제 자연수 x가 주어졌을 때, A[i] + A[j] = x 를 만족하는 쌍의 수를 구한다.
+(A[i], A[j]) 🔖 예제 및 실행결과 예제 9 5 12 7 10 9 1 2 3 11 13 실행결과 3 ⌨️ 문제 풀이 Python 언어의 배열 이진 분할 알고리즘을 사용할 수 있는 bisect 사용.</description>
+    </item>
+    <item>
+      <title>[BOJ] 15486 퇴사 2 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</guid>
+      <description>📌 BOJ 15486 퇴사 2 💡 조건 및 풀이 퇴사가 남은 일 수 N. 1 &amp;lt;= N &amp;lt;= 1500000 T, P 의 길이는 N과 같으며, 1 &amp;lt;= Ti &amp;lt;= 50, 1 &amp;lt;= Pi &amp;lt;= 1000 N + 1 에 해당하는 날짜부터는 상담을 할 수 없다. DP 유형의 문제 상담을 통해 취한 이익 중, 가장 큰 값을 반환하는 문제. 🔖 예제 및 실행결과 예제 10 5 50 4 40 3 30 2 20 1 10 1 10 2 20 3 30 4 40 5 50 실행결과 90 ⌨️ 문제 풀이 편한 계산을 위해 dp를 n + 1의 크기만큼 생성했다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 4179 불! with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</link>
+      <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</guid>
+      <description>📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.</description>
+    </item>
+  </channel>
+</rss>

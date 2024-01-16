@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>이분탐색 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/</link>
+    <description>Recent content in 이분탐색 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 30 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 3273 두 수의 합 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</link>
+      <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 3273 두 수의 합 💡 조건 및 풀이 n개의 서로 다른 정수로 이루어진 수열 A가 있다. 1 &amp;lt;= A[i] &amp;lt;= 1000000 n의 크기는 1 &amp;lt;= n &amp;lt;= 100000 x의 크기는 1 &amp;lt;= x &amp;lt;= 2000000 sort + binary search 유형의 문제 자연수 x가 주어졌을 때, A[i] + A[j] = x 를 만족하는 쌍의 수를 구한다.
+(A[i], A[j]) 🔖 예제 및 실행결과 예제 9 5 12 7 10 9 1 2 3 11 13 실행결과 3 ⌨️ 문제 풀이 Python 언어의 배열 이진 분할 알고리즘을 사용할 수 있는 bisect 사용.</description>
+    </item>
+  </channel>
+</rss>

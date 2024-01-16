@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 4779 칸토어 집합 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="분할정복, PS, 재귀, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 4779 칸토어 집합 💡 조건 및 풀이 칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.
+구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 &#43; 재귀 유형의 문제 0 &lt;= N &lt;= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가,">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 4779 칸토어 집합 with Python" />
+<meta property="og:description" content="📌 BOJ 4779 칸토어 집합 💡 조건 및 풀이 칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.
+구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 &#43; 재귀 유형의 문제 0 &lt;= N &lt;= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-31T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 4779 칸토어 집합 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 4779 칸토어 집합 💡 조건 및 풀이 칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.
+구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 &#43; 재귀 유형의 문제 0 &lt;= N &lt;= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가,"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 4779 칸토어 집합 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 4779 칸토어 집합 with Python",
+  "name": "[BOJ] 4779 칸토어 집합 with Python",
+  "description": "📌 BOJ 4779 칸토어 집합 💡 조건 및 풀이 칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.\n구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 + 재귀 유형의 문제 0 \u0026lt;= N \u0026lt;= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가,",
+  "keywords": [
+    "분할정복", "PS", "재귀", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 4779 칸토어 집합 💡 조건 및 풀이 칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.\n구간 [0, 1]에서 시작해서 각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식으로 만든다. -가 3N개 있는 문열에서 시작 == - 의 개수는 3 ** N 개 분할 정복 + 재귀 유형의 문제 0 \u003c= N \u003c= 12 파일의 끝에서 입력을 멈춘다 🔖 예제 및 실행결과 예제 0 1 3 2 실행결과 - - - - - - - - - - - - - - - ⌨️ 문제 풀이 칸토어 집합은 각 구간을 3등분, 반복적으로 가운데 구간을 제외하는 방식 파일의 끝에서 입력을 멈춘다 라는 말은 무한루프를 돌다가,\n입력받은 N이 비어있는 문자열 ''이면 break 입력받은 N이 0, -의 개수가 1이라면 print('-') (N ** 3) * '-' == 하이픈의 개수 만들어진 하이픈을 분할 정복 함수에 넣는다.\n각 파라미터는 3 ** N개의 하이픈과 인덱스 번호이다. 인덱스 번호는 세등분이 된 문자열의 각 인덱스 번호이며, 재귀를 통해 인덱스 번호가 1인\n문자열을 공백으로 만들어주면 된다. 문자열은 파라미터로 받은 문자열 길이를 3으로 나누어\n그 길이만큼 리스트를 슬라이싱해 arr 리스트에 넣는다. 반환 조건은 아래의 두가지로 만들었다. 문자열의 길이가 3이고 인덱스 번호가 1이 아닐 때에는 ‘- -‘을 리턴 문자열의 길이가 3보다 같거나 크며, 인덱스 번호가 1일 때는 문자열의 길이만큼 공백을 반환 🖥 소스 코드 from sys import stdin, setrecursionlimit setrecursionlimit(10 ** 6) def div(s, idx): ls = len(s) if ls == 3 and idx != 1: return '- -' elif ls \u003e= 3 and idx == 1: return s.replace('-', ' ') arr = [] for i in range(0, ls, ls // 3): arr.append(string[i:i+ls//3]) k = div(arr[0], 0) + div(arr[1], 1) + div(arr[2], 2) return k while 1: k = '-' n = stdin.readline().rstrip() if n == '': break num = (3 ** int(n)) if num == 1: print('-') continue string = k * num arr = div(string, 0) print(arr) 💾 느낀점 분할 정복을 사용하기로 하고 인덱스를 같이 파라미터 값으로 넣자고 생각했다.\n좋은 아이디어가 한번에 떠올라서 매우 좋았다. 성공적인 풀이였다. 재귀 사용 실력이 최악이라 사용자체가 많이 힘들었지만\n예전보다는 사용하기 매우 수월해졌다. ",
+  "wordCount" : "328",
+  "inLanguage": "en",
+  "datePublished": "2021-08-31T00:00:00Z",
+  "dateModified": "2021-08-31T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 4779 칸토어 집합 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-08-31 00:00:00 +0000 UTC'>August 31, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%204779%20%ec%b9%b8%ed%86%a0%ec%96%b4%20%ec%a7%91%ed%95%a9%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem4779-target_blankboj-4779-칸토어-집합a">📌 <a href="https://www.acmicpc.net/problem/4779" target="_blank">BOJ 4779 칸토어 집합</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem4779-target_blankboj-4779-칸토어-집합a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li>칸토어 집합은 0과 1 사이의 실수로 이루어진 집합.<br>
+구간 <code>[0, 1]</code>에서 시작해서 <strong>각 구간을 3등분하여 가운데 구간을 반복적으로 제외하는 방식</strong>으로 만든다.</li>
+<li><code>-</code>가 <code>3N</code>개 있는 문열에서 시작 == - 의 개수는 <code>3 ** N</code> 개</li>
+<li><strong>분할 정복 + 재귀 유형의 문제</strong></li>
+<li><code>0 &lt;= N &lt;= 12</code></li>
+<li><strong>파일의 끝에서 입력을 멈춘다</strong></li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<pre tabindex="0"><code>0
+1
+3
+2
+</code></pre><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<pre tabindex="0"><code>-
+- -
+- -   - -         - -   - -
+- -   - -
+</code></pre><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>칸토어 집합은 <strong>각 구간을 3등분</strong>, <strong>반복적으로 가운데 구간을 제외하는 방식</strong></li>
+<li><strong>파일의 끝에서 입력을 멈춘다</strong> 라는 말은 무한루프를 돌다가,<br>
+입력받은 <code>N</code>이 비어있는 문자열 <code>''</code>이면 <code>break</code></li>
+<li>입력받은 <code>N</code>이 0, <code>-</code>의 개수가 1이라면 <code>print('-')</code></li>
+<li><code>(N ** 3) * '-' == 하이픈의 개수</code></li>
+<li>만들어진 하이픈을 분할 정복 함수에 넣는다.<br>
+각 파라미터는 <code>3 ** N</code>개의 하이픈과 인덱스 번호이다.</li>
+<li>인덱스 번호는 세등분이 된 문자열의 각 인덱스 번호이며, <strong>재귀를 통해 인덱스 번호가 1인<br>
+문자열을 공백으로 만들어주면 된다.</strong></li>
+<li><strong>문자열은 파라미터로 받은 문자열 길이를 3으로 나누어</strong><br>
+그 길이만큼 리스트를 슬라이싱해 arr 리스트에 넣는다.</li>
+<li>반환 조건은 아래의 두가지로 만들었다.
+<ul>
+<li>문자열의 길이가 3이고 인덱스 번호가 1이 아닐 때에는 &lsquo;- -&lsquo;을 리턴</li>
+<li>문자열의 길이가 3보다 같거나 크며, 인덱스 번호가 1일 때는 문자열의 길이만큼 공백을 반환</li>
+</ul>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">setrecursionlimit</span>
+</span></span><span class="line"><span class="cl"><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ls</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">ls</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">idx</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;- -&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">ls</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">idx</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="p">,</span> <span class="n">ls</span> <span class="o">//</span> <span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">string</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">ls</span><span class="o">//</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">k</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">div</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">div</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">k</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">string</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">num</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ul>
+<li>분할 정복을 사용하기로 하고 인덱스를 같이 파라미터 값으로 넣자고 생각했다.<br>
+좋은 아이디어가 한번에 떠올라서 매우 좋았다.</li>
+<li>성공적인 풀이였다. 재귀 사용 실력이 최악이라 사용자체가 많이 힘들었지만<br>
+예전보다는 사용하기 매우 수월해졌다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5/">분할정복</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%AC%EA%B7%80/">재귀</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 1620 나는야 포켓몬 마스터 이다솜 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
