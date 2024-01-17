@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%99%84%EC%A0%84%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 9934 완전 이진 트리 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/</guid>
       <description>📌 BOJ 9934 완전 이진 트리 💡 조건 및 풀이 이진 트리의 깊이를 나타내는 1&amp;lt;=K&amp;lt;=10, 깊이가 K인 이진 트리는 총 2 * K - 1 개의 노드로 이루어져 있다. 가장 마지막 레벨을 제외한 모든 집은 왼쪽 자식과 오른쪽 자식을 갖는다. 이분탐색, 트리, 재귀구현 문제 모든 빌딩의 번호는 중복되지 않는다. 🔖 예제 및 실행결과 예제 3 1 6 4 3 5 2 7 실행결과 3 6 2 1 4 5 7 ⌨️ 문제 풀이 깊이가 k 인 2차원 리스트 res 를 생성하고, 이 리스트에 노드를 쌓을 것입니다.</description>
     </item>
   </channel>

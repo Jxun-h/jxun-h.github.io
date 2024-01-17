@@ -212,7 +212,7 @@
   <div class="post-content"><br>
 <h2 id="-a-hrefhttpswwwacmicpcnetproblem1244-target_blankboj-1244-스위치-켜고-끄기a">📌 <a href="https://www.acmicpc.net/problem/1244" target="_blank">BOJ 1244 스위치 켜고 끄기</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1244-target_blankboj-1244-스위치-켜고-끄기a">#</a></h2>
 <br>
-<h2 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h2>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
 <ol>
 <li>첫째 줄은 스위치 개수. <code>스위치 개수는 100 이하인 양의 정수.</code><br>
 둘째 줄은 각 스위치의 상태. <code>켜져 있으면 1, 꺼져있으면 0이라고 표시</code><br>
@@ -225,7 +225,7 @@
 <li>학생들은 입력되는 순서대로 자기의 성별과 받은 수에 따라 스위치의 상태를 바꾸었을 때, <strong>스위치들의 마지막 상태를 출력하는 문제.</strong></li>
 </ol>
 <br>
-<h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
 <h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">8</span>
 </span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
@@ -235,7 +235,7 @@
 </span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>
 </span></span></code></pre></div><br>
-<h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
 <ol>
 <li>학생의 수만큼 순회하여 남자일 때와 여자일 때를 구분하여 작업을 할 수 있도록 조건문을 짠다.<br>
 (내가 문제를 푸는 방식은 이러하다. 이렇게 큰 틀을 짜놓고 구현하면 훨씬 편하다.)</li>
@@ -252,7 +252,7 @@ left와 right를 갱신한다.</li>
 </span></span></code></pre></div></li>
 </ol>
 <br>
-<h2 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h2>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
@@ -293,7 +293,7 @@ left와 right를 갱신한다.</li>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">switch</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">20</span><span class="p">])</span>
 </span></span></code></pre></div><br>
-<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
 <ol>
 <li>조건문만 충실히 지키면 잘 풀 수 있는 문제였다.</li>
 <li>여학생이 바꾸는 스위치들의 조건을 구현하는데에 살짝 힘이 들뻔했다.</li>

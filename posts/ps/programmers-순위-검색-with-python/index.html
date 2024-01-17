@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Programmers] 순위 검색 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="이분탐색, PS, 자료구조, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?
+를 구하는 문제
+&#39;-&#39; 표시는 해당 조건을 고려하지 않겠다는 의미.
+&#34;cpp and - and senior and pizza 500&#34; 은를 의미한다.
+&quot;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?&quot;
+브루트포스 알고리즘 유형의 문제에 해당한다.
+🔖 예제 및 실행결과 예제 info = [&#34;java backend junior pizza 150&#34;, &#34;python frontend senior chicken 210&#34;, &#34;python frontend senior chicken 150&#34;,&#34;cpp backend senior pizza 260&#34;, &#34;java backend junior chicken 80&#34;, &#34;python backend senior chicken 50&#34;] query = [&#34;java and backend and junior and pizza 100&#34;, &#34;python and frontend and senior and chicken 200&#34;, &#34;cpp and - and senior and pizza 250&#34;, &#34;- and backend and senior and - 150&#34;, &#34;- and - and - and chicken 100&#34;, &#34;- and - and - and - 150&#34;] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[Programmers] 순위 검색 with Python" />
+<meta property="og:description" content="📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?
+를 구하는 문제
+&#39;-&#39; 표시는 해당 조건을 고려하지 않겠다는 의미.
+&#34;cpp and - and senior and pizza 500&#34; 은를 의미한다.
+&quot;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?&quot;
+브루트포스 알고리즘 유형의 문제에 해당한다.
+🔖 예제 및 실행결과 예제 info = [&#34;java backend junior pizza 150&#34;, &#34;python frontend senior chicken 210&#34;, &#34;python frontend senior chicken 150&#34;,&#34;cpp backend senior pizza 260&#34;, &#34;java backend junior chicken 80&#34;, &#34;python backend senior chicken 50&#34;] query = [&#34;java and backend and junior and pizza 100&#34;, &#34;python and frontend and senior and chicken 200&#34;, &#34;cpp and - and senior and pizza 250&#34;, &#34;- and backend and senior and - 150&#34;, &#34;- and - and - and chicken 100&#34;, &#34;- and - and - and - 150&#34;] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-14T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-10775-%EA%B3%B5%ED%95%AD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[Programmers] 순위 검색 with Python"/>
+<meta name="twitter:description" content="📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?
+를 구하는 문제
+&#39;-&#39; 표시는 해당 조건을 고려하지 않겠다는 의미.
+&#34;cpp and - and senior and pizza 500&#34; 은를 의미한다.
+&quot;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?&quot;
+브루트포스 알고리즘 유형의 문제에 해당한다.
+🔖 예제 및 실행결과 예제 info = [&#34;java backend junior pizza 150&#34;, &#34;python frontend senior chicken 210&#34;, &#34;python frontend senior chicken 150&#34;,&#34;cpp backend senior pizza 260&#34;, &#34;java backend junior chicken 80&#34;, &#34;python backend senior chicken 50&#34;] query = [&#34;java and backend and junior and pizza 100&#34;, &#34;python and frontend and senior and chicken 200&#34;, &#34;cpp and - and senior and pizza 250&#34;, &#34;- and backend and senior and - 150&#34;, &#34;- and - and - and chicken 100&#34;, &#34;- and - and - and - 150&#34;] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Programmers] 순위 검색 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Programmers] 순위 검색 with Python",
+  "name": "[Programmers] 순위 검색 with Python",
+  "description": "📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?\n를 구하는 문제\n'-' 표시는 해당 조건을 고려하지 않겠다는 의미.\n\u0026#34;cpp and - and senior and pizza 500\u0026#34; 은를 의미한다.\n\u0026quot;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?\u0026quot;\n브루트포스 알고리즘 유형의 문제에 해당한다.\n🔖 예제 및 실행결과 예제 info = [\u0026#34;java backend junior pizza 150\u0026#34;, \u0026#34;python frontend senior chicken 210\u0026#34;, \u0026#34;python frontend senior chicken 150\u0026#34;,\u0026#34;cpp backend senior pizza 260\u0026#34;, \u0026#34;java backend junior chicken 80\u0026#34;, \u0026#34;python backend senior chicken 50\u0026#34;] query = [\u0026#34;java and backend and junior and pizza 100\u0026#34;, \u0026#34;python and frontend and senior and chicken 200\u0026#34;, \u0026#34;cpp and - and senior and pizza 250\u0026#34;, \u0026#34;- and backend and senior and - 150\u0026#34;, \u0026#34;- and - and - and chicken 100\u0026#34;, \u0026#34;- and - and - and - 150\u0026#34;] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다.",
+  "keywords": [
+    "이분탐색", "PS", "자료구조", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?\n를 구하는 문제\n'-' 표시는 해당 조건을 고려하지 않겠다는 의미.\n\"cpp and - and senior and pizza 500\" 은를 의미한다.\n\"cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?\"\n브루트포스 알고리즘 유형의 문제에 해당한다.\n🔖 예제 및 실행결과 예제 info = [\"java backend junior pizza 150\", \"python frontend senior chicken 210\", \"python frontend senior chicken 150\",\"cpp backend senior pizza 260\", \"java backend junior chicken 80\", \"python backend senior chicken 50\"] query = [\"java and backend and junior and pizza 100\", \"python and frontend and senior and chicken 200\", \"cpp and - and senior and pizza 250\", \"- and backend and senior and - 150\", \"- and - and - and chicken 100\", \"- and - and - and - 150\"] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다. temp = j.split() condition = temp[:-1] score = int(temp[-1]) 지원서에 입력한 4개의 값 range(4)의 데이터를 combinations 을 이용해\n짝을 지어 각 1부터 4개까지의 경우의 수와 점수를 dict 자료구조에 넣어준다. for i in range(5): comb = list(combinations(range(4), i)) for c in comb: test_case = condition.copy() for idx in c: test_case[idx] = '-' case = ''.join(test_case) if case not in data: data[case] = [score] else: data[case].append(score) 이분탐색 라이브러리인 bisect 라이브러리를 사용해 사용을 할 것이기 때문에 dict 자료구조의 value를 정렬해준다. 파라미터로 받아온 sql을 순차적으로 돌면서 and 문자열을 ‘‘로 바꾸어주고 split 해준다.\ntest_query 와 test_score 로 나누어주고, test_query에 해당하는 인원 중(data의 key)\ntest_score 이상의 점수를 얻은(data의 value) 인원의 수를 계산하여 answer에 입력해준다. 🖥 소스 코드 from itertools import combinations from bisect import bisect_left def solution(info, query): answer, data, sql = [], {}, [] n, m = len(info), len(query) for j in info: temp = j.split() condition = temp[:-1] score = int(temp[-1]) for i in range(5): comb = list(combinations(range(4), i)) for c in comb: test_case = condition.copy() for idx in c: test_case[idx] = '-' case = ''.join(test_case) if case not in data: data[case] = [score] else: data[case].append(score) for i in data.values(): i.sort() for i in range(m): sql = query[i].replace('and', '').split() test_query = ''.join(sql[:-1]) test_score = int(sql[-1]) if test_query in data: idx = bisect_left(data[test_query], test_score) answer.append(len(data[test_query]) - idx) else: answer.append(0) return answer 💾 느낀점 모든 경우의 수를 data 에 입력하여 찾는 아이디어를 구상하는 것이 힘이 들었다. sql에 해당하는 지원자를 이분탐색으로 찾을 아이디어와 dict 자료구조를 사용할 아이디어를 떠올리니\n구현하는데에는 큰 무리가 없었던 것 같다. 포스팅 내용을 보니 아예 아이디어를 얻지 못한 분들이 보시기에 괜찮을까 라는 생각이 들면서,\n설명하는 능력이 조금 부족하다고 느낀다. ",
+  "wordCount" : "439",
+  "inLanguage": "en",
+  "datePublished": "2021-10-14T00:00:00Z",
+  "dateModified": "2021-10-14T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [Programmers] 순위 검색 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-10-14 00:00:00 +0000 UTC'>October 14, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[Programmers]%20%ec%88%9c%ec%9c%84%20%ea%b2%80%ec%83%89%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons72412-target_blankprogrammers---순위-검색a">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/72412" target="_blank">Programmers - 순위 검색</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons72412-target_blankprogrammers---순위-검색a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li>
+<p><strong>조건</strong>을 만족하는 사람 중 <code>코딩테스트 점수를 X점 이상 받은 사람</code>은 모두 몇 명인가?<br>
+를 구하는 문제</p>
+</li>
+<li>
+<p><code>'-'</code> 표시는 해당 조건을 고려하지 않겠다는 의미.</p>
+</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;cpp and - and senior and pizza 500&#34;</span>
+</span></span></code></pre></div><p>은를 의미한다.</p>
+</li>
+<li>
+<p><code>&quot;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?&quot;</code></p>
+</li>
+<li>
+<p><strong>브루트포스 알고리즘 유형의 문제에 해당한다.</strong></p>
+</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">info</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;java backend junior pizza 150&#34;</span><span class="p">,</span> <span class="s2">&#34;python frontend senior chicken 210&#34;</span><span class="p">,</span> <span class="s2">&#34;python frontend senior chicken 150&#34;</span><span class="p">,</span><span class="s2">&#34;cpp backend senior pizza 260&#34;</span><span class="p">,</span> <span class="s2">&#34;java backend junior chicken 80&#34;</span><span class="p">,</span> <span class="s2">&#34;python backend senior chicken 50&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;java and backend and junior and pizza 100&#34;</span><span class="p">,</span> <span class="s2">&#34;python and frontend and senior and chicken 200&#34;</span><span class="p">,</span> <span class="s2">&#34;cpp and - and senior and pizza 250&#34;</span><span class="p">,</span> <span class="s2">&#34;- and backend and senior and - 150&#34;</span><span class="p">,</span> <span class="s2">&#34;- and - and - and chicken 100&#34;</span><span class="p">,</span> <span class="s2">&#34;- and - and - and - 150&#34;</span><span class="p">]</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다.</li>
+<li><code>temp = j.split() condition = temp[:-1] score = int(temp[-1])</code></li>
+<li>지원서에 입력한 4개의 값 range(4)의 데이터를 combinations 을 이용해<br>
+짝을 지어 각 1부터 4개까지의 경우의 수와 점수를 dict 자료구조에 넣어준다.</li>
+<li><code>for i in range(5): comb = list(combinations(range(4), i)) for c in comb: test_case = condition.copy() for idx in c: test_case[idx] = '-' case = ''.join(test_case) if case not in data: data[case] = [score] else: data[case].append(score)</code></li>
+<li>이분탐색 라이브러리인 bisect 라이브러리를 사용해 사용을 할 것이기 때문에 dict 자료구조의 value를 정렬해준다.</li>
+<li>파라미터로 받아온 sql을 순차적으로 돌면서 and 문자열을 &lsquo;&lsquo;로 바꾸어주고 split 해준다.<br>
+test_query 와 test_score 로 나누어주고, test_query에 해당하는 인원 중(data의 key)<br>
+test_score 이상의 점수를 얻은(data의 value) 인원의 수를 계산하여 answer에 입력해준다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">bisect</span> <span class="kn">import</span> <span class="n">bisect_left</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">info</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">sql</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">{},</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">info</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">temp</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">condition</span> <span class="o">=</span> <span class="n">temp</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">comb</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">comb</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">test_case</span> <span class="o">=</span> <span class="n">condition</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">test_case</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">case</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">test_case</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="k">case</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">data</span><span class="p">[</span><span class="k">case</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">score</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">data</span><span class="p">[</span><span class="k">case</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sql</span> <span class="o">=</span> <span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">test_query</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sql</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">test_score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sql</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">test_query</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">idx</span> <span class="o">=</span> <span class="n">bisect_left</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">test_query</span><span class="p">],</span> <span class="n">test_score</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">test_query</span><span class="p">])</span> <span class="o">-</span> <span class="n">idx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">answer</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ul>
+<li>모든 경우의 수를 data 에 입력하여 찾는 아이디어를 구상하는 것이 힘이 들었다.</li>
+<li>sql에 해당하는 지원자를 이분탐색으로 찾을 아이디어와 dict 자료구조를 사용할 아이디어를 떠올리니<br>
+구현하는데에는 큰 무리가 없었던 것 같다.</li>
+<li>포스팅 내용을 보니 아예 아이디어를 얻지 못한 분들이 보시기에 괜찮을까 라는 생각이 들면서,<br>
+설명하는 능력이 조금 부족하다고 느낀다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/">이분탐색</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[Programmers] 표 편집 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-10775-%EA%B3%B5%ED%95%AD-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 10775 공항 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

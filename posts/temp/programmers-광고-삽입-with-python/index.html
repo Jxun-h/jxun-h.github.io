@@ -215,7 +215,7 @@ play_time, adv_time은 HH:MM:SS 형식이며,
   <div class="post-content"><br>
 <h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons72414-target_blankprogrammers---광고-삽입a">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/72414" target="_blank">Programmers - 광고 삽입</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons72414-target_blankprogrammers---광고-삽입a">#</a></h2>
 <br>
-<h2 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h2>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
 <ol>
 <li>동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.<br>
 = 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다.</li>
@@ -229,13 +229,13 @@ play_time, adv_time은 HH:MM:SS 형식이며,
 <li><code>1 &lt;= logs &lt;= 300000</code></li>
 </ol>
 <br>
-<h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
 <h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">(</span><span class="s2">&#34;02:03:55&#34;</span><span class="p">,</span> <span class="s2">&#34;00:14:15&#34;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;01:20:15-01:45:14&#34;</span><span class="p">,</span> <span class="s2">&#34;00:40:31-01:00:00&#34;</span><span class="p">,</span> <span class="s2">&#34;00:25:50-00:48:29&#34;</span><span class="p">,</span> <span class="s2">&#34;01:30:59-01:53:29&#34;</span><span class="p">,</span> <span class="s2">&#34;01:37:44-02:02:30&#34;</span><span class="p">]))</span>
 </span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;01:30:59&#34;</span>
 </span></span></code></pre></div><br>
-<h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
 <ol>
 <li>play_time, adv_time (동영상 재생 길이, 광고 재생 길이)를 각각 str 타입에서 int 타입으로 변경한다.</li>
 <li>
@@ -276,7 +276,7 @@ play_time, adv_time은 HH:MM:SS 형식이며,
 <li>최대 시청자가 있는 광고 삽입 시간을 <code>HH:MM:SS</code> 형식으로 변환하여 return 합니다.</li>
 </ol>
 <br>
-<h2 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h2>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">play_time</span><span class="p">,</span> <span class="n">adv_time</span><span class="p">,</span> <span class="n">logs</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="n">play_time</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">play_time</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -334,7 +334,7 @@ play_time, adv_time은 HH:MM:SS 형식이며,
 </span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="k">if</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">s</span>
 </span></span></code></pre></div><br>
-<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
 <ul>
 <li>문자열 타입의 시간 형식 데이터는 각 시간, 분, 초를 합쳐 숫자로 만들어 다루는 것이 편하다.</li>
 <li>구간별 시청자 기록과 모든 구간의 시청자 누적 기록을 하는 부분에서 많은 이해가 필요했다.<br>

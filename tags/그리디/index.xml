@@ -15,18 +15,18 @@
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 13305 주유소 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/</link>
       <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/</guid>
       <description>📌 BOJ 13305 주유소 💡 조건 및 풀이 도시의 개수 2 &amp;lt;= N &amp;lt;= 100000 도시를 연결하는 간선의 길이가 N-1개 주어진다. 그리디 알고리즘 유형 문제 제일 왼쪽에서 오른쪽으로 이동하는 최소 비용을 계산 어느 도시에서 기름을 넣어 이동하는 것이 가장 비용이 저렴한지에 대해 계산하면 된다. 서브태스크 점수가 주어진다 17점 모든 주유소의 리터당 가격은 1원 41점 2 &amp;lt;= N &amp;lt;= 1000
 제일 왼쪽 도시부터 제일 오른쪽 도시까지의 거리는 최대 10000,
 리터 당 가격은 최대 10000 42점 원래의 제약조건 이외에 아무 제약조건이 없다.</description>
     </item>
     <item>
       <title>[BOJ] 17521 Byte Coin with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-17521-byte-coin-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-17521-byte-coin-with-python/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-17521-byte-coin-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-17521-byte-coin-with-python/</guid>
       <description>📌 BOJ 17521 Byte Coin 💡 조건 및 풀이 주식 시장에서 단타를 치는 국제자본 부동산 회사를 도와 최고의 수익을 내는 문제. 일 수를 나타내는 1 &amp;lt;= n &amp;lt;= 15 초기 현금을 나타내는 W 다음 n 개의 줄에서, i번째 줄은 i일의 바이트 코인 가격을 나타내는
 정수 si가 주어진다(1 ≤ si ≤ 50). 단순 구현, 그리디 알고리즘 문제 🔖 예제 및 실행결과 예제 10 24 5 7 5 4 2 7 8 5 3 4 실행결과 170 ⌨️ 문제 풀이 현재 매수한 코인이 있는지의 상태를 체크할 수 있는 변수 &amp;quot;m&amp;quot; (기본값은 False)</description>
     </item>

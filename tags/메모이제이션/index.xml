@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Programmers] 광고 삽입 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</link>
       <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</guid>
       <description>📌 Programmers - 광고 삽입 💡 조건 및 풀이 동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.
 = 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다. 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time,
 시청자들이 해당 동영상을 재생했던 구간 정보 logs 구간합을 구해 답을 이끌어내는 유형의 문제 play_time, adv_time은 길이 8로 고정된 문자열

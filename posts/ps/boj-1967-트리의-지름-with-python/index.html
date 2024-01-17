@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 1967 트리의 지름 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="BFS, PS, 너비우선탐색, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 1967 트리의 지름 💡 조건 및 풀이 노드의 개수 (1 ≤ n ≤ 10,000) 첫 번째 정수는 간선이 연결하는 두 노드 중 부모 노드의 번호
+두 번째 정수는 자식 노드
+세 번째 정수는 간선의 가중치 부모 노드의 번호가 작은 것이 먼저 입력되고,
+부모 노드의 번호가 같으면 자식 노드의 번호가 작은 것이 먼저 입력된다. BFS 유형의 문제 루트 노드의 번호는 항상 1
+간선의 가중치는 100보다 크지 않은 양의 정수 트리에 존재하는 모든 경로들 중, 가장 긴 경로를 출력하는 문제이다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 1967 트리의 지름 with Python" />
+<meta property="og:description" content="📌 BOJ 1967 트리의 지름 💡 조건 및 풀이 노드의 개수 (1 ≤ n ≤ 10,000) 첫 번째 정수는 간선이 연결하는 두 노드 중 부모 노드의 번호
+두 번째 정수는 자식 노드
+세 번째 정수는 간선의 가중치 부모 노드의 번호가 작은 것이 먼저 입력되고,
+부모 노드의 번호가 같으면 자식 노드의 번호가 작은 것이 먼저 입력된다. BFS 유형의 문제 루트 노드의 번호는 항상 1
+간선의 가중치는 100보다 크지 않은 양의 정수 트리에 존재하는 모든 경로들 중, 가장 긴 경로를 출력하는 문제이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-11T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-10775-%EA%B3%B5%ED%95%AD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 1967 트리의 지름 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 1967 트리의 지름 💡 조건 및 풀이 노드의 개수 (1 ≤ n ≤ 10,000) 첫 번째 정수는 간선이 연결하는 두 노드 중 부모 노드의 번호
+두 번째 정수는 자식 노드
+세 번째 정수는 간선의 가중치 부모 노드의 번호가 작은 것이 먼저 입력되고,
+부모 노드의 번호가 같으면 자식 노드의 번호가 작은 것이 먼저 입력된다. BFS 유형의 문제 루트 노드의 번호는 항상 1
+간선의 가중치는 100보다 크지 않은 양의 정수 트리에 존재하는 모든 경로들 중, 가장 긴 경로를 출력하는 문제이다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 1967 트리의 지름 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 1967 트리의 지름 with Python",
+  "name": "[BOJ] 1967 트리의 지름 with Python",
+  "description": "📌 BOJ 1967 트리의 지름 💡 조건 및 풀이 노드의 개수 (1 ≤ n ≤ 10,000) 첫 번째 정수는 간선이 연결하는 두 노드 중 부모 노드의 번호\n두 번째 정수는 자식 노드\n세 번째 정수는 간선의 가중치 부모 노드의 번호가 작은 것이 먼저 입력되고,\n부모 노드의 번호가 같으면 자식 노드의 번호가 작은 것이 먼저 입력된다. BFS 유형의 문제 루트 노드의 번호는 항상 1\n간선의 가중치는 100보다 크지 않은 양의 정수 트리에 존재하는 모든 경로들 중, 가장 긴 경로를 출력하는 문제이다.",
+  "keywords": [
+    "BFS", "PS", "너비우선탐색", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 1967 트리의 지름 💡 조건 및 풀이 노드의 개수 (1 ≤ n ≤ 10,000) 첫 번째 정수는 간선이 연결하는 두 노드 중 부모 노드의 번호\n두 번째 정수는 자식 노드\n세 번째 정수는 간선의 가중치 부모 노드의 번호가 작은 것이 먼저 입력되고,\n부모 노드의 번호가 같으면 자식 노드의 번호가 작은 것이 먼저 입력된다. BFS 유형의 문제 루트 노드의 번호는 항상 1\n간선의 가중치는 100보다 크지 않은 양의 정수 트리에 존재하는 모든 경로들 중, 가장 긴 경로를 출력하는 문제이다. 🔖 예제 및 실행결과 예제 12 1 2 3 1 3 2 2 4 5 3 5 11 3 6 9 4 7 1 4 8 7 5 9 15 5 10 4 6 11 6 6 12 10 실행결과 45 ⌨️ 문제 풀이 BFS 문제 였지만, 트리의 길이를 구하는 문제라고 하기에 당황을 했다. BFS 를 통해 루트 노드인 1 부터 탐색을 시작해서 가중치가 가장 높은 것을\n반환받아 변수에 담는다. 변수에는 (node, cost) 형식으로 있는데, 이 node 번호를 다시 BFS에 넣어 처리한다. 3번을 통해서 반환 된 (node, cost) 에서 cost가 답이 된다. 다시 설명하자면,\n2번에서 BFS 로 가장 가중치가 많이 쌓이는 노드를 탐색한다. 이를 A-node 라고 하고,\n3번에서 A-node에서부터 가장 가중치가 많이 쌓이는 곳으로 순회를 하여 B-node라고 한다.\n문제에서 설명하듯, 이 두 노드가 가장 높은 가중치를 가지고 있는 경로 즉, 지름이 된다. 🖥 소스 코드 from sys import stdin from collections import deque n = int(stdin.readline()) tree = [[] for _ in range(n + 1)] for _ in range(n - 1): a, b, c = map(int, stdin.readline().split()) tree[a].append((b, c)) tree[b].append((a, c)) def bfs(i): visited = set() q = deque() q.append((i, 0)) visited.add(i) res = (0, 0) while q: now, cost = q.popleft() for n, c in tree[now]: if n not in visited: visited.add(n) t = c + cost q.append((n, t)) if res[1] \u003c t: res = (n, t) return res a = bfs(1) b = bfs(a[0]) print(b[1]) 💾 느낀점 BFS를 응용하여 푸는 문제였다. 두번이나 돌릴 생각을 못해서 헤맸다. 문제를 해석하고 압축하는 능력을 더 키우고, 생각의 전환을 하는 습관을 길러야겠다. ",
+  "wordCount" : "329",
+  "inLanguage": "en",
+  "datePublished": "2021-10-11T00:00:00Z",
+  "dateModified": "2021-10-11T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 1967 트리의 지름 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-10-11 00:00:00 +0000 UTC'>October 11, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%201967%20%ed%8a%b8%eb%a6%ac%ec%9d%98%20%ec%a7%80%eb%a6%84%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem1967-target_blankboj-1967-트리의-지름a">📌 <a href="https://www.acmicpc.net/problem/1967" target="_blank">BOJ 1967 트리의 지름</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1967-target_blankboj-1967-트리의-지름a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li>노드의 개수 <code>(1 ≤ n ≤ 10,000)</code></li>
+<li>첫 번째 정수는 간선이 연결하는 두 노드 중 부모 노드의 번호<br>
+두 번째 정수는 자식 노드<br>
+세 번째 정수는 간선의 가중치</li>
+<li>부모 노드의 번호가 작은 것이 먼저 입력되고,<br>
+부모 노드의 번호가 같으면 자식 노드의 번호가 작은 것이 먼저 입력된다.</li>
+<li><strong>BFS 유형의 문제</strong></li>
+<li>루트 노드의 번호는 항상 <code>1</code><br>
+간선의 가중치는 <code>100</code>보다 크지 않은 양의 정수</li>
+<li><strong>트리에 존재하는 모든 경로들 중, 가장 긴 경로를 출력하는 문제</strong>이다.</li>
+</ol>
+<br>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">12</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">4</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">5</span> <span class="mi">11</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">6</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">7</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">8</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span> <span class="mi">9</span> <span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span> <span class="mi">10</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span> <span class="mi">11</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span> <span class="mi">12</span> <span class="mi">10</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">45</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li><code>BFS</code> 문제 였지만, 트리의 길이를 구하는 문제라고 하기에 당황을 했다.</li>
+<li><code>BFS</code> 를 통해 루트 노드인 1 부터 탐색을 시작해서 가중치가 가장 높은 것을<br>
+반환받아 변수에 담는다.</li>
+<li>변수에는 <code>(node, cost)</code> 형식으로 있는데, 이 node 번호를 다시 BFS에 넣어 처리한다.</li>
+<li><code>3번</code>을 통해서 반환 된 <code>(node, cost)</code> 에서 cost가 답이 된다.</li>
+<li>다시 설명하자면,<br>
+<code>2번</code>에서 BFS 로 가장 가중치가 많이 쌓이는 노드를 탐색한다. 이를 <code>A-node</code> 라고 하고,<br>
+<code>3번</code>에서 <code>A-node</code>에서부터 가장 가중치가 많이 쌓이는 곳으로 순회를 하여 <code>B-node</code>라고 한다.<br>
+문제에서 설명하듯, 이 두 노드가 가장 높은 가중치를 가지고 있는 경로 즉, 지름이 된다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">tree</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tree</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tree</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">now</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">t</span> <span class="o">=</span> <span class="n">c</span> <span class="o">+</span> <span class="n">cost</span>
+</span></span><span class="line"><span class="cl">                <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">res</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">bfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">bfs</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span></code></pre></div><h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ul>
+<li>BFS를 응용하여 푸는 문제였다. 두번이나 돌릴 생각을 못해서 헤맸다.</li>
+<li>문제를 해석하고 압축하는 능력을 더 키우고, 생각의 전환을 하는 습관을 길러야겠다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/bfs/">BFS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89/">너비우선탐색</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-1799-%EB%B9%84%EC%88%8D-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 1799 비숍 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 13305 주유소 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

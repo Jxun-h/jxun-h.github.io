@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Programmers] 문자열 압축 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</guid>
       <description>📌 Programmers - 문자열 압축 💡 조건 및 풀이 입력 받는 의 길이는 1 &amp;lt;= s &amp;lt;= 1000, 소문자로만 이루어져 있다. 문자열을 1개 단위로 자르는 것부터 s의 길이 만큼 자르는 것까지 계산 완전탐색, 구현 문제 문자열을 자르고 숫자를 붙이는 것에서 쓸데 없는 문자가 들어가지 않도록 주의 🔖 예제 및 실행결과 예제 print(solution(&amp;#34;aabbaccc&amp;#34;)) print(solution(&amp;#34;ababcdcdababcdcd&amp;#34;)) print(solution(&amp;#34;abcabcdede&amp;#34;)) print(solution(&amp;#34;abcabcabcabcdededededede&amp;#34;)) print(solution(&amp;#34;xababcdcdababcdcd&amp;#34;)) 실행결과 7 9 8 14 17 ⌨️ 문제 풀이 answer의 값을 s의 길이로 초기화.</description>
     </item>
   </channel>

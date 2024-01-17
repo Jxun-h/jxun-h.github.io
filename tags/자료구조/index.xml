@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Programmers] 표 편집 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</link>
       <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</guid>
       <description>📌 Programmers - 표 편집 💡 조건 및 풀이 표의 원본 행의 개수를 나타내는 변수 n
 5 ≤ n ≤ 1,000,000 처음에 선택되어 있는 행의 위치 k
 0 ≤ k &amp;lt; n 수행한 명령어들이 담긴 문자열 배열 cmd
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>[Programmers] 순위 검색 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</link>
       <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</guid>
       <description>📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?
 를 구하는 문제
 &#39;-&#39; 표시는 해당 조건을 고려하지 않겠다는 의미.

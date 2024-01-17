@@ -203,7 +203,7 @@
   <div class="post-content"><br>
 <h2 id="-a-hrefhttpswwwacmicpcnetproblem1799-target_blankboj-1799-비숍a">📌 <a href="https://www.acmicpc.net/problem/1799" target="_blank">BOJ 1799 비숍</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1799-target_blankboj-1799-비숍a">#</a></h2>
 <br>
-<h2 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h2>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
 <ol>
 <li><strong>체스판의 크기는 10 이하의 자연수</strong></li>
 <li>비숍을 놓을 수 있는 곳에는 <code>1</code>, 비숍을 놓을 수 없는 곳에는 <code>0</code></li>
@@ -211,7 +211,7 @@
 <li><strong>백트래킹 유형의 문제</strong></li>
 </ol>
 <br>
-<h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
 <h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">5</span>
 </span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>
@@ -222,7 +222,7 @@
 </span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">7</span>
 </span></span></code></pre></div><br>
-<h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
 <ol>
 <li>흑과 백을 구분할 수 있는 체스판을 <code>True</code> 와 <code>False</code> 를 사용해 다시 만든다.</li>
 <li>비숍을 놓을 수 있는 좌표를 흑과 백으로 나누어 각각 <code>black</code> 과 <code>white</code> 리스트에 넣어준다.</li>
@@ -234,7 +234,7 @@
 <li><code>index</code>값이 흰색 혹은 검정색 비숍 좌표의 길이와 같다면 검정색의 최댓값과 흰색의 최댓값을 각각 <code>Bcnt</code>와 <code>Wcnt</code>에 저장한다.</li>
 </ol>
 <br>
-<h2 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h2>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
@@ -297,7 +297,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">fun</span><span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">Bcnt</span> <span class="o">+</span> <span class="n">Wcnt</span><span class="p">)</span>
 </span></span></code></pre></div><br>
-<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
 <ul>
 <li>무지성 백트래킹으로 풀려다가 시간초과가 떴다.</li>
 <li>백트래킹을 잘하려면 재귀를 잘 짤줄 알아야하는데 아직도 재귀함수가 약점이다.</li>
