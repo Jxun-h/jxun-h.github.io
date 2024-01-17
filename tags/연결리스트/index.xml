@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>연결리스트 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/</link>
+    <description>Recent content in 연결리스트 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 17 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Programmers] 표 편집 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</link>
+      <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</guid>
+      <description>📌 Programmers - 표 편집 💡 조건 및 풀이 표의 원본 행의 개수를 나타내는 변수 n
+5 ≤ n ≤ 1,000,000 처음에 선택되어 있는 행의 위치 k
+0 ≤ k &amp;lt; n 수행한 명령어들이 담긴 문자열 배열 cmd
+1 ≤ cmd의 원소 개수 ≤ 200,000 cmd의 각 원소는 &amp;quot;U X&amp;quot;, &amp;quot;D X&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;Z&amp;quot; 중 하나 Linked List 자료구조 문제 표의 모든 행을 제거하여, 행이 하나도 남지 않는 경우는 입력으로 주어지지 않는다.</description>
+    </item>
+  </channel>
+</rss>

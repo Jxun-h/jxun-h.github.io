@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 13305 주유소 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="구현, PS, 그리디, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 13305 주유소 💡 조건 및 풀이 도시의 개수 2 &lt;= N &lt;= 100000 도시를 연결하는 간선의 길이가 N-1개 주어진다. 그리디 알고리즘 유형 문제 제일 왼쪽에서 오른쪽으로 이동하는 최소 비용을 계산 어느 도시에서 기름을 넣어 이동하는 것이 가장 비용이 저렴한지에 대해 계산하면 된다. 서브태스크 점수가 주어진다 17점 모든 주유소의 리터당 가격은 1원 41점 2 &lt;= N &lt;= 1000
+제일 왼쪽 도시부터 제일 오른쪽 도시까지의 거리는 최대 10000,
+리터 당 가격은 최대 10000 42점 원래의 제약조건 이외에 아무 제약조건이 없다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/temp/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 13305 주유소 with Python" />
+<meta property="og:description" content="📌 BOJ 13305 주유소 💡 조건 및 풀이 도시의 개수 2 &lt;= N &lt;= 100000 도시를 연결하는 간선의 길이가 N-1개 주어진다. 그리디 알고리즘 유형 문제 제일 왼쪽에서 오른쪽으로 이동하는 최소 비용을 계산 어느 도시에서 기름을 넣어 이동하는 것이 가장 비용이 저렴한지에 대해 계산하면 된다. 서브태스크 점수가 주어진다 17점 모든 주유소의 리터당 가격은 1원 41점 2 &lt;= N &lt;= 1000
+제일 왼쪽 도시부터 제일 오른쪽 도시까지의 거리는 최대 10000,
+리터 당 가격은 최대 10000 42점 원래의 제약조건 이외에 아무 제약조건이 없다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/temp/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-22T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-10775-%EA%B3%B5%ED%95%AD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 13305 주유소 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 13305 주유소 💡 조건 및 풀이 도시의 개수 2 &lt;= N &lt;= 100000 도시를 연결하는 간선의 길이가 N-1개 주어진다. 그리디 알고리즘 유형 문제 제일 왼쪽에서 오른쪽으로 이동하는 최소 비용을 계산 어느 도시에서 기름을 넣어 이동하는 것이 가장 비용이 저렴한지에 대해 계산하면 된다. 서브태스크 점수가 주어진다 17점 모든 주유소의 리터당 가격은 1원 41점 2 &lt;= N &lt;= 1000
+제일 왼쪽 도시부터 제일 오른쪽 도시까지의 거리는 최대 10000,
+리터 당 가격은 최대 10000 42점 원래의 제약조건 이외에 아무 제약조건이 없다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 13305 주유소 with Python",
+      "item": "https://jxun-h.github.io/posts/temp/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 13305 주유소 with Python",
+  "name": "[BOJ] 13305 주유소 with Python",
+  "description": "📌 BOJ 13305 주유소 💡 조건 및 풀이 도시의 개수 2 \u0026lt;= N \u0026lt;= 100000 도시를 연결하는 간선의 길이가 N-1개 주어진다. 그리디 알고리즘 유형 문제 제일 왼쪽에서 오른쪽으로 이동하는 최소 비용을 계산 어느 도시에서 기름을 넣어 이동하는 것이 가장 비용이 저렴한지에 대해 계산하면 된다. 서브태스크 점수가 주어진다 17점 모든 주유소의 리터당 가격은 1원 41점 2 \u0026lt;= N \u0026lt;= 1000\n제일 왼쪽 도시부터 제일 오른쪽 도시까지의 거리는 최대 10000,\n리터 당 가격은 최대 10000 42점 원래의 제약조건 이외에 아무 제약조건이 없다.",
+  "keywords": [
+    "구현", "PS", "그리디", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 13305 주유소 💡 조건 및 풀이 도시의 개수 2 \u003c= N \u003c= 100000 도시를 연결하는 간선의 길이가 N-1개 주어진다. 그리디 알고리즘 유형 문제 제일 왼쪽에서 오른쪽으로 이동하는 최소 비용을 계산 어느 도시에서 기름을 넣어 이동하는 것이 가장 비용이 저렴한지에 대해 계산하면 된다. 서브태스크 점수가 주어진다 17점 모든 주유소의 리터당 가격은 1원 41점 2 \u003c= N \u003c= 1000\n제일 왼쪽 도시부터 제일 오른쪽 도시까지의 거리는 최대 10000,\n리터 당 가격은 최대 10000 42점 원래의 제약조건 이외에 아무 제약조건이 없다. 🔖 예제 및 실행결과 예제 4 2 3 1 5 2 4 1 실행결과 18 ⌨️ 문제 풀이 도로의 길이를 저장할 리스트 dist\n주유소의 리터당 가격을 저장할 리스트 cost 가장 왼쪽에 있는 도시의 주유소의 리터당 가격을 변수 c 에 넣어준다. k-1 반복문을 실행하여 주유소의 리터 당 가격을 순회한다. 만약 현재 계산된 c 가 i 번째 리터 당 가격보다 비싸다면 c 를 갱신한다.\n그게 아니라면, 결과값을 저장할 res에 리터 당 가격 * i번째 도로의 길이를 더해준다 🖥 소스 코드 from sys import stdin k = int(stdin.readline()) dist = list(map(int, stdin.readline().split())) cost = list(map(int, stdin.readline().split())) res = 0 c = cost[0] for i in range(k - 1): if c \u003e cost[i]: c = cost[i] res += c * dist[i] print(res) 💾 느낀점 그리디 문제라고해서 얕봤다가 로직이 한순간 꼬여서 고생을 좀 했다. 리스트를 따로 처리해 사용하다가 머리가 순간 복잡해지는 것을 방지하기 위해 노력을 해야겠다. 그림을 그려 차분히 로직을 생각하고 구현하는 습관을 길러야겠다. ",
+  "wordCount" : "229",
+  "inLanguage": "en",
+  "datePublished": "2021-09-22T00:00:00Z",
+  "dateModified": "2021-09-22T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/temp/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 13305 주유소 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-09-22 00:00:00 +0000 UTC'>September 22, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/temp/[BOJ]%2013305%20%ec%a3%bc%ec%9c%a0%ec%86%8c%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem13305-target_blankboj-13305-주유소a">📌 <a href="https://www.acmicpc.net/problem/13305" target="_blank">BOJ 13305 주유소</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem13305-target_blankboj-13305-주유소a">#</a></h2>
+<br>
+<h2 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h2>
+<ol>
+<li>도시의 개수 <code>2 &lt;= N &lt;= 100000</code></li>
+<li>도시를 연결하는 간선의 길이가 <code>N-1</code>개 주어진다.</li>
+<li><strong>그리디 알고리즘 유형 문제</strong></li>
+<li>제일 왼쪽에서 오른쪽으로 이동하는 최소 비용을 계산</li>
+<li><strong>어느 도시에서 기름을 넣어 이동하는 것이 가장 비용이 저렴한지에 대해 계산</strong>하면 된다.</li>
+<li><strong>서브태스크 점수</strong>가 주어진다
+<ol>
+<li>17점 모든 주유소의 리터당 가격은 1원</li>
+<li>41점 <code>2 &lt;= N &lt;= 1000</code><br>
+    제일 왼쪽 도시부터 제일 오른쪽 도시까지의 거리는 최대 10000,<br>
+    리터 당 가격은 최대 10000</li>
+<li>42점 원래의 제약조건 이외에 아무 제약조건이 없다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<pre tabindex="0"><code>4
+2 3 1
+5 2 4 1
+</code></pre><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<pre tabindex="0"><code>18
+</code></pre><br>
+<h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
+<ol>
+<li>도로의 길이를 저장할 리스트 <code>dist</code><br>
+주유소의 리터당 가격을 저장할 리스트 <code>cost</code></li>
+<li>가장 왼쪽에 있는 도시의 주유소의 리터당 가격을 변수 <code>c</code> 에 넣어준다.</li>
+<li><code>k-1</code> 반복문을 실행하여 주유소의 리터 당 가격을 순회한다.</li>
+<li><strong>만약 현재 계산된 <code>c</code> 가 <code>i</code> 번째 리터 당 가격보다 비싸다면 <code>c</code> 를 갱신한다.</strong><br>
+<strong>그게 아니라면, 결과값을 저장할 <code>res</code>에 <code>리터 당 가격 * i번째 도로의 길이</code>를 더해준다</strong></li>
+</ol>
+<br>
+<h2 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">dist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl"><span class="n">cost</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">c</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">+=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<ul>
+<li>그리디 문제라고해서 얕봤다가 로직이 한순간 꼬여서 고생을 좀 했다.</li>
+<li>리스트를 따로 처리해 사용하다가 머리가 순간 복잡해지는 것을 방지하기 위해 노력을 해야겠다.</li>
+<li>그림을 그려 차분히 로직을 생각하고 구현하는 습관을 길러야겠다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/">구현</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/">그리디</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/temp/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 1967 트리의 지름 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/temp/boj-6987-%EC%9B%94%EB%93%9C%EC%BB%B5-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 6987 월드컵 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

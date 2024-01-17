@@ -11,8 +11,31 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 31 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Oct 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Programmers] 표 편집 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</link>
+      <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</guid>
+      <description>📌 Programmers - 표 편집 💡 조건 및 풀이 표의 원본 행의 개수를 나타내는 변수 n
+5 ≤ n ≤ 1,000,000 처음에 선택되어 있는 행의 위치 k
+0 ≤ k &amp;lt; n 수행한 명령어들이 담긴 문자열 배열 cmd
+1 ≤ cmd의 원소 개수 ≤ 200,000 cmd의 각 원소는 &amp;quot;U X&amp;quot;, &amp;quot;D X&amp;quot;, &amp;quot;C&amp;quot;, &amp;quot;Z&amp;quot; 중 하나 Linked List 자료구조 문제 표의 모든 행을 제거하여, 행이 하나도 남지 않는 경우는 입력으로 주어지지 않는다.</description>
+    </item>
+    <item>
+      <title>[Programmers] 순위 검색 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</link>
+      <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</guid>
+      <description>📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?
+를 구하는 문제
+&#39;-&#39; 표시는 해당 조건을 고려하지 않겠다는 의미.
+&amp;#34;cpp and - and senior and pizza 500&amp;#34; 은를 의미한다.
+&amp;quot;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?&amp;quot;
+브루트포스 알고리즘 유형의 문제에 해당한다.
+🔖 예제 및 실행결과 예제 info = [&amp;#34;java backend junior pizza 150&amp;#34;, &amp;#34;python frontend senior chicken 210&amp;#34;, &amp;#34;python frontend senior chicken 150&amp;#34;,&amp;#34;cpp backend senior pizza 260&amp;#34;, &amp;#34;java backend junior chicken 80&amp;#34;, &amp;#34;python backend senior chicken 50&amp;#34;] query = [&amp;#34;java and backend and junior and pizza 100&amp;#34;, &amp;#34;python and frontend and senior and chicken 200&amp;#34;, &amp;#34;cpp and - and senior and pizza 250&amp;#34;, &amp;#34;- and backend and senior and - 150&amp;#34;, &amp;#34;- and - and - and chicken 100&amp;#34;, &amp;#34;- and - and - and - 150&amp;#34;] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다.</description>
+    </item>
     <item>
       <title>[BOJ] 5568 카드 놓기 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/</link>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>누적합 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EB%88%84%EC%A0%81%ED%95%A9/</link>
+    <description>Recent content in 누적합 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EB%88%84%EC%A0%81%ED%95%A9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2143 두 배열의 합 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</link>
+      <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 2143 두 배열의 합 💡 조건 및 풀이 (-1,000,000,000 ≤ T ≤ 1,000,000,000) (1 ≤ n ≤ 1,000) (1 ≤ m ≤ 1,000) 누적합 유형의 문제 두 배열의 부분배열을 사용하여 합을 구해 T를 만들 수 있는 개수를 구한다. 🔖 예제 및 실행결과 예제 5 4 1 3 1 2 3 1 3 2 실행결과 7 ⌨️ 문제 풀이 A 부분 배열의 합들과 B 부분 배열의 합들을 더해 T가 만들어지는 경우의 수를 구하는 문제였다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 16507 어두운 건 무서워 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</guid>
+      <description>📌 BOJ 16507 어두운 건 무서워 💡 조건 및 풀이 사진 크기를 의미하는 1 &amp;lt;= R, C &amp;lt;= 1000 사진 일부분의 밝기 평균을 알아볼 개수 Q Q개의 각 줄에는 사진의 일부분을 나타내기 위한 두 꼭짓점을 의미하는 정수 r1, c1, r2, c2 가 주어진다.
+(1 ≤ r1 ≤ r2 ≤ R, 1 ≤ c1 ≤ c2 ≤ C) 누적합 문제 Q개의 각 줄에 주어진 사진에서 두 점 (r1, c1)과 (r2, c2)를 꼭짓점으로 하는 직사각형의 밝기 평균을 출력한다.</description>
+    </item>
+  </channel>
+</rss>

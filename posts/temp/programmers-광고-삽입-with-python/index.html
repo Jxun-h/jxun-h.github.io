@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Programmers] 광고 삽입 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="다이나믹프로그래밍, PS, DP, 알고리즘, 백준, BOJ, 메모이제이션">
+<meta name="description" content="📌 Programmers - 광고 삽입 💡 조건 및 풀이 동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.
+= 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다. 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time,
+시청자들이 해당 동영상을 재생했던 구간 정보 logs 구간합을 구해 답을 이끌어내는 유형의 문제 play_time, adv_time은 길이 8로 고정된 문자열
+play_time, adv_time은 HH:MM:SS 형식이며,
+00:00:01 &lt;= play_time, adv_time &lt;= 99:59:59 공익광고 재생시간은 동영상 재생시간보다 짧거나 같다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/temp/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[Programmers] 광고 삽입 with Python" />
+<meta property="og:description" content="📌 Programmers - 광고 삽입 💡 조건 및 풀이 동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.
+= 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다. 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time,
+시청자들이 해당 동영상을 재생했던 구간 정보 logs 구간합을 구해 답을 이끌어내는 유형의 문제 play_time, adv_time은 길이 8로 고정된 문자열
+play_time, adv_time은 HH:MM:SS 형식이며,
+00:00:01 &lt;= play_time, adv_time &lt;= 99:59:59 공익광고 재생시간은 동영상 재생시간보다 짧거나 같다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/temp/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-17T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-10775-%EA%B3%B5%ED%95%AD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[Programmers] 광고 삽입 with Python"/>
+<meta name="twitter:description" content="📌 Programmers - 광고 삽입 💡 조건 및 풀이 동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.
+= 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다. 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time,
+시청자들이 해당 동영상을 재생했던 구간 정보 logs 구간합을 구해 답을 이끌어내는 유형의 문제 play_time, adv_time은 길이 8로 고정된 문자열
+play_time, adv_time은 HH:MM:SS 형식이며,
+00:00:01 &lt;= play_time, adv_time &lt;= 99:59:59 공익광고 재생시간은 동영상 재생시간보다 짧거나 같다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Programmers] 광고 삽입 with Python",
+      "item": "https://jxun-h.github.io/posts/temp/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Programmers] 광고 삽입 with Python",
+  "name": "[Programmers] 광고 삽입 with Python",
+  "description": "📌 Programmers - 광고 삽입 💡 조건 및 풀이 동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.\n= 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다. 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time,\n시청자들이 해당 동영상을 재생했던 구간 정보 logs 구간합을 구해 답을 이끌어내는 유형의 문제 play_time, adv_time은 길이 8로 고정된 문자열\nplay_time, adv_time은 HH:MM:SS 형식이며,\n00:00:01 \u0026lt;= play_time, adv_time \u0026lt;= 99:59:59 공익광고 재생시간은 동영상 재생시간보다 짧거나 같다.",
+  "keywords": [
+    "다이나믹프로그래밍", "PS", "DP", "알고리즘", "백준", "BOJ", "메모이제이션"
+  ],
+  "articleBody": "\n📌 Programmers - 광고 삽입 💡 조건 및 풀이 동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.\n= 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다. 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time,\n시청자들이 해당 동영상을 재생했던 구간 정보 logs 구간합을 구해 답을 이끌어내는 유형의 문제 play_time, adv_time은 길이 8로 고정된 문자열\nplay_time, adv_time은 HH:MM:SS 형식이며,\n00:00:01 \u003c= play_time, adv_time \u003c= 99:59:59 공익광고 재생시간은 동영상 재생시간보다 짧거나 같다. 1 \u003c= logs \u003c= 300000 🔖 예제 및 실행결과 예제 print(solution(\"02:03:55\", \"00:14:15\", [\"01:20:15-01:45:14\", \"00:40:31-01:00:00\", \"00:25:50-00:48:29\", \"01:30:59-01:53:29\", \"01:37:44-02:02:30\"])) 실행결과 \"01:30:59\" ⌨️ 문제 풀이 play_time, adv_time (동영상 재생 길이, 광고 재생 길이)를 각각 str 타입에서 int 타입으로 변경한다. def str_to_int(time): h, m, s = time.split(':') return int(h) * 3600 + int(m) * 60 + int(s) 각 구간의 시청자들의 수를 기록할 배열을 만든다. all_time = [0 for i in range(play_time + 1)] logs 를 순회하면서 시청 시작 시간에 시청자 수 + 1\n시청 종료 시간에 시청자 수 - 1 구간별 시청자 기록을 위해 all_time 배열을 순회하면서, 이전 배열의 값을 가지고 현재 배열에 더해주는 작업을 해줍니다. for i in range(1, len(all_time)): all_time[i] = all_time[i] + all_time[i - 1] 모든 구간의 시청자 누적 기록을 위해 다시 한번 4번의 작업을 해줍니다. 누적된 구간별 시청자 수의 정보가 저장된 배열을 순회하면서 시청자가 가장 많은 구간을 탐색합니다. # 가장 시청자 수가 많은 구간을 탐색 for i in range(adv_time - 1, play_time): # i가 공익 광고 시청 시간보다 빠를 때 if i \u003e= adv_time: # 지금까지 최대 누적 시청자 수가 (총 누적 시청자 수 - 해당 구간 시청자 수) 보다 작으면? if most_view \u003c all_time[i] - all_time[i - adv_time]: # 지금까지 최대 누적 시청자 수를 갱신 most_view = all_time[i] - all_time[i - adv_time] # 최대 누적 시청자 수에 해당하는 구간을 갱신 max_time = i - adv_time + 1 else: # 최대 시청자 수가 현재 탐색하는 시간대의 총 누적 시청자 수보다 적을 때 if most_view \u003c all_time[i]: # 최대 시청자 수와 그에 해당하는 시간대를 갱신 most_view = all_time[i] max_time = i - adv_time + 1 최대 시청자가 있는 광고 삽입 시간을 HH:MM:SS 형식으로 변환하여 return 합니다. 🖥 소스 코드 def solution(play_time, adv_time, logs): play_time = str_to_int(play_time) adv_time = str_to_int(adv_time) all_time = [0 for i in range(play_time + 1)] for l in logs: start, end = l.split('-') start = str_to_int(start) end = str_to_int(end) all_time[start] += 1 all_time[end] -= 1 for i in range(1, len(all_time)): all_time[i] = all_time[i] + all_time[i - 1] for i in range(1, len(all_time)): all_time[i] = all_time[i] + all_time[i - 1] most_view = 0 max_time = 0 for i in range(adv_time - 1, play_time): if i \u003e= adv_time: if most_view \u003c all_time[i] - all_time[i - adv_time]: most_view = all_time[i] - all_time[i - adv_time] max_time = i - adv_time + 1 else: if most_view \u003c all_time[i]: most_view = all_time[i] max_time = i - adv_time + 1 return int_to_str(max_time) def str_to_int(time): h, m, s = time.split(':') return int(h) * 3600 + int(m) * 60 + int(s) def int_to_str(time): h = time // 3600 h = '0' + str(h) if h \u003c 10 else str(h) time = time % 3600 m = time // 60 m = '0' + str(m) if m \u003c 10 else str(m) time = time % 60 s = '0' + str(time) if time \u003c 10 else str(time) return h + ':' + m + ':' + s 💾 느낀점 문자열 타입의 시간 형식 데이터는 각 시간, 분, 초를 합쳐 숫자로 만들어 다루는 것이 편하다. 구간별 시청자 기록과 모든 구간의 시청자 누적 기록을 하는 부분에서 많은 이해가 필요했다.\n스스로 이해하지 못해 다른 블로그를 참고하여 코드를 작성했다. 모든 구간의 시청자 누적 기록을 순회하는 부분에서도 이해가 어려워 여러번 코드를 디버깅했다.\n이해를 하는 방향으로 코드를 보고 나의 방식으로 코드를 작성하는 시간이 필요할 것 같다. ",
+  "wordCount" : "602",
+  "inLanguage": "en",
+  "datePublished": "2021-10-17T00:00:00Z",
+  "dateModified": "2021-10-17T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/temp/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [Programmers] 광고 삽입 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-10-17 00:00:00 +0000 UTC'>October 17, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/temp/[Programmers]%20%ea%b4%91%ea%b3%a0%20%ec%82%bd%ec%9e%85%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons72414-target_blankprogrammers---광고-삽입a">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/72414" target="_blank">Programmers - 광고 삽입</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons72414-target_blankprogrammers---광고-삽입a">#</a></h2>
+<br>
+<h2 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h2>
+<ol>
+<li>동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.<br>
+= 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다.</li>
+<li>동영상 재생시간 길이 <code>play_time</code>, 공익광고의 재생시간 길이 <code>adv_time</code>,<br>
+시청자들이 해당 동영상을 재생했던 구간 정보 logs</li>
+<li><strong>구간합을 구해 답을 이끌어내는 유형의 문제</strong></li>
+<li><code>play_time</code>, <code>adv_time</code>은 길이 8로 고정된 문자열<br>
+<code>play_time</code>, <code>adv_time</code>은 <code>HH:MM:SS</code> 형식이며,<br>
+<code>00:00:01 &lt;= play_time, adv_time &lt;= 99:59:59</code></li>
+<li>공익광고 재생시간은 동영상 재생시간보다 짧거나 같다.</li>
+<li><code>1 &lt;= logs &lt;= 300000</code></li>
+</ol>
+<br>
+<h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<pre tabindex="0"><code>print(solution(&#34;02:03:55&#34;, &#34;00:14:15&#34;, [&#34;01:20:15-01:45:14&#34;, &#34;00:40:31-01:00:00&#34;, &#34;00:25:50-00:48:29&#34;, &#34;01:30:59-01:53:29&#34;, &#34;01:37:44-02:02:30&#34;]))
+</code></pre><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<pre tabindex="0"><code>&#34;01:30:59&#34;
+</code></pre><br>
+<h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
+<ol>
+<li>play_time, adv_time (동영상 재생 길이, 광고 재생 길이)를 각각 str 타입에서 int 타입으로 변경한다.</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">str_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span></code></pre></div></li>
+<li>각 구간의 시청자들의 수를 기록할 배열을 만든다.</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">all_time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">play_time</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span></code></pre></div></li>
+<li>logs 를 순회하면서 시청 시작 시간에 시청자 수 + 1<br>
+시청 종료 시간에 시청자 수 - 1</li>
+<li>구간별 시청자 기록을 위해 all_time 배열을 순회하면서, 이전 배열의 값을 가지고 현재 배열에 더해주는 작업을 해줍니다.</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_time</span><span class="p">)):</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span></code></pre></div></li>
+<li>모든 구간의 시청자 누적 기록을 위해 다시 한번 4번의 작업을 해줍니다.</li>
+<li>누적된 구간별 시청자 수의 정보가 저장된 배열을 순회하면서 시청자가 가장 많은 구간을 탐색합니다.</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 가장 시청자 수가 많은 구간을 탐색 </span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">adv_time</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">play_time</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1"># i가 공익 광고 시청 시간보다 빠를 때 </span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">adv_time</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1"># 지금까지 최대 누적 시청자 수가 (총 누적 시청자 수 - 해당 구간 시청자 수) 보다 작으면? </span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">most_view</span> <span class="o">&lt;</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span><span class="p">]:</span> 
+</span></span><span class="line"><span class="cl">            <span class="c1"># 지금까지 최대 누적 시청자 수를 갱신 </span>
+</span></span><span class="line"><span class="cl">            <span class="n">most_view</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl">            <span class="c1"># 최대 누적 시청자 수에 해당하는 구간을 갱신 </span>
+</span></span><span class="line"><span class="cl">            <span class="n">max_time</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span> <span class="o">+</span> <span class="mi">1</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1"># 최대 시청자 수가 현재 탐색하는 시간대의 총 누적 시청자 수보다 적을 때 </span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">most_view</span> <span class="o">&lt;</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> 
+</span></span><span class="line"><span class="cl">            <span class="c1"># 최대 시청자 수와 그에 해당하는 시간대를 갱신 </span>
+</span></span><span class="line"><span class="cl">            <span class="n">most_view</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">max_time</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span></code></pre></div></li>
+<li>최대 시청자가 있는 광고 삽입 시간을 <code>HH:MM:SS</code> 형식으로 변환하여 return 합니다.</li>
+</ol>
+<br>
+<h2 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">play_time</span><span class="p">,</span> <span class="n">adv_time</span><span class="p">,</span> <span class="n">logs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">play_time</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">play_time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">adv_time</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">adv_time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">all_time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">play_time</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">logs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">start</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">end</span> <span class="o">=</span> <span class="n">str_to_int</span><span class="p">(</span><span class="n">end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">all_time</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">all_time</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_time</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_time</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">most_view</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_time</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">adv_time</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">play_time</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">adv_time</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">most_view</span> <span class="o">&lt;</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">most_view</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">max_time</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">most_view</span> <span class="o">&lt;</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">most_view</span> <span class="o">=</span> <span class="n">all_time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">max_time</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">adv_time</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">int_to_str</span><span class="p">(</span><span class="n">max_time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">str_to_int</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3600</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">int_to_str</span><span class="p">(</span><span class="n">time</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h</span> <span class="o">=</span> <span class="n">time</span> <span class="o">//</span> <span class="mi">3600</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="k">if</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">%</span> <span class="mi">3600</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="n">time</span> <span class="o">//</span> <span class="mi">60</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">%</span> <span class="mi">60</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="k">if</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">h</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">s</span>
+</span></span></code></pre></div><br>
+<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<ul>
+<li>문자열 타입의 시간 형식 데이터는 각 시간, 분, 초를 합쳐 숫자로 만들어 다루는 것이 편하다.</li>
+<li>구간별 시청자 기록과 모든 구간의 시청자 누적 기록을 하는 부분에서 많은 이해가 필요했다.<br>
+스스로 이해하지 못해 다른 블로그를 참고하여 코드를 작성했다.</li>
+<li>모든 구간의 시청자 누적 기록을 순회하는 부분에서도 이해가 어려워 여러번 코드를 디버깅했다.<br>
+이해를 하는 방향으로 코드를 보고 나의 방식으로 코드를 작성하는 시간이 필요할 것 같다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">다이나믹프로그래밍</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/dp/">DP</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98/">메모이제이션</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/temp/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 1244 스위치 켜고 끄기 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/temp/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[Programmers] 표 편집 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
