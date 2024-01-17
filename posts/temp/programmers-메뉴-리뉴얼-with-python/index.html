@@ -232,10 +232,10 @@ dict를 사용해도 되는 문제.<br>
 <br>
 <h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
 <h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
-<pre tabindex="0"><code>print(solution([&#34;ABCFG&#34;, &#34;AC&#34;, &#34;CDE&#34;, &#34;ACDE&#34;, &#34;BCFG&#34;, &#34;ACDEH&#34;], [2, 3, 4]))
-</code></pre><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
-<pre tabindex="0"><code>[&#34;AC&#34;, &#34;ACDE&#34;, &#34;BCFG&#34;, &#34;CDE&#34;]
-</code></pre><br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">([</span><span class="s2">&#34;ABCFG&#34;</span><span class="p">,</span> <span class="s2">&#34;AC&#34;</span><span class="p">,</span> <span class="s2">&#34;CDE&#34;</span><span class="p">,</span> <span class="s2">&#34;ACDE&#34;</span><span class="p">,</span> <span class="s2">&#34;BCFG&#34;</span><span class="p">,</span> <span class="s2">&#34;ACDEH&#34;</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="s2">&#34;AC&#34;</span><span class="p">,</span> <span class="s2">&#34;ACDE&#34;</span><span class="p">,</span> <span class="s2">&#34;BCFG&#34;</span><span class="p">,</span> <span class="s2">&#34;CDE&#34;</span><span class="p">]</span>
+</span></span></code></pre></div><br>
 <h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
 <ol>
 <li>
@@ -250,9 +250,9 @@ dict를 사용해도 되는 문제.<br>
 <li>
 <p><code>조합 라이브러리</code>를 사용해 3번 반복문에서 나오는 코스의 메뉴개수만큼 메뉴를 뽑아서<br>
 중복을 없앤 뒤 t문자열에 저장. <strong>(t는 j 개를 뽑아 만든 메뉴의 조합입니다.)</strong></p>
-<pre tabindex="0"><code>list(set(combinations(data, j)))
-# set()은 중복을 없애줍니다!
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">j</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># set()은 중복을 없애줍니다!</span>
+</span></span></code></pre></div></li>
 <li>
 <p><code>t</code> 가 점수판에 없으면 새로 등록시켜 <strong>1점 부여</strong><br>
 <code>t</code> 가 점수판에 있으면 <strong>1점 부여</strong></p>
@@ -260,12 +260,12 @@ dict를 사용해도 되는 문제.<br>
 <li>
 <p><strong>최소 2명 이상의 손님으로부터 주문</strong>된 <strong>단품메뉴 조합</strong> 만 해당하기 때문에<br>
 <code>score</code>에 저장된 점수가 1점 이상이라면 <code>new_score</code>에 <code>(메뉴, 점수)</code> 형식으로 저장 후 점수를 기준으로 정렬</p>
-<pre tabindex="0"><code>&#34;&#34;&#34;
-# lambda 설명
-x 를 x[1] 기준으로 정렬할건데, -가 붙으면 역순입니다.
-&#34;&#34;&#34; 
-new_score.sort(key=lambda x: -x[1])
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2"># lambda 설명
+</span></span></span><span class="line"><span class="cl"><span class="s2">x 를 x[1] 기준으로 정렬할건데, -가 붙으면 역순입니다.
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="n">new_score</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span></code></pre></div></li>
 <li>
 <p>마지막으로 코스요리를 구성할 메뉴 개수를 순회하면서 <code>new_score</code>에 넣은 코스메뉴 후보들을 검사하면서<br>
 정답으로 반환할 배열 <code>answer</code>에 넣어주고, <strong>정렬을 한 뒤 반환 시켜준다.</strong></p>

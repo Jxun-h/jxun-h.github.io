@@ -189,7 +189,7 @@ permutations라는 순열 함수를 사용했다.
       <link>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</guid>
-      <description>📌 BOJ 15486 퇴사 2 💡 조건 및 풀이 퇴사가 남은 일 수 N. 1 &amp;lt;= N &amp;lt;= 1500000 T, P 의 길이는 N과 같으며, 1 &amp;lt;= Ti &amp;lt;= 50, 1 &amp;lt;= Pi &amp;lt;= 1000 N + 1 에 해당하는 날짜부터는 상담을 할 수 없다. DP 유형의 문제 상담을 통해 취한 이익 중, 가장 큰 값을 반환하는 문제. 🔖 예제 및 실행결과 예제 10 5 50 4 40 3 30 2 20 1 10 1 10 2 20 3 30 4 40 5 50 실행결과 90 ⌨️ 문제 풀이 편한 계산을 위해 dp를 n + 1의 크기만큼 생성했다.</description>
+      <description>📌 BOJ 15486 퇴사 2 💡 조건 및 풀이 퇴사가 남은 일 수 N. 1 &amp;lt;= N &amp;lt;= 1500000 T, P 의 길이는 N과 같으며, 1 &amp;lt;= Ti &amp;lt;= 50, 1 &amp;lt;= Pi &amp;lt;= 1000 N + 1 에 해당하는 날짜부터는 상담을 할 수 없다. DP 유형의 문제 상담을 통해 취한 이익 중, 가장 큰 값을 반환하는 문제. 🔖 예제 및 실행결과 예제 10 5 50 4 40 3 30 2 20 1 10 1 10 2 20 3 30 4 40 5 50 실행결과 90 ```python &amp;lt;br&amp;gt; ### ⌨️ 문제 풀이 1.</description>
     </item>
     <item>
       <title>[BOJ] 4179 불! with Python</title>

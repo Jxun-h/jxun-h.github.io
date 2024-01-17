@@ -214,14 +214,14 @@
 <br>
 <h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
 <h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
-<pre tabindex="0"><code>5
-4
-1 3 1 2
-3
-1 3 2
-</code></pre><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
-<pre tabindex="0"><code>7
-</code></pre><br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span> <span class="mi">1</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span> <span class="mi">2</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">7</span>
+</span></span></code></pre></div><br>
 <h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
 <ol>
 <li>
@@ -234,10 +234,10 @@
 <p>A 배열의 키 값을 순차적으로 순회하면서<br>
 구하고자 하는 t 값에서 A 배열의 키 값을 빼준 값이 B배열의 키값으로 있다면,<br>
 res에 해당 B배열의 값과 A배열의 값을 곱하여 더해준다.</p>
-<pre tabindex="0"><code>for key in Asum.keys():
- if (t - key) in Bsum:
-     res += Bsum[t - key] * Asum[key]
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">Asum</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl"> <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">key</span><span class="p">)</span> <span class="ow">in</span> <span class="n">Bsum</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">     <span class="n">res</span> <span class="o">+=</span> <span class="n">Bsum</span><span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="n">key</span><span class="p">]</span> <span class="o">*</span> <span class="n">Asum</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</span></span></code></pre></div></li>
 </ol>
 <br>
 <h2 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h2>

@@ -231,8 +231,8 @@
 <p><code>'-'</code> 표시는 해당 조건을 고려하지 않겠다는 의미.</p>
 </li>
 <li>
-<pre tabindex="0"><code>&#34;cpp and - and senior and pizza 500&#34;
-</code></pre><p>은를 의미한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;cpp and - and senior and pizza 500&#34;</span>
+</span></span></code></pre></div><p>은를 의미한다.</p>
 </li>
 <li>
 <p><code>&quot;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?&quot;</code></p>
@@ -244,12 +244,12 @@
 <br>
 <h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>
 <h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
-<pre tabindex="0"><code>info = [&#34;java backend junior pizza 150&#34;, &#34;python frontend senior chicken 210&#34;, &#34;python frontend senior chicken 150&#34;,&#34;cpp backend senior pizza 260&#34;, &#34;java backend junior chicken 80&#34;, &#34;python backend senior chicken 50&#34;]
-
-query = [&#34;java and backend and junior and pizza 100&#34;, &#34;python and frontend and senior and chicken 200&#34;, &#34;cpp and - and senior and pizza 250&#34;, &#34;- and backend and senior and - 150&#34;, &#34;- and - and - and chicken 100&#34;, &#34;- and - and - and - 150&#34;]
-</code></pre><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
-<pre tabindex="0"><code>[1,1,1,1,2,4]
-</code></pre><br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">info</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;java backend junior pizza 150&#34;</span><span class="p">,</span> <span class="s2">&#34;python frontend senior chicken 210&#34;</span><span class="p">,</span> <span class="s2">&#34;python frontend senior chicken 150&#34;</span><span class="p">,</span><span class="s2">&#34;cpp backend senior pizza 260&#34;</span><span class="p">,</span> <span class="s2">&#34;java backend junior chicken 80&#34;</span><span class="p">,</span> <span class="s2">&#34;python backend senior chicken 50&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">query</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;java and backend and junior and pizza 100&#34;</span><span class="p">,</span> <span class="s2">&#34;python and frontend and senior and chicken 200&#34;</span><span class="p">,</span> <span class="s2">&#34;cpp and - and senior and pizza 250&#34;</span><span class="p">,</span> <span class="s2">&#34;- and backend and senior and - 150&#34;</span><span class="p">,</span> <span class="s2">&#34;- and - and - and chicken 100&#34;</span><span class="p">,</span> <span class="s2">&#34;- and - and - and - 150&#34;</span><span class="p">]</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span></span></code></pre></div><br>
 <h2 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h2>
 <ol>
 <li>info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다.</li>
