@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>set on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/set/</link>
+    <description>Recent content in set on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/set/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Programmers] 후보키 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/</guid>
+      <description>📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.
+1 &amp;lt;= relation 의 컬럼의 길이 &amp;lt;= 8
+1 &amp;lt;= relation 의 로우의 길이 &amp;lt;= 20
+1 &amp;lt;= relation 의 모든 문자열의 길이 &amp;lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.
+중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.
+즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[&amp;#34;100&amp;#34;,&amp;#34;ryan&amp;#34;,&amp;#34;music&amp;#34;,&amp;#34;2&amp;#34;],[&amp;#34;200&amp;#34;,&amp;#34;apeach&amp;#34;,&amp;#34;math&amp;#34;,&amp;#34;2&amp;#34;],[&amp;#34;300&amp;#34;,&amp;#34;tube&amp;#34;,&amp;#34;computer&amp;#34;,&amp;#34;3&amp;#34;],[&amp;#34;400&amp;#34;,&amp;#34;con&amp;#34;,&amp;#34;computer&amp;#34;,&amp;#34;4&amp;#34;],[&amp;#34;500&amp;#34;,&amp;#34;muzi&amp;#34;,&amp;#34;music&amp;#34;,&amp;#34;3&amp;#34;],[&amp;#34;600&amp;#34;,&amp;#34;apeach&amp;#34;,&amp;#34;music&amp;#34;,&amp;#34;2&amp;#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다.</description>
+    </item>
+  </channel>
+</rss>
