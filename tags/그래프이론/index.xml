@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%B4%EB%A1%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 1043 거짓말 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</guid>
       <description>📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
 진실을 아는 사람의 수는 0 이상 50 이하의 정수
 각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.

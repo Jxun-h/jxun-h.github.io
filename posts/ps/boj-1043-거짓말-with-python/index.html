@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 1043 거짓말 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 그래프이론, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
+진실을 아는 사람의 수는 0 이상 50 이하의 정수
+각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.
+지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.
+이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 1043 거짓말 with Python" />
+<meta property="og:description" content="📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
+진실을 아는 사람의 수는 0 이상 50 이하의 정수
+각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.
+지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.
+이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-20T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-12100-2048easy-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-13334-%EC%B2%A0%EB%A1%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-3184-%EC%96%91-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 1043 거짓말 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
+진실을 아는 사람의 수는 0 이상 50 이하의 정수
+각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.
+지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.
+이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 1043 거짓말 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 1043 거짓말 with Python",
+  "name": "[BOJ] 1043 거짓말 with Python",
+  "description": "📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수\n진실을 아는 사람의 수는 0 이상 50 이하의 정수\n각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.\n지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.\n이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다.",
+  "keywords": [
+    "자료구조", "PS", "그래프이론", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수\n진실을 아는 사람의 수는 0 이상 50 이하의 정수\n각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.\n지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.\n이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다.\n이는 파티에서 과장되게 말을 할 수 있다는 가정하에 1로 둔 것.\n또한 각 파티의 구성원을 party 리스트에 각각 집어넣어준다. 파티의 수만큼 다시 순회하면서 각 party의 번호와 구성원을 뽑아 반복문을 돌리기 위해 enumerate 를 사용해준다.\nenumerate 함수는 리스트를 순회하면서 리스트의 각 원소의 인덱스와 원소를 반환한다. 파티의 구성원과 진실을 아는 사람들간에 교집합이 존재한다면, cnt 리스트의 해당 번호에 해당하는 값을 0으로 변경한다.\n그 파티는 진실만을 말할 수 있는 파티라는 것이다.\n그 후, 파티원을 진실을 알고 있는 사람들이 저장되어 있는 set() 자료형에 update 시켜준다.\nupdate 와 |= 이 둘은 같은 효과를 볼 수 있다. cnt 리스트의 합을 구해 출력한다. 🖥 소스 코드 from sys import stdin n, m = map(int, stdin.readline().split()) trues = set(list(map(int, stdin.readline().split()))[1:]) party = [] cnt = [] for _ in range(m): data = set(map(int, stdin.readline().split()[1:])) if data: party.append(data) cnt.append(1) for _ in range(m): for i, p in enumerate(party): if trues \u0026 p: cnt[i] = 0 trues |= p print(sum(cnt)) 💾 느낀점 set 집합자료형의 강력함을 알 수 있는 문제였다. 문제를 잘 읽고 자료구조를 활용하면 풀 수 있는 문제였다. 이 문제를 한번에 풀지 못했다. 아직 활용이 부족한 것 같다. ",
+  "wordCount" : "285",
+  "inLanguage": "en",
+  "datePublished": "2021-10-20T00:00:00Z",
+  "dateModified": "2021-10-20T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 1043 거짓말 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-10-20 00:00:00 +0000 UTC'>October 20, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%201043%20%ea%b1%b0%ec%a7%93%eb%a7%90%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem1043-target_blankboj-1043-거짓말a">📌 <a href="https://www.acmicpc.net/problem/1043" target="_blank">BOJ 1043 거짓말</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1043-target_blankboj-1043-거짓말a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li><code>N, M</code>은 <code>50 이하의 자연수</code> 각각 사람의 수, 파티의 수<br>
+진실을 아는 사람의 수는 <code>0 이상 50 이하의 정수</code><br>
+각 파티마다 오는 사람의 수는 <code>1 이상 50 이하의 정수</code></li>
+<li>지민이는 <strong>모든 파티에 참가</strong>해야한다.<br>
+지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.<br>
+<strong>이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다.</strong></li>
+<li>과장된 이야기를 할 수 있는 파티 개수의 <code>최댓값</code>을 구하는 문제.</li>
+<li><strong>자료구조의 활용을 요구하는 유형의 문제</strong></li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">4</span> <span class="mi">1</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li><code>cnt</code>라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 <code>1</code>로 둔다.<br>
+이는 <strong>파티에서 과장되게 말을 할 수 있다는 가정하에 <code>1</code>로 둔 것.</strong><br>
+또한 각 파티의 구성원을 <code>party</code> 리스트에 각각 집어넣어준다.</li>
+<li>파티의 수만큼 다시 순회하면서 각 <code>party</code>의 번호와 구성원을 뽑아 반복문을 돌리기 위해 <code>enumerate</code> 를 사용해준다.<br>
+<strong>enumerate 함수는 리스트를 순회하면서 리스트의 각 원소의 인덱스와 원소를 반환한다.</strong></li>
+<li>파티의 구성원과 진실을 아는 사람들간에 <strong>교집합이 존재</strong>한다면, <code>cnt</code> 리스트의 해당 번호에 해당하는 값을 <code>0</code>으로 변경한다.<br>
+<strong>그 파티는 진실만을 말할 수 있는 파티라는 것</strong>이다.<br>
+그 후, 파티원을 진실을 알고 있는 사람들이 저장되어 있는 <code>set()</code> 자료형에 <code>update</code> 시켜준다.<br>
+<code>update</code> 와 <code>|=</code> 이 둘은 같은 효과를 볼 수 있다.</li>
+<li><code>cnt</code> 리스트의 합을 구해 출력한다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">trues</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))[</span><span class="mi">1</span><span class="p">:])</span>
+</span></span><span class="line"><span class="cl"><span class="n">party</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">cnt</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">party</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">party</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">trues</span> <span class="o">&amp;</span> <span class="n">p</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="n">trues</span> <span class="o">|=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">cnt</span><span class="p">))</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li><code>set</code> 집합자료형의 강력함을 알 수 있는 문제였다.</li>
+<li>문제를 잘 읽고 자료구조를 활용하면 풀 수 있는 문제였다.</li>
+<li>이 문제를 한번에 풀지 못했다. 아직 활용이 부족한 것 같다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%B4%EB%A1%A0/">그래프이론</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-13334-%EC%B2%A0%EB%A1%9C-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 13334 철로 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 2343 기타 레슨 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

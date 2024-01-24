@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>트라이 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%ED%8A%B8%EB%9D%BC%EC%9D%B4/</link>
+    <description>Recent content in 트라이 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%ED%8A%B8%EB%9D%BC%EC%9D%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 14725 개미굴 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/</guid>
+      <description>📌 BOJ 14725 개미굴 💡 조건 첫 번째 줄은 로봇 개미가 각 층을 따라 내려오면서 알게 된 먹이의 정보 개수 N &amp;raquo; (1 ≤ N ≤ 1000)
+두 번째 줄부터 N+1 번째 줄까지, 각 줄의 시작은 로봇 개미 한마리가 보내준 먹이 정보 개수 K &amp;raquo; (1 ≤ K ≤ 15)
+다음 K개의 입력은 로봇 개미가 왼쪽부터 순서대로 각 층마다 지나온 방에 있는 먹이 정보이며 먹이 이름 길이 t &amp;raquo; (1 ≤ t ≤ 15) 트라이(Trie) 자료구조를 사용하는 문제.</description>
+    </item>
+  </channel>
+</rss>
