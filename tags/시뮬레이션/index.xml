@@ -11,8 +11,26 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1713 후보 추천하기 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 1713 후보 추천하기 💡 조건 사진틀의 개수 N이 주어진다. (1 ≤ N ≤ 20)
+총 추천 횟수는 1,000번 이하이며 학생을 나타내는 번호는 1부터 100까지의 자연수 사진틀의 개수와 전체 학생의 추천 결과가 추천받은 순서대로 주어졌을 때, 최종 후보가 누구인지 결정 구현 &amp;amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 3 9 2 1 4 3 5 6 2 7 2 실행결과 2 6 7 ⌨️ 문제 풀이 추천받은 순서대로 주어진 리스트를 순회하며 student (dict) 에 없으면 새로 추가하고,</description>
+    </item>
+    <item>
+      <title>[BOJ] 1743 음식물 피하기 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</link>
+      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 1743 음식물 피하기 💡 조건 통로의 세로 길이 N(1 ≤ N ≤ 100)
+통로의 가로 길이 M(1 ≤ M ≤ 100)
+음식물 쓰레기의 개수 K(1 ≤ K ≤ N×M)
+K개의 줄에 음식물이 떨어진 좌표 (r, c) DFS 유형의 문제(깊이우선탐색) 🔖 예제 및 실행결과 예제 3 4 5 3 2 2 2 3 1 2 3 1 1 실행결과 4 ⌨️ 문제 풀이 m * n 크기의 맵을 만들어 0으로 도배를 한 후, 쓰레기가 있는 곳의 좌표를 받아 1이라고 표시했다.</description>
+    </item>
     <item>
       <title>[BOJ] 1244 스위치 켜고 끄기 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/</link>

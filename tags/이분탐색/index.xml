@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Oct 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2343 기타 레슨 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</link>
+      <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</guid>
+      <description>📌 BOJ 2343 기타 레슨 💡 조건 강의의 수 N (1 ≤ N ≤ 100,000)
+블루레이의 수 M (1 ≤ M ≤ N) 블루레이를 녹화할 때, 강의의 순서가 바뀌면 안 된다. 각 강의의 길이가 분 단위(자연수)로 주어진다. 가능한 블루레이의 크기 중 최소를 구하는 문제. 이분탐색 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 9 3 1 2 3 4 5 6 7 8 9 실행결과 17 ⌨️ 문제 풀이 이분탐색을 위해 left, right, mid 변수를 초기화 해줍니다.</description>
+    </item>
     <item>
       <title>[Programmers] 순위 검색 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</link>
