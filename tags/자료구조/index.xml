@@ -11,8 +11,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Nov 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Programmers] 후보키 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/</link>
+      <pubDate>Sat, 27 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/</guid>
+      <description>📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.
+1 &amp;lt;= relation 의 컬럼의 길이 &amp;lt;= 8
+1 &amp;lt;= relation 의 로우의 길이 &amp;lt;= 20
+1 &amp;lt;= relation 의 모든 문자열의 길이 &amp;lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.
+중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.
+즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[&amp;#34;100&amp;#34;,&amp;#34;ryan&amp;#34;,&amp;#34;music&amp;#34;,&amp;#34;2&amp;#34;],[&amp;#34;200&amp;#34;,&amp;#34;apeach&amp;#34;,&amp;#34;math&amp;#34;,&amp;#34;2&amp;#34;],[&amp;#34;300&amp;#34;,&amp;#34;tube&amp;#34;,&amp;#34;computer&amp;#34;,&amp;#34;3&amp;#34;],[&amp;#34;400&amp;#34;,&amp;#34;con&amp;#34;,&amp;#34;computer&amp;#34;,&amp;#34;4&amp;#34;],[&amp;#34;500&amp;#34;,&amp;#34;muzi&amp;#34;,&amp;#34;music&amp;#34;,&amp;#34;3&amp;#34;],[&amp;#34;600&amp;#34;,&amp;#34;apeach&amp;#34;,&amp;#34;music&amp;#34;,&amp;#34;2&amp;#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다.</description>
+    </item>
     <item>
       <title>[BOJ] 14725 개미굴 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/</link>
@@ -21,6 +33,15 @@
       <description>📌 BOJ 14725 개미굴 💡 조건 첫 번째 줄은 로봇 개미가 각 층을 따라 내려오면서 알게 된 먹이의 정보 개수 N &amp;raquo; (1 ≤ N ≤ 1000)
 두 번째 줄부터 N+1 번째 줄까지, 각 줄의 시작은 로봇 개미 한마리가 보내준 먹이 정보 개수 K &amp;raquo; (1 ≤ K ≤ 15)
 다음 K개의 입력은 로봇 개미가 왼쪽부터 순서대로 각 층마다 지나온 방에 있는 먹이 정보이며 먹이 이름 길이 t &amp;raquo; (1 ≤ t ≤ 15) 트라이(Trie) 자료구조를 사용하는 문제.</description>
+    </item>
+    <item>
+      <title>[Programmers] 오픈채팅방 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/</guid>
+      <description>📌 Programmers 오픈채팅방 with Python 💡 조건 채팅방에 들어오고 나가거나, 닉네임을 변경한 기록이 담긴 문자열 배열 record
+모든 기록이 처리된 후, 최종적으로 방을 개설한 사람이 보게 되는 메시지를 문자열 배열 형태로 return record는 다음과 같은 문자열이 담긴 배열이며, 길이는 1 이상 100,000 이하 모든 유저는 유저 아이디로 구분한다.
+유저 아이디 사용자가 닉네임으로 채팅방에 입장 - &amp;quot;Enter 유저 아이디 닉네임&amp;quot; (ex. &amp;quot;Enter uid1234 Muzi&amp;quot;) 구현 유형의 문제 🔖 예제 및 실행결과 예제 record = [&amp;#34;Enter uid1234 Muzi&amp;#34;, &amp;#34;Enter uid4567 Prodo&amp;#34;,&amp;#34;Leave uid1234&amp;#34;,&amp;#34;Enter uid1234 Prodo&amp;#34;,&amp;#34;Change uid4567 Ryan&amp;#34;] 실행결과 [&amp;#34;Prodo님이 들어왔습니다.</description>
     </item>
     <item>
       <title>[BOJ] 13334 철로 with Python</title>

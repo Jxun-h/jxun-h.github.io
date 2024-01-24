@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%ED%95%B4%EC%8B%9C%EB%A7%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Programmers] 오픈채팅방 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/</guid>
+      <description>📌 Programmers 오픈채팅방 with Python 💡 조건 채팅방에 들어오고 나가거나, 닉네임을 변경한 기록이 담긴 문자열 배열 record
+모든 기록이 처리된 후, 최종적으로 방을 개설한 사람이 보게 되는 메시지를 문자열 배열 형태로 return record는 다음과 같은 문자열이 담긴 배열이며, 길이는 1 이상 100,000 이하 모든 유저는 유저 아이디로 구분한다.
+유저 아이디 사용자가 닉네임으로 채팅방에 입장 - &amp;quot;Enter 유저 아이디 닉네임&amp;quot; (ex. &amp;quot;Enter uid1234 Muzi&amp;quot;) 구현 유형의 문제 🔖 예제 및 실행결과 예제 record = [&amp;#34;Enter uid1234 Muzi&amp;#34;, &amp;#34;Enter uid4567 Prodo&amp;#34;,&amp;#34;Leave uid1234&amp;#34;,&amp;#34;Enter uid1234 Prodo&amp;#34;,&amp;#34;Change uid4567 Ryan&amp;#34;] 실행결과 [&amp;#34;Prodo님이 들어왔습니다.</description>
+    </item>
     <item>
       <title>[BOJ] 1620 나는야 포켓몬 마스터 이다솜 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</link>
