@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/set/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Programmers] 외벽 점검 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</guid>
+      <description>📌 Programmers 외벽 점검 with Python 💡 조건 외벽의 총 둘레길이 (1 &amp;lt;= n &amp;lt;= 200)
+취약 지점의 위치가 담긴 배열 (1&amp;lt; = weak &amp;lt;= 15) 서로 다른 두 취약점의 위치가 같을 경우는 없다. 취약지점의 위치는 오름차순이다. (0 &amp;lt;= weak의 원소 &amp;lt;= n-1) 친구가 1시간 동안 이동할 수 있는 거리 (1&amp;lt;= dist &amp;lt;= 8) 친구들을 최소한으로 투입시켜서 외벽 점검을 해야한다.
+만약 친구들이 모두 투입되어도 외벽을 모두 점검할 수 없다면, -1을 출력.</description>
+    </item>
     <item>
       <title>[Programmers] 후보키 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/</link>
