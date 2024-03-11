@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 6118 숨바꼭질 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 너비우선탐색, BFS, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 &lt;= N &lt;= 20,000), 1부터 세아린다. 모든 헛간은 (1&lt;= M &lt;= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.
+거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수
+를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 6118 숨바꼭질 with Python" />
+<meta property="og:description" content="📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 &lt;= N &lt;= 20,000), 1부터 세아린다. 모든 헛간은 (1&lt;= M &lt;= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.
+거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수
+를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-01T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-12100-2048easy-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 6118 숨바꼭질 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 &lt;= N &lt;= 20,000), 1부터 세아린다. 모든 헛간은 (1&lt;= M &lt;= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.
+거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수
+를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 6118 숨바꼭질 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 6118 숨바꼭질 with Python",
+  "name": "[BOJ] 6118 숨바꼭질 with Python",
+  "description": "📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 \u0026lt;= N \u0026lt;= 20,000), 1부터 세아린다. 모든 헛간은 (1\u0026lt;= M \u0026lt;= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.\n거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수\n를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다.",
+  "keywords": [
+    "자료구조", "PS", "너비우선탐색", "BFS", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 \u003c= N \u003c= 20,000), 1부터 세아린다. 모든 헛간은 (1\u003c= M \u003c= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.\n거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수\n를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다. **너비 우선 탐색(BFS)**유형의 문제 🔖 예제 및 실행결과 예제 6 7 3 6 4 3 3 2 1 3 1 2 2 4 5 2 실행결과 4 2 3 ⌨️ 문제 풀이 양방향으로 움직일 수 있는 노드들을 연결하기 위해 2차원 리스트인 arr을 생성한 후 데이터를 입력한다. 결과 값을 저장하고, 헛간의 번호를 의미하는 res 2차원 리스트를 생성한다.\n가장 먼 헛간의 거리를 저장할 max_dist 변수도 생성한다. 너비 우선 탐색 알고리즘을 호출하는데, 큐에는 (거리, 노드번호)를 넣어준다.\n큐가 빌 때까지 반복하면서, 해당 헛간과 연결되어 있는 헛간을 순차적으로 방문한다.\n큐에서 데이터를 pop() 하여 나온 거리 데이터가 현재 max_dist 보다 크다면 갱신한다. 방문한 헛간은 이미 방문했던 헛간이라는 정보를 저장하기 위해 visited 집합 자료형에 노드번호를 저장한다. 헛간의 거리는 모두 1씩이기에, 큐에 (현재 헛간과의 거리 + 1, 노드번호) 를 저장한다. res 리스트에 거리 + 1에 해당하는 리스트에 노드 번호를 저장한다.\nres 리스트에는 가장 먼 거리에 해당하는 원소 리스트에 같은 거리를 가진 헛간의 번호들이 저장된다. 문제에서 요구한 것들을 출력한다.\n숨어야 하는 헛간의 번호 = min(res[max_dist])\n숨어야 하는 헛간까지의 거리 = max_dist\n숨어야 하는 헛간까지의 거리와 같은 거리를 가진 헛간들 = len(res[max_dist]) 🖥 소스 코드 from sys import stdin from collections import deque n, m = map(int, stdin.readline().split()) arr = [[] for _ in range(n + 1)] for _ in range(m): a, b = map(int, stdin.readline().split()) arr[a].append(b) arr[b].append(a) res = [[] for _ in range(20001)] max_dist = -1e9 def bfs(n): global max_dist q = deque() q.append((0, n)) visited = set() visited.add(n) while q: dist, now = q.popleft() max_dist = max(max_dist, dist) for node in arr[now]: if node not in visited: visited.add(node) q.append((dist + 1, node)) res[dist + 1].append(node) bfs(1) print(min(res[max_dist]), max_dist, len(res[max_dist])) 💾 느낀점 BFS 응용 문제이기 때문에 풀이를 하는데에는 오래 걸리지 않았다. 그래프 이론 및 BFS 문제는 조금씩 더 풀어서 내것으로 만들어도 더 좋을 것 같다. ",
+  "wordCount" : "359",
+  "inLanguage": "en",
+  "datePublished": "2021-12-01T00:00:00Z",
+  "dateModified": "2021-12-01T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 6118 숨바꼭질 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-12-01 00:00:00 +0000 UTC'>December 1, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%206118%20%ec%88%a8%eb%b0%94%ea%bc%ad%ec%a7%88%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem6118-target_blankboj-6118-숨바꼭질a">📌 <a href="https://www.acmicpc.net/problem/6118" target="_blank">BOJ 6118 숨바꼭질</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem6118-target_blankboj-6118-숨바꼭질a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>헛간의 개수 <code>(2 &lt;= N &lt;= 20,000)</code>, 1부터 세아린다.</li>
+<li>모든 헛간은 <code>(1&lt;= M &lt;= 50,000)</code>개의 <strong>양방향 길</strong>로 이어져 있다.</li>
+<li>냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.<br>
+<code>거리 = 지나야 하는 길의 최소 개수.</code></li>
+<li><code>숨어야 하는 가장 거리가 먼 헛간 번호</code>, <code>가장 거리가 먼 헛간까지의 거리</code>, <code>가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수</code><br>
+를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다.</li>
+<li>**너비 우선 탐색(BFS)**유형의 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">6</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span> <span class="mi">2</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">2</span> <span class="mi">3</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>양방향으로 움직일 수 있는 노드들을 연결하기 위해 2차원 리스트인 <code>arr</code>을 생성한 후 데이터를 입력한다.</li>
+<li>결과 값을 저장하고, 헛간의 번호를 의미하는 <code>res</code> 2차원 리스트를 생성한다.<br>
+가장 먼 헛간의 거리를 저장할 <code>max_dist</code> 변수도 생성한다.</li>
+<li>너비 우선 탐색 알고리즘을 호출하는데, 큐에는 <code>(거리, 노드번호)</code>를 넣어준다.<br>
+큐가 빌 때까지 반복하면서, 해당 헛간과 연결되어 있는 헛간을 순차적으로 방문한다.<br>
+큐에서 데이터를 <code>pop()</code> 하여 나온 거리 데이터가 현재 <code>max_dist</code> 보다 크다면 갱신한다.</li>
+<li>방문한 헛간은 이미 방문했던 헛간이라는 정보를 저장하기 위해 <code>visited</code> 집합 자료형에 노드번호를 저장한다.</li>
+<li>헛간의 거리는 모두 1씩이기에, 큐에 <code>(현재 헛간과의 거리 + 1, 노드번호)</code> 를 저장한다.</li>
+<li><code>res</code> 리스트에 거리 + 1에 해당하는 리스트에 노드 번호를 저장한다.<br>
+<code>res</code> 리스트에는 가장 먼 거리에 해당하는 원소 리스트에 같은 거리를 가진 헛간의 번호들이 저장된다.</li>
+<li>문제에서 요구한 것들을 출력한다.<br>
+숨어야 하는 헛간의 번호 = <code>min(res[max_dist])</code><br>
+숨어야 하는 헛간까지의 거리 = <code>max_dist</code><br>
+숨어야 하는 헛간까지의 거리와 같은 거리를 가진 헛간들 = <code>len(res[max_dist])</code></li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20001</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">max_dist</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1e9</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">max_dist</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dist</span><span class="p">,</span> <span class="n">now</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_dist</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_dist</span><span class="p">,</span> <span class="n">dist</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">node</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">dist</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span><span class="p">[</span><span class="n">dist</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">bfs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">max_dist</span><span class="p">]),</span> <span class="n">max_dist</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">max_dist</span><span class="p">]))</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>BFS 응용 문제이기 때문에 풀이를 하는데에는 오래 걸리지 않았다.</li>
+<li>그래프 이론 및 BFS 문제는 조금씩 더 풀어서 내것으로 만들어도 더 좋을 것 같다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89/">너비우선탐색</a></li>
+      <li><a href="https://jxun-h.github.io/tags/bfs/">BFS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 2841 외계인의 기타 연주 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 2304 창고 다각형 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
