@@ -157,7 +157,7 @@
 board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x &#43; dx[i], pos1_y &#43; dy[i], pos2_x &#43; dx[i], pos2_y &#43; dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-12 00:00:00 +0000 UTC'>December 12, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 블록 이동하기 with Python" href="https://jxun-h.github.io/posts/temp/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 블록 이동하기 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -171,7 +171,7 @@ board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 
 가장 첫 통나무와 가장 마지막 통나무 역시 인접해 있다. 그리디 알고리즘유형의 문제 🔖 예제 및 실행결과 예제 3 7 13 10 12 11 10 11 12 5 2 4 5 7 9 8 6 6 6 6 6 6 6 6 실행결과 1 4 0 ⌨️ 문제 풀이 단순히 정렬을 해도 되지만, 첫 통나무와 마지막 통나무가 인접해있다는 조건이 있다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-06 00:00:00 +0000 UTC'>December 6, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 11497 통나무 건너뛰기 with Python" href="https://jxun-h.github.io/posts/temp/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [BOJ] 11497 통나무 건너뛰기 with Python" href="https://jxun-h.github.io/posts/ps/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -185,7 +185,7 @@ board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 
 만약 친구들이 모두 투입되어도 외벽을 모두 점검할 수 없다면, -1을 출력....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-06 00:00:00 +0000 UTC'>December 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 외벽 점검 with Python" href="https://jxun-h.github.io/posts/temp/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 외벽 점검 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -197,7 +197,7 @@ board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 
     <p>📌 BOJ 2841 외계인의 기타 연주 💡 조건 멜로디는 음의 연속이고, 각 음은 줄에서 해당하는 프렛을 누르고 줄을 튕기면 연주할 수 있다. 어떤 줄의 프렛을 여러 개 누르고 있다면, 가장 높은 프렛의 음이 발생. 멜로디에 포함되어 있는 음의 수 N과 한 줄에 있는 프렛의 수 P가 주어진다. (N ≤ 500,000, 2 ≤ P ≤ 300,000) 2번 프렛의 음을 연주하려고 한다면, 5번과 7번을 누르던 손가락을 뗀 다음에 2번 프렛을 누르고 연주해야 한다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-01 00:00:00 +0000 UTC'>December 1, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 2841 외계인의 기타 연주 with Python" href="https://jxun-h.github.io/posts/temp/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [BOJ] 2841 외계인의 기타 연주 with Python" href="https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -211,7 +211,7 @@ board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 
 를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-01 00:00:00 +0000 UTC'>December 1, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 6118 숨바꼭질 with Python" href="https://jxun-h.github.io/posts/temp/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [BOJ] 6118 숨바꼭질 with Python" href="https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -228,7 +228,7 @@ board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 
 지붕은 수평 부분과 수직 부분으로 구성되며, 모두 연결되어야 한다. 지붕의 수평 부분은 반드시 어떤 기둥의 윗면과 닿아야 한다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-11-29 00:00:00 +0000 UTC'>November 29, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 2304 창고 다각형 with Python" href="https://jxun-h.github.io/posts/temp/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [BOJ] 2304 창고 다각형 with Python" href="https://jxun-h.github.io/posts/ps/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -242,7 +242,7 @@ lock은 N x N(3 ≤ N ≤ 20, N은 자연수) 크기 2차원 배열
 M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 있으며, 열쇠도 돌기가 있다. 열쇠는 회전이 가능하다. 자물쇠 부분이 회전할 수 있는 열쇠와 겹쳐져서 모두 1이 된다면 열 수 있으니 True, 열 수 없다면 False를 반환 구현 &amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[0, 0, 0, 0], [1, 1, 1, 0], [0, 0, 0, 0], [1, 0, 1, 0]])) 실행결과 true ⌨️ 문제 풀이 N과 M의 최대 크기가 20이니, 열쇠의 최소크기인 3만큼 자물쇠의 길이에 곱해서 맵을 뻥튀기 시킨다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-11-29 00:00:00 +0000 UTC'>November 29, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 자물쇠와 열쇠 with Python" href="https://jxun-h.github.io/posts/temp/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 자물쇠와 열쇠 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 

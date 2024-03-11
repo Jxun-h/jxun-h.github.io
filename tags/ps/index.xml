@@ -15,51 +15,51 @@
     <atom:link href="https://jxun-h.github.io/tags/ps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Programmers] 블록 이동하기 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</link>
       <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</guid>
       <description>📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.
 board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x + dx[i], pos1_y + dy[i], pos2_x + dx[i], pos2_y + dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos.</description>
     </item>
     <item>
       <title>[BOJ] 11497 통나무 건너뛰기 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/</link>
       <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 11497 통나무 건너뛰기 💡 조건 첫 줄에 통나무의 개수를 나타내는 정수 (5 ≤ N ≤ 10,000)
 둘째 줄에 각 통나무의 높이를 나타내는 정수 (1 ≤ Li ≤ 100,000) 통나무 건너뛰기의 난이도는 인접한 두 통나무 간의 높이의 차의 최댓값으로 결정된다.
 가장 첫 통나무와 가장 마지막 통나무 역시 인접해 있다. 그리디 알고리즘유형의 문제 🔖 예제 및 실행결과 예제 3 7 13 10 12 11 10 11 12 5 2 4 5 7 9 8 6 6 6 6 6 6 6 6 실행결과 1 4 0 ⌨️ 문제 풀이 단순히 정렬을 해도 되지만, 첫 통나무와 마지막 통나무가 인접해있다는 조건이 있다.</description>
     </item>
     <item>
       <title>[Programmers] 외벽 점검 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</link>
       <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</guid>
       <description>📌 Programmers 외벽 점검 with Python 💡 조건 외벽의 총 둘레길이 (1 &amp;lt;= n &amp;lt;= 200)
 취약 지점의 위치가 담긴 배열 (1&amp;lt; = weak &amp;lt;= 15) 서로 다른 두 취약점의 위치가 같을 경우는 없다. 취약지점의 위치는 오름차순이다. (0 &amp;lt;= weak의 원소 &amp;lt;= n-1) 친구가 1시간 동안 이동할 수 있는 거리 (1&amp;lt;= dist &amp;lt;= 8) 친구들을 최소한으로 투입시켜서 외벽 점검을 해야한다.
 만약 친구들이 모두 투입되어도 외벽을 모두 점검할 수 없다면, -1을 출력.</description>
     </item>
     <item>
       <title>[BOJ] 2841 외계인의 기타 연주 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</guid>
       <description>📌 BOJ 2841 외계인의 기타 연주 💡 조건 멜로디는 음의 연속이고, 각 음은 줄에서 해당하는 프렛을 누르고 줄을 튕기면 연주할 수 있다. 어떤 줄의 프렛을 여러 개 누르고 있다면, 가장 높은 프렛의 음이 발생. 멜로디에 포함되어 있는 음의 수 N과 한 줄에 있는 프렛의 수 P가 주어진다. (N ≤ 500,000, 2 ≤ P ≤ 300,000) 2번 프렛의 음을 연주하려고 한다면, 5번과 7번을 누르던 손가락을 뗀 다음에 2번 프렛을 누르고 연주해야 한다.</description>
     </item>
     <item>
       <title>[BOJ] 6118 숨바꼭질 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</guid>
       <description>📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 &amp;lt;= N &amp;lt;= 20,000), 1부터 세아린다. 모든 헛간은 (1&amp;lt;= M &amp;lt;= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.
 거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수
 를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다.</description>
     </item>
     <item>
       <title>[BOJ] 2304 창고 다각형 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/</link>
       <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/</guid>
       <description>📌 BOJ 2304 창고 다각형 💡 조건 기둥의 개수를 나타내는 정수 (1 &amp;lt;= N &amp;lt;= 1000)
 각 기둥의 왼쪽 면의 위치를 나타내는 정수 (1 &amp;lt;= L &amp;lt;= 1000)
 각 기둥의 높이를 나타내는 정수 (1 &amp;lt;= H &amp;lt;= 1000)
@@ -69,9 +69,9 @@ board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 
     </item>
     <item>
       <title>[Programmers] 자물쇠와 열쇠 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</link>
       <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</guid>
       <description>📌 Programmers 자물쇠와 열쇠 with Python 💡 조건 key는 M x M(3 ≤ M ≤ 20, M은 자연수) 크기 2차원 배열
 lock은 N x N(3 ≤ N ≤ 20, N은 자연수) 크기 2차원 배열
 M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 있으며, 열쇠도 돌기가 있다. 열쇠는 회전이 가능하다. 자물쇠 부분이 회전할 수 있는 열쇠와 겹쳐져서 모두 1이 된다면 열 수 있으니 True, 열 수 없다면 False를 반환 구현 &amp;amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[0, 0, 0, 0], [1, 1, 1, 0], [0, 0, 0, 0], [1, 0, 1, 0]])) 실행결과 true ⌨️ 문제 풀이 N과 M의 최대 크기가 20이니, 열쇠의 최소크기인 3만큼 자물쇠의 길이에 곱해서 맵을 뻥튀기 시킨다.</description>
