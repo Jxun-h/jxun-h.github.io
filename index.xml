@@ -11,8 +11,54 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1535 안녕 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1535-%EC%95%88%EB%85%95-with-python/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1535-%EC%95%88%EB%85%95-with-python/</guid>
+      <description>📌 BOJ 1535 안녕 💡 조건 첫째 줄에 사람의 수 N(≤ 20). 둘째 줄에 각각의 사람에게 인사를 할 때, 잃는 체력이 1번 사람부터 순서대로 입력. 셋째 줄에는 각각의 사람에게 인사를 할 때, 얻는 기쁨이 1번 사람부터 순서대로 입력. 체력과 기쁨은 100보다 작거나 같은 자연수 또는 0. 세준이가 얻을 수 있는 최대 기쁨을 출력. 브루트포스 알고리즘, 배낭 알고리즘 유형 문제 🔖 예제 및 실행결과 예제 3 1 21 79 20 30 25 실행결과 50 ⌨️ 문제 풀이 브루트포스 알고리즘 혹은 냅색 알고리즘 으로 풀이할 수 있다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 9461 파도반 수열 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</guid>
+      <description>📌 BOJ 9461 파도반 💡 조건 첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고, N이 주어진다.
+(1 ≤ N ≤ 100) 파도반 수열 P(N)은 나선에 있는 정삼각형의 변의 길이. P(1)부터 P(10)까지 첫 10개 숫자는 1, 1, 1, 2, 2, 3, 4, 5, 7, 9 각 테스트 케이스마다 정수 N을 입력받아 P(N)을 출력. Dynamic Programming 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 2 6 12 실행결과 3 16 ⌨️ 문제 풀이 문제에서 이미 점화식을 짜라고 P(1)부터 P(10)까지 제공해주었다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1063 킹 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</link>
+      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</guid>
+      <description>📌 BOJ 1063 킹 💡 조건 체스판의 크기는 8*8
+체스판에서의 말의 위치는 알파벳 하나와 숫자 하나로 구성되어 있다.
+알파벳은 열(column), 숫자는 행(row)을 상징한다.
+알파벳은 A
+~H, 숫자는 1~
+8까지이다.
+킹이 움직일 수 있는 방법은 8가지가 있으며, 문제에 제시되어 있다.
+체스판에 있는 돌은 킹이 움직인 방향으로 같이 움직인다.
+체스판이나 돌이 입력에서 주어진대로 움직이다가 밖으로 나갈 경우, 그 이동은 건너 뛴다.
+첫째 줄에 킹의 마지막 위치, 둘째 줄에 돌의 마지막 위치를 출력한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 18511 큰 수 구성하기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18511-%ED%81%B0-%EC%88%98-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0-with-python/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18511-%ED%81%B0-%EC%88%98-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 18511 큰 수 구성하기 💡 조건 N보다 작거나 같은 자연수 중에서, 집합 K의 원소로만 구성된 가장 큰 수를 출력하는 프로그램을 작성.
+(10 ≤ N ≤ 100,000,000, 1 ≤ K의 원소의 개수 ≤ 3) K의 모든 원소는 1부터 9까지의 자연수로만 구성된다. 첫째 줄에 N보다 작거나 같은 자연수 중에서, K의 원소로만 구성된 가장 큰 수를 출력 브루트포스 알고리즘, 재귀함수 유형의 문제 🔖 예제 및 실행결과 예제 657 3 1 5 7 실행결과 577 ⌨️ 문제 풀이 n을 문자열로 바꾸었을 때의 길이를 le 라는 변수에 저장한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20546 🐜 기적의 매매법 🐜 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</guid>
+      <description>📌 BOJ 20546 🐜 기적의 매매법 🐜 💡 조건 모든 거래는 전량 매수와 전량 매도로 이루어진다. 현재 가지고 있는 현금이 100원이고 주가가 11원이라면 99원어치의 주식을 매수하는 것이다. 단, 현금이 100원 있고 주가가 101원이라면 주식을 살 수 없다. 성민이는 빚을 내서 주식을 하지는 않는다. 3일 연속 가격이 전일 대비 상승하는 주식은 다음날 무조건 가격이 하락한다고 가정한다. 따라서 현재 소유한 주식의 가격이 3일째 상승한다면, 전량 매도한다. 전일과 오늘의 주가가 동일하다면 가격이 상승한 것이 아니다.</description>
+    </item>
     <item>
       <title>[BOJ] 13900 순서쌍의 곱의 합 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/</link>

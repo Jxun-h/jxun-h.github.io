@@ -11,8 +11,24 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1063 킹 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</link>
+      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</guid>
+      <description>📌 BOJ 1063 킹 💡 조건 체스판의 크기는 8*8
+체스판에서의 말의 위치는 알파벳 하나와 숫자 하나로 구성되어 있다.
+알파벳은 열(column), 숫자는 행(row)을 상징한다.
+알파벳은 A
+~H, 숫자는 1~
+8까지이다.
+킹이 움직일 수 있는 방법은 8가지가 있으며, 문제에 제시되어 있다.
+체스판에 있는 돌은 킹이 움직인 방향으로 같이 움직인다.
+체스판이나 돌이 입력에서 주어진대로 움직이다가 밖으로 나갈 경우, 그 이동은 건너 뛴다.
+첫째 줄에 킹의 마지막 위치, 둘째 줄에 돌의 마지막 위치를 출력한다.</description>
+    </item>
     <item>
       <title>[Programmers] 블록 이동하기 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</link>

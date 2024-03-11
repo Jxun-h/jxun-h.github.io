@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>배낭 알고리즘 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EB%B0%B0%EB%82%AD-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
+    <description>Recent content in 배낭 알고리즘 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EB%B0%B0%EB%82%AD-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1535 안녕 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1535-%EC%95%88%EB%85%95-with-python/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1535-%EC%95%88%EB%85%95-with-python/</guid>
+      <description>📌 BOJ 1535 안녕 💡 조건 첫째 줄에 사람의 수 N(≤ 20). 둘째 줄에 각각의 사람에게 인사를 할 때, 잃는 체력이 1번 사람부터 순서대로 입력. 셋째 줄에는 각각의 사람에게 인사를 할 때, 얻는 기쁨이 1번 사람부터 순서대로 입력. 체력과 기쁨은 100보다 작거나 같은 자연수 또는 0. 세준이가 얻을 수 있는 최대 기쁨을 출력. 브루트포스 알고리즘, 배낭 알고리즘 유형 문제 🔖 예제 및 실행결과 예제 3 1 21 79 20 30 25 실행결과 50 ⌨️ 문제 풀이 브루트포스 알고리즘 혹은 냅색 알고리즘 으로 풀이할 수 있다.</description>
+    </item>
+  </channel>
+</rss>
