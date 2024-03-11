@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1515 수 이어 쓰기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 1515 수 이어 쓰기 💡 조건 1부터 N까지 모든 수를 차례대로 공백없이 한 줄에 다 썼다. 다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 N이 기억나지 않는다. 남은 수를 이어 붙인 수가 주어질 경우, N의 최솟값을 구하는 문제. 일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, 이 수는 최대 3000자리. 구현, 문자열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 00000000000000000000000000000000000000000000000000000000000000000000000 실행결과 400 ⌨️ 문제 풀이 1부터 수를 늘려가면서 완전탐색을 실행하면 된다.</description>
+    </item>
     <item>
       <title>[Programmers] 문자열 압축 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</link>

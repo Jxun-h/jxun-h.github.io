@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 1515 수 이어 쓰기 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 구현, 문자열, 브루트포스, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 1515 수 이어 쓰기 💡 조건 1부터 N까지 모든 수를 차례대로 공백없이 한 줄에 다 썼다. 다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 N이 기억나지 않는다. 남은 수를 이어 붙인 수가 주어질 경우, N의 최솟값을 구하는 문제. 일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, 이 수는 최대 3000자리. 구현, 문자열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 00000000000000000000000000000000000000000000000000000000000000000000000 실행결과 400 ⌨️ 문제 풀이 1부터 수를 늘려가면서 완전탐색을 실행하면 된다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 1515 수 이어 쓰기 with Python" />
+<meta property="og:description" content="📌 BOJ 1515 수 이어 쓰기 💡 조건 1부터 N까지 모든 수를 차례대로 공백없이 한 줄에 다 썼다. 다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 N이 기억나지 않는다. 남은 수를 이어 붙인 수가 주어질 경우, N의 최솟값을 구하는 문제. 일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, 이 수는 최대 3000자리. 구현, 문자열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 00000000000000000000000000000000000000000000000000000000000000000000000 실행결과 400 ⌨️ 문제 풀이 1부터 수를 늘려가면서 완전탐색을 실행하면 된다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-12T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14620-%EA%BD%83%EA%B8%B8-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1411-%EB%B9%84%EC%8A%B7%ED%95%9C-%EB%8B%A8%EC%96%B4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2615-%EC%98%A4%EB%AA%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 1515 수 이어 쓰기 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 1515 수 이어 쓰기 💡 조건 1부터 N까지 모든 수를 차례대로 공백없이 한 줄에 다 썼다. 다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 N이 기억나지 않는다. 남은 수를 이어 붙인 수가 주어질 경우, N의 최솟값을 구하는 문제. 일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, 이 수는 최대 3000자리. 구현, 문자열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 00000000000000000000000000000000000000000000000000000000000000000000000 실행결과 400 ⌨️ 문제 풀이 1부터 수를 늘려가면서 완전탐색을 실행하면 된다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 1515 수 이어 쓰기 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 1515 수 이어 쓰기 with Python",
+  "name": "[BOJ] 1515 수 이어 쓰기 with Python",
+  "description": "📌 BOJ 1515 수 이어 쓰기 💡 조건 1부터 N까지 모든 수를 차례대로 공백없이 한 줄에 다 썼다. 다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 N이 기억나지 않는다. 남은 수를 이어 붙인 수가 주어질 경우, N의 최솟값을 구하는 문제. 일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, 이 수는 최대 3000자리. 구현, 문자열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 00000000000000000000000000000000000000000000000000000000000000000000000 실행결과 400 ⌨️ 문제 풀이 1부터 수를 늘려가면서 완전탐색을 실행하면 된다.",
+  "keywords": [
+    "자료구조", "PS", "구현", "문자열", "브루트포스", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 1515 수 이어 쓰기 💡 조건 1부터 N까지 모든 수를 차례대로 공백없이 한 줄에 다 썼다. 다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 N이 기억나지 않는다. 남은 수를 이어 붙인 수가 주어질 경우, N의 최솟값을 구하는 문제. 일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, 이 수는 최대 3000자리. 구현, 문자열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 00000000000000000000000000000000000000000000000000000000000000000000000 실행결과 400 ⌨️ 문제 풀이 1부터 수를 늘려가면서 완전탐색을 실행하면 된다.\ni, s 는 각각 1과 '' 로 초기화 한 뒤, while 1: 반복으로 i를 늘려주며 순회한다. s 에 str(i)를 이어 붙이고 check() 함수에서 검사를 실시한다. check 함수에서는 사용자에게 입력받은 data와 while 반복문을 통해서 이어 붙인 숫자의 길이를 검사한다.\n만약, 길이가 같지 않으면 ' '를 리턴해준다.\n만약, 길이가 같다면 data 배열과 이어 붙인 숫자의 각 자리를 검사하여 틀린것은 pop() 으로 빼준다\n길이가 같은 경우, 각 자리가 모두 동일했다면 chk 변수는 0이고 data의 길이만큼 반환\n길이가 다른 경우, 각 자리를 검사하고 pop()을 사용해 숫자를 뺀 이어 붙인 수를 반환 check 함수에서 반환받은 tf 변수는 ' ' 혹은 3번의 결과값을 가지고 있다.\n만약 tf 변수가 data의 길이와 tf의 길이 중 짧은 길이만큼 잘라냈을 때, data의 길이와 같다면\n현재의 i를 출력해주고 while을 종료한다. 4번에서 종료가 안되었고 tf 가 ' '과 다르다면, s는 tf로 저장해주고, i 를 1만큼 증가시켜준다. 이 때 tf는 이어 붙인 수에서 숫자를 지운 상태이다.* 4번에서 종료가 안되었고, tf 가 ' '과 같다면, i 를 1만큼 증가시켜준다. data 변수와 단 한자리도 같지 않아 이어 붙인 수가 pop()에 의해 다 뽑힌 것.* 🖥 소스 코드 from sys import stdin data = stdin.readline().rstrip() s, i = '', 1 def check(s): t = list(s) k = list(data) while 1: if len(t) \u003c len(data): return ' ' else: i = 0 chk = 0 while 1: if i \u003e= len(k) or i \u003e= len(t): if chk: return ''.join(t) else: return ''.join(t[:len(data)]) if t[i] != k[i]: t.pop(i) chk = 1 else: i += 1 while 1: s += str(i) # check tf = check(s) if tf[:min(len(tf), len(data))] == data: print(i) break # tf = False if tf != ' ': s = tf i += 1 else: i += 1 💾 느낀점 틀렸습니다와 런타임에러가 날 괴롭혔다.\n그 이유는 아래와 같다. 문자열을 이어 붙이다 보면 10의 자리를 붙이게 되는데 그 순간 data 변수의 길이보다 이어 붙인 수의 길이가 길어질 때 검사하다가 오류. 반환할 때도 이미 data 변수와 길이가 같거나 혹은 길이가 길게나와서 답도 제대로 안나왔다. 인덱싱에 매우 약하다. 이를 극복하려면 반복 밖에는 없을 것 같다. ",
+  "wordCount" : "404",
+  "inLanguage": "en",
+  "datePublished": "2021-12-12T00:00:00Z",
+  "dateModified": "2021-12-12T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 1515 수 이어 쓰기 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-12-12 00:00:00 +0000 UTC'>December 12, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%201515%20%ec%88%98%20%ec%9d%b4%ec%96%b4%20%ec%93%b0%ea%b8%b0%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem1515-target_blankboj-1515-수-이어-쓰기a">📌 <a href="https://www.acmicpc.net/problem/1515" target="_blank">BOJ 1515 수 이어 쓰기</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1515-target_blankboj-1515-수-이어-쓰기a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li><code>1부터 N까지 모든 수</code>를 차례대로 공백없이 한 줄에 다 썼다.</li>
+<li>다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 <code>N</code>이 기억나지 않는다.</li>
+<li>남은 수를 이어 붙인 수가 주어질 경우, <code>N</code>의 최솟값을 구하는 문제.</li>
+<li>일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, <strong>이 수는 최대 3000자리</strong>.</li>
+<li><strong>구현, 문자열, 브루트포스 알고리즘 유형</strong>의 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">00000000000000000000000000000000000000000000000000000000000000000000000</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">400</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>1부터 수를 늘려가면서 <code>완전탐색</code>을 실행하면 된다.<br>
+<code>i, s</code> 는 각각 <code>1과 ''</code> 로 초기화 한 뒤, <code>while 1:</code> 반복으로 <code>i</code>를 늘려주며 순회한다.</li>
+<li><code>s</code> 에 <code>str(i)</code>를 이어 붙이고 <code>check()</code> 함수에서 검사를 실시한다.</li>
+<li><code>check</code> 함수에서는 사용자에게 입력받은 <code>data</code>와 <code>while</code> 반복문을 통해서 이어 붙인 숫자의 길이를 검사한다.<br>
+만약, 길이가 같지 않으면 <code>' '</code>를 리턴해준다.<br>
+만약, 길이가 같다면 <code>data</code> 배열과 이어 붙인 숫자의 각 자리를 검사하여 틀린것은 <code>pop()</code> 으로 빼준다<br>
+<strong>길이가 같은 경우, 각 자리가 모두 동일했다면 <code>chk</code> 변수는 0이고 <code>data</code>의 길이만큼 반환</strong><br>
+<strong>길이가 다른 경우, 각 자리를 검사하고 <code>pop()</code>을 사용해 숫자를 뺀 이어 붙인 수를 반환</strong></li>
+<li><code>check</code> 함수에서 반환받은 <code>tf</code> 변수는 <code>' '</code> 혹은 3번의 결과값을 가지고 있다.<br>
+만약 <code>tf</code> 변수가 <code>data</code>의 길이와 <code>tf</code>의 길이 중 짧은 길이만큼 잘라냈을 때, <code>data</code>의 길이와 같다면<br>
+현재의 <code>i</code>를 출력해주고 <code>while</code>을 종료한다.</li>
+<li>4번에서 종료가 안되었고 <code>tf</code> 가 <code>' '</code>과 다르다면,
+<ul>
+<li><code>s</code>는 <code>tf</code>로 저장해주고, i 를 1만큼 증가시켜준다.</li>
+<li><em>이 때 <code>tf</code>는 이어 붙인 수에서 숫자를 지운 상태이다.*</em></li>
+</ul>
+</li>
+<li>4번에서 종료가 안되었고, <code>tf</code> 가 <code>' '</code>과 같다면,
+<ul>
+<li><code>i</code> 를 <code>1</code>만큼 증가시켜준다.</li>
+<li><em><code>data</code> 변수와 단 한자리도 같지 않아 이어 붙인 수가 <code>pop()</code>에 의해 다 뽑힌 것.*</em></li>
+</ul>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s1">&#39; &#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="n">chk</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">chk</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">t</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">chk</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># check</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tf</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">tf</span><span class="p">[:</span><span class="nb">min</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))]</span> <span class="o">==</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># tf = False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">tf</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span> <span class="o">=</span> <span class="n">tf</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>틀렸습니다와 런타임에러가 날 괴롭혔다.<br>
+그 이유는 아래와 같다.
+<ul>
+<li>문자열을 이어 붙이다 보면 10의 자리를 붙이게 되는데 그 순간 data 변수의 길이보다 이어 붙인 수의 길이가 길어질 때 검사하다가 오류.</li>
+<li>반환할 때도 이미 data 변수와 길이가 같거나 혹은 길이가 길게나와서 답도 제대로 안나왔다.</li>
+</ul>
+</li>
+<li>인덱싱에 매우 약하다. 이를 극복하려면 반복 밖에는 없을 것 같다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/">구현</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/">문자열</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/">브루트포스</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-1411-%EB%B9%84%EC%8A%B7%ED%95%9C-%EB%8B%A8%EC%96%B4-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 1411 비슷한 단어 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-2615-%EC%98%A4%EB%AA%A9-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 2615 오목 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

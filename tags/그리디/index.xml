@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1411 비슷한 단어 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1411-%EB%B9%84%EC%8A%B7%ED%95%9C-%EB%8B%A8%EC%96%B4-with-python/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1411-%EB%B9%84%EC%8A%B7%ED%95%9C-%EB%8B%A8%EC%96%B4-with-python/</guid>
+      <description>📌 BOJ 1411 비슷한 단어 💡 조건 문자열 A를 숌스럽게 바꾸어 B로 만들었다면, 그 단어는 비슷한 단어라고한다. 숌스럽게 바꾼다는 것은 단어 A에 등장하는 모든 알파벳을 다른 알파벳으로 바꾼다. 단어가 여러 개 주어졌을 때, 몇 개의 쌍이 비슷한지 구하는 문제. 단어의 길이는 최대 50
+N은 100보다 작거나 같은 자연수이다.
+모든 단어의 길이는 같고, 중복되지 않는다. 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 12 cacccdaabc cdcccaddbc dcdddbccad bdbbbaddcb bdbcadbbdc abaadcbbda babcdabbac cacdbaccad dcddabccad cacccbaadb bbcdcbcbdd bcbadcbbca 실행결과 13 ⌨️ 문제 풀이 가능한 각 단어들의 쌍을 combinations 함수를 사용해 만들고 순차적으로 순회한다.</description>
+    </item>
     <item>
       <title>[BOJ] 13305 주유소 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/</link>

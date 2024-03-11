@@ -11,34 +11,76 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BOJ</title>
       <link>https://jxun-h.github.io/tags/boj/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/tags/boj/</guid>
       <description></description>
     </item>
     <item>
       <title>PS</title>
       <link>https://jxun-h.github.io/tags/ps/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/tags/ps/</guid>
       <description></description>
     </item>
     <item>
       <title>구현</title>
       <link>https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/</guid>
       <description></description>
     </item>
     <item>
       <title>백준</title>
       <link>https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>브루트포스</title>
+      <link>https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>수학</title>
+      <link>https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>알고리즘</title>
+      <link>https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>자료구조</title>
+      <link>https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>그리디</title>
+      <link>https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>문자열</title>
+      <link>https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/</guid>
       <description></description>
     </item>
     <item>
@@ -49,31 +91,10 @@
       <description></description>
     </item>
     <item>
-      <title>알고리즘</title>
-      <link>https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>자료구조</title>
-      <link>https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>set</title>
       <link>https://jxun-h.github.io/tags/set/</link>
       <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/tags/set/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>브루트포스</title>
-      <link>https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/</link>
-      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/</guid>
       <description></description>
     </item>
     <item>
@@ -207,20 +228,6 @@
       <link>https://jxun-h.github.io/tags/%EC%9E%AC%EA%B7%80/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/tags/%EC%9E%AC%EA%B7%80/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>그리디</title>
-      <link>https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/</link>
-      <pubDate>Wed, 22 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>문자열</title>
-      <link>https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/</link>
-      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/</guid>
       <description></description>
     </item>
     <item>
