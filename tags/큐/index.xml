@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>큐 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%ED%81%90/</link>
+    <description>Recent content in 큐 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%ED%81%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1021 회전하는 큐 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1021-%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-with-python/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1021-%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-with-python/</guid>
+      <description>📌 BOJ 1021 회전하는 큐 💡 조건 N개의 원소를 포함하고 있는 양방향 순환 큐 1 &amp;lt;= N &amp;lt;= 50 큐에서 다음과 같은 3가지 연산을 수행할 수 있다. 첫 번째 원소를 뽑아낸다. 이 연산을 수행하면, 원래 큐의 원소가 a1, &amp;hellip;, ak이었던 것이 a2, &amp;hellip;, ak와 같이 된다. 왼쪽으로 한 칸 이동시킨다. 이 연산을 수행하면, a1, &amp;hellip;, ak가 a2, &amp;hellip;, ak, a1이 된다. 오른쪽으로 한 칸 이동시킨다. 이 연산을 수행하면, a1, &amp;hellip;, ak가 ak, a1, &amp;hellip;, ak-1이 된다.</description>
+    </item>
+  </channel>
+</rss>

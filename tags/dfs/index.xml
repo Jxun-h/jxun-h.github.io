@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFS on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/dfs/</link>
+    <description>Recent content in DFS on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 14502 연구소 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</guid>
+      <description>📌 BOJ 14502 연구소 💡 조건 연구소는 크기가 N×M인 직사각형으로 나타낼 수 있으며, 직사각형은 1×1 크기의 정사각형으로 나누어져 있다. 새로 세울 수 있는 벽의 개수는 3개이며, 꼭 3개를 세워야 한다. 벽을 3개 세운 뒤, 바이러스가 퍼질 수 없는 곳을 안전 영역이라고 한다. 지도의 세로 크기 N과 가로 크기 M이 주어진다. (3 ≤ N, M ≤ 8) 0은 빈 칸, 1은 벽, 2는 바이러스가 있는 위치이다. 2의 개수는 2보다 크거나 같고, 10보다 작거나 같은 자연수이다.</description>
+    </item>
+  </channel>
+</rss>

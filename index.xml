@@ -11,8 +11,64 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1021 회전하는 큐 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1021-%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-with-python/</link>
+      <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1021-%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-with-python/</guid>
+      <description>📌 BOJ 1021 회전하는 큐 💡 조건 N개의 원소를 포함하고 있는 양방향 순환 큐 1 &amp;lt;= N &amp;lt;= 50 큐에서 다음과 같은 3가지 연산을 수행할 수 있다. 첫 번째 원소를 뽑아낸다. 이 연산을 수행하면, 원래 큐의 원소가 a1, &amp;hellip;, ak이었던 것이 a2, &amp;hellip;, ak와 같이 된다. 왼쪽으로 한 칸 이동시킨다. 이 연산을 수행하면, a1, &amp;hellip;, ak가 a2, &amp;hellip;, ak, a1이 된다. 오른쪽으로 한 칸 이동시킨다. 이 연산을 수행하면, a1, &amp;hellip;, ak가 ak, a1, &amp;hellip;, ak-1이 된다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14916 거스름돈 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</link>
+      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</guid>
+      <description>📌 BOJ 14916 거스름돈 💡 조건 동전의 개수가 최소가 되도록 거슬러 주어야 한다. 거스름돈 액수 n(1 ≤ n ≤ 100,000) DP, 수학 유형의 문제 🔖 예제 및 실행결과 예제 13 실행결과 5 ⌨️ 문제 풀이 5원 동전이 몇 개 일때 최소인지 구하면 된다. int(1e9)로 결과값을 초기하화 해두고, n // 5 개부터 한개씩 5원짜리를 줄여가며 최소 갯수를 구한다. 5원 개수에 해당하는 금액만큼 n에서 뺀 후, 2 로 나누어 떨어지지 않을 경우 continue 5월 개수에 해당하는 금액만큼 n에서 뺀 나머지 금액이 2로 나누어 떨어지면 res 갱신 🖥 소스 코드 from sys import stdin n = int(stdin.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20291 파일 정리 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20291-%ED%8C%8C%EC%9D%BC-%EC%A0%95%EB%A6%AC-with-python/</link>
+      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20291-%ED%8C%8C%EC%9D%BC-%EC%A0%95%EB%A6%AC-with-python/</guid>
+      <description>📌 BOJ 20291 파일 정리 💡 조건 바탕화면에 있는 파일의 개수 N (1 &amp;lt;= N &amp;lt;= 50000) 파일의 이름은 알파벳 소문자와 점(.)으로만 구성되어 있다.
+점은 정확히 한 번 등장하며, 파일 이름의 첫 글자 또는 마지막 글자로 오지 않는다.
+각 파일의 이름의 길이는 최소 3, 최대 100이다. 확장자의 이름과 그 확장자 파일의 개수를 한 줄에 하나씩 출력한다.
+확장자가 여러 개 있는 경우 확장자 이름의 사전순으로 출력한다. 해시맵 자료구조 유형의 문제 🔖 예제 및 실행결과 예제 8 sbrus.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14502 연구소 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</guid>
+      <description>📌 BOJ 14502 연구소 💡 조건 연구소는 크기가 N×M인 직사각형으로 나타낼 수 있으며, 직사각형은 1×1 크기의 정사각형으로 나누어져 있다. 새로 세울 수 있는 벽의 개수는 3개이며, 꼭 3개를 세워야 한다. 벽을 3개 세운 뒤, 바이러스가 퍼질 수 없는 곳을 안전 영역이라고 한다. 지도의 세로 크기 N과 가로 크기 M이 주어진다. (3 ≤ N, M ≤ 8) 0은 빈 칸, 1은 벽, 2는 바이러스가 있는 위치이다. 2의 개수는 2보다 크거나 같고, 10보다 작거나 같은 자연수이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14888 연산자 끼워넣기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 14888 연산자 끼워넣기 💡 조건 N개의 수로 이루어진 수열 A1, A2, &amp;hellip;, AN 수와 수 사이에 끼워넣을 수 있는 N-1개의 연산자
+연산자는 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷)으로만 이루어져 있다. 수의 개수 N(2 ≤ N ≤ 11)
+A1, A2, &amp;hellip;, AN이 주어진다. (1 ≤ Ai ≤ 100) 첫째 줄에 만들 수 있는 식의 결과의 최댓값을, 둘째 줄에는 최솟값을 출력 순열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 2 5 6 0 0 1 0 실행결과 30 30 ⌨️ 문제 풀이 permutations 라이브러리 import 연산자를 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷) 순서대로 담은 gi 리스트 선언.</description>
+    </item>
+    <item>
+      <title>[BOJ] 10819 차이를 최대로 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-10819-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-with-python/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-10819-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-with-python/</guid>
+      <description>📌 BOJ 10819 차이를 최대로 💡 조건 N개의 정수로 이루어진 배열 A N (3 ≤ N ≤ 8) 배열에 들어있는 정수는 -100보다 크거나 같고, 100보다 작거나 같다. 다음 식의 최댓값을 구하는 프로그램을 작성. |A[0] - A[1]| + |A[1] - A[2]| + ... + |A[N-2] - A[N-1]| 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 6 20 1 15 8 4 10 실행결과 62 ⌨️ 문제 풀이 최댓값을 저장할 res 정수 생성 itertools 의 permutaions 함수로 가능한 수를 모두 계산하여 v에 저장하고, res 갱신 🖥 소스 코드 from sys import stdin from itertools import permutations n = int(stdin.</description>
+    </item>
+    <item>
+      <title>[BOJ] 11504 돌려 돌려 돌림판! with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</guid>
+      <description>📌 BOJ 11504 돌려 돌려 돌림판! 💡 조건 첫 번째 줄에 테스트케이스의 개수 T 테스트케이스의 첫 줄에는 돌림판을 N등분할 정수 N (1 ≤ N ≤ 100)
+X, Y의 길이 M (1 ≤ M ≤ 9, M ≤ N)
+다음 3개의 줄에 X의 각 자리수, Y의 각 자리수, 돌림판의 상태 돌림판에서 X ≤ Z ≤ Y를 만족하는 M자리의 수 Z가 몇 개가 있는 지를 출력 X와 Y사이에 있는 수가 123 밖에 없는 데 돌림판에서 2번 나온다면, 1이 아닌 2를 출력 구현, 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 3 8 3 2 0 0 3 1 1 3 7 8 3 1 9 2 7 5 2 8 8 9 9 1 3 2 5 4 6 3 0 0 0 9 9 9 1 2 3 4 5 6 실행결과 1 0 6 ⌨️ 문제 풀이 돌림판의 숫자를 입력받아, m개의 개수만큼 이어붙여 새로운 숫자를 만든다.</description>
+    </item>
     <item>
       <title>[BOJ] 1535 안녕 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1535-%EC%95%88%EB%85%95-with-python/</link>

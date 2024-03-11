@@ -11,8 +11,31 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jan 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 14502 연구소 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</guid>
+      <description>📌 BOJ 14502 연구소 💡 조건 연구소는 크기가 N×M인 직사각형으로 나타낼 수 있으며, 직사각형은 1×1 크기의 정사각형으로 나누어져 있다. 새로 세울 수 있는 벽의 개수는 3개이며, 꼭 3개를 세워야 한다. 벽을 3개 세운 뒤, 바이러스가 퍼질 수 없는 곳을 안전 영역이라고 한다. 지도의 세로 크기 N과 가로 크기 M이 주어진다. (3 ≤ N, M ≤ 8) 0은 빈 칸, 1은 벽, 2는 바이러스가 있는 위치이다. 2의 개수는 2보다 크거나 같고, 10보다 작거나 같은 자연수이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14888 연산자 끼워넣기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
+      <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 14888 연산자 끼워넣기 💡 조건 N개의 수로 이루어진 수열 A1, A2, &amp;hellip;, AN 수와 수 사이에 끼워넣을 수 있는 N-1개의 연산자
+연산자는 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷)으로만 이루어져 있다. 수의 개수 N(2 ≤ N ≤ 11)
+A1, A2, &amp;hellip;, AN이 주어진다. (1 ≤ Ai ≤ 100) 첫째 줄에 만들 수 있는 식의 결과의 최댓값을, 둘째 줄에는 최솟값을 출력 순열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 2 5 6 0 0 1 0 실행결과 30 30 ⌨️ 문제 풀이 permutations 라이브러리 import 연산자를 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷) 순서대로 담은 gi 리스트 선언.</description>
+    </item>
+    <item>
+      <title>[BOJ] 10819 차이를 최대로 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-10819-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-with-python/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-10819-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-with-python/</guid>
+      <description>📌 BOJ 10819 차이를 최대로 💡 조건 N개의 정수로 이루어진 배열 A N (3 ≤ N ≤ 8) 배열에 들어있는 정수는 -100보다 크거나 같고, 100보다 작거나 같다. 다음 식의 최댓값을 구하는 프로그램을 작성. |A[0] - A[1]| + |A[1] - A[2]| + ... + |A[N-2] - A[N-1]| 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 6 20 1 15 8 4 10 실행결과 62 ⌨️ 문제 풀이 최댓값을 저장할 res 정수 생성 itertools 의 permutaions 함수로 가능한 수를 모두 계산하여 v에 저장하고, res 갱신 🖥 소스 코드 from sys import stdin from itertools import permutations n = int(stdin.</description>
+    </item>
     <item>
       <title>[BOJ] 1535 안녕 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1535-%EC%95%88%EB%85%95-with-python/</link>

@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 11504 돌려 돌려 돌림판! with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</guid>
+      <description>📌 BOJ 11504 돌려 돌려 돌림판! 💡 조건 첫 번째 줄에 테스트케이스의 개수 T 테스트케이스의 첫 줄에는 돌림판을 N등분할 정수 N (1 ≤ N ≤ 100)
+X, Y의 길이 M (1 ≤ M ≤ 9, M ≤ N)
+다음 3개의 줄에 X의 각 자리수, Y의 각 자리수, 돌림판의 상태 돌림판에서 X ≤ Z ≤ Y를 만족하는 M자리의 수 Z가 몇 개가 있는 지를 출력 X와 Y사이에 있는 수가 123 밖에 없는 데 돌림판에서 2번 나온다면, 1이 아닌 2를 출력 구현, 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 3 8 3 2 0 0 3 1 1 3 7 8 3 1 9 2 7 5 2 8 8 9 9 1 3 2 5 4 6 3 0 0 0 9 9 9 1 2 3 4 5 6 실행결과 1 0 6 ⌨️ 문제 풀이 돌림판의 숫자를 입력받아, m개의 개수만큼 이어붙여 새로운 숫자를 만든다.</description>
+    </item>
     <item>
       <title>[BOJ] 1063 킹 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</link>
