@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%ED%95%B4%EC%8B%9C%EB%A7%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1269 대칭 차집합 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1269-%EB%8C%80%EC%B9%AD-%EC%B0%A8%EC%A7%91%ED%95%A9-with-python/</link>
+      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1269-%EB%8C%80%EC%B9%AD-%EC%B0%A8%EC%A7%91%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 1269 대칭 차집합 💡 조건 자연수를 원소로 갖는 공집합이 아닌 두 집합 A와 B가 있다. 두 집합 A와 B가 있을 때, (A-B)와 (B-A)의 합집합을 A와 B의 대칭 차집합이라고 한다. 예를 들어, A = { 1, 2, 4 } 이고, B = { 2, 3, 4, 5, 6 } 라고 할 때,
+A-B = { 1 } 이고, B-A = { 3, 5, 6 } 이므로,
+대칭 차집합의 원소의 개수는 1 + 3 = 4개이다.</description>
+    </item>
     <item>
       <title>[BOJ] 10546 배부른 마라토너 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-10546-%EB%B0%B0%EB%B6%80%EB%A5%B8-%EB%A7%88%EB%9D%BC%ED%86%A0%EB%84%88-with-python/</link>

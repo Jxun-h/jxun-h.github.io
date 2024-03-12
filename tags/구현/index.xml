@@ -11,8 +11,32 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1531 투명 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1531-%ED%88%AC%EB%AA%85-with-python/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1531-%ED%88%AC%EB%AA%85-with-python/</guid>
+      <description>📌 BOJ 1531 투명 💡 조건 세준이는 1×1크기의 그림으로 모자이크한 100×100크기의 그림을 가지고 있다. 어느 날 이 모자이크 중 일부 그림이 너무 보기 싫어서 N개의 불투명한 종이로 그림을 가리기 시작했다. 그림의 현재 부분 위에 M개 이하의 종이가 올려져 있으면 그림은 그 부분에서 보이게 된다. N은 0보다 크거나 같고, 50보다 작거나 같다. M은 0보다 크거나 같고, 50보다 작거나 같다. 왼쪽 아래 모서리의 x, y좌표, 오른쪽 위 모서리의 x, y좌표 순으로 주어진다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 10163 색종이 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-10163-%EC%83%89%EC%A2%85%EC%9D%B4-with-python/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-10163-%EC%83%89%EC%A2%85%EC%9D%B4-with-python/</guid>
+      <description>📌 BOJ 10163 색종이 💡 조건 평면에 색깔이 서로 다른 직사각형 모양의 색종이 N장이 하나씩 차례로 놓여진다. 이때 색종이가 비스듬하게 놓이는 경우는 없다. 색종이의 장수를 나타내는 정수 N (1 ≤ N ≤ 100) N장의 색종이가 주어진 위치에 차례로 놓일 경우, 각 색종이가 보이는 부분의 면적을 구하는 문제 가로 최대 1001칸, 세로 최대 1001칸으로 구성된 격자 모양이다.
+격자의 각 칸은 가로, 세로 길이가 1인 면적이 1인 정사각형 색종이가 놓인 상태는 가장 왼쪽 아래 칸의 번호와 너비, 높이를 나타내는 네 정수로 표현한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 9081 단어 맞추기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-9081-%EB%8B%A8%EC%96%B4-%EB%A7%9E%EC%B6%94%EA%B8%B0-with-python/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-9081-%EB%8B%A8%EC%96%B4-%EB%A7%9E%EC%B6%94%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 9081 단어 맞추기 💡 조건 단어를 주면 그 단어를 이루는 알파벳들로 만들 수 있는 단어들을 사전 순으로 정렬할 때에
+주어진 단어 다음에 나오는 단어를 찾는 프로그램을 작성하는 문제 케이스의 개수 T (1 ≤ T ≤ 10) 단어는 알파벳 A~Z 대문자로만 이루어지며 항상 공백이 없는 연속된 알파벳으로 이루어진다.
+단어의 길이는 100을 넘지 않는다. 구현 유형의 문제 🖥 소스 코드 from sys import stdin for t in range(int(stdin.readline())): string = list(stdin.</description>
+    </item>
     <item>
       <title>[BOJ] 16935 배열 돌리기 3 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-16935-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-3-with-python/</link>
