@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 15658 연산자 끼워넣기 (2) with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 백트래킹, DFS, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 15658 연산자 끼워넣기 (2) 💡 조건 N개의 수로 이루어진 수열 A1, A2, &hellip;, AN
+N(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,
+차례대로 덧셈(&#43;)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면 안 된다. 식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 15658 연산자 끼워넣기 (2) with Python" />
+<meta property="og:description" content="📌 BOJ 15658 연산자 끼워넣기 (2) 💡 조건 N개의 수로 이루어진 수열 A1, A2, &hellip;, AN
+N(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,
+차례대로 덧셈(&#43;)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면 안 된다. 식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-02T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-11655-rot13-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-6603-%EB%A1%9C%EB%98%90-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2535-%EC%95%84%EC%8B%9C%EC%95%84-%EC%A0%95%EB%B3%B4%EC%98%AC%EB%A6%BC%ED%94%BC%EC%95%84%EB%93%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1940-%EC%A3%BC%EB%AA%BD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 15658 연산자 끼워넣기 (2) with Python"/>
+<meta name="twitter:description" content="📌 BOJ 15658 연산자 끼워넣기 (2) 💡 조건 N개의 수로 이루어진 수열 A1, A2, &hellip;, AN
+N(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,
+차례대로 덧셈(&#43;)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면 안 된다. 식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 15658 연산자 끼워넣기 (2) with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 15658 연산자 끼워넣기 (2) with Python",
+  "name": "[BOJ] 15658 연산자 끼워넣기 (2) with Python",
+  "description": "📌 BOJ 15658 연산자 끼워넣기 (2) 💡 조건 N개의 수로 이루어진 수열 A1, A2, \u0026hellip;, AN\nN(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,\n차례대로 덧셈(+)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면 안 된다. 식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다.",
+  "keywords": [
+    "자료구조", "PS", "백트래킹", "DFS", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 15658 연산자 끼워넣기 (2) 💡 조건 N개의 수로 이루어진 수열 A1, A2, …, AN\nN(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,\n차례대로 덧셈(+)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면 안 된다. 식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다. 나눗셈은 정수 나눗셈으로 몫만 취한다. 또한 음수를 나눌 때에는 양수로 바꾼 뒤 몫을 취하고, 그 몫을 음수로 바꾸어야 한다. 백트래킹, DFS 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 6 1 2 3 4 5 6 3 2 1 1 실행결과 72 -48 ⌨️ 문제 풀이 DFS 알고리즘과 백트래킹을 이용한 문제 풀이를 했다. DFS에 매개변수로 들어가는 val 의 값은 수열의 순서를 바꾸면 안되기 때문에 무슨 짓을 해도 수열[0] 의 값과 같다. DFS에 매개변수로 들어가는 num은 입력받은 수열의 index 1번부터 들어가면 된다. DFS가 종료되는 시점은 num 이라는 리스트가 비어있을 때이며 이 때, 최댓값과 최솟값을 갱신하면서 종료된다.\n최댓값은 -int(1e9), 최솟값은 int(1e9)이다. arr 리스트는 각각 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷)의 개수이며, 입력으로 받는다. 만약 DFS가 넘겨받는 num 리스트가 비어있지 않다면, 반복문을 0부터 3까지 반복을 한다.\n반복하면서, 각 i 의 숫자에 따라 arr[i]의 값이 0보다 클 때, val 변수에 해당하는 연산을 해준 뒤, 재귀호출을 한다. 재귀호출을 할 때, num[1:] 을 매개변수로 넘겨주어 중복 계산을 방지한다.\n이렇게 재귀호출을 하게 되면 넘겨주는 리스트는 길이가 앞에서부터 하나씩 없어지게 되는데,\n재귀 호출 전, arr[i]를 -1 해주고 재귀 호출 후 +1 해준다. 🖥 소스 코드 from sys import stdin, setrecursionlimit setrecursionlimit(10 ** 6) n = int(stdin.readline()) n_num = list(map(int, stdin.readline().split())) arr = list(map(int, stdin.readline().split())) def dfs(num, val): global max_res, min_res if not num: max_res = max(val, max_res) min_res = min(val, min_res) return else: for i in range(4): if i == 0: if arr[i] \u003e 0: arr[i] -= 1 dfs(num[1:], val + num[0]) arr[i] += 1 else: continue if i == 1: if arr[i] \u003e 0: arr[i] -= 1 dfs(num[1:], val - num[0]) arr[i] += 1 else: continue if i == 2: if arr[i] \u003e 0: arr[i] -= 1 dfs(num[1:], val * num[0]) arr[i] += 1 else: continue if i == 3: if arr[i] \u003e 0: arr[i] -= 1 if val \u003c 0: temp = abs(val) // num[0] * -1 else: temp = val // num[0] dfs(num[1:], temp) arr[i] += 1 else: continue max_res = -int(1e9) min_res = int(1e9) dfs(n_num[1:], n_num[0]) print(max_res, min_res, sep='\\n') 💾 느낀점 단순히 permutations 혹은 combinations 로 풀지 않았고,\n정확하게 DFS 및 백트래킹을 활용하여 풀이했는데, 이것이 N과 M 시리즈를 푸는데에 좋은 연습이 됐다. 조건이 크게 없었지만, division error를 조심해야 했고,\n음수일 경우에 나눗셈의 방식이 조금 다르기 때문에 간단한 조건 추가하는 것만 조심하면 되는 문제였던 것 같다. ",
+  "wordCount" : "441",
+  "inLanguage": "en",
+  "datePublished": "2022-02-02T00:00:00Z",
+  "dateModified": "2022-02-02T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 15658 연산자 끼워넣기 (2) with Python
+    </h1>
+    <div class="post-meta"><span title='2022-02-02 00:00:00 +0000 UTC'>February 2, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%2015658%20%ec%97%b0%ec%82%b0%ec%9e%90%20%eb%81%bc%ec%9b%8c%eb%84%a3%ea%b8%b0%20%282%29%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem15658-target_blankboj-15658-연산자-끼워넣기-2a">📌 <a href="https://www.acmicpc.net/problem/15658" target="_blank">BOJ 15658 연산자 끼워넣기 (2)</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem15658-target_blankboj-15658-연산자-끼워넣기-2a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>N개의 수로 이루어진 수열 A1, A2, &hellip;, AN<br>
+N(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100)</li>
+<li>입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,<br>
+차례대로 덧셈(+)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다.</li>
+<li>수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, <strong>주어진 수의 순서를 바꾸면 안 된다.</strong></li>
+<li>식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다.</li>
+<li>나눗셈은 정수 나눗셈으로 몫만 취한다. 또한 음수를 나눌 때에는 양수로 바꾼 뒤 몫을 취하고, 그 몫을 음수로 바꾸어야 한다.</li>
+<li><strong>백트래킹, DFS 알고리즘 유형</strong>의 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">72</span>
+</span></span><span class="line"><span class="cl"><span class="o">-</span><span class="mi">48</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>DFS 알고리즘과 백트래킹을 이용한 문제 풀이를 했다.</li>
+<li>DFS에 매개변수로 들어가는 val 의 값은 수열의 순서를 바꾸면 안되기 때문에 무슨 짓을 해도 수열[0] 의 값과 같다.</li>
+<li>DFS에 매개변수로 들어가는 num은 입력받은 수열의 index 1번부터 들어가면 된다.</li>
+<li>DFS가 종료되는 시점은 <strong>num 이라는 리스트가 비어있을 때</strong>이며 이 때, 최댓값과 최솟값을 갱신하면서 종료된다.<br>
+최댓값은 -int(1e9), 최솟값은 int(1e9)이다.</li>
+<li>arr 리스트는 각각 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷)의 개수이며, 입력으로 받는다.</li>
+<li>만약 DFS가 넘겨받는 num 리스트가 비어있지 않다면, 반복문을 0부터 3까지 반복을 한다.<br>
+반복하면서, 각 i 의 숫자에 따라 arr[i]의 값이 0보다 클 때, val 변수에 해당하는 연산을 해준 뒤, 재귀호출을 한다.</li>
+<li>재귀호출을 할 때, num[1:] 을 매개변수로 넘겨주어 중복 계산을 방지한다.<br>
+이렇게 재귀호출을 하게 되면 넘겨주는 리스트는 길이가 앞에서부터 하나씩 없어지게 되는데,<br>
+재귀 호출 전, arr[i]를 -1 해주고 재귀 호출 후 +1 해준다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">setrecursionlimit</span>
+</span></span><span class="line"><span class="cl"><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">n_num</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">max_res</span><span class="p">,</span> <span class="n">min_res</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">num</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_res</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">max_res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">min_res</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">min_res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">dfs</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">val</span> <span class="o">+</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">dfs</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">val</span> <span class="o">-</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">dfs</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">val</span> <span class="o">*</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">temp</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">//</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">temp</span> <span class="o">=</span> <span class="n">val</span> <span class="o">//</span> <span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">dfs</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">temp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">max_res</span> <span class="o">=</span> <span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">min_res</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dfs</span><span class="p">(</span><span class="n">n_num</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">n_num</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">max_res</span><span class="p">,</span> <span class="n">min_res</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<ol>
+<li>단순히 permutations 혹은 combinations 로 풀지 않았고,<br>
+정확하게 DFS 및 백트래킹을 활용하여 풀이했는데, 이것이 N과 M 시리즈를 푸는데에 좋은 연습이 됐다.</li>
+<li>조건이 크게 없었지만, division error를 조심해야 했고,<br>
+음수일 경우에 나눗셈의 방식이 조금 다르기 때문에 간단한 조건 추가하는 것만 조심하면 되는 문제였던 것 같다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/">백트래킹</a></li>
+      <li><a href="https://jxun-h.github.io/tags/dfs/">DFS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-14500-%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 14500 테트로미노 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-1904-01%ED%83%80%EC%9D%BC-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 1904 01타일 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

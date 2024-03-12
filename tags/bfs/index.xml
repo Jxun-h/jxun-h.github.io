@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 16234 인구 이동 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/</link>
+      <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/</guid>
+      <description>📌 BOJ 16234 인구 이동 💡 조건 N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다.
+N, L, R이 주어진다. (1 ≤ N ≤ 50, 1 ≤ L ≤ R ≤ 100) 인구 이동은 하루 동안 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다. 국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루 동안 연다. 위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다.</description>
+    </item>
     <item>
       <title>[BOJ] 14502 연구소 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</link>

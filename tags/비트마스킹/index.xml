@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>비트마스킹 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EB%B9%84%ED%8A%B8%EB%A7%88%EC%8A%A4%ED%82%B9/</link>
+    <description>Recent content in 비트마스킹 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EB%B9%84%ED%8A%B8%EB%A7%88%EC%8A%A4%ED%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1094 막대기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 1094 막대기 💡 조건 64cm인 막대를 가지고 있다.
+지민이는 원래 가지고 있던 막대를 더 작은 막대로 자른다음에, 풀로 붙여서 길이가 Xcm인 막대를 만들려고 한다. 아래는 막대를 자르는 방법이다. 지민이가 가지고 있는 막대의 길이를 모두 더한다.
+처음에는 64cm 막대 하나만 가지고 있다. 이때, 합이 X보다 크다면, 아래와 같은 과정을 반복한다.
+1-1) 가지고 있는 막대 중 길이가 가장 짧은 것을 절반으로 자른다.
+1-2) 만약, 위에서 자른 막대의 절반 중 하나를 버리고 남아있는 막대의 길이의 합이 X보다 크거나 같다면,2) 이제, 남아있는 모든 막대를 풀로 붙여서 Xcm를 만든다.</description>
+    </item>
+  </channel>
+</rss>

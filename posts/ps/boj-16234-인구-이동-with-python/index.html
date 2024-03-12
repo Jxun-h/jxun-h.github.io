@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 16234 인구 이동 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 구현, BFS, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 16234 인구 이동 💡 조건 N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다.
+N, L, R이 주어진다. (1 ≤ N ≤ 50, 1 ≤ L ≤ R ≤ 100) 인구 이동은 하루 동안 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다. 국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루 동안 연다. 위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 16234 인구 이동 with Python" />
+<meta property="og:description" content="📌 BOJ 16234 인구 이동 💡 조건 N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다.
+N, L, R이 주어진다. (1 ≤ N ≤ 50, 1 ≤ L ≤ R ≤ 100) 인구 이동은 하루 동안 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다. 국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루 동안 연다. 위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-03T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-11655-rot13-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-6603-%EB%A1%9C%EB%98%90-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2535-%EC%95%84%EC%8B%9C%EC%95%84-%EC%A0%95%EB%B3%B4%EC%98%AC%EB%A6%BC%ED%94%BC%EC%95%84%EB%93%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1940-%EC%A3%BC%EB%AA%BD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 16234 인구 이동 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 16234 인구 이동 💡 조건 N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다.
+N, L, R이 주어진다. (1 ≤ N ≤ 50, 1 ≤ L ≤ R ≤ 100) 인구 이동은 하루 동안 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다. 국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루 동안 연다. 위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 16234 인구 이동 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 16234 인구 이동 with Python",
+  "name": "[BOJ] 16234 인구 이동 with Python",
+  "description": "📌 BOJ 16234 인구 이동 💡 조건 N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다.\nN, L, R이 주어진다. (1 ≤ N ≤ 50, 1 ≤ L ≤ R ≤ 100) 인구 이동은 하루 동안 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다. 국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루 동안 연다. 위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다.",
+  "keywords": [
+    "자료구조", "PS", "구현", "BFS", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 16234 인구 이동 💡 조건 N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다.\nN, L, R이 주어진다. (1 ≤ N ≤ 50, 1 ≤ L ≤ R ≤ 100) 인구 이동은 하루 동안 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다. 국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루 동안 연다. 위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다. 국경선이 열려있어 인접한 칸만을 이용해 이동할 수 있으면, 그 나라를 오늘 하루 동안은 연합이라고 한다. 연합을 이루고 있는 각 칸의 인구수는 (연합의 인구수) / (연합을 이루고 있는 칸의 개수)가 된다. 연합을 해체하고, 모든 국경선을 닫는다. 각 나라의 인구수가 주어졌을 때, 인구 이동이 며칠 동안 발생하는지 구하는 프로그램을 작성해야한다. r행 c열에 주어지는 정수는 A[r][c]의 값이다. (0 ≤ A[r][c] ≤ 100) BFS 알고리즘, 구현유형의 문제 🔖 예제 및 실행결과 예제 2 20 50 50 30 30 40 실행결과 1 ⌨️ 문제 풀이 board 리스트에 각 국가의 인구수를 입력 받고, 인구 이동 횟수를 저장할 cnt 변수를 0으로 초기화. 인구 이동이 일어나지 않을 때까지 while 반복을 통해서 체크를 해줄 것. 인구 이동이 일어났을 때, 인구 이동 후의 인구 수와 인구 이동이 일어난 도시의 좌표를 담을 리스트 변수 tf를 생성한다. board 를 순회하면서, 각 좌표에서 연합이 될 수 있는 국가를 체크하여 반환된 값을 temp에 저장한다.\n만약, temp 가 False라면 인구이동이 일어나지 않은 것이다.\n반대로 False 가 아니라면 인구이동이 일어난 것이다. board 전체를 순회했음에도 인구이동이 일어나지 않아 tf가 비어있다면, 그대로 while 문 밖으로 나온다. tf가 비어있지 않다면, 인구이동 횟수(cnt)를 + 1 해준 뒤,\ntf 를 순차적으로 순회하면서, 연합끼리의 인구 이동을 한 좌표에 해당하는 인구 수로 board 값을 갱신한다. check() 함수의 로직은 아래와 같다. BFS 알고리즘을 이용하여 매개변수로 받은 좌표와 연합이 될 수 있는 모든 국가를 찾는다. 다음 이동하려는 좌표가 방문하지 않았어야하고,\n그 좌표에 해당하는 board의 값이 l \u003c= 국경을 공유하는 국가들의 인구 차이 \u003c= r 의 조건을 지켜야한다. 또한 (1), (2) 의 조건을 지킨 경우, 연합들의 각 인구수는 vals 리스트에 저장해 평균 인구수를 계산할 수 있게 한다. check 함수 내의 인구이동 판별 변수인 tf 에 인구이동을 했을 시, True 값을 저장한다. 🖥 소스 코드 from sys import stdin from collections import deque n, l, r = map(int, stdin.readline().split()) if l \u003e r: l, r = r, l board = [] for _ in range(n): board.append(list(map(int, stdin.readline().split()))) dx, dy = [1, 0, 0, -1], [0, -1, 1, 0] def check(x, y): visited = set() q = deque() visited.add((x, y)) q.append((x, y, board[x][y])) vals = [board[x][y]] tf = False while q: x, y, cost = q.popleft() for i in range(4): nx, ny = x + dx[i], y + dy[i] if -1 \u003c nx \u003c n and -1 \u003c ny \u003c n: if l \u003c= abs(cost - board[nx][ny]) \u003c= r and (nx, ny) not in visited: visited.add((nx, ny)) q.append((nx, ny, board[nx][ny])) vals.append(board[nx][ny]) tf = True if not tf: return False else: res = int(sum(vals) / len(vals)) return [res, visited] cnt = 0 while 1: tf = [] for i in range(n): for j in range(n): temp = check(i, j) if temp is not False: tf.append(temp) if not tf: break else: cnt += 1 for val, visited in tf: for x, y in visited: board[x][y] = val print(cnt) 💾 느낀점 국경선을 공유하는 두 국가의 인구 차이 조건을 넣는 것에서 한번 헤맸다. 연합으로 구성된 국가들의 인구 평균 수를 구하는 방법에서 고민을 했었다. 모든 연합을 따로 구해서 연합끼리의 평균 인구 수로 갱신하는 부분이 한번에 이루어져야 한다. 하지만 (3)의 방식이 아닌 연합이 생길때마다 변경해주어 예제 결과도 다르게 나오는 대참사가 있었다. BFS 알고리즘 중에서도 조건이 꽤 있어서 구현이 조금 묻어나온 문제 같았고, 풀기 조금 힘이 들었다. ",
+  "wordCount" : "588",
+  "inLanguage": "en",
+  "datePublished": "2022-02-03T00:00:00Z",
+  "dateModified": "2022-02-03T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 16234 인구 이동 with Python
+    </h1>
+    <div class="post-meta"><span title='2022-02-03 00:00:00 +0000 UTC'>February 3, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%2016234%20%ec%9d%b8%ea%b5%ac%20%ec%9d%b4%eb%8f%99%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem16234-target_blankboj-16234-인구-이동a">📌 <a href="https://www.acmicpc.net/problem/16234" target="_blank">BOJ 16234 인구 이동</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem16234-target_blankboj-16234-인구-이동a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>N×N크기의 땅이 있고, 땅은 1×1개의 칸으로 나누어져 있다.<br>
+N, L, R이 주어진다. (1 ≤ N ≤ 50, 1 ≤ L ≤ R ≤ 100)</li>
+<li>인구 이동은 하루 동안 다음과 같이 진행되고, 더 이상 아래 방법에 의해 인구 이동이 없을 때까지 지속된다.
+<ul>
+<li>
+<ol>
+<li>국경선을 공유하는 두 나라의 인구 차이가 L명 이상, R명 이하라면, 두 나라가 공유하는 국경선을 오늘 하루 동안 연다.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>위의 조건에 의해 열어야하는 국경선이 모두 열렸다면, 인구 이동을 시작한다.</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>국경선이 열려있어 인접한 칸만을 이용해 이동할 수 있으면, 그 나라를 오늘 하루 동안은 연합이라고 한다.</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>연합을 이루고 있는 각 칸의 인구수는 (연합의 인구수) / (연합을 이루고 있는 칸의 개수)가 된다.</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>연합을 해체하고, 모든 국경선을 닫는다.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>각 나라의 인구수가 주어졌을 때, 인구 이동이 며칠 동안 발생하는지 구하는 프로그램을 작성해야한다.</li>
+<li>r행 c열에 주어지는 정수는 A[r][c]의 값이다. (0 ≤ A[r][c] ≤ 100)</li>
+<li><strong>BFS 알고리즘, 구현</strong>유형의 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">20</span> <span class="mi">50</span>
+</span></span><span class="line"><span class="cl"><span class="mi">50</span> <span class="mi">30</span>
+</span></span><span class="line"><span class="cl"><span class="mi">30</span> <span class="mi">40</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>board 리스트에 각 국가의 인구수를 입력 받고, 인구 이동 횟수를 저장할 cnt 변수를 0으로 초기화.</li>
+<li>인구 이동이 일어나지 않을 때까지 while 반복을 통해서 체크를 해줄 것.</li>
+<li>인구 이동이 일어났을 때, 인구 이동 후의 인구 수와 인구 이동이 일어난 도시의 좌표를 담을 리스트 변수 tf를 생성한다.</li>
+<li>board 를 순회하면서, 각 좌표에서 연합이 될 수 있는 국가를 체크하여 반환된 값을 temp에 저장한다.<br>
+만약, temp 가 False라면 인구이동이 일어나지 않은 것이다.<br>
+반대로 False 가 아니라면 인구이동이 일어난 것이다.</li>
+<li>board 전체를 순회했음에도 인구이동이 일어나지 않아 tf가 비어있다면, 그대로 while 문 밖으로 나온다.</li>
+<li>tf가 비어있지 않다면, 인구이동 횟수(cnt)를 + 1 해준 뒤,<br>
+tf 를 순차적으로 순회하면서, 연합끼리의 인구 이동을 한 좌표에 해당하는 인구 수로 board 값을 갱신한다.</li>
+<li>check() 함수의 로직은 아래와 같다.
+<ol>
+<li>BFS 알고리즘을 이용하여 매개변수로 받은 좌표와 연합이 될 수 있는 모든 국가를 찾는다.</li>
+<li>다음 이동하려는 좌표가 방문하지 않았어야하고,<br>
+그 좌표에 해당하는 board의 값이 l &lt;= 국경을 공유하는 국가들의 인구 차이 &lt;= r 의 조건을 지켜야한다.</li>
+<li>또한 (1), (2) 의 조건을 지킨 경우, 연합들의 각 인구수는 vals 리스트에 저장해 평균 인구수를 계산할 수 있게 한다.</li>
+<li>check 함수 내의 인구이동 판별 변수인 tf 에 인구이동을 했을 시, True 값을 저장한다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">l</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="p">,</span> <span class="n">l</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">board</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">board</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tf</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">nx</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ny</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">l</span> <span class="o">&lt;=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">cost</span> <span class="o">-</span> <span class="n">board</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">r</span> <span class="ow">and</span> <span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">board</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">board</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">tf</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">tf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="n">res</span><span class="p">,</span> <span class="n">visited</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tf</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">temp</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">temp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">tf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">val</span><span class="p">,</span> <span class="n">visited</span> <span class="ow">in</span> <span class="n">tf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">board</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>국경선을 공유하는 두 국가의 인구 차이 조건을 넣는 것에서 한번 헤맸다.</li>
+<li>연합으로 구성된 국가들의 인구 평균 수를 구하는 방법에서 고민을 했었다.</li>
+<li>모든 연합을 따로 구해서 연합끼리의 평균 인구 수로 갱신하는 부분이 한번에 이루어져야 한다.</li>
+<li>하지만 (3)의 방식이 아닌 연합이 생길때마다 변경해주어 예제 결과도 다르게 나오는 대참사가 있었다.</li>
+<li>BFS 알고리즘 중에서도 조건이 꽤 있어서 구현이 조금 묻어나온 문제 같았고, 풀기 조금 힘이 들었다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/">구현</a></li>
+      <li><a href="https://jxun-h.github.io/tags/bfs/">BFS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 1292 쉽게 푸는 문제 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-14500-%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 14500 테트로미노 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
