@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1236 성 지키기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</link>
+      <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 1236 성 지키기 💡 조건 직사각형 모양의 성을 가지고 있다. 성의 1층은 몇 명의 경비원에 의해서 보호되고 있다.
+영식이는 모든 행과 모든 열에 한 명 이상의 경비원이 있으면 좋겠다고 생각했다. 성의 크기와 경비원이 어디있는지 주어졌을 때, 몇 명의 경비원을 최소로 추가해야 영식이를 만족시키는지 구하는 문제 0 &amp;lt;= N, M &amp;lt;= 50 성의 상태는 .은 빈칸, X는 경비원이 있는 칸이다. 구현, 시뮬레이션유형의 문제 🔖 예제 및 실행결과 예제 4 4 .</description>
+    </item>
     <item>
       <title>[BOJ] 11504 돌려 돌려 돌림판! with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</link>
