@@ -7,10 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>[BOJ] 20125 쿠키의 신체 측정 with Python | Jxun-h Dev Log</title>
 <meta name="keywords" content="자료구조, PS, 구현, 백준, BOJ">
-<meta name="description" content="📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.
-판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.
-쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.
-그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.">
+<meta name="description" content="📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.">
 <meta name="author" content="Jxun-h">
 <link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
@@ -58,25 +55,19 @@
 
     </style>
 </noscript><meta property="og:title" content="[BOJ] 20125 쿠키의 신체 측정 with Python" />
-<meta property="og:description" content="📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.
-판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.
-쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.
-그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다." />
+<meta property="og:description" content="📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-05-12T00:00:00+00:00" />
-<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14562-%ED%83%9C%EA%B6%8C%EC%99%95-with-python/" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-17204-%EC%A3%BD%EC%9D%8C%EC%9D%98-%EA%B2%8C%EC%9E%84-with-python/" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
 
 <meta name="twitter:title" content="[BOJ] 20125 쿠키의 신체 측정 with Python"/>
-<meta name="twitter:description" content="📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.
-판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.
-쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.
-그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다."/>
+<meta name="twitter:description" content="📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다."/>
 
 
 <script type="application/ld+json">
@@ -105,11 +96,11 @@
   "@type": "BlogPosting",
   "headline": "[BOJ] 20125 쿠키의 신체 측정 with Python",
   "name": "[BOJ] 20125 쿠키의 신체 측정 with Python",
-  "description": "📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.\n판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.\n쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.\n그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.",
+  "description": "📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.",
   "keywords": [
     "자료구조", "PS", "구현", "백준", "BOJ"
   ],
-  "articleBody": "\n📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.\n판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.\n쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.\n그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.\n왼쪽 팔은 심장 바로 왼쪽에 붙어있고 왼쪽으로 뻗어 있으며, 오른쪽 팔은 심장 바로 오른쪽에 붙어있고 오른쪽으로 뻗어있다.\n허리는 심장의 바로 아래 쪽에 붙어있고 아래 쪽으로 뻗어 있다.\n왼쪽 다리는 허리의 왼쪽 아래에, 오른쪽 다리는 허리의 오른쪽 아래에 바로 붙어있고, 각 다리들은 전부 아래쪽으로 뻗어 있다.\n각 신체 부위들은 절대로 끊겨있지 않으며 굽혀진 곳도 없다.\n또한, 허리, 팔, 다리의 길이는 1 이상이며, 너비는 무조건 1이다.\n쿠키의 신체가 주어졌을 때 심장의 위치와 팔, 다리, 허리의 길이를 구하는 문제\n5 ≤ N ≤ 1,000. N은 판의 한 변의 길이를 의미하는 양의 정수다.\nai,j는 * 또는 _이다. *는 쿠키의 신체 부분이고, _는 쿠키의 신체가 올라가 있지 않은 칸을 의미한다. (1 ≤ i, j ≤ N)\n쿠키의 신체 조건에 위배되는 입력은 주어지지 않는다.\n구현 유형의 문제\n🔖 예제 및 실행결과 예제 5 _____ __*__ _***_ __*__ _*_*_ 실행결과 3 3 1 1 1 1 1 🖥 소스 코드 from sys import stdin arr = [] n = int(stdin.readline()) for i in range(n): arr.append(list(stdin.readline().rstrip())) heo, l_leg, r_leg = 0, 0, 0 def find_heart(): for i in range(n): for j in range(n): if arr[i][j] == '*': return (i, j), (i + 1, j) head, heart = find_heart() l_arm = arr[heart[0]][:heart[1]].count('*') r_arm = arr[heart[0]][heart[1] + 1:].count('*') for i in range(heart[0] + 1, n): if arr[i][heart[1]] != '*': last_heo = (i, heart[1]) break else: heo += 1 for i in range(last_heo[0], n): if arr[i][heart[1] - 1] == '*': l_leg += 1 if arr[i][heart[1] + 1] == '*': r_leg += 1 print(heart[0] + 1, heart[1] + 1) print(l_arm, r_arm, heo, l_leg, r_leg) ",
+  "articleBody": "\n📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.\n왼쪽 팔은 심장 바로 왼쪽에 붙어있고 왼쪽으로 뻗어 있으며, 오른쪽 팔은 심장 바로 오른쪽에 붙어있고 오른쪽으로 뻗어있다.\n허리는 심장의 바로 아래 쪽에 붙어있고 아래 쪽으로 뻗어 있다.\n왼쪽 다리는 허리의 왼쪽 아래에, 오른쪽 다리는 허리의 오른쪽 아래에 바로 붙어있고, 각 다리들은 전부 아래쪽으로 뻗어 있다.\n각 신체 부위들은 절대로 끊겨있지 않으며 굽혀진 곳도 없다.\n또한, 허리, 팔, 다리의 길이는 1 이상이며, 너비는 무조건 1이다. 쿠키의 신체가 주어졌을 때 심장의 위치와 팔, 다리, 허리의 길이를 구하는 문제 5 ≤ N ≤ 1,000. N은 판의 한 변의 길이를 의미하는 양의 정수다. ai,j는 * 또는 _이다. *는 쿠키의 신체 부분이고, _는 쿠키의 신체가 올라가 있지 않은 칸을 의미한다. (1 ≤ i, j ≤ N) 쿠키의 신체 조건에 위배되는 입력은 주어지지 않는다. 구현 유형의 문제 🔖 예제 및 실행결과 예제 5 _____ __*__ _***_ __*__ _*_*_ 실행결과 3 3 1 1 1 1 1 🖥 소스 코드 from sys import stdin arr = [] n = int(stdin.readline()) for i in range(n): arr.append(list(stdin.readline().rstrip())) heo, l_leg, r_leg = 0, 0, 0 def find_heart(): for i in range(n): for j in range(n): if arr[i][j] == '*': return (i, j), (i + 1, j) head, heart = find_heart() l_arm = arr[heart[0]][:heart[1]].count('*') r_arm = arr[heart[0]][heart[1] + 1:].count('*') for i in range(heart[0] + 1, n): if arr[i][heart[1]] != '*': last_heo = (i, heart[1]) break else: heo += 1 for i in range(last_heo[0], n): if arr[i][heart[1] - 1] == '*': l_leg += 1 if arr[i][heart[1] + 1] == '*': r_leg += 1 print(heart[0] + 1, heart[1] + 1) print(l_arm, r_arm, heo, l_leg, r_leg) ",
   "wordCount" : "329",
   "inLanguage": "en",
   "datePublished": "2022-05-12T00:00:00Z",
@@ -214,39 +205,25 @@
 <br>
 <h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
 <ol>
-<li>
-<p>쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.</p>
-</li>
-<li>
-<p>판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.</p>
-</li>
-<li>
-<p>쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.</p>
-<center><img src='/20125.png' width="381" height="381"/></center>
-</li>
-<li>
-<p>그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.<br>
+<li>쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.</li>
+<li>판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.</li>
+<li>쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.</li>
+</ol>
+<br>
+    <center><img src='/20125.png' width="381" height="381"/></center>
+<br>
+<ol start="4">
+<li>그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.<br>
 왼쪽 팔은 심장 바로 왼쪽에 붙어있고 왼쪽으로 뻗어 있으며, 오른쪽 팔은 심장 바로 오른쪽에 붙어있고 오른쪽으로 뻗어있다.<br>
 허리는 심장의 바로 아래 쪽에 붙어있고 아래 쪽으로 뻗어 있다.<br>
 왼쪽 다리는 허리의 왼쪽 아래에, 오른쪽 다리는 허리의 오른쪽 아래에 바로 붙어있고, 각 다리들은 전부 아래쪽으로 뻗어 있다.<br>
 각 신체 부위들은 절대로 끊겨있지 않으며 굽혀진 곳도 없다.<br>
-또한, 허리, 팔, 다리의 길이는 1 이상이며, 너비는 무조건 1이다.</p>
-</li>
-<li>
-<p>쿠키의 신체가 주어졌을 때 심장의 위치와 팔, 다리, 허리의 길이를 구하는 문제</p>
-</li>
-<li>
-<p>5 ≤ N ≤ 1,000. N은 판의 한 변의 길이를 의미하는 양의 정수다.</p>
-</li>
-<li>
-<p>ai,j는 * 또는 _이다. *는 쿠키의 신체 부분이고, _는 쿠키의 신체가 올라가 있지 않은 칸을 의미한다. (1 ≤ i, j ≤ N)</p>
-</li>
-<li>
-<p>쿠키의 신체 조건에 위배되는 입력은 주어지지 않는다.</p>
-</li>
-<li>
-<p><strong>구현</strong> 유형의 문제</p>
-</li>
+또한, 허리, 팔, 다리의 길이는 1 이상이며, 너비는 무조건 1이다.</li>
+<li>쿠키의 신체가 주어졌을 때 심장의 위치와 팔, 다리, 허리의 길이를 구하는 문제</li>
+<li>5 ≤ N ≤ 1,000. N은 판의 한 변의 길이를 의미하는 양의 정수다.</li>
+<li>ai,j는 * 또는 _이다. *는 쿠키의 신체 부분이고, _는 쿠키의 신체가 올라가 있지 않은 칸을 의미한다. (1 ≤ i, j ≤ N)</li>
+<li>쿠키의 신체 조건에 위배되는 입력은 주어지지 않는다.</li>
+<li><strong>구현</strong> 유형의 문제</li>
 </ol>
 <br>
 <h2 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h2>

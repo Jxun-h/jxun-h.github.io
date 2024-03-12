@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>위상정렬 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC/</link>
+    <description>Recent content in 위상정렬 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2637 장난감 조립 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/</guid>
+      <description>📌 BOJ 2637 장난감 조립 💡 조건 우리는 어떤 장난감을 여러 가지 부품으로 조립하여 만들려고 한다.
+이 장난감을 만드는데는 기본 부품과 그 기본 부품으로 조립하여 만든 중간 부품이 사용된다.
+기본 부품은 다른 부품을 사용하여 조립될 수 없는 부품이다. 중간 부품은 또 다른 중간 부품이나 기본 부품을 이용하여 만들어지는 부품이다.
+어떤 장난감 완제품과 그에 필요한 부품들 사이의 관계가 주어져 있을 때 하나의 장난감 완제품을 조립하기 위해
+필요한 기본 부품의 종류별 개수를 계산하는 문제.</description>
+    </item>
+  </channel>
+</rss>

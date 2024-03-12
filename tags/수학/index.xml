@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 18291 비요뜨의 징검다리 건너기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 18291 비요뜨의 징검다리 건너기 💡 조건 징검다리는 비요뜨가 있는 방향에서부터 반대 방향까지 차례로 1번, 2번, &amp;hellip;, N번의 번호를 가지고 있다.
+비요뜨는 1번 징검다리 위에 올라갔다. 그리고 아래 두 가지 규칙을 지키며 징검다리를 건너려고 한다.
+1 ≤ X ≤ N 인 임의의 정수 X에 대해, 현재 있는 징검다리의 번호를 i번이라고 할 때 i+X번 징검다리로 뛸 수 있다. N번째 징검다리를 지나쳐선 안 되고, 정확히 도착해야 한다 첫 번째 줄에 테스트 케이스의 수 T가 주어진다.</description>
+    </item>
     <item>
       <title>[BOJ] 18004 From A to B with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</link>

@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 22252 정보 상인 호석 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-22252-%EC%A0%95%EB%B3%B4-%EC%83%81%EC%9D%B8-%ED%98%B8%EC%84%9D-with-python/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-22252-%EC%A0%95%EB%B3%B4-%EC%83%81%EC%9D%B8-%ED%98%B8%EC%84%9D-with-python/</guid>
+      <description>📌 BOJ 22252 정보 상인 호석 💡 조건 관찰하면서 얻은 정보는 총 $Q$ 개이다. 각 정보는 다음의 2가지 중 하나이다.
+1 Name k C_1, C_2, &amp;hellip;, C_k : 이름이 [Name]인 고릴라가 k 개의 정보를 얻었으며, 각 가치는 C_1 부터 C_k 이다. 2 Name b : 호석이가 이름이 [Name]인 고릴라에게 b 개의 정보를 구매한다.
+이때 고릴라가 가진 정보들 중 가장 비싼 b 개를 구매하며, 고릴라가 가진 정보가 b개 이하이면 가진 모든 정보를 구매한다.</description>
+    </item>
     <item>
       <title>[BOJ] 2075 N번째 큰 수 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-2075-n%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-with-python/</link>

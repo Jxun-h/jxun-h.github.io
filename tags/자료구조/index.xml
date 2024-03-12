@@ -11,8 +11,120 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 6010 Music Notes with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/</guid>
+      <description>📌 BOJ 6010 Music Notes 💡 조건 노래는 음표 N개로 구성되며, i 번째 음표는 B_i 비트동안 지속된다.
+N(1 &amp;lt;= N &amp;lt;= 50,000), B_i(1 &amp;lt;= B_i &amp;lt;= 10,000)
+어떤 노래도 5억 비트 보다 길지 않다.
+0에서 노래를 연주하기 시작하며, 0에서부터 B_1 전까지 음표 1개, 시간 B_1에서 B_1 + B_2 직전까지 음표 2개를 연주한다.
+T 시간부터 T+1 직전까지의 간격에서 어떤 음표를 연주해야하는지 구하는 문제.
+질문의 개수는 Q개가 있다.
+Q(1 &amp;lt;= Q &amp;lt;= 50,000)</description>
+    </item>
+    <item>
+      <title>[BOJ] 2637 장난감 조립 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/</guid>
+      <description>📌 BOJ 2637 장난감 조립 💡 조건 우리는 어떤 장난감을 여러 가지 부품으로 조립하여 만들려고 한다.
+이 장난감을 만드는데는 기본 부품과 그 기본 부품으로 조립하여 만든 중간 부품이 사용된다.
+기본 부품은 다른 부품을 사용하여 조립될 수 없는 부품이다. 중간 부품은 또 다른 중간 부품이나 기본 부품을 이용하여 만들어지는 부품이다.
+어떤 장난감 완제품과 그에 필요한 부품들 사이의 관계가 주어져 있을 때 하나의 장난감 완제품을 조립하기 위해
+필요한 기본 부품의 종류별 개수를 계산하는 문제.</description>
+    </item>
+    <item>
+      <title>[BOJ] 3151 합이 0 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</guid>
+      <description>📌 BOJ 3151 합이 0 💡 조건 1 ≤ N ≤ 10000
+-10000 ≤ Ai ≤ 10000
+대회는 정확히 3명으로 구성된 팀만 참가가 가능하다.
+코딩 실력이 좋으면 팀워크가 떨어지고, 팀워크가 좋을수록 코딩 실력이 떨어진다. 그리고 출전하고자 하는 대회는 코딩 실력과 팀워크 모두가 중요하다.
+세 팀원의 코딩 실력의 합이 0이 되는 팀을 만들고자 한다.
+대회에 출전할 수 있는 팀을 얼마나 많이 만들 수 있는지를 계산하여라.
+N명의 학생들의 코딩 실력 Ai가 -10000부터 10000사이의 정수로 주어질 때, 합이 0이 되는 3인조를 만들 수 있는 경우의 수를 구하는 문제.</description>
+    </item>
+    <item>
+      <title>[BOJ] 18291 비요뜨의 징검다리 건너기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 18291 비요뜨의 징검다리 건너기 💡 조건 징검다리는 비요뜨가 있는 방향에서부터 반대 방향까지 차례로 1번, 2번, &amp;hellip;, N번의 번호를 가지고 있다.
+비요뜨는 1번 징검다리 위에 올라갔다. 그리고 아래 두 가지 규칙을 지키며 징검다리를 건너려고 한다.
+1 ≤ X ≤ N 인 임의의 정수 X에 대해, 현재 있는 징검다리의 번호를 i번이라고 할 때 i+X번 징검다리로 뛸 수 있다. N번째 징검다리를 지나쳐선 안 되고, 정확히 도착해야 한다 첫 번째 줄에 테스트 케이스의 수 T가 주어진다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2342 Dance Dance Revolution with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/</guid>
+      <description>📌 BOJ 2342 Dance Dance Revolution 💡 조건 편의상 중점을 0, 위를 1, 왼쪽을 2, 아래를 3, 오른쪽을 4라고 정하자. 처음에 게이머는 두 발을 중앙에 모으고 있다.(그림에서 0의 위치)
+그리고 게임이 시작하면, 지시에 따라 왼쪽 또는 오른쪽 발을 움직인다. 하지만 그의 두 발이 동시에 움직이지는 않는다.
+두 발이 같은 지점에 있는 것이 허락되지 않는다.
+한 발이 1의 위치에 있고, 다른 한 발이 3의 위치에 있을 때, 3을 연속으로 눌러야 한다면, 3의 위치에 있는 발로 반복해야 눌러야 한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 17204 죽음의 게임 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-17204-%EC%A3%BD%EC%9D%8C%EC%9D%98-%EA%B2%8C%EC%9E%84-with-python/</link>
+      <pubDate>Thu, 19 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-17204-%EC%A3%BD%EC%9D%8C%EC%9D%98-%EA%B2%8C%EC%9E%84-with-python/</guid>
+      <description>📌 BOJ 17204 죽음의 게임 💡 조건 게임에 참여하는 N명의 사람들은 원탁에 둘러앉게 된다.
+N(3 ≤ N ≤ 150)
+게임을 시작하는 사람은 0번, 그 오른쪽 사람은 1번, 그 오른쪽은 2번, N-1번의 오른쪽 사람은 다시 0번이 된다.
+게임 참여자들간에 지목을 완료한 상태가 주어질때, 보성이가 벌주를 마시기 위해 록 하자.
+영기가 불러야 하는 가장 작은 양의 정수 M을 보성이 몰래 귀띔해 주도록 하자.
+보성이의 번호 K(1 ≤ K ≤ N - 1)</description>
+    </item>
+    <item>
+      <title>[BOJ] 12760 최 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/temp/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
+      <description>
+📌 BOJ 12760 최 </description>
+    </item>
+    <item>
+      <title>[BOJ] 20444 색종이와 가위 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</guid>
+      <description>📌 BOJ 20444 색종이와 가위 💡 조건 색종이를 자를 때는 다음과 같은 규칙을 따른다.
+색종이는 직사각형이며, 색종이를 자를 때는 한 변에 평행하게 자른다. 자르기 시작했으면, 경로 상의 모든 색종이를 자를 때까지 멈추지 않는다. 이미 자른 곳을 또 자를 수 없다. 하나의 색종이를 정확히 n번의 가위질로 k개의 색종이 조각으로 만들 수 있는지 궁금해졌다.
+정수 n, k가 주어진다. (1 ≤ n ≤ 231-1, 1 ≤ k ≤ 263-1)
+n번의 가위질로 k개의 색종이 조각을 만들 수 있다면 YES, 아니라면 NO를 출력한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 22252 정보 상인 호석 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-22252-%EC%A0%95%EB%B3%B4-%EC%83%81%EC%9D%B8-%ED%98%B8%EC%84%9D-with-python/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-22252-%EC%A0%95%EB%B3%B4-%EC%83%81%EC%9D%B8-%ED%98%B8%EC%84%9D-with-python/</guid>
+      <description>📌 BOJ 22252 정보 상인 호석 💡 조건 관찰하면서 얻은 정보는 총 $Q$ 개이다. 각 정보는 다음의 2가지 중 하나이다.
+1 Name k C_1, C_2, &amp;hellip;, C_k : 이름이 [Name]인 고릴라가 k 개의 정보를 얻었으며, 각 가치는 C_1 부터 C_k 이다. 2 Name b : 호석이가 이름이 [Name]인 고릴라에게 b 개의 정보를 구매한다.
+이때 고릴라가 가진 정보들 중 가장 비싼 b 개를 구매하며, 고릴라가 가진 정보가 b개 이하이면 가진 모든 정보를 구매한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20436 ZOAC 3 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20436-zoac-3-with-python/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20436-zoac-3-with-python/</guid>
+      <description>📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.
+성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,
+a에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|+|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</guid>
+      <description>📌 BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1 💡 조건 어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다. 방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000) N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE &amp;lt; TX ≤ 2,100,000,000)
+모기는 [TE, Tx)동안 존재한다. 첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다.</description>
+    </item>
     <item>
       <title>[BOJ] 18004 From A to B with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</link>
@@ -61,10 +173,7 @@ B는 1점을 얻는 연속 발차기이다. 태균이의 점수 S와 상대의 �
       <link>https://jxun-h.github.io/posts/ps/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/ps/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</guid>
-      <description>📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.
-판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.
-쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.
-그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.</description>
+      <description>📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.</description>
     </item>
     <item>
       <title>[BOJ] 14696 딱지놀이 with Python</title>
@@ -1001,14 +1110,6 @@ permutations라는 순열 함수를 사용했다.
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/</guid>
       <description>📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 +, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = &amp;#34;100-200*300-500+20&amp;#34; expression = &amp;#34;50*6-3*2&amp;#34; 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다.</description>
-    </item>
-    <item>
-      <title>[BOJ] 12760 최 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/temp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
-      <description>
-📌 BOJ 12760 최 </description>
     </item>
   </channel>
 </rss>

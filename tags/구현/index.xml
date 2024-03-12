@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 20436 ZOAC 3 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20436-zoac-3-with-python/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20436-zoac-3-with-python/</guid>
+      <description>📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.
+성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,
+a에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|+|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다.</description>
+    </item>
     <item>
       <title>[BOJ] 20114 미아 노트 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</link>
@@ -27,10 +36,7 @@
       <link>https://jxun-h.github.io/posts/ps/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/ps/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</guid>
-      <description>📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다.
-판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다.
-쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다.
-그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.</description>
+      <description>📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.</description>
     </item>
     <item>
       <title>[BOJ] 14696 딱지놀이 with Python</title>

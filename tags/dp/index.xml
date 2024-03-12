@@ -11,8 +11,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2342 Dance Dance Revolution with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/</link>
+      <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/</guid>
+      <description>📌 BOJ 2342 Dance Dance Revolution 💡 조건 편의상 중점을 0, 위를 1, 왼쪽을 2, 아래를 3, 오른쪽을 4라고 정하자. 처음에 게이머는 두 발을 중앙에 모으고 있다.(그림에서 0의 위치)
+그리고 게임이 시작하면, 지시에 따라 왼쪽 또는 오른쪽 발을 움직인다. 하지만 그의 두 발이 동시에 움직이지는 않는다.
+두 발이 같은 지점에 있는 것이 허락되지 않는다.
+한 발이 1의 위치에 있고, 다른 한 발이 3의 위치에 있을 때, 3을 연속으로 눌러야 한다면, 3의 위치에 있는 발로 반복해야 눌러야 한다.</description>
+    </item>
     <item>
       <title>[BOJ] 2302 극장 좌석 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-2302-%EA%B7%B9%EC%9E%A5-%EC%A2%8C%EC%84%9D-with-python/</link>
