@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 5698 Tautogram with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-5698-tautogram-with-python/</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-5698-tautogram-with-python/</guid>
+      <description>📌 BOJ 5698 Tautogram 💡 조건 Tautogram은 매우 특별한 형태의 두운법으로, 인접한 단어가 같은 글자로 시작하는 것을 말한다. 문장이 Tautogram이 되려면, 모든 단어가 같은 글자로 시작해야 한다. 선영이의 편지에 있는 문장이 주어졌을 때, Tautogram인지 아닌지 알아내는 프로그램을 작성하시오. 문장은 최대 50개의 단어로 이루어져 있으며, 공백으로 구분되어져 있다. 단어는 알파벳 대문자와 소문자로 이루어져 있고, 길이는 최대 20이다. 마지막 테스트 케이스의 다음 줄에는 &amp;lsquo;*&amp;lsquo;이 하나 주어진다.
+입력으로 주어진 문장이 Tautogram이라면 &amp;lsquo;Y&amp;rsquo;를, 아니라면 &amp;lsquo;N&amp;rsquo;을 출력한다.</description>
+    </item>
     <item>
       <title>[BOJ] 1855 암호 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1855-%EC%95%94%ED%98%B8-with-python/</link>

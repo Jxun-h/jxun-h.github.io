@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2493 탑 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-2493-%ED%83%91-with-python/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-2493-%ED%83%91-with-python/</guid>
+      <description>📌 BOJ 2493 탑 💡 조건 일직선 위에 N개의 높이가 서로 다른 탑을 수평 직선의 왼쪽부터 오른쪽 방향으로 차례로 세우고, 각 탑의 꼭대기에 레이저 송신기를 설치하였다. 모든 탑의 레이저 송신기는 레이저 신호를 지표면과 평행하게 수평 직선의 왼쪽 방향으로 발사하고,
+탑의 기둥 모두에는 레이저 신호를 수신하는 장치가 설치되어 있다.
+하나의 탑에서 발사된 레이저 신호는 가장 먼저 만나는 단 하나의 탑에서만 수신이 가능하다. N과 탑들의 높이가 주어질 때, 각각의 탑에서 발사한 레이저 신호를 어느 탑에서 수신하는지를 알아내는 문제.</description>
+    </item>
     <item>
       <title>[BOJ] 2096 내려가기 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-2096-%EB%82%B4%EB%A0%A4%EA%B0%80%EA%B8%B0-with-python/</link>
