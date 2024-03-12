@@ -11,8 +11,24 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 18004 From A to B with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</link>
+      <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</guid>
+      <description>📌 BOJ 18004 From A to B 💡 조건 두 개의 정수인 a와 b가 입력된다. 일련의 작업을 수행하여 a를 b로 만들려고 한다. 다음의 두가지 작업만 할 수 있다. 짝수인 경우에만 2로 나누기. 1 더하기 (1 ≤ a , b ≤ 10 9 ) a 를 b 로 변환하는 데 필요한 주어진 연산의 최소 횟수를 출력하는 문제 수학, 그리디 알고리즘, BFS 유형의 문제 🔖 예제 및 실행결과 예제 103 27 실행결과 4 ⌨️ 문제 풀이 a 와 b 정수를 입력받고, a 를 b로 만드는 문제이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 17839 Baba is Rabbit with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/</guid>
+      <description>📌 BOJ 17839 Baba is Rabbit 💡 조건 N(1 ≤ N ≤ 100,000) N개의 줄에 걸쳐 명령이 주어진다.
+각 명령은 p is q의 형태로 주어지며, p와 q는 첫 글자가 영문 대문자이고, 나머지 글자는 영문 소문자인 길이 10 이내의 문자열이다. Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 사물을 사전순으로 출력한다.
+단, 적용할 수 있는 명령이 없다면, 아무것도 출력하지 않는다. 그래프 탐색, BFS 유형의 문제 🔖 예제 및 실행결과 예제 1 1 Rabbit is Carrot 실행결과 1 예제 2 3 Rabbit is Carrot Baba is Cat Cat is Rabbit 실행결과 2 Carrot Cat Rabbit ⌨️ 문제 풀이 Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 결과를 뽑아야하는 문제이다.</description>
+    </item>
     <item>
       <title>[BOJ] 2636 치즈 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-2636-%EC%B9%98%EC%A6%88-with-python/</link>

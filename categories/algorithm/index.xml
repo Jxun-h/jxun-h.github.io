@@ -11,15 +11,90 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[BOJ] 12760 최 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/temp/</link>
+      <title>[BOJ] 18004 From A to B with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</link>
+      <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</guid>
+      <description>📌 BOJ 18004 From A to B 💡 조건 두 개의 정수인 a와 b가 입력된다. 일련의 작업을 수행하여 a를 b로 만들려고 한다. 다음의 두가지 작업만 할 수 있다. 짝수인 경우에만 2로 나누기. 1 더하기 (1 ≤ a , b ≤ 10 9 ) a 를 b 로 변환하는 데 필요한 주어진 연산의 최소 횟수를 출력하는 문제 수학, 그리디 알고리즘, BFS 유형의 문제 🔖 예제 및 실행결과 예제 103 27 실행결과 4 ⌨️ 문제 풀이 a 와 b 정수를 입력받고, a 를 b로 만드는 문제이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20114 미아 노트 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</link>
+      <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</guid>
+      <description>📌 BOJ 20114 미아 노트 💡 조건 노트에 적힌 문자열이 번진 패턴은 일정했는데, 가령 &amp;ldquo;abc&amp;rdquo; 문자가 세로로 3글자씩, 가로로 2글자씩 번진 경우는 다음과 같았다. 아쉽게도 번진 문자열의 일부는 지워진 상태였다.
+너무 많이 지워져버려서 해당 자리의 문자를 유추할 수 없는 경우, 완전히 문자열을 복원하지 못할 수도 있다. 첫째 줄에 원래 문자열의 길이 N, 세로로 번진 글자의 개수 H, 가로로 번진 글자의 개수 W가 주어진다.
+(1 ≤ N ≤ 100, 1 ≤ H ≤ 10, 1 ≤ W ≤ 10) H개의 줄에 걸쳐 N × W 길이의 문자열이 주어진다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 17839 Baba is Rabbit with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/</guid>
+      <description>📌 BOJ 17839 Baba is Rabbit 💡 조건 N(1 ≤ N ≤ 100,000) N개의 줄에 걸쳐 명령이 주어진다.
+각 명령은 p is q의 형태로 주어지며, p와 q는 첫 글자가 영문 대문자이고, 나머지 글자는 영문 소문자인 길이 10 이내의 문자열이다. Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 사물을 사전순으로 출력한다.
+단, 적용할 수 있는 명령이 없다면, 아무것도 출력하지 않는다. 그래프 탐색, BFS 유형의 문제 🔖 예제 및 실행결과 예제 1 1 Rabbit is Carrot 실행결과 1 예제 2 3 Rabbit is Carrot Baba is Cat Cat is Rabbit 실행결과 2 Carrot Cat Rabbit ⌨️ 문제 풀이 Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 결과를 뽑아야하는 문제이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1951 활자 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/</guid>
+      <description>📌 BOJ 1951 활자 💡 조건 N(1 ≤ N ≤ 2,000,000,000) 가나다라는 글씨를 쓰기 위해서는 3개의 활자가 필요하다.
+N이하의 자연수를 활자로 표현하기 위해서는 몇 개의 활자가 필요한지 구하는 문제 10이하의 자연수를 활자로 표현하려면 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0 이렇게 11개의 활자가 필요하다. 첫째 줄에 필요한 활자의 수를 1234567로 나눈 나머지를 출력. 수학 유형의 문제 🔖 예제 및 실행결과 예제 10 실행결과 11 ⌨️ 문제 풀이 일단 먼저, N의 크기를 확인해보자.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14562 태권왕 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14562-%ED%83%9C%EA%B6%8C%EC%99%95-with-python/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14562-%ED%83%9C%EA%B6%8C%EC%99%95-with-python/</guid>
+      <description>📌 BOJ 14562 태권왕 💡 조건 테스트 케이스의 수 C(1 ≤ C ≤ 100)
+현재 점수 S와 T가 공백을 사이에 두고 주어진다. (1 ≤ S &amp;lt; T ≤ 100) 태균이가 현재 할 수 있는 연속 발차기는 두가지가 있다.
+A는 현재 점수만큼 점수를 얻을 수 있는 엄청난 연속 발차기이다. 하지만 상대 역시 3점을 득점하는 위험이 있다.
+B는 1점을 얻는 연속 발차기이다. 태균이의 점수 S와 상대의 점수 T가 주어질 때, S와 T가 같아지는 최소 연속 발차기 횟수를 구하는 문제 BFS(너비우선탐색) 유형의 문제 🔖 예제 및 실행결과 예제 6 10 20 2 7 15 62 10 37 11 50 34 59 실행결과 3 3 4 4 5 25 ⌨️ 문제 풀이 BFS로 점수를 얻을 수 있는 점수를 큐에 추가한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20125 쿠키의 신체 측정 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</guid>
+      <description>📌 BOJ 20125 쿠키의 신체 측정 💡 조건 쿠키들은 신체를 측정하기 위해서 한 변의 길이가 N인 정사각형 판 위에 누워있으며, 어느 신체 부위도 판 밖으로 벗어나지 않는다. 판의 x번째 행, y번째 열에 위치한 곳을 (x, y)로 지칭한다. 판의 맨 왼쪽 위 칸을 (1, 1), 오른쪽 아래 칸을 (N, N)으로 나타낼 수 있다. 쿠키의 신체는 머리, 심장, 허리, 그리고 좌우 팔, 다리로 구성되어 있다. 그림에서 빨간 곳으로 칠해진 부분이 심장이다. 머리는 심장 바로 윗 칸에 1칸 크기로 있다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14696 딱지놀이 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14696-%EB%94%B1%EC%A7%80%EB%86%80%EC%9D%B4-with-python/</link>
+      <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14696-%EB%94%B1%EC%A7%80%EB%86%80%EC%9D%B4-with-python/</guid>
+      <description>📌 BOJ 14696 딱지놀이 💡 조건 4, 3, 2, 1 에 해당하는 숫자가 각 몇 개인지 파악하여 승자가 누구인지 출력하는 문제 서브태크스가 존재한다. 출력의 i번째 (1 ≤ i ≤ N) 줄에 정확히 한 글자를 출력하는데, 출력하는 글자는 A, B, D 중 하나로 라운드 i의 결과를 나타낸다. 각 라운드의 결과는 A가 승자라면 A, B가 승자라면 B, 무승부라면 D이다. 구현 유형의 문제 🔖 예제 및 실행결과 예제 5 1 4 4 3 3 2 1 5 2 4 3 2 1 4 4 3 3 1 4 3 2 1 1 4 2 3 2 1 4 4 3 2 1 3 4 3 2 5 4 4 2 3 1 5 4 2 4 1 3 실행결과 A B B A D 🖥 소스 코드 from sys import stdin for _ in range(int(stdin.</description>
+    </item>
+    <item>
+      <title>[BOJ] 16926 배열 돌리기 1 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-16926-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-1-with-python/</link>
+      <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-16926-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-1-with-python/</guid>
+      <description>📌 BOJ 16926 배열 돌리기 1 💡 조건 크기가 N×M인 배열이 있을 때, 배열을 반시계 방향으로 돌린다. 첫째 줄에 배열의 크기 N, M과 수행해야 하는 회전의 수 R이 주어진다.
+둘째 줄부터 N개의 줄에 배열 A의 원소 Aij가 주어진다. 2 ≤ N, M ≤ 300
+1 ≤ R ≤ 1,000
+min(N, M) mod 2 = 0
+1 ≤ Aij ≤ 108 배열을 R번 회전시킨 결과를 출력하는 문제 구현 유형의 문제 🔖 예제 및 실행결과 예제 5 4 7 1 2 3 4 7 8 9 10 13 14 15 16 19 20 21 22 25 26 27 28 실행결과 28 27 26 25 22 9 15 19 16 8 21 13 10 14 20 7 4 3 2 1 🖥 소스 코드 from sys import stdin n, m, r = map(int, stdin.</description>
+    </item>
+    <item>
+      <title>[BOJ] 11508 2&#43;1 세일 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/</link>
       <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
-      <description>
-📌 BOJ 12760 최 </description>
+      <guid>https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/</guid>
+      <description>📌 BOJ 11508 2+1 세일 💡 조건 유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다. 한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다. 유제품의 수 N (1 ≤ N ≤ 100,000) N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)
+정답은 231-1보다 작거나 같다. 최소비용으로 유제품을 구입할 수 있도록 도와주는 문제. 그리디, 정렬 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 4 3 2 3 2 실행결과 8 ⌨️ 문제 풀이 유제품의 가격을 arr 배열에 입력 받는다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 12970 AB with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/</guid>
+      <description>📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i &amp;lt; j &amp;lt; N 이면서 s[i] == &amp;lsquo;A&amp;rsquo; &amp;amp;&amp;amp; s[j] == &amp;lsquo;B&amp;rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다.</description>
     </item>
     <item>
       <title>[BOJ] 2012 등수 매기기 with Python</title>
@@ -1161,6 +1236,14 @@ B의 도착지점 b, 노드 간 이동하는데 드는 비용 fares A와 B가 �
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</guid>
       <description>📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 12760 최 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/temp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
+      <description>
+📌 BOJ 12760 최 </description>
     </item>
   </channel>
 </rss>

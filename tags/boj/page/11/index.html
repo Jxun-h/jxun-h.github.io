@@ -149,6 +149,141 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 블록 이동하기 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.
+board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x &#43; dx[i], pos1_y &#43; dy[i], pos2_x &#43; dx[i], pos2_y &#43; dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-12-12 00:00:00 +0000 UTC'>December 12, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 블록 이동하기 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 11497 통나무 건너뛰기 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 11497 통나무 건너뛰기 💡 조건 첫 줄에 통나무의 개수를 나타내는 정수 (5 ≤ N ≤ 10,000)
+둘째 줄에 각 통나무의 높이를 나타내는 정수 (1 ≤ Li ≤ 100,000) 통나무 건너뛰기의 난이도는 인접한 두 통나무 간의 높이의 차의 최댓값으로 결정된다.
+가장 첫 통나무와 가장 마지막 통나무 역시 인접해 있다. 그리디 알고리즘유형의 문제 🔖 예제 및 실행결과 예제 3 7 13 10 12 11 10 11 12 5 2 4 5 7 9 8 6 6 6 6 6 6 6 6 실행결과 1 4 0 ⌨️ 문제 풀이 단순히 정렬을 해도 되지만, 첫 통나무와 마지막 통나무가 인접해있다는 조건이 있다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-12-06 00:00:00 +0000 UTC'>December 6, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 11497 통나무 건너뛰기 with Python" href="https://jxun-h.github.io/posts/ps/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 외벽 점검 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers 외벽 점검 with Python 💡 조건 외벽의 총 둘레길이 (1 &lt;= n &lt;= 200)
+취약 지점의 위치가 담긴 배열 (1&lt; = weak &lt;= 15) 서로 다른 두 취약점의 위치가 같을 경우는 없다. 취약지점의 위치는 오름차순이다. (0 &lt;= weak의 원소 &lt;= n-1) 친구가 1시간 동안 이동할 수 있는 거리 (1&lt;= dist &lt;= 8) 친구들을 최소한으로 투입시켜서 외벽 점검을 해야한다.
+만약 친구들이 모두 투입되어도 외벽을 모두 점검할 수 없다면, -1을 출력....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-12-06 00:00:00 +0000 UTC'>December 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 외벽 점검 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 2841 외계인의 기타 연주 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 2841 외계인의 기타 연주 💡 조건 멜로디는 음의 연속이고, 각 음은 줄에서 해당하는 프렛을 누르고 줄을 튕기면 연주할 수 있다. 어떤 줄의 프렛을 여러 개 누르고 있다면, 가장 높은 프렛의 음이 발생. 멜로디에 포함되어 있는 음의 수 N과 한 줄에 있는 프렛의 수 P가 주어진다. (N ≤ 500,000, 2 ≤ P ≤ 300,000) 2번 프렛의 음을 연주하려고 한다면, 5번과 7번을 누르던 손가락을 뗀 다음에 2번 프렛을 누르고 연주해야 한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-12-01 00:00:00 +0000 UTC'>December 1, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 2841 외계인의 기타 연주 with Python" href="https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 6118 숨바꼭질 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 &lt;= N &lt;= 20,000), 1부터 세아린다. 모든 헛간은 (1&lt;= M &lt;= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.
+거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수
+를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-12-01 00:00:00 +0000 UTC'>December 1, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 6118 숨바꼭질 with Python" href="https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 2304 창고 다각형 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 2304 창고 다각형 💡 조건 기둥의 개수를 나타내는 정수 (1 &lt;= N &lt;= 1000)
+각 기둥의 왼쪽 면의 위치를 나타내는 정수 (1 &lt;= L &lt;= 1000)
+각 기둥의 높이를 나타내는 정수 (1 &lt;= H &lt;= 1000)
+창고 다각형의 면적을 구하는 문제
+모든 기둥이 들어가는 창고를 지으려고 할 때, 지붕이 될 수 있는 조건은 아래와 같다.
+지붕은 수평 부분과 수직 부분으로 구성되며, 모두 연결되어야 한다. 지붕의 수평 부분은 반드시 어떤 기둥의 윗면과 닿아야 한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-11-29 00:00:00 +0000 UTC'>November 29, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 2304 창고 다각형 with Python" href="https://jxun-h.github.io/posts/ps/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 자물쇠와 열쇠 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers 자물쇠와 열쇠 with Python 💡 조건 key는 M x M(3 ≤ M ≤ 20, M은 자연수) 크기 2차원 배열
+lock은 N x N(3 ≤ N ≤ 20, N은 자연수) 크기 2차원 배열
+M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 있으며, 열쇠도 돌기가 있다. 열쇠는 회전이 가능하다. 자물쇠 부분이 회전할 수 있는 열쇠와 겹쳐져서 모두 1이 된다면 열 수 있으니 True, 열 수 없다면 False를 반환 구현 &amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[0, 0, 0, 0], [1, 1, 1, 0], [0, 0, 0, 0], [1, 0, 1, 0]])) 실행결과 true ⌨️ 문제 풀이 N과 M의 최대 크기가 20이니, 열쇠의 최소크기인 3만큼 자물쇠의 길이에 곱해서 맵을 뻥튀기 시킨다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-11-29 00:00:00 +0000 UTC'>November 29, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 자물쇠와 열쇠 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 기둥과 보 설치 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers 기둥과 보 설치 with Python 💡 조건 5 &lt;= n &lt;= 100
+1 &lt;= 입력받을 기둥과 보의 개수 &lt;= 1000
+`입력받을 기둥 혹은 보의 정보의 데이터 개수 == 4&#39;
+바닥에 보를 설치하는 경우는 없다.
+벽면을 벗어나게 설치하는 경우는 없다.
+구조물은 교차점 좌표를 기준으로 보는 오른쪽, 기둥은 위쪽 방향으로 설치 또는 삭제한다.
+구조물이 겹치거나, 없는 것을 삭제하는 경우는 없습니다.
+구현&amp;시뮬레이션 문제
+반환하는 데이터는 x, y, 기둥 순으로 정렬하여 반환한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-11-28 00:00:00 +0000 UTC'>November 28, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 기둥과 보 설치 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 후보키 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.
+1 &lt;= relation 의 컬럼의 길이 &lt;= 8
+1 &lt;= relation 의 로우의 길이 &lt;= 20
+1 &lt;= relation 의 모든 문자열의 길이 &lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.
+중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.
+즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[&#34;100&#34;,&#34;ryan&#34;,&#34;music&#34;,&#34;2&#34;],[&#34;200&#34;,&#34;apeach&#34;,&#34;math&#34;,&#34;2&#34;],[&#34;300&#34;,&#34;tube&#34;,&#34;computer&#34;,&#34;3&#34;],[&#34;400&#34;,&#34;con&#34;,&#34;computer&#34;,&#34;4&#34;],[&#34;500&#34;,&#34;muzi&#34;,&#34;music&#34;,&#34;3&#34;],[&#34;600&#34;,&#34;apeach&#34;,&#34;music&#34;,&#34;2&#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-11-27 00:00:00 +0000 UTC'>November 27, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 후보키 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">[BOJ] 14725 개미굴 with Python
     </h2>
   </header>
@@ -160,144 +295,12 @@
   <footer class="entry-footer"><span title='2021-11-21 00:00:00 +0000 UTC'>November 21, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
   <a class="entry-link" aria-label="post link to [BOJ] 14725 개미굴 with Python" href="https://jxun-h.github.io/posts/ps/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[Programmers] 오픈채팅방 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 Programmers 오픈채팅방 with Python 💡 조건 채팅방에 들어오고 나가거나, 닉네임을 변경한 기록이 담긴 문자열 배열 record
-모든 기록이 처리된 후, 최종적으로 방을 개설한 사람이 보게 되는 메시지를 문자열 배열 형태로 return record는 다음과 같은 문자열이 담긴 배열이며, 길이는 1 이상 100,000 이하 모든 유저는 유저 아이디로 구분한다.
-유저 아이디 사용자가 닉네임으로 채팅방에 입장 - &#34;Enter 유저 아이디 닉네임&#34; (ex. &#34;Enter uid1234 Muzi&#34;) 구현 유형의 문제 🔖 예제 및 실행결과 예제 record = [&#34;Enter uid1234 Muzi&#34;, &#34;Enter uid4567 Prodo&#34;,&#34;Leave uid1234&#34;,&#34;Enter uid1234 Prodo&#34;,&#34;Change uid4567 Ryan&#34;] 실행결과 [&#34;Prodo님이 들어왔습니다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-11-21 00:00:00 +0000 UTC'>November 21, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 오픈채팅방 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 12100 2048(easy) with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 12100 2048(easy) 💡 조건 보드의 크기는 N * N (1 ≤ N ≤ 20)
-0 은 빈칸, 이외의 값은 블록의 값들을 나타낸다.
-블록에 쓰여 있는 수는 2보다 크거나 같고, 1024보다 작거나 같은 2의 제곱꼴이다.
-블록은 적어도 하나 주어진다. 같은 값을 갖는 두 블록이 충돌하면 두 블록은 하나로 합쳐지게 된다. 한 번의 이동에서 이미 합쳐진 블록은 또 다른 블록과 다시 합쳐질 수 없다. 최대 다섯번 이동 시켜서 얻을 수 있는 가장 큰 블록의 값을 출력....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-25 00:00:00 +0000 UTC'>October 25, 2021</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 12100 2048(easy) with Python" href="https://jxun-h.github.io/posts/ps/boj-12100-2048easy-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 13334 철로 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 13334 철로 💡 조건 사람 수를 나타내는 양의 정수 n (1 ≤ n ≤ 100,000)
-n개의 각 줄에 정수 쌍 (hi, oi)가 주어진다.
-−100,000,000 ≤ hi ≤ 100,000,000
-−100,000,000 ≤ oi ≤ 100,000,000
-oi != hi
-철로의 길이를 나타내는 정수 d (1 ≤ d ≤ 200,000,000) 집과 사무실 모두가 철로 길이 안에 들어갈 수 있는 최대의 개수를 구하는 문제. 우선순위 큐, 즉 자료구조를 활용하는 문제. 🔖 예제 및 실행결과 예제 8 5 40 35 25 10 20 10 25 30 50 50 60 30 25 80 100 30 실행결과 4 ⌨️ 문제 풀이 가장 먼저 집과 사무실의 위치를 입력받는데, 그 위치가 정렬이 된 데이터가 아니기에 계산을 용이하도록 하기 위해...</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-25 00:00:00 +0000 UTC'>October 25, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 13334 철로 with Python" href="https://jxun-h.github.io/posts/ps/boj-13334-%EC%B2%A0%EB%A1%9C-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 1043 거짓말 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
-진실을 아는 사람의 수는 0 이상 50 이하의 정수
-각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.
-지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.
-이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-20 00:00:00 +0000 UTC'>October 20, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 1043 거짓말 with Python" href="https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 2343 기타 레슨 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 2343 기타 레슨 💡 조건 강의의 수 N (1 ≤ N ≤ 100,000)
-블루레이의 수 M (1 ≤ M ≤ N) 블루레이를 녹화할 때, 강의의 순서가 바뀌면 안 된다. 각 강의의 길이가 분 단위(자연수)로 주어진다. 가능한 블루레이의 크기 중 최소를 구하는 문제. 이분탐색 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 9 3 1 2 3 4 5 6 7 8 9 실행결과 17 ⌨️ 문제 풀이 이분탐색을 위해 left, right, mid 변수를 초기화 해줍니다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-19 00:00:00 +0000 UTC'>October 19, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 2343 기타 레슨 with Python" href="https://jxun-h.github.io/posts/ps/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 3184 양 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 3184 양 💡 조건 R과 C가 주어지며(3 ≤ R, C ≤ 250), 각 수는 마당의 행과 열의 수를 의미한다.
-R개의 줄은 C개의 글자를 가진다. 이들은 마당의 구조(울타리, 양, 늑대의 위치)를 의미한다. 글자 &#39;.&#39; (점)은 빈 필드를 의미하며, 글자 &#39;#&#39;는 울타리를, &#39;o&#39;는 양, &#39;v&#39;는 늑대를 의미한다. 한 칸에서 수평, 수직만으로 이동할수 있다.
-영역 안의 양의 수가 늑대의 수보다 많다면 이기고, 늑대가 많으면 양은 사라진다. 넓이 우선 탐색(BFS) 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 6 6 ....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-19 00:00:00 +0000 UTC'>October 19, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 3184 양 with Python" href="https://jxun-h.github.io/posts/ps/boj-3184-%EC%96%91-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 1713 후보 추천하기 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 1713 후보 추천하기 💡 조건 사진틀의 개수 N이 주어진다. (1 ≤ N ≤ 20)
-총 추천 횟수는 1,000번 이하이며 학생을 나타내는 번호는 1부터 100까지의 자연수 사진틀의 개수와 전체 학생의 추천 결과가 추천받은 순서대로 주어졌을 때, 최종 후보가 누구인지 결정 구현 &amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 3 9 2 1 4 3 5 6 2 7 2 실행결과 2 6 7 ⌨️ 문제 풀이 추천받은 순서대로 주어진 리스트를 순회하며 student (dict) 에 없으면 새로 추가하고,...</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-18 00:00:00 +0000 UTC'>October 18, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 1713 후보 추천하기 with Python" href="https://jxun-h.github.io/posts/ps/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 1743 음식물 피하기 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 1743 음식물 피하기 💡 조건 통로의 세로 길이 N(1 ≤ N ≤ 100)
-통로의 가로 길이 M(1 ≤ M ≤ 100)
-음식물 쓰레기의 개수 K(1 ≤ K ≤ N×M)
-K개의 줄에 음식물이 떨어진 좌표 (r, c) DFS 유형의 문제(깊이우선탐색) 🔖 예제 및 실행결과 예제 3 4 5 3 2 2 2 3 1 2 3 1 1 실행결과 4 ⌨️ 문제 풀이 m * n 크기의 맵을 만들어 0으로 도배를 한 후, 쓰레기가 있는 곳의 좌표를 받아 1이라고 표시했다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-18 00:00:00 +0000 UTC'>October 18, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 1743 음식물 피하기 with Python" href="https://jxun-h.github.io/posts/ps/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 1244 스위치 켜고 끄기 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 1244 스위치 켜고 끄기 💡 조건 및 풀이 첫째 줄은 스위치 개수. 스위치 개수는 100 이하인 양의 정수.
-둘째 줄은 각 스위치의 상태. 켜져 있으면 1, 꺼져있으면 0이라고 표시
-셋째 줄에는 학생 수. 학생수는 100 이하인 양의 정수
-넷째 줄부터 마지막 줄까지 한 줄에 한 학생의 성별, 학생이 받은 수. 남학생은 스위치 번호가 자기가 받은 수의 배수이면, 그 스위치의 상태를 바꾼다. 즉, 스위치가 켜져 있으면 끄고, 꺼져 있으면 켠다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-10-17 00:00:00 +0000 UTC'>October 17, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 1244 스위치 켜고 끄기 with Python" href="https://jxun-h.github.io/posts/ps/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://jxun-h.github.io/tags/boj/page/10/">
-      «&nbsp;Prev&nbsp;10/14
+      «&nbsp;Prev&nbsp;10/15
     </a>
-    <a class="next" href="https://jxun-h.github.io/tags/boj/page/12/">Next&nbsp;12/14&nbsp;»
+    <a class="next" href="https://jxun-h.github.io/tags/boj/page/12/">Next&nbsp;12/15&nbsp;»
     </a>
   </nav>
 </footer>

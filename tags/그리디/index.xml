@@ -11,8 +11,30 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 May 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 18004 From A to B with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</link>
+      <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</guid>
+      <description>📌 BOJ 18004 From A to B 💡 조건 두 개의 정수인 a와 b가 입력된다. 일련의 작업을 수행하여 a를 b로 만들려고 한다. 다음의 두가지 작업만 할 수 있다. 짝수인 경우에만 2로 나누기. 1 더하기 (1 ≤ a , b ≤ 10 9 ) a 를 b 로 변환하는 데 필요한 주어진 연산의 최소 횟수를 출력하는 문제 수학, 그리디 알고리즘, BFS 유형의 문제 🔖 예제 및 실행결과 예제 103 27 실행결과 4 ⌨️ 문제 풀이 a 와 b 정수를 입력받고, a 를 b로 만드는 문제이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 11508 2&#43;1 세일 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/</guid>
+      <description>📌 BOJ 11508 2+1 세일 💡 조건 유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다. 한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다. 유제품의 수 N (1 ≤ N ≤ 100,000) N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)
+정답은 231-1보다 작거나 같다. 최소비용으로 유제품을 구입할 수 있도록 도와주는 문제. 그리디, 정렬 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 4 3 2 3 2 실행결과 8 ⌨️ 문제 풀이 유제품의 가격을 arr 배열에 입력 받는다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 12970 AB with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/</guid>
+      <description>📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i &amp;lt; j &amp;lt; N 이면서 s[i] == &amp;lsquo;A&amp;rsquo; &amp;amp;&amp;amp; s[j] == &amp;lsquo;B&amp;rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다.</description>
+    </item>
     <item>
       <title>[BOJ] 2012 등수 매기기 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-2012-%EB%93%B1%EC%88%98-%EB%A7%A4%EA%B8%B0%EA%B8%B0-with-python/</link>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 12970 AB with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 수학, 그리디, 백준, BOJ">
+<meta name="description" content="📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i &lt; j &lt; N 이면서 s[i] == &lsquo;A&rsquo; &amp;&amp; s[j] == &lsquo;B&rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 12970 AB with Python" />
+<meta property="og:description" content="📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i &lt; j &lt; N 이면서 s[i] == &lsquo;A&rsquo; &amp;&amp; s[j] == &lsquo;B&rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-09T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14562-%ED%83%9C%EA%B6%8C%EC%99%95-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 12970 AB with Python"/>
+<meta name="twitter:description" content="📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i &lt; j &lt; N 이면서 s[i] == &lsquo;A&rsquo; &amp;&amp; s[j] == &lsquo;B&rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 12970 AB with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 12970 AB with Python",
+  "name": "[BOJ] 12970 AB with Python",
+  "description": "📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i \u0026lt; j \u0026lt; N 이면서 s[i] == \u0026lsquo;A\u0026rsquo; \u0026amp;\u0026amp; s[j] == \u0026lsquo;B\u0026rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다.",
+  "keywords": [
+    "자료구조", "PS", "수학", "그리디", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i \u003c j \u003c N 이면서 s[i] == ‘A’ \u0026\u0026 s[j] == ‘B’를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다. 예제 4번을 예로 들면, BBBBBBBBBB 으로 먼저 s를 초기화한다. 오른쪽 기준 두번째 부터 A를 넣는데, 끝에 넣어봐야 쌍의 개수가 0이기 때문에 두번째부터 넣는다. A를 왼쪽으로 밀면서 쌍의 개수를 검사한다. curk 의 값이 k가 되었을 때, while 을 종료하고, 문자열을 출력해준다. 만약 while 이 종료된 후에도 curk 값이 k 의 값과 같지 않다면, 문자열을 만들 수 없는 것이니 -1을 출력한다. 🖥 소스 코드 from sys import stdin n, k = map(int, stdin.readline().split()) def solve(n, k): s = list('B' * n) acnt, curk, lidx = 0, 0, -1 while curk \u003c k: if lidx \u003c= acnt - 1: if s[n - 1 - (acnt + 1)] == 'A': break s[n - 1 - (acnt + 1)] = 'A' lidx = n - 1 - (acnt + 1) acnt += 1 curk += 1 else: s[lidx] = 'B' s[lidx - 1] = 'A' lidx -= 1 curk += 1 return s if curk == k else '-1' answer = solve(n, k) print(*answer, sep='') 💾 느낀점 그리디는 너무 어렵다. 문제가 조금 난이도가 높아지면 손을 대지 못하는 상황이 오는 것 같다. 그리디 유형을 더욱 풀어봐야겠다. ",
+  "wordCount" : "266",
+  "inLanguage": "en",
+  "datePublished": "2022-05-09T00:00:00Z",
+  "dateModified": "2022-05-09T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 12970 AB with Python
+    </h1>
+    <div class="post-meta"><span title='2022-05-09 00:00:00 +0000 UTC'>May 9, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%2012970%20AB%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem12970-target_blankboj-12970-aba">📌 <a href="https://www.acmicpc.net/problem/12970" target="_blank">BOJ 12970 AB</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem12970-target_blankboj-12970-aba">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>문자열의 길이 n</li>
+<li>0 ≤ i &lt; j &lt; N 이면서 s[i] == &lsquo;A&rsquo; &amp;&amp; s[j] == &lsquo;B&rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다.</li>
+<li>N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2)</li>
+<li>문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다.</li>
+<li>S가 존재하지 않는 경우에는 -1을 출력한다.</li>
+<li><strong>수학, 그리디 알고리즘</strong> 유형의 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">2</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">ABB</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>문자열 s는 B로 n만큼 채워서 초기화한다.</li>
+<li>예제 4번을 예로 들면, BBBBBBBBBB 으로 먼저 s를 초기화한다.</li>
+<li>오른쪽 기준 두번째 부터 A를 넣는데, 끝에 넣어봐야 쌍의 개수가 0이기 때문에 두번째부터 넣는다.</li>
+<li>A를 왼쪽으로 밀면서 쌍의 개수를 검사한다.</li>
+<li>curk 의 값이 k가 되었을 때, while 을 종료하고, 문자열을 출력해준다.</li>
+<li>만약 while 이 종료된 후에도 curk 값이 k 의 값과 같지 않다면, 문자열을 만들 수 없는 것이니 -1을 출력한다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;B&#39;</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">acnt</span><span class="p">,</span> <span class="n">curk</span><span class="p">,</span> <span class="n">lidx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">curk</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">lidx</span> <span class="o">&lt;=</span> <span class="n">acnt</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">acnt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">acnt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lidx</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">acnt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">acnt</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">curk</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">[</span><span class="n">lidx</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">s</span><span class="p">[</span><span class="n">lidx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lidx</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">curk</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">s</span> <span class="k">if</span> <span class="n">curk</span> <span class="o">==</span> <span class="n">k</span> <span class="k">else</span> <span class="s1">&#39;-1&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">answer</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">answer</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>그리디는 너무 어렵다.</li>
+<li>문제가 조금 난이도가 높아지면 손을 대지 못하는 상황이 오는 것 같다.</li>
+<li>그리디 유형을 더욱 풀어봐야겠다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/">수학</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/">그리디</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 11508 2&#43;1 세일 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-2012-%EB%93%B1%EC%88%98-%EB%A7%A4%EA%B8%B0%EA%B8%B0-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 2012 등수 매기기 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

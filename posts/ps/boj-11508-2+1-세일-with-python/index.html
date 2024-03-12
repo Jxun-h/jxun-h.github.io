@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 11508 2&#43;1 세일 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 정렬, 그리디, 백준, BOJ">
+<meta name="description" content="📌 BOJ 11508 2&#43;1 세일 💡 조건 유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다. 한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다. 유제품의 수 N (1 ≤ N ≤ 100,000) N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)
+정답은 231-1보다 작거나 같다. 최소비용으로 유제품을 구입할 수 있도록 도와주는 문제. 그리디, 정렬 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 4 3 2 3 2 실행결과 8 ⌨️ 문제 풀이 유제품의 가격을 arr 배열에 입력 받는다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 11508 2&#43;1 세일 with Python" />
+<meta property="og:description" content="📌 BOJ 11508 2&#43;1 세일 💡 조건 유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다. 한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다. 유제품의 수 N (1 ≤ N ≤ 100,000) N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)
+정답은 231-1보다 작거나 같다. 최소비용으로 유제품을 구입할 수 있도록 도와주는 문제. 그리디, 정렬 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 4 3 2 3 2 실행결과 8 ⌨️ 문제 풀이 유제품의 가격을 arr 배열에 입력 받는다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-09T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14562-%ED%83%9C%EA%B6%8C%EC%99%95-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 11508 2&#43;1 세일 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 11508 2&#43;1 세일 💡 조건 유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다. 한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다. 유제품의 수 N (1 ≤ N ≤ 100,000) N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)
+정답은 231-1보다 작거나 같다. 최소비용으로 유제품을 구입할 수 있도록 도와주는 문제. 그리디, 정렬 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 4 3 2 3 2 실행결과 8 ⌨️ 문제 풀이 유제품의 가격을 arr 배열에 입력 받는다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 11508 2+1 세일 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-11508-2+1-%EC%84%B8%EC%9D%BC-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 11508 2+1 세일 with Python",
+  "name": "[BOJ] 11508 2\u002b1 세일 with Python",
+  "description": "📌 BOJ 11508 2+1 세일 💡 조건 유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다. 한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다. 유제품의 수 N (1 ≤ N ≤ 100,000) N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)\n정답은 231-1보다 작거나 같다. 최소비용으로 유제품을 구입할 수 있도록 도와주는 문제. 그리디, 정렬 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 4 3 2 3 2 실행결과 8 ⌨️ 문제 풀이 유제품의 가격을 arr 배열에 입력 받는다.",
+  "keywords": [
+    "자료구조", "PS", "정렬", "그리디", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 11508 2+1 세일 💡 조건 유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다. 한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다. 유제품의 수 N (1 ≤ N ≤ 100,000) N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)\n정답은 231-1보다 작거나 같다. 최소비용으로 유제품을 구입할 수 있도록 도와주는 문제. 그리디, 정렬 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 4 3 2 3 2 실행결과 8 ⌨️ 문제 풀이 유제품의 가격을 arr 배열에 입력 받는다. arr 리스트를 역순으로 정렬(내림차순)한다. 역순으로 정렬된 arr 리스트를 순회하면서 어떤 조건에 해당하지 않으면 ans 에 arr[i]을 추가해줄 것 이다. (3)에서 말한 조건 » 가장 비싼 물건 순으로 꾸러미에 넣으면, 최소한 세번째로 비싼 물건을 무료가 될 수 있다. 그렇기 때문에 i 를 mod 3 연산을 해주어 이미 상품 두 개를 꾸러미에 넣었다면, 세번째는 무료이기 때문에 ans에 값을 더해주지 않아도 된다는 것. 🖥 소스 코드 from sys import stdin arr = [] n = int(stdin.readline()) for i in range(n): arr.append(int(stdin.readline())) arr.sort(reverse=True) ans = 0 for i in range(n): if i % 3 != 2: ans += arr[i] print(ans) 💾 느낀점 단순 그리디 문제였는데, 잘 풀지 못했다. 그리디 알고리즘이 묻어(?)있는 유형의 문제들을 매우 고전하는 모습이 보인다. 경우의 수 문제도 헷갈리는데, 생각난 김에 복습을 해봐야할 것 같다. ",
+  "wordCount" : "215",
+  "inLanguage": "en",
+  "datePublished": "2022-05-09T00:00:00Z",
+  "dateModified": "2022-05-09T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-11508-2+1-%EC%84%B8%EC%9D%BC-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 11508 2&#43;1 세일 with Python
+    </h1>
+    <div class="post-meta"><span title='2022-05-09 00:00:00 +0000 UTC'>May 9, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%2011508%202&#43;1%20%ec%84%b8%ec%9d%bc%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem11508-target_blankboj-11508-21-세일a">📌 <a href="https://www.acmicpc.net/problem/11508" target="_blank">BOJ 11508 2+1 세일</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem11508-target_blankboj-11508-21-세일a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>유제품 3개를 한 번에 산다면 그중에서 가장 싼 것은 무료로 지불하고 나머지 두 개의 제품 가격만 지불하면 됩니다.</li>
+<li>한 번에 3개의 유제품을 사지 않는다면 할인 없이 정가를 지불해야 합니다.</li>
+<li>유제품의 수 N (1 ≤ N ≤ 100,000)</li>
+<li>N개의 줄에는 각 유제품의 가격 Ci (1 ≤ Ci ≤ 100,000)<br>
+정답은 231-1보다 작거나 같다.</li>
+<li>최소비용으로 유제품을 구입할 수 있도록 도와주는 문제.</li>
+<li><strong>그리디, 정렬 알고리즘</strong> 유형의 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">8</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>유제품의 가격을 arr 배열에 입력 받는다.</li>
+<li>arr 리스트를 역순으로 정렬(내림차순)한다.</li>
+<li>역순으로 정렬된 arr 리스트를 순회하면서 어떤 조건에 해당하지 않으면 ans 에 arr[i]을 추가해줄 것 이다.</li>
+<li>(3)에서 말한 조건 &raquo; 가장 비싼 물건 순으로 꾸러미에 넣으면, 최소한 세번째로 비싼 물건을 무료가 될 수 있다.</li>
+<li>그렇기 때문에 i 를 mod 3 연산을 해주어 이미 상품 두 개를 꾸러미에 넣었다면, 세번째는 무료이기 때문에 ans에 값을 더해주지 않아도 된다는 것.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">arr</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">+=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>단순 그리디 문제였는데, 잘 풀지 못했다.</li>
+<li>그리디 알고리즘이 묻어(?)있는 유형의 문제들을 매우 고전하는 모습이 보인다.</li>
+<li>경우의 수 문제도 헷갈리는데, 생각난 김에 복습을 해봐야할 것 같다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%A0%95%EB%A0%AC/">정렬</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/">그리디</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/ps/boj-16926-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-1-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 16926 배열 돌리기 1 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 12970 AB with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
