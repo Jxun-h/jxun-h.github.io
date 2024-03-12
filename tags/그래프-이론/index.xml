@@ -11,8 +11,41 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1342 행운의 문자열 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</guid>
+      <description>📌 BOJ 1342 행운의 문자열 💡 조건 인접해 있는 모든 문자가 같지 않은 문자열을 행운의 문자열이라고 한다고 한다. 준영이는 문자열 S에 나오는 문자를 재배치하면 서로 다른 행운의 문자열이 몇 개 나오는지 궁금해졌다. 만약 원래 문자열 S도 행운의 문자열이라면 그것도 개수에 포함한다. S의 길이는 최대 10이고, 알파벳 소문자로만 이루어져 있다. 첫째 줄에 위치를 재배치해서 얻은 서로 다른 행운의 문자열의 개수를 출력한다. 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 abcdefghij 실행결과 3628800 ⌨️ 문제 풀이 브루트포스 알고리즘으로 해결하는 문제였습니다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 18243 Small World Network with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18243-small-world-network-with-python/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18243-small-world-network-with-python/</guid>
+      <description>📌 BOJ 18243 Small World Network 💡 조건 첫 번째 줄에 지구에 있는 사람의 수 N과 친구 관계의 개수 K.
+(1 ≤ N ≤ 100, 0 ≤ K ≤ N×(N-1)/2) 모든 사람은 1부터 N까지 번호가 매겨져 있다. 두 번째 줄부터 K+1번째 줄까지 친구 관계를 나타내는 A B가 한 줄에 하나씩 주어진다.
+(1 ≤ A, B ≤ N) A와 B가 친구면 B와 A도 친구다. 자기 자신과 친구인 경우는 없다.
+A와 B의 친구 관계는 중복되어 입력되지 않는다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 9372 상근이의 여행 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-9372-%EC%83%81%EA%B7%BC%EC%9D%B4%EC%9D%98-%EC%97%AC%ED%96%89-with-python/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-9372-%EC%83%81%EA%B7%BC%EC%9D%B4%EC%9D%98-%EC%97%AC%ED%96%89-with-python/</guid>
+      <description>📌 BOJ 9372 상근이의 여행 💡 조건 N개국을 여행할 상근이에게 가장 적은 비행기를 타고 여행할 수 있게 도와주자. 테스트 케이스의 수 T(T ≤ 100) 첫 번째 줄에는 국가의 수 N(2 ≤ N ≤ 1 000)과 비행기의 종류 M(1 ≤ M ≤ 10 000) 가 주어진다.
+이후 M개의 줄에 a와 b 쌍들이 입력된다. a와 b를 왕복하는 비행기가 있다는 것을 의미한다. (1 ≤ a, b ≤ n; a ≠ b)
+주어지는 비행 스케줄은 항상 연결 그래프를 이룬다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 13565 침투 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-13565-%EC%B9%A8%ED%88%AC-with-python/</link>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-13565-%EC%B9%A8%ED%88%AC-with-python/</guid>
+      <description>📌 BOJ 13565 침투 💡 조건 격자의 크기를 나타내는 M (2 ≤ M ≤ 1,000) 과 N (2 ≤ N ≤ 1,000) M줄에 걸쳐서, N개의 0 또는 1 이 공백 없이 주어진다. 0은 전류가 잘 통하는 흰색, 1은 전류가 통하지 않는 검은색 격자임을 뜻한다. 맨 윗줄에서 받은 전기가 맨 밑 줄까지 갈 수 있다면 True, 아니면 False BFS 유형의 문제 🔖 예제 및 실행결과 예제 5 6 010101 010000 011101 100011 001011 실행결과 NO ⌨️ 문제 풀이 전류판을 board 리스트에 입력받아 저장합니다.</description>
+    </item>
     <item>
       <title>[BOJ] 2422 한윤정이 이탈리아에 가서 아이스크림을 사먹는데 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-2422-%ED%95%9C%EC%9C%A4%EC%A0%95%EC%9D%B4-%EC%9D%B4%ED%83%88%EB%A6%AC%EC%95%84%EC%97%90-%EA%B0%80%EC%84%9C-%EC%95%84%EC%9D%B4%EC%8A%A4%ED%81%AC%EB%A6%BC%EC%9D%84-%EC%82%AC%EB%A8%B9%EB%8A%94%EB%8D%B0-with-python/</link>
@@ -22,6 +55,33 @@
 모든 아이스크림은 1부터 N까지 번호가 매겨져있다.
 어떤 종류의 아이스크림을 함께먹으면, 맛이 아주 형편없어진다. 정수 N과 M이 주어진다. (1 ≤ N ≤ 200, 0 ≤ M ≤ 10,000)
 N은 아이스크림 종류의 수이고, M은 섞어먹으면 안 되는 조합의 개수이다. 같은 조합은 두 번 이상 나오지 않는다. 브루트포스 알고리즘, 그래프 이론유형의 문제 🔖 예제 및 실행결과 예제 5 3 1 2 3 4 1 3 실행결과 3 ⌨️ 문제 풀이 저는 브루트포스 알고리즘 보다 그래프 이론으로 풀이하는게 쉬웠습니다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1043 거짓말 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</link>
+      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</guid>
+      <description>📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
+진실을 아는 사람의 수는 0 이상 50 이하의 정수
+각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.
+지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.
+이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2458 키 순서 with Python (Feat. PyPy3)</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2458-%ED%82%A4-%EC%88%9C%EC%84%9C-with-python-feat.-pypy3/</link>
+      <pubDate>Thu, 02 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2458-%ED%82%A4-%EC%88%9C%EC%84%9C-with-python-feat.-pypy3/</guid>
+      <description>📌 BOJ 2458 키 순서 💡 조건 및 풀이 1번부터 N번까지 번호가 붙여져 있는 학생들끼리 두 명씩 키를 비교했다. N명의 학생들은 모두 키가 다르다. 플로이드와샬 알고리즘으로 해결이 가능한 문제이다. 2 &amp;lt;= N &amp;lt;= 500, 0 &amp;lt;= M &amp;lt;= N(N-1)/2 M개의 줄에 두 학생의 키를 비교한 결과를 나타내는 두 양의 정수 a, b가 주어진다. a, b == a가 b보다 작다 자신의 키가 몇번째인지 알 수 있는 학생의 수를 구하는 문제 🖥 소스 코드 from sys import stdin n, m = map(int, stdin.</description>
+    </item>
+    <item>
+      <title>[Programmers] 합승 택시 요금 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/programmers-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88-with-python/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/programmers-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88-with-python/</guid>
+      <description>📌 Programmers - 합승 택시 요금 💡 조건 및 풀이 노드의 개수 n, 출발노드 s, A의 도착지점 a,
+B의 도착지점 b, 노드 간 이동하는데 드는 비용 fares A와 B가 서로 다른 목적지를 향하고 있다. A와 B가 따로 이동하는 것과 어느 지점까지 같이 이동하는 것 중에
+최소 비용을 구하는 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 🔖 예제 및 실행결과 예제 print(solution(6, 4, 6, 2, [[4, 1, 10], [3, 5, 24], [5, 6, 2], [3, 1, 41], [5, 1, 24], [4, 6, 50], [2, 4, 66], [2, 3, 22], [1, 6, 25]])) print(solution(7, 3, 4, 1, [[5, 7, 9], [4, 6, 4], [3, 6, 1], [3, 2, 3], [2, 1, 6]])) print(solution(6, 4, 5, 6, [[2, 6, 6], [6, 3, 7], [4, 6, 7], [6, 5, 11], [2, 5, 12], [5, 3, 20], [2, 4, 8], [4, 3, 9]])) 실행결과 82 14 18 ⌨️ 문제 풀이 거리 정보를 담을 graph 2중 리스트를 생성 플로이드 와샬 알고리즘을 사용하여 각각 노드끼리 얼마의 비용이 드는지 계산</description>
     </item>
   </channel>
 </rss>

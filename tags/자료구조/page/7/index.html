@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>자료구조 | Jxun-h Dev Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="자료구조" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="자료구조"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/tags/">Tags</a></div>
+  <h1>
+    자료구조
+    <a href="/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 1043 거짓말 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
+진실을 아는 사람의 수는 0 이상 50 이하의 정수
+각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.
+지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.
+이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-10-20 00:00:00 +0000 UTC'>October 20, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 1043 거짓말 with Python" href="https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 표 편집 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers - 표 편집 💡 조건 및 풀이 표의 원본 행의 개수를 나타내는 변수 n
+5 ≤ n ≤ 1,000,000 처음에 선택되어 있는 행의 위치 k
+0 ≤ k &lt; n 수행한 명령어들이 담긴 문자열 배열 cmd
+1 ≤ cmd의 원소 개수 ≤ 200,000 cmd의 각 원소는 &#34;U X&#34;, &#34;D X&#34;, &#34;C&#34;, &#34;Z&#34; 중 하나 Linked List 자료구조 문제 표의 모든 행을 제거하여, 행이 하나도 남지 않는 경우는 입력으로 주어지지 않는다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-10-17 00:00:00 +0000 UTC'>October 17, 2021</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 표 편집 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 순위 검색 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?
+를 구하는 문제
+&#39;-&#39; 표시는 해당 조건을 고려하지 않겠다는 의미.
+&#34;cpp and - and senior and pizza 500&#34; 은를 의미한다.
+&#34;cpp로 코딩테스트를 봤으며, 경력은 senior 이면서 소울푸드로 pizza를 선택한 지원자 중 코딩테스트 점수를 500점 이상 받은 사람은 모두 몇 명인가?&#34;
+브루트포스 알고리즘 유형의 문제에 해당한다.
+🔖 예제 및 실행결과 예제 info = [&#34;java backend junior pizza 150&#34;, &#34;python frontend senior chicken 210&#34;, &#34;python frontend senior chicken 150&#34;,&#34;cpp backend senior pizza 260&#34;, &#34;java backend junior chicken 80&#34;, &#34;python backend senior chicken 50&#34;] query = [&#34;java and backend and junior and pizza 100&#34;, &#34;python and frontend and senior and chicken 200&#34;, &#34;cpp and - and senior and pizza 250&#34;, &#34;- and backend and senior and - 150&#34;, &#34;- and - and - and chicken 100&#34;, &#34;- and - and - and - 150&#34;] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-10-14 00:00:00 +0000 UTC'>October 14, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 순위 검색 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 5568 카드 놓기 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 5568 카드 놓기 💡 조건 및 풀이 카드의 장수는 4 &lt;= N &lt;= 10 각 카드에 숫자가 적혀있다. 1 &lt;= 숫자 &lt;= 99 N개의 카드 중에서 K개의 카드를 골라서 몇 가지 수를 만들 수 있을까? 브루트포스 유형의 문제 🔖 예제 및 실행결과 예제 6 3 72 2 12 7 2 1 실행결과 68 ⌨️ 문제 풀이 from itertools import permutaions
+permutations라는 순열 함수를 사용했다.
+리스트와 값을 넣으면 리스트에서 그만큼의 개수대로 숫자를 꺼낸다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-08-31 00:00:00 +0000 UTC'>August 31, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 5568 카드 놓기 with Python" href="https://jxun-h.github.io/posts/ps/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 1620 나는야 포켓몬 마스터 이다솜 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 1620 나는야 포켓몬 마스터 이다솜 💡 조건 및 풀이 도감에 수록되어 있는 포켓몬의 수 N, 맞추어야할 문제의 개수 M 범위는 1 &lt;= N, M &lt;= 100000 이다. 자료구조를 이용하는 문제 문자열로 입력이 들어오면 도감에 수록된 포켓몬의 번호를 출력한다. 숫자로 입력이 들어오면 도감에 수록된 포켓몬의 이름을 출력한다. 🔖 예제 및 실행결과 예제 26 5 Bulbasaur Ivysaur Venusaur Charmander Charmeleon Charizard Squirtle Wartortle Blastoise Caterpie Metapod Butterfree Weedle Kakuna Beedrill Pidgey Pidgeotto Pidgeot Rattata Raticate Spearow Fearow Ekans Arbok Pikachu Raichu 25 Raichu 3 Pidgey Kakuna 실행결과 Pikachu 26 Venusaur 16 14 ⌨️ 문제 풀이 key - value 로 매핑되는 자료구조를 사용한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-08-30 00:00:00 +0000 UTC'>August 30, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 1620 나는야 포켓몬 마스터 이다솜 with Python" href="https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 수식최대화 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 &#43;, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = &#34;100-200*300-500&#43;20&#34; expression = &#34;50*6-3*2&#34; 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-08-29 00:00:00 +0000 UTC'>August 29, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 수식최대화 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/page/6/">
+      «&nbsp;Prev&nbsp;6/7
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

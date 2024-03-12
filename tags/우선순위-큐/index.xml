@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>우선순위 큐 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90/</link>
+    <description>Recent content in 우선순위 큐 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2075 N번째 큰 수 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2075-n%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-with-python/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2075-n%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-with-python/</guid>
+      <description>📌 BOJ 2075 N번째 큰 수 💡 조건 N×N의 표에 수 N2개 채워져 있다. 채워진 수에는 한 가지 특징이 있는데,
+모든 수는 자신의 한 칸 위에 있는 수보다 크다는 것이다. 표에 채워진 수는 모두 다르다. N(1 ≤ N ≤ 1,500) 표에 적힌 수는 -10억보다 크거나 같고, 10억보다 작거나 같은 정수이다. 자료구조 응용, 우선순위 큐 활용, 정렬 유형의 문제 🔖 예제 및 실행결과 예제 5 12 7 9 15 5 13 8 11 19 6 21 10 26 31 16 48 14 28 35 25 52 20 32 41 49 실행결과 35 ⌨️ 문제 풀이 q 라는 리스트를 만든다.</description>
+    </item>
+  </channel>
+</rss>

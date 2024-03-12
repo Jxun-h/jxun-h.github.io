@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1342 행운의 문자열 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</guid>
+      <description>📌 BOJ 1342 행운의 문자열 💡 조건 인접해 있는 모든 문자가 같지 않은 문자열을 행운의 문자열이라고 한다고 한다. 준영이는 문자열 S에 나오는 문자를 재배치하면 서로 다른 행운의 문자열이 몇 개 나오는지 궁금해졌다. 만약 원래 문자열 S도 행운의 문자열이라면 그것도 개수에 포함한다. S의 길이는 최대 10이고, 알파벳 소문자로만 이루어져 있다. 첫째 줄에 위치를 재배치해서 얻은 서로 다른 행운의 문자열의 개수를 출력한다. 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 abcdefghij 실행결과 3628800 ⌨️ 문제 풀이 브루트포스 알고리즘으로 해결하는 문제였습니다.</description>
+    </item>
     <item>
       <title>[BOJ] 15970 화살표 그리기 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-15970-%ED%99%94%EC%82%B4%ED%91%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0-with-python/</link>

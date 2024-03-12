@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Feb 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 11501 주식 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-11501-%EC%A3%BC%EC%8B%9D-with-python/</link>
+      <pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-11501-%EC%A3%BC%EC%8B%9D-with-python/</guid>
+      <description>📌 BOJ 11501 주식 💡 조건 홍준이는 요즘 주식에 빠져있다. 아래 세가지 중 하나의 행동을 한다. 주식 하나를 산다. 원하는 만큼 가지고 있는 주식을 판다. 아무것도 안한다. 테스트케이스 수를 나타내는 자연수 T. 테스트케이스 별로 첫 줄에는 날의 수를 나타내는 자연수 N(2 ≤ N ≤ 1,000,000)이 주어지고,
+둘째 줄에는 날 별 주가를 나타내는 N개의 자연수들이 공백으로 구분되어 순서대로 주어진다. 날 별 주가는 10,000이하다. 최대 이익이 얼마나 되는지 계산을 해 출력하는 문제.</description>
+    </item>
     <item>
       <title>[BOJ] 19941 햄버거 분배 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-19941-%ED%96%84%EB%B2%84%EA%B1%B0-%EB%B6%84%EB%B0%B0-with-python/</link>

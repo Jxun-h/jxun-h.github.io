@@ -11,8 +11,90 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/series/boj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1342 행운의 문자열 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</guid>
+      <description>📌 BOJ 1342 행운의 문자열 💡 조건 인접해 있는 모든 문자가 같지 않은 문자열을 행운의 문자열이라고 한다고 한다. 준영이는 문자열 S에 나오는 문자를 재배치하면 서로 다른 행운의 문자열이 몇 개 나오는지 궁금해졌다. 만약 원래 문자열 S도 행운의 문자열이라면 그것도 개수에 포함한다. S의 길이는 최대 10이고, 알파벳 소문자로만 이루어져 있다. 첫째 줄에 위치를 재배치해서 얻은 서로 다른 행운의 문자열의 개수를 출력한다. 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 abcdefghij 실행결과 3628800 ⌨️ 문제 풀이 브루트포스 알고리즘으로 해결하는 문제였습니다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 18243 Small World Network with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-18243-small-world-network-with-python/</link>
+      <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-18243-small-world-network-with-python/</guid>
+      <description>📌 BOJ 18243 Small World Network 💡 조건 첫 번째 줄에 지구에 있는 사람의 수 N과 친구 관계의 개수 K.
+(1 ≤ N ≤ 100, 0 ≤ K ≤ N×(N-1)/2) 모든 사람은 1부터 N까지 번호가 매겨져 있다. 두 번째 줄부터 K+1번째 줄까지 친구 관계를 나타내는 A B가 한 줄에 하나씩 주어진다.
+(1 ≤ A, B ≤ N) A와 B가 친구면 B와 A도 친구다. 자기 자신과 친구인 경우는 없다.
+A와 B의 친구 관계는 중복되어 입력되지 않는다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14425 문자열 집합 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</link>
+      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 14425 문자열 집합 💡 조건 N개의 문자열로 이루어진 집합 S 입력으로 주어지는 M개의 문자열 중에서 집합 S에 포함되어 있는 것이 총 몇 개인지 구하는 문제 N과 M (1 ≤ N ≤ 10,000, 1 ≤ M ≤ 10,000) 어지는 문자열은 알파벳 소문자로만 이루어져 있으며, 길이는 500을 넘지 않는다. 집합 S에 같은 문자열이 여러 번 주어지는 경우는 없다. 문자열, 자료구조 유형의 문제 🔖 예제 및 실행결과 예제 5 11 baekjoononlinejudge startlink codeplus sundaycoding codingsh baekjoon codeplus codeminus startlink starlink sundaycoding codingsh codinghs sondaycoding startrink icerink 실행결과 4 ⌨️ 문제 풀이 n개의 문자열을 dictionary 자료형 변수에 넣는다 m 개의 문자열을 입력 받으면서 만약 입력 받은 문자열이 만들어둔 dictionary 변수에 있다면</description>
+    </item>
+    <item>
+      <title>[BOJ] 15722 빙글빙글 스네일 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</link>
+      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</guid>
+      <description>📌 BOJ 15722 빙글빙글 스네일 💡 조건 달팽이는 원점에서 시작하여 1초에 한 칸 씩, 시계방향으로 아래 그림과 같이 움직인다. 1초일 때 달팽이의 위치는 (0, 1)이다. 몇 초가 지났는지가 입력으로 주어질 때, 현재 달팽이의 위치를 좌표로 출력하는 문제 달팽이가 움직인 시간이 n초로 주어진다. (0 ≤ n ≤ 1000, n은 0이상의 정수) 구현, 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 9 실행결과 -1 2 ⌨️ 문제 풀이 달팽이의 첫 위치를 [0, 0]으로 지정한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 10546 배부른 마라토너 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-10546-%EB%B0%B0%EB%B6%80%EB%A5%B8-%EB%A7%88%EB%9D%BC%ED%86%A0%EB%84%88-with-python/</link>
+      <pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-10546-%EB%B0%B0%EB%B6%80%EB%A5%B8-%EB%A7%88%EB%9D%BC%ED%86%A0%EB%84%88-with-python/</guid>
+      <description>📌 BOJ 10546 배부른 마라토너 💡 조건 참가자 수 N이 주어진다. (1 ≤ N ≤ 105) N개의 줄에는 참가자의 이름이 주어진다. N-1개의 줄에는 완주한 참가자의 이름이 쓰여져 있다. 참가자들의 이름은 길이가 1보다 크거나 같고, 20보다 작거나 같은 문자열이고, 알파벳 소문자로만 이루어져 있다.
+참가자들 중엔 동명이인이 있을 수도 있다. 백준 마라톤 대회에 참가해 놓고 완주하지 못한 배부른 참가자 한 명은 누굴까? 해시맵 자료구조 응용 유형의 문제 🔖 예제 및 실행결과 예제 4 mislav stanko mislav ana stanko ana mislav 실행결과 mislav ⌨️ 문제 풀이 동명이인이 있다는 것이 중요합니다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 11501 주식 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-11501-%EC%A3%BC%EC%8B%9D-with-python/</link>
+      <pubDate>Thu, 24 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-11501-%EC%A3%BC%EC%8B%9D-with-python/</guid>
+      <description>📌 BOJ 11501 주식 💡 조건 홍준이는 요즘 주식에 빠져있다. 아래 세가지 중 하나의 행동을 한다. 주식 하나를 산다. 원하는 만큼 가지고 있는 주식을 판다. 아무것도 안한다. 테스트케이스 수를 나타내는 자연수 T. 테스트케이스 별로 첫 줄에는 날의 수를 나타내는 자연수 N(2 ≤ N ≤ 1,000,000)이 주어지고,
+둘째 줄에는 날 별 주가를 나타내는 N개의 자연수들이 공백으로 구분되어 순서대로 주어진다. 날 별 주가는 10,000이하다. 최대 이익이 얼마나 되는지 계산을 해 출력하는 문제.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2628 종이 자르기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 2628 종이 자르기 💡 조건 종이의 가로와 세로의 길이가 차례로 자연수로 주어진다. 가로와 세로의 길이는 최대 100㎝이다. 칼로 잘라야하는 점선의 개수가 주어진다.
+셋째 줄부터 마지막 줄까지 한 줄에 점선이 하나씩 아래와 같은 방법으로 입력된다.
+가로로 자르는 점선은 0과 점선 번호가 차례로 주어지고, 세로로 자르는 점선은 1과 점선 번호가 주어진다. 점선을 따라 이 종이를 칼로 자르려고 한다.
+가로 점선을 따라 자르는 경우는 종이의 왼쪽 끝에서 오른쪽 끝까지, 세로 점선인 경우는 위쪽 끝에서 아래쪽 끝까지 한 번에 자른다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 9372 상근이의 여행 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-9372-%EC%83%81%EA%B7%BC%EC%9D%B4%EC%9D%98-%EC%97%AC%ED%96%89-with-python/</link>
+      <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-9372-%EC%83%81%EA%B7%BC%EC%9D%B4%EC%9D%98-%EC%97%AC%ED%96%89-with-python/</guid>
+      <description>📌 BOJ 9372 상근이의 여행 💡 조건 N개국을 여행할 상근이에게 가장 적은 비행기를 타고 여행할 수 있게 도와주자. 테스트 케이스의 수 T(T ≤ 100) 첫 번째 줄에는 국가의 수 N(2 ≤ N ≤ 1 000)과 비행기의 종류 M(1 ≤ M ≤ 10 000) 가 주어진다.
+이후 M개의 줄에 a와 b 쌍들이 입력된다. a와 b를 왕복하는 비행기가 있다는 것을 의미한다. (1 ≤ a, b ≤ n; a ≠ b)
+주어지는 비행 스케줄은 항상 연결 그래프를 이룬다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2075 N번째 큰 수 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2075-n%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-with-python/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2075-n%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-with-python/</guid>
+      <description>📌 BOJ 2075 N번째 큰 수 💡 조건 N×N의 표에 수 N2개 채워져 있다. 채워진 수에는 한 가지 특징이 있는데,
+모든 수는 자신의 한 칸 위에 있는 수보다 크다는 것이다. 표에 채워진 수는 모두 다르다. N(1 ≤ N ≤ 1,500) 표에 적힌 수는 -10억보다 크거나 같고, 10억보다 작거나 같은 정수이다. 자료구조 응용, 우선순위 큐 활용, 정렬 유형의 문제 🔖 예제 및 실행결과 예제 5 12 7 9 15 5 13 8 11 19 6 21 10 26 31 16 48 14 28 35 25 52 20 32 41 49 실행결과 35 ⌨️ 문제 풀이 q 라는 리스트를 만든다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2168 터널 위의 대각선 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</guid>
+      <description>📌 BOJ 2168 터널 위의 대각선 💡 조건 한 변의 길이가 1cm인 정사각형 모양의 타일이 있다.
+이 타일들을 가로가 xcm, 세로가 ycm인 직사각형 모양의 벽에 빈틈없이 붙였다. x와 y는 정수이다. 직사각형에 붙어 있는 x*y개의 타일 중에는 대각선이 그려진 타일도 있고, 그렇지 않은 타일도 있다. x*y개의 타일 중에서 대각선이 그려져 있는 타일의 개수를 구하는 문제. x와 y는 1,000,000,000 이하의 자연수 수학, 정수론, 유클리드 호제법유형의 문제 🔖 예제 및 실행결과 예제 8 12 실행결과 16 ⌨️ 문제 풀이 유클리드 호제법과 관련된 문제입니다.</description>
+    </item>
     <item>
       <title>[BOJ] 15970 화살표 그리기 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-15970-%ED%99%94%EC%82%B4%ED%91%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0-with-python/</link>

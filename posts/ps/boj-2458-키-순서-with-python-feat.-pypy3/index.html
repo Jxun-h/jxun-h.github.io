@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>[BOJ] 2458 키 순서 with Python (Feat. PyPy3) | Jxun-h Dev Log</title>
-<meta name="keywords" content="플로이드-와샬, PS, 그래프이론, 알고리즘, 프로그래머스">
+<meta name="keywords" content="플로이드-와샬, PS, 그래프 이론, 알고리즘, 프로그래머스">
 <meta name="description" content="📌 BOJ 2458 키 순서 💡 조건 및 풀이 1번부터 N번까지 번호가 붙여져 있는 학생들끼리 두 명씩 키를 비교했다. N명의 학생들은 모두 키가 다르다. 플로이드와샬 알고리즘으로 해결이 가능한 문제이다. 2 &lt;= N &lt;= 500, 0 &lt;= M &lt;= N(N-1)/2 M개의 줄에 두 학생의 키를 비교한 결과를 나타내는 두 양의 정수 a, b가 주어진다. a, b == a가 b보다 작다 자신의 키가 몇번째인지 알 수 있는 학생의 수를 구하는 문제 🖥 소스 코드 from sys import stdin n, m = map(int, stdin.">
 <meta name="author" content="Jxun-h">
 <link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-2458-%ED%82%A4-%EC%88%9C%EC%84%9C-with-python-feat.-pypy3/">
@@ -60,7 +60,7 @@
 <meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-2458-%ED%82%A4-%EC%88%9C%EC%84%9C-with-python-feat.-pypy3/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-09-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-09-02T00:00:00+00:00" />
-<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-15970-%ED%99%94%EC%82%B4%ED%91%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-19941-%ED%96%84%EB%B2%84%EA%B1%B0-%EB%B6%84%EB%B0%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-11048-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-13565-%EC%B9%A8%ED%88%AC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2477-%EC%B0%B8%EC%99%B8%EB%B0%AD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-9663-n-queen-with-python/" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18243-small-world-network-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-10546-%EB%B0%B0%EB%B6%80%EB%A5%B8-%EB%A7%88%EB%9D%BC%ED%86%A0%EB%84%88-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-11501-%EC%A3%BC%EC%8B%9D-with-python/" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -98,7 +98,7 @@
   "name": "[BOJ] 2458 키 순서 with Python (Feat. PyPy3)",
   "description": "📌 BOJ 2458 키 순서 💡 조건 및 풀이 1번부터 N번까지 번호가 붙여져 있는 학생들끼리 두 명씩 키를 비교했다. N명의 학생들은 모두 키가 다르다. 플로이드와샬 알고리즘으로 해결이 가능한 문제이다. 2 \u0026lt;= N \u0026lt;= 500, 0 \u0026lt;= M \u0026lt;= N(N-1)/2 M개의 줄에 두 학생의 키를 비교한 결과를 나타내는 두 양의 정수 a, b가 주어진다. a, b == a가 b보다 작다 자신의 키가 몇번째인지 알 수 있는 학생의 수를 구하는 문제 🖥 소스 코드 from sys import stdin n, m = map(int, stdin.",
   "keywords": [
-    "플로이드-와샬", "PS", "그래프이론", "알고리즘", "프로그래머스"
+    "플로이드-와샬", "PS", "그래프 이론", "알고리즘", "프로그래머스"
   ],
   "articleBody": "\n📌 BOJ 2458 키 순서 💡 조건 및 풀이 1번부터 N번까지 번호가 붙여져 있는 학생들끼리 두 명씩 키를 비교했다. N명의 학생들은 모두 키가 다르다. 플로이드와샬 알고리즘으로 해결이 가능한 문제이다. 2 \u003c= N \u003c= 500, 0 \u003c= M \u003c= N(N-1)/2 M개의 줄에 두 학생의 키를 비교한 결과를 나타내는 두 양의 정수 a, b가 주어진다. a, b == a가 b보다 작다 자신의 키가 몇번째인지 알 수 있는 학생의 수를 구하는 문제 🖥 소스 코드 from sys import stdin n, m = map(int, stdin.readline().split()) inf = int(1e9) graph = [[inf] * (n + 1) for _ in range(n + 1)] for _ in range(m): a, b = map(int, stdin.readline().split()) graph[b][a] = 1 for i in range(1, n + 1): for j in range(1, n + 1): for k in range(1, n + 1): if j == k: graph[j][k] = 0 continue if graph[j][k] \u003e graph[j][i] + graph[i][k]: graph[j][k] = graph[j][i] + graph[i][k] res = n for i in range(1, n + 1): checker = 1 for j in range(1, n + 1): if graph[i][j] == inf and graph[j][i] == inf: res -= 1 checker = 0 if not checker: break print(res) 🔖 예제 및 실행결과 예제 6 7 1 3 1 5 3 4 5 4 4 2 4 6 5 2 실행결과 2 ⌨️ 문제 풀이 최소 거리를 정해준다고 생각하고 플로이드 와샬을 사용하기 위해 2차원 리스트를 만들고\nINF 값을 넣어 리스트를 초기화했다. a, b 값을 입력받게 되면 a 가 b 보다 작다 라는 조건에 따라, 2차원 리스트에 graph[b].append(a) 플로이드 와샬 알고리즘 실행 자신의 키가 몇등인지 알 수있는 사람을 처음부터 N명이라고 정의한 뒤 1번 학생부터 순차적으로\n2중 반복문을 사용해 플로이드 와샬로 만든 2차원 리스트에 접근 if graph[i][j] == inf and graph[j][i] == inf:\ni번 학생이 j번 학생과의 작다, 크다의 정보가 아무것도 없다면 res -= 1 2중 반복문을 빠져나오기 위한 checker변수에 0을 넣어주고(False) 반복문 탈출 PyPy3 제출 🖥 소스 코드 from sys import stdin n, m = map(int, stdin.readline().split()) inf = int(1e9) graph = [[inf] * (n + 1) for _ in range(n + 1)] for _ in range(m): a, b = map(int, stdin.readline().split()) graph[b][a] = 1 for i in range(1, n + 1): for j in range(1, n + 1): for k in range(1, n + 1): if j == k: graph[j][k] = 0 continue if graph[j][k] \u003e graph[j][i] + graph[i][k]: graph[j][k] = graph[j][i] + graph[i][k] res = n for i in range(1, n + 1): checker = 1 for j in range(1, n + 1): if graph[i][j] == inf and graph[j][i] == inf: res -= 1 checker = 0 if not checker: break print(res) 💾 느낀점 문제를 보자마자 플로이드와샬 알고리즘과 유니온-파인드가 생각났다.\n유니온-파인드로 구현을 하려다보니 절대 아닌 것 같아 플로이드와샬을 사용하기로 했다. 아는 분들의 이야기를 들어보니 BFS로 구현하셨다고 했다. 플로이드 와샬 알고리즘으로 해결했을 때, Python3 로 시간초과가 생겼으며, PyPy3 는 통과 BFS로 풀이하는 방법도 구현해봐야겠다. 문제를 풀시간은 없는데 생각할 시간이 너무 길다. 아직 숙달이 되지 못한 것이라고 생각하고 더 풀어봐야겠다. ",
   "wordCount" : "478",
@@ -324,7 +324,7 @@
     <ul class="post-tags">
       <li><a href="https://jxun-h.github.io/tags/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%99%80%EC%83%AC/">플로이드 와샬</a></li>
       <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
-      <li><a href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%B4%EB%A1%A0/">그래프이론</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0/">그래프 이론</a></li>
       <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
       <li><a href="https://jxun-h.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a></li>
     </ul>
