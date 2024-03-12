@@ -11,8 +11,38 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1520 내리막 길 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</guid>
+      <description>📌 BOJ 1520 내리막 길 💡 조건 지도는 아래 그림과 같이 직사각형 모양이며 여러 칸으로 나뉘어져 있다.
+한 칸은 한 지점을 나타내는데 각 칸에는 그 지점의 높이가 쓰여 있으며, 각 지점 사이의 이동은 지도에서 상하좌우 이웃한 곳끼리만 가능하다.
+현재 제일 왼쪽 위 칸이 나타내는 지점에 있는 세준이는 제일 오른쪽 아래 칸이 나타내는 지점으로 가려고 한다.
+그런데 가능한 힘을 적게 들이고 싶어 항상 높이가 더 낮은 지점으로만 이동하여 목표 지점까지 가고자 한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1309 동물원 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1309-%EB%8F%99%EB%AC%BC%EC%9B%90-with-python/</link>
+      <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1309-%EB%8F%99%EB%AC%BC%EC%9B%90-with-python/</guid>
+      <description>📌 BOJ 1309 동물원 💡 조건 어떤 동물원에 가로로 두칸 세로로 N칸인 아래와 같은 우리가 있다.
+이 동물원에는 사자들이 살고 있는데 사자들을 우리에 가둘 때, 가로로도 세로로도 붙어 있게 배치할 수는 없다.
+동물원 조련사의 머리가 아프지 않도록 우리가 2*N 배열에 사자를 배치하는 경우의 수가 몇 가지인지를 알아내는 프로그램을 작성하는 문제.
+사자를 한 마리도 배치하지 않는 경우도 하나의 경우의 수로 친다고 가정한다.
+첫째 줄에 우리의 크기 N(1≤N≤100,000)이 주어진다.
+첫째 줄에 사자를 배치하는 경우의 수를 9901로 나눈 나머지를 출력하자.</description>
+    </item>
+    <item>
+      <title>[BOJ] 17485 진우의 달 여행 (Large) with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</link>
+      <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</guid>
+      <description>📌 BOJ 17485 진우의 달 여행 (Large) 💡 조건 지구와 우주사이는 N X M 행렬로 나타낼 수 있으며 각 원소의 값은 우주선이 그 공간을 지날 때 소모되는 연료의 양이다.
+N, M (2 ≤ N, M ≤ 1000), 각 행렬의 원소값은 100 이하의 자연수이다. 지구 -&amp;gt; 달로 가는 경우 우주선이 움직일 수 있는 방향은 아래와 같다. 우주선은 전에 움직인 방향으로 움직일 수 없다. 즉, 같은 방향으로 두번 연속으로 움직일 수 없다.</description>
+    </item>
     <item>
       <title>[BOJ] 2342 Dance Dance Revolution with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/</link>

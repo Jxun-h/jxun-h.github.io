@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>완전탐색 on Jxun-h Dev Log</title>
+    <link>https://jxun-h.github.io/tags/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89/</link>
+    <description>Recent content in 완전탐색 on Jxun-h Dev Log</description>
+    <image>
+      <title>Jxun-h Dev Log</title>
+      <url>https://jxun-h.github.io/images/papermod-cover.png</url>
+      <link>https://jxun-h.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 04 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jxun-h.github.io/tags/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 17485 진우의 달 여행 (Large) with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</link>
+      <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</guid>
+      <description>📌 BOJ 17485 진우의 달 여행 (Large) 💡 조건 지구와 우주사이는 N X M 행렬로 나타낼 수 있으며 각 원소의 값은 우주선이 그 공간을 지날 때 소모되는 연료의 양이다.
+N, M (2 ≤ N, M ≤ 1000), 각 행렬의 원소값은 100 이하의 자연수이다. 지구 -&amp;gt; 달로 가는 경우 우주선이 움직일 수 있는 방향은 아래와 같다. 우주선은 전에 움직인 방향으로 움직일 수 없다. 즉, 같은 방향으로 두번 연속으로 움직일 수 없다.</description>
+    </item>
+  </channel>
+</rss>

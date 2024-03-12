@@ -11,8 +11,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%88%84%EC%A0%81%ED%95%A9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 20438 출석체크 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</guid>
+      <description>📌 BOJ 20438 출석체크 💡 조건 학생들은 접속 순서대로 3번부터 N + 2번까지 입장 번호를 받게 된다.
+지환이가 한 학생에게 출석 코드를 보내게 되면, 해당 학생은 본인의 입장 번호의 배수인 학생들에게 출석 코드를 보내어
+해당 강의의 출석을 할 수 있게끔 한다. 하지만, K명의 졸고 있는 학생들은 출석 코드를 제출하지 않고, 다른 학생들에게 보내지 않는다.
+지환이는 무작위로 한 명의 학생에게 출석 코드를 보내는 행위를 Q번 반복한 뒤,
+출석부 정리를 위해 특정 구간의 입장 번호를 받은 학생들 중에서 출석이 되지 않은 학생들의 수를 구하고 싶다.</description>
+    </item>
     <item>
       <title>[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</link>

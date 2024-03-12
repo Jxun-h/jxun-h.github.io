@@ -11,8 +11,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1057 토너먼트 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1057-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8-with-python/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1057-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8-with-python/</guid>
+      <description>📌 BOJ 1057 토너먼트 💡 조건 N명의 참가자는 번호가 1번부터 N번까지 배정받는다.
+그러고 난 후에 서로 인접한 번호끼리 스타를 한다. 이긴 사람은 다음 라운드에 진출하고, 진 사람은 그 라운드에서 떨어진다.
+그 라운드의 참가자가 홀수명이라면, 마지막 번호를 가진 참가자는 다음 라운드로 자동 진출한다. 다음 라운드에선 다시 참가자의 번호를 1번부터 매긴다.
+번호를 매기는 순서는 처음 번호의 순서를 유지하면서 1번부터 매긴다.
+이 말은 1번과 2번이 스타를 해서 1번이 진출하고, 3번과 4번이 스타를 해서 4번이 진출했다면, 4번은 다음 라운드에서 번호 2번을 배정받는다.</description>
+    </item>
     <item>
       <title>[BOJ] 1145 적어도 대부분의 배수 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1145-%EC%A0%81%EC%96%B4%EB%8F%84-%EB%8C%80%EB%B6%80%EB%B6%84%EC%9D%98-%EB%B0%B0%EC%88%98-with-python/</link>

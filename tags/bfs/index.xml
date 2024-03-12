@@ -11,8 +11,30 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 19 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2644 촌수계산 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2644-%EC%B4%8C%EC%88%98%EA%B3%84%EC%82%B0-with-python/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2644-%EC%B4%8C%EC%88%98%EA%B3%84%EC%82%B0-with-python/</guid>
+      <description>📌 BOJ 2644 촌수계산 💡 조건 기본적으로 부모와 자식 사이를 1촌으로 정의하고 이로부터 사람들 간의 촌수를 계산한다.
+아버지와 할아버지는 각각 1촌으로 나와 할아버지는 2촌이 되고, 아버지 형제들과 할아버지는 1촌, 나와 아버지 형제들과는 3촌이 된다.
+여러 사람들에 대한 부모 자식들 간의 관계가 주어졌을 때, 주어진 두 사람의 촌수를 계산하는 프로그램을 작성하시오.
+사람들은 1, 2, 3, …, n (1 ≤ n ≤ 100)의 연속된 번호로 각각 표시된다.
+입력 파일의 첫째 줄에는 전체 사람의 수 n이 주어지고, 둘째 줄에는 촌수를 계산해야 하는 서로 다른 두 사람의 번호가 주어진다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 13459 구슬 탈출 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-13459-%EA%B5%AC%EC%8A%AC-%ED%83%88%EC%B6%9C-with-python/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-13459-%EA%B5%AC%EC%8A%AC-%ED%83%88%EC%B6%9C-with-python/</guid>
+      <description>📌 BOJ 13459 구슬 탈출 💡 조건 구슬 탈출은 직사각형 보드에 빨간 구슬과 파란 구슬을 하나씩 넣은 다음, 빨간 구슬을 구멍을 통해 빼내는 게임이다.
+보드의 세로 크기는 N, 가로 크기는 M이고, 편의상 1×1크기의 칸으로 나누어져 있다.
+N, M (3 ≤ N, M ≤ 10)
+가장 바깥 행과 열은 모두 막혀져 있고, 보드에는 구멍이 하나 있다.
+빨간 구슬과 파란 구슬의 크기는 보드에서 1×1크기의 칸을 가득 채우는 사이즈이고, 각각 하나씩 들어가 있다.</description>
+    </item>
     <item>
       <title>[BOJ] 17204 죽음의 게임 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-17204-%EC%A3%BD%EC%9D%8C%EC%9D%98-%EA%B2%8C%EC%9E%84-with-python/</link>

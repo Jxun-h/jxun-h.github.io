@@ -11,8 +11,115 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 03 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/boj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 2644 촌수계산 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2644-%EC%B4%8C%EC%88%98%EA%B3%84%EC%82%B0-with-python/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2644-%EC%B4%8C%EC%88%98%EA%B3%84%EC%82%B0-with-python/</guid>
+      <description>📌 BOJ 2644 촌수계산 💡 조건 기본적으로 부모와 자식 사이를 1촌으로 정의하고 이로부터 사람들 간의 촌수를 계산한다.
+아버지와 할아버지는 각각 1촌으로 나와 할아버지는 2촌이 되고, 아버지 형제들과 할아버지는 1촌, 나와 아버지 형제들과는 3촌이 된다.
+여러 사람들에 대한 부모 자식들 간의 관계가 주어졌을 때, 주어진 두 사람의 촌수를 계산하는 프로그램을 작성하시오.
+사람들은 1, 2, 3, …, n (1 ≤ n ≤ 100)의 연속된 번호로 각각 표시된다.
+입력 파일의 첫째 줄에는 전체 사람의 수 n이 주어지고, 둘째 줄에는 촌수를 계산해야 하는 서로 다른 두 사람의 번호가 주어진다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1520 내리막 길 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</guid>
+      <description>📌 BOJ 1520 내리막 길 💡 조건 지도는 아래 그림과 같이 직사각형 모양이며 여러 칸으로 나뉘어져 있다.
+한 칸은 한 지점을 나타내는데 각 칸에는 그 지점의 높이가 쓰여 있으며, 각 지점 사이의 이동은 지도에서 상하좌우 이웃한 곳끼리만 가능하다.
+현재 제일 왼쪽 위 칸이 나타내는 지점에 있는 세준이는 제일 오른쪽 아래 칸이 나타내는 지점으로 가려고 한다.
+그런데 가능한 힘을 적게 들이고 싶어 항상 높이가 더 낮은 지점으로만 이동하여 목표 지점까지 가고자 한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2512 예산 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2512-%EC%98%88%EC%82%B0-with-python/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2512-%EC%98%88%EC%82%B0-with-python/</guid>
+      <description>📌 BOJ 2512 예산 💡 조건 국가의 역할 중 하나는 여러 지방의 예산요청을 심사하여 국가의 예산을 분배하는 것이다.
+국가예산의 총액은 미리 정해져 있어서 모든 예산요청을 배정해 주기는 어려울 수도 있다.
+그래서 정해진 총액 이하에서 가능한 한 최대의 총 예산을 다음과 같은 방법으로 배정한다.
+모든 요청이 배정될 수 있는 경우에는 요청한 금액을 그대로 배정한다. 모든 요청이 배정될 수 없는 경우에는 특정한 정수 상한액을 계산하여 그 이상인 예산요청에는 모두 상한액을 배정한다. 상한액 이하의 예산요청에 대해서는 요청한 금액을 그대로 배정한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1238 파티 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1238-%ED%8C%8C%ED%8B%B0-with-python/</link>
+      <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1238-%ED%8C%8C%ED%8B%B0-with-python/</guid>
+      <description>📌 BOJ 1238 파티 💡 조건 N개의 숫자로 구분된 각각의 마을에 한 명의 학생이 살고 있다.
+N명의 학생이 X (1 ≤ X ≤ N)번 마을에 모여서 파티를 벌이기로 했다.
+이 마을 사이에는 총 M개의 단방향 도로들이 있고 i번째 길을 지나는데 Ti(1 ≤ Ti ≤ 100)의 시간을 소비한다.
+각각의 학생들은 파티에 참석하기 위해 걸어가서 다시 그들의 마을로 돌아와야 한다.
+하지만 이 학생들은 워낙 게을러서 최단 시간에 오고 가기를 원한다.
+이 도로들은 단방향이기 때문에 아마 그들이 오고 가는 길이 다를지도 모른다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1309 동물원 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1309-%EB%8F%99%EB%AC%BC%EC%9B%90-with-python/</link>
+      <pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1309-%EB%8F%99%EB%AC%BC%EC%9B%90-with-python/</guid>
+      <description>📌 BOJ 1309 동물원 💡 조건 어떤 동물원에 가로로 두칸 세로로 N칸인 아래와 같은 우리가 있다.
+이 동물원에는 사자들이 살고 있는데 사자들을 우리에 가둘 때, 가로로도 세로로도 붙어 있게 배치할 수는 없다.
+동물원 조련사의 머리가 아프지 않도록 우리가 2*N 배열에 사자를 배치하는 경우의 수가 몇 가지인지를 알아내는 프로그램을 작성하는 문제.
+사자를 한 마리도 배치하지 않는 경우도 하나의 경우의 수로 친다고 가정한다.
+첫째 줄에 우리의 크기 N(1≤N≤100,000)이 주어진다.
+첫째 줄에 사자를 배치하는 경우의 수를 9901로 나눈 나머지를 출력하자.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1057 토너먼트 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-1057-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8-with-python/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-1057-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8-with-python/</guid>
+      <description>📌 BOJ 1057 토너먼트 💡 조건 N명의 참가자는 번호가 1번부터 N번까지 배정받는다.
+그러고 난 후에 서로 인접한 번호끼리 스타를 한다. 이긴 사람은 다음 라운드에 진출하고, 진 사람은 그 라운드에서 떨어진다.
+그 라운드의 참가자가 홀수명이라면, 마지막 번호를 가진 참가자는 다음 라운드로 자동 진출한다. 다음 라운드에선 다시 참가자의 번호를 1번부터 매긴다.
+번호를 매기는 순서는 처음 번호의 순서를 유지하면서 1번부터 매긴다.
+이 말은 1번과 2번이 스타를 해서 1번이 진출하고, 3번과 4번이 스타를 해서 4번이 진출했다면, 4번은 다음 라운드에서 번호 2번을 배정받는다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20438 출석체크 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</link>
+      <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</guid>
+      <description>📌 BOJ 20438 출석체크 💡 조건 학생들은 접속 순서대로 3번부터 N + 2번까지 입장 번호를 받게 된다.
+지환이가 한 학생에게 출석 코드를 보내게 되면, 해당 학생은 본인의 입장 번호의 배수인 학생들에게 출석 코드를 보내어
+해당 강의의 출석을 할 수 있게끔 한다. 하지만, K명의 졸고 있는 학생들은 출석 코드를 제출하지 않고, 다른 학생들에게 보내지 않는다.
+지환이는 무작위로 한 명의 학생에게 출석 코드를 보내는 행위를 Q번 반복한 뒤,
+출석부 정리를 위해 특정 구간의 입장 번호를 받은 학생들 중에서 출석이 되지 않은 학생들의 수를 구하고 싶다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 17485 진우의 달 여행 (Large) with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</link>
+      <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</guid>
+      <description>📌 BOJ 17485 진우의 달 여행 (Large) 💡 조건 지구와 우주사이는 N X M 행렬로 나타낼 수 있으며 각 원소의 값은 우주선이 그 공간을 지날 때 소모되는 연료의 양이다.
+N, M (2 ≤ N, M ≤ 1000), 각 행렬의 원소값은 100 이하의 자연수이다. 지구 -&amp;gt; 달로 가는 경우 우주선이 움직일 수 있는 방향은 아래와 같다. 우주선은 전에 움직인 방향으로 움직일 수 없다. 즉, 같은 방향으로 두번 연속으로 움직일 수 없다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 20166 문자열 지옥에 빠진 호석 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</link>
+      <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</guid>
+      <description>📌 BOJ 20166 문자열 지옥에 빠진 호석 💡 조건 정신을 차려보니 바닥에는 격자 모양의 타일이 가득한 세상이었고, 각 타일마다 알파벳 소문자가 하나씩 써있다더라.
+두려움에 가득해 미친듯이 앞만 보고 달려 끝을 찾아 헤맸지만 이 세상은 끝이 없었고,
+달리다 지쳐 바닥에 드러누우니 하늘에 이런 문구가 핏빛 구름으로 떠다니고 있었다.
+이 세상은 N행 M열의 격자로 생겼으며, 각 칸에 알파벳이 써있고 환형으로 이어진다. 왼쪽 위를 (1, 1), 오른쪽 아래를 (N, M)이라고 하자.
+너는 아무 곳에서나 시작해서 상하좌우나 대각선 방향의 칸으로 한 칸씩 이동할 수 있다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 13459 구슬 탈출 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-13459-%EA%B5%AC%EC%8A%AC-%ED%83%88%EC%B6%9C-with-python/</link>
+      <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-13459-%EA%B5%AC%EC%8A%AC-%ED%83%88%EC%B6%9C-with-python/</guid>
+      <description>📌 BOJ 13459 구슬 탈출 💡 조건 구슬 탈출은 직사각형 보드에 빨간 구슬과 파란 구슬을 하나씩 넣은 다음, 빨간 구슬을 구멍을 통해 빼내는 게임이다.
+보드의 세로 크기는 N, 가로 크기는 M이고, 편의상 1×1크기의 칸으로 나누어져 있다.
+N, M (3 ≤ N, M ≤ 10)
+가장 바깥 행과 열은 모두 막혀져 있고, 보드에는 구멍이 하나 있다.
+빨간 구슬과 파란 구슬의 크기는 보드에서 1×1크기의 칸을 가득 채우는 사이즈이고, 각각 하나씩 들어가 있다.</description>
+    </item>
     <item>
       <title>[BOJ] 6010 Music Notes with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/</link>
@@ -80,14 +187,6 @@ N(3 ≤ N ≤ 150)
 게임 참여자들간에 지목을 완료한 상태가 주어질때, 보성이가 벌주를 마시기 위해 록 하자.
 영기가 불러야 하는 가장 작은 양의 정수 M을 보성이 몰래 귀띔해 주도록 하자.
 보성이의 번호 K(1 ≤ K ≤ N - 1)</description>
-    </item>
-    <item>
-      <title>[BOJ] 12760 최 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/temp/</link>
-      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
-      <description>
-📌 BOJ 12760 최 </description>
     </item>
     <item>
       <title>[BOJ] 20444 색종이와 가위 with Python</title>
@@ -1318,6 +1417,14 @@ permutations라는 순열 함수를 사용했다.
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</guid>
       <description>📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 12760 최 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/temp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
+      <description>
+📌 BOJ 12760 최 </description>
     </item>
   </channel>
 </rss>

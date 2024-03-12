@@ -64,7 +64,7 @@
 <meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-05-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-05-13T00:00:00+00:00" />
-<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-17204-%EC%A3%BD%EC%9D%8C%EC%9D%98-%EA%B2%8C%EC%9E%84-with-python/" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2644-%EC%B4%8C%EC%88%98%EA%B3%84%EC%82%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2512-%EC%98%88%EC%82%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1238-%ED%8C%8C%ED%8B%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1309-%EB%8F%99%EB%AC%BC%EC%9B%90-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-1057-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8-with-python/" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
@@ -106,7 +106,7 @@
   "keywords": [
     "자료구조", "PS", "그래프 탐색", "BFS", "백준", "BOJ"
   ],
-  "articleBody": "\n📌 BOJ 17839 Baba is Rabbit 💡 조건 N(1 ≤ N ≤ 100,000) N개의 줄에 걸쳐 명령이 주어진다.\n각 명령은 p is q의 형태로 주어지며, p와 q는 첫 글자가 영문 대문자이고, 나머지 글자는 영문 소문자인 길이 10 이내의 문자열이다. Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 사물을 사전순으로 출력한다.\n단, 적용할 수 있는 명령이 없다면, 아무것도 출력하지 않는다. 그래프 탐색, BFS 유형의 문제 🔖 예제 및 실행결과 예제 1 1 Rabbit is Carrot 실행결과 1 예제 2 3 Rabbit is Carrot Baba is Cat Cat is Rabbit 실행결과 2 Carrot Cat Rabbit ⌨️ 문제 풀이 Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 결과를 뽑아야하는 문제이다. 그래프 탐색을 해야하는데, 문자열로 이루어진 노드로 구성된 그래프를 만들어야 하기 때문에 딕셔너리 타입을 사용해 그래프를 만들어야 한다.\n어떤 사물 p에 명령을 한 번 이상 적용한 결과로 다시 p가 나오는 경우는 없다. 라는 조건이 있기 때문에 단방향 그래프를 만들어주면 된다. 만든 그래프를 BFS 로 탐색하면 되는데, Baba 에 명령을 한 번 이상 해야하기 때문에 큐에는 Baba를 넣어 탐색을 시작한다. 딕셔너리에 해당 키가 없을 수 있기 때문에 try - except 문을 사용하여 예외처리를 해준다. 🖥 소스 코드 from collections import deque from sys import stdin graph = {} for _ in range(int(stdin.readline())): a, b = stdin.readline().rstrip().split(' is ') if a not in graph: graph[a] = [b] else: graph[a].append(b) def solve(): q = deque() q.append(\"Baba\") visited = {} while q: now = q.popleft() try: for i in graph[now]: if i not in visited: visited[i] = 1 q.append(i) except: pass return visited try: ans = sorted(solve()) print(*ans, sep='\\n') except: pass 💾 배운점 숫자가 아닌 문자열로 이루어진 그래프를 만들고, 탐색하는 법 ",
+  "articleBody": "\n📌 BOJ 17839 Baba is Rabbit 💡 조건 N(1 ≤ N ≤ 100,000) N개의 줄에 걸쳐 명령이 주어진다.\n각 명령은 p is q의 형태로 주어지며, p와 q는 첫 글자가 영문 대문자이고, 나머지 글자는 영문 소문자인 길이 10 이내의 문자열이다. Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 사물을 사전순으로 출력한다.\n단, 적용할 수 있는 명령이 없다면, 아무것도 출력하지 않는다. 그래프 탐색, BFS 유형의 문제 🔖 예제 및 실행결과 예제 1 1 Rabbit is Carrot 실행결과 1 예제 2 3 Rabbit is Carrot Baba is Cat Cat is Rabbit 실행결과 2 Carrot Cat Rabbit ⌨️ 문제 풀이 Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 결과를 뽑아야하는 문제이다. 그래프 탐색을 해야하는데, 문자열로 이루어진 노드로 구성된 그래프를 만들어야 하기 때문에 딕셔너리 타입을 사용해 그래프를 만들어야 한다.\n어떤 사물 p에 명령을 한 번 이상 적용한 결과로 다시 p가 나오는 경우는 없다. 라는 조건이 있기 때문에 단방향 그래프를 만들어주면 된다. 만든 그래프를 BFS 로 탐색하면 되는데, Baba 에 명령을 한 번 이상 해야하기 때문에 큐에는 Baba를 넣어 탐색을 시작한다. 딕셔너리에 해당 키가 없을 수 있기 때문에 try - except 문을 사용하여 예외처리를 해준다. 🖥 소스 코드 from collections import deque from sys import stdin graph = {} for _ in range(int(stdin.readline())): a, b = stdin.readline().rstrip().split(' is ') if a not in graph: graph[a] = [b] else: graph[a].append(b) def solve(): q = deque() q.append(\"Baba\") visited = {} while q: now = q.popleft() try: for i in graph[now]: if i not in visited: visited[i] = 1 q.append(i) except: pass return visited try: ans = sorted(solve()) print(*ans, sep='\\n') except: pass 💾 느낀점 숫자가 아닌 문자열로 이루어진 그래프를 만들고, 탐색하는 법 ",
   "wordCount" : "267",
   "inLanguage": "en",
   "datePublished": "2022-05-13T00:00:00Z",
@@ -281,7 +281,7 @@
 </span></span><span class="line"><span class="cl"><span class="k">except</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="k">pass</span>
 </span></span></code></pre></div><br>
-<h3 id="-배운점">💾 배운점<a hidden class="anchor" aria-hidden="true" href="#-배운점">#</a></h3>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
 <ol>
 <li>숫자가 아닌 문자열로 이루어진 그래프를 만들고, 탐색하는 법</li>
 </ol>
