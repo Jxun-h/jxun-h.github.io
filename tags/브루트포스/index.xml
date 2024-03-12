@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 5671 호텔 방 번호 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-5671-%ED%98%B8%ED%85%94-%EB%B0%A9-%EB%B2%88%ED%98%B8-with-python/</link>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-5671-%ED%98%B8%ED%85%94-%EB%B0%A9-%EB%B2%88%ED%98%B8-with-python/</guid>
+      <description>📌 BOJ 5671 호텔 방 번호 💡 조건 선영이는 투숙객에게 불운이 찾아오는 것을 피하기 위해서 반복되는 숫자가 없게 방 번호를 만들려고 한다. 정부는 선영이의 호텔 방 번호는 N보다 크거나 같고, M보다 작거나 같아야 한다는 조건을 걸고 신축 허가를 내주었다. 선영이의 새 호텔에는 방이 최대 몇 개 있을 수 있을까?
+두 방이 같은 방 번호를 사용할 수 없다 입력은 여러 개의 테스트 케이스로 이루어져 있고, 한 줄이다.
+각 줄에는 문제의 설명에 나와있는 N과 M이 주어진다.</description>
+    </item>
     <item>
       <title>[BOJ] 1342 행운의 문자열 with Python</title>
       <link>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</link>

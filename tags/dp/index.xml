@@ -11,13 +11,28 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Mar 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[BOJ] 2631 줄세우기 with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-2631-%EC%A4%84%EC%84%B8%EC%9A%B0%EA%B8%B0-with-python/</link>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2631-%EC%A4%84%EC%84%B8%EC%9A%B0%EA%B8%B0-with-python/</guid>
+      <description>📌 BOJ 2631 줄세우기 💡 조건 선생님은 1번부터 N번까지 번호가 적혀있는 번호표를 아이들의 가슴에 붙여주었다. 선생님은 아이들을 효과적으로 보호하기 위해 목적지까지 번호순서대로 일렬로 서서 걸어가도록 하였다. 이동 도중에 보니 아이들의 번호순서가 바뀌어 다시 번호 순서대로 줄을 세우기 위해서 아이들의 위치를 옮기려고 한다. 아이들이 혼란스러워하지 않도록 하기 위해 위치를 옮기는 아이들의 수를 최소로 하려고 한다. 아이들의 수 N은 2 이상 200 이하의 정수이다. 다이나믹프로그래밍 유형의 문제 🔖 예제 및 실행결과 예제 7 3 7 5 2 6 1 4 실행결과 4 ⌨️ 문제 풀이 가장 긴 증가하는 부분 수열 알고리즘으로 해결 할 수 있는 문제입니다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 12788 제 2회 IUPC는 잘 개최될 수 있을까? with Python</title>
+      <link>https://jxun-h.github.io/posts/ps/boj-12788-%EC%A0%9C-2%ED%9A%8C-iupc%EB%8A%94-%EC%9E%98-%EA%B0%9C%EC%B5%9C%EB%90%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-with-python/</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/ps/boj-12788-%EC%A0%9C-2%ED%9A%8C-iupc%EB%8A%94-%EC%9E%98-%EA%B0%9C%EC%B5%9C%EB%90%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-with-python/</guid>
+      <description>📌 BOJ 12788 제 2회 IUPC는 잘 개최될 수 있을까? 💡 조건 대회 개최를 위한 예산을 아끼기 위하여 펜을 구매하지 않고 CTP회원들에게 펜을 빌리기로 하였다. CTP에는 N명의 회원들이 존재하며 각각의 회원들의 필통에 들어있는 펜의 개수는 모두 다르다.
+정은이는 여러명의 회원에게 펜을 빌릴경우 펜을 돌려주기에 번거롭다고 생각하여 최소한의 회원들에게 펜을 빌려 참가자들에게 나누어 주려고 한다. 대회에 참가하는 참가자들은 팀을 구성해서 참가하는데 모든 팀원에게 펜을 지급해야한다. 한 팀이 k명의 팀원으로 구성되어 있을때 몇 명의 회원들에게 펜을 빌려야하는지 출력하는 문제.</description>
+    </item>
+    <item>
       <title>[BOJ] 2493 탑 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-2493-%ED%83%91-with-python/</link>
+      <link>https://jxun-h.github.io/posts/ps/boj-2493-%ED%83%91-with-python/</link>
       <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-2493-%ED%83%91-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/ps/boj-2493-%ED%83%91-with-python/</guid>
       <description>📌 BOJ 2493 탑 💡 조건 일직선 위에 N개의 높이가 서로 다른 탑을 수평 직선의 왼쪽부터 오른쪽 방향으로 차례로 세우고, 각 탑의 꼭대기에 레이저 송신기를 설치하였다. 모든 탑의 레이저 송신기는 레이저 신호를 지표면과 평행하게 수평 직선의 왼쪽 방향으로 발사하고,
 탑의 기둥 모두에는 레이저 신호를 수신하는 장치가 설치되어 있다.
 하나의 탑에서 발사된 레이저 신호는 가장 먼저 만나는 단 하나의 탑에서만 수신이 가능하다. N과 탑들의 높이가 주어질 때, 각각의 탑에서 발사한 레이저 신호를 어느 탑에서 수신하는지를 알아내는 문제.</description>
