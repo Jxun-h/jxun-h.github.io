@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/series/boj/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 1068 트리 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/</link>
       <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/</guid>
       <description>📌 BOJ 1068 트리 💡 조건 트리에서 리프 노드란, 자식의 개수가 0인 노드를 말한다.
 트리가 주어졌을 때, 노드 하나를 지울 것이다. 그 때, 남은 트리에서 리프 노드의 개수를 구하는 문제.
 노드를 지우면 그 노드와 노드의 모든 자손이 트리에서 제거된다.
@@ -28,9 +28,9 @@
     </item>
     <item>
       <title>[BOJ] 16956 늑대와 양 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/</link>
       <pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/</guid>
       <description>📌 BOJ 16956 늑대와 양 💡 조건 크기가 R×C인 목장이 있고, 목장은 1×1 크기의 칸으로 나누어져 있다.
 각각의 칸에는 비어있거나, 양 또는 늑대가 있다. 양은 이동하지 않고 위치를 지키고 있고, 늑대는 인접한 칸을 자유롭게 이동할 수 있다.
 두 칸이 인접하다는 것은 두 칸이 변을 공유하는 경우이다.
@@ -1459,9 +1459,9 @@ permutations라는 순열 함수를 사용했다.
     </item>
     <item>
       <title>[BOJ] 17103 골드바흐 파티션 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-17103-%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90-%ED%8C%8C%ED%8B%B0%EC%85%98-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-17103-%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90-%ED%8C%8C%ED%8B%B0%EC%85%98-with-python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-17103-%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90-%ED%8C%8C%ED%8B%B0%EC%85%98-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-17103-%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90-%ED%8C%8C%ED%8B%B0%EC%85%98-with-python/</guid>
       <description>📌 BOJ 17103 골드바흐 파티션 💡 조건 골드바흐의 추측: 2보다 큰 짝수는 두 소수의 합으로 나타낼 수 있다.
 짝수 N을 두 소수의 합으로 나타내는 표현을 골드바흐 파티션이라고 한다.
 짝수 N이 주어졌을 때, 골드바흐 파티션의 개수를 구해보자. 두 소수의 순서만 다른 것은 같은 파티션이다.
