@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>백트래킹 | Jxun-h Dev Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://jxun-h.github.io/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="백트래킹" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://jxun-h.github.io/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="백트래킹"/>
+<meta name="twitter:description" content=""/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/tags/">Tags</a></div>
+  <h1>
+    백트래킹
+    <a href="/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/index.xml" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 6443 애너그램 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 6443 애너그램 💡 조건 첫째 줄에 단어의 개수 N 이, 둘째 줄부터 N개의 영단어가 들어온다. 영단어는 소문자로 이루어져 있다. 단어의 길이는 20보다 작거나 같고, 애너그램의 수가 100,000개 이하인 단어만 입력으로 주어진다. 애너그램 프로그램이란, 입력받은 영단어의 철자들로 만들 수 있는 모든 단어를 출력하는 것이다. 입력받은 단어내에 몇몇 철자가 중복될 수 있다. 이 경우 같은 단어가 여러 번 만들어 질 수 있는데, 한 번만 출력해야 한다. 또한 출력할 때에 알파벳 순서로 출력해야 한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-03-02 00:00:00 +0000 UTC'>March 2, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 6443 애너그램 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-6443-%EC%95%A0%EB%84%88%EA%B7%B8%EB%9E%A8-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 9663 N-Queen with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 9663 N-Queen 💡 조건 N-Queen 문제는 크기가 N × N인 체스판 위에 퀸 N개를 서로 공격할 수 없게 놓는 문제. 1 &lt;= N &lt; 15 브루트포스, 백트래킹 알고리즘유형의 문제 🔖 예제 및 실행결과 예제 8 실행결과 92 ⌨️ 문제 풀이 퀸은 각 줄마다 반드시 하나씩 들어가야한다.
+퀸이 있는 자리 기준으로 대각선, 세로선에는 다른 퀸이 존재할 수 없다.
+퀸의 좌표를 하나하나 확인하면서 문제를 해결하려고 하면 시간초과가 난다.
+dfs 함수에서 퀸을 놓은 개수가 n개가 되었으면 res &#43; 1 후 return한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-02-14 00:00:00 +0000 UTC'>February 14, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 9663 N-Queen with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-9663-n-queen-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 1759 암호 만들기 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 1759 암호 만들기 💡 조건 암호는 서로 다른 L개의 알파벳 소문자들로 구성되며 최소 한 개의 모음(a, e, i, o, u)과
+최소 두 개의 자음으로 구성되어 있다고 알려져 있다. 암호를 이루는 알파벳이 암호에서 증가하는 순서로 배열되었을 것.
+즉, abc는 가능성이 있는 암호이지만 bac는 그렇지 않다. C개의 문자들이 모두 주어졌을 때, 가능성 있는 암호들을 모두 구하는 프로그램을 작성.
+각 줄에 하나씩, 사전식으로 가능성 있는 암호를 모두 출력 두 정수 L, C가 주어진다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-02-13 00:00:00 +0000 UTC'>February 13, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 1759 암호 만들기 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-1759-%EC%95%94%ED%98%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 6603 로또 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 6603 로또 💡 조건 집합 S에서 K개의 숫자를 골라 뽑아 낼 수 있는 경우의 수를 모두 출력하는 문제 입력이 여러개 들어오며, 0이 들어왔을 때 종료 백트래킹, 재귀, 조합유형의 문제 🔖 예제 및 실행결과 예제 7 1 2 3 4 5 6 7 8 1 2 3 5 8 13 21 34 0 실행결과 1 2 3 4 5 6 1 2 3 4 5 7 1 2 3 4 6 7 1 2 3 5 6 7 1 2 4 5 6 7 1 3 4 5 6 7 2 3 4 5 6 7 1 2 3 5 8 13 1 2 3 5 8 21 1 2 3 5 8 34 1 2 3 5 13 21 1 2 3 5 13 34 1 2 3 5 21 34 1 2 3 8 13 21 1 2 3 8 13 34 1 2 3 8 21 34 1 2 3 13 21 34 1 2 5 8 13 21 1 2 5 8 13 34 1 2 5 8 21 34 1 2 5 13 21 34 1 2 8 13 21 34 1 3 5 8 13 21 1 3 5 8 13 34 1 3 5 8 21 34 1 3 5 13 21 34 1 3 8 13 21 34 1 5 8 13 21 34 2 3 5 8 13 21 2 3 5 8 13 34 2 3 5 8 21 34 2 3 5 13 21 34 2 3 8 13 21 34 2 5 8 13 21 34 3 5 8 13 21 34 ⌨️ 문제 풀이 조합을 이용하여 S 수열에 있는 K개의 숫자를 뽑아낸 조합의 경우의 수를 구하되, 가능한 조합을 모두 출력하는 문제....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-02-10 00:00:00 +0000 UTC'>February 10, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 6603 로또 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-6603-%EB%A1%9C%EB%98%90-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 15658 연산자 끼워넣기 (2) with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 15658 연산자 끼워넣기 (2) 💡 조건 N개의 수로 이루어진 수열 A1, A2, …, AN
+N(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,
+차례대로 덧셈(&#43;)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면 안 된다. 식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-02-02 00:00:00 +0000 UTC'>February 2, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 15658 연산자 끼워넣기 (2) with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 10819 차이를 최대로 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 10819 차이를 최대로 💡 조건 N개의 정수로 이루어진 배열 A N (3 ≤ N ≤ 8) 배열에 들어있는 정수는 -100보다 크거나 같고, 100보다 작거나 같다. 다음 식의 최댓값을 구하는 프로그램을 작성. |A[0] - A[1]| &#43; |A[1] - A[2]| &#43; ... &#43; |A[N-2] - A[N-1]| 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 6 20 1 15 8 4 10 실행결과 62 ⌨️ 문제 풀이 최댓값을 저장할 res 정수 생성 itertools 의 permutaions 함수로 가능한 수를 모두 계산하여 v에 저장하고, res 갱신 🖥 소스 코드 from sys import stdin from itertools import permutations n = int(stdin....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-01-11 00:00:00 +0000 UTC'>January 11, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 10819 차이를 최대로 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-10819-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 1799 비숍 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 1799 비숍 💡 조건 및 풀이 체스판의 크기는 10 이하의 자연수 비숍을 놓을 수 있는 곳에는 1, 비숍을 놓을 수 없는 곳에는 0 대각선 방향으로 움직이는 비숍이 이동할 수 있는 경로에 비숍을 놓을 수 없다. 백트래킹 유형의 문제 🔖 예제 및 실행결과 예제 5 1 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 1 0 1 1 1 실행결과 7 ⌨️ 문제 풀이 흑과 백을 구분할 수 있는 체스판을 True 와 False 를 사용해 다시 만든다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-10-11 00:00:00 +0000 UTC'>October 11, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 1799 비숍 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-1799-%EB%B9%84%EC%88%8D-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 6987 월드컵 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 6987 월드컵 💡 조건 및 풀이 6개의 국가가 있고, 총 18번의 경기를 한다. 승, 무, 패의 결과가 있으며, 승, 무, 패의 수는 6보다 작거나 같은 자연수 또는 0 백트래킹 유형의 문제 입력은 네 줄로 들어오며, 각 줄에 대해 가능한 결과 1, 불가능한 결과 0 을출력하는 문제이다 🔖 예제 및 실행결과 예제 5 0 0 3 0 2 2 0 3 0 0 5 4 0 1 1 0 4 4 1 0 3 0 2 4 1 0 1 1 3 0 0 5 1 1 3 5 0 0 4 0 1 2 2 1 2 0 3 1 0 4 0 0 5 5 0 0 3 1 1 2 1 2 2 0 3 0 0 5 1 0 4 실행결과 1 1 0 0 ⌨️ 문제 풀이 data 변수에 각 나라의 일정을 담고, res 베열에 3개씩 쪼개어 다시 넣는다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-09-22 00:00:00 +0000 UTC'>September 22, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 6987 월드컵 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-6987-%EC%9B%94%EB%93%9C%EC%BB%B5-with-python/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://jxun-h.github.io/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/">
+      «&nbsp;Prev&nbsp;1/2
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
