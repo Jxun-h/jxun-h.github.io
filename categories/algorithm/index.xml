@@ -11,8 +11,96 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Apr 2023 16:26:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2023 14:07:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 10025 게으른 백곰 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-10025-%EA%B2%8C%EC%9C%BC%EB%A5%B8-%EB%B0%B1%EA%B3%B0-with-python/</link>
+      <pubDate>Mon, 10 Apr 2023 14:07:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-10025-%EA%B2%8C%EC%9C%BC%EB%A5%B8-%EB%B0%B1%EA%B3%B0-with-python/</guid>
+      <description>📌 BOJ 10025 게으른 백곰 💡 조건 앨버트가 가장 적은 거리만 움직이고도 최대한 많은 얼음으로 더위를 식힐 수 있도록 도와주자. 우리 안은 1차원 배열로 생각하며, 총 N개의 얼음 양동이들이 xi좌표마다 놓여 있고 각 양동이 안에는 gi씩의 얼음이 들어 있다.
+(1 ≤ N ≤ 100000)
+(0 ≤ xi ≤ 1,000,000)
+(1 ≤ gi ≤ 10,000) 앨버트가 자리를 잡으면 그로부터 좌우로 K(1 ≤ K ≤ 2,000,000) 만큼 떨어진 양동이까지 닿을 수 있다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 15792 A/B - 2 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-15792-ab-2-with-python/</link>
+      <pubDate>Mon, 10 Apr 2023 13:03:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-15792-ab-2-with-python/</guid>
+      <description>📌 BOJ 15792 A/B - 2 💡 조건 두 정수 A와 B를 입력받은 다음, A/B 의 값을 출력하는 문제. 첫째 줄에 A와 B가 주어진다. (0 &amp;lt; A, B ≤ 10,000) 이 문제는 서브태스크가 있다. 구현, 수학 유형의 문제 🔖 예제 및 실행결과 예제 1 1 3 실행결과 1 0.33333333333333333333333333333333 예제 2 4 5 실행결과 2 0.8 ⌨️ 문제 풀이 해당 문제의 서브태스크 10번을 보면, 절대/상대 오차 허용 범위가 10**-1000 이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2455 지능형 기차 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2455-%EC%A7%80%EB%8A%A5%ED%98%95-%EA%B8%B0%EC%B0%A8-with-python/</link>
+      <pubDate>Mon, 10 Apr 2023 11:36:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2455-%EC%A7%80%EB%8A%A5%ED%98%95-%EA%B8%B0%EC%B0%A8-with-python/</guid>
+      <description>📌 BOJ 2455 지능형 기차 💡 조건 기차에는 타거나 내리는 사람 수를 자동으로 인식할 수 있는 장치가 있다.
+이 장치를 이용하여 출발역에서 종착역까지 가는 도중 기차 안에 사람이 가장 많을 때의 사람 수를 계산하려고 한다.
+기차를 이용하는 사람들은 질서 의식이 투철하여, 역에서 기차에 탈 때, 내릴 사람이 모두 내린 후에 기차에 탄다고 가정한다.
+이 기차는 다음 조건을 만족하면서 운행된다고 가정한다.
+기차는 역 번호 순서대로 운행한다. 출발역에서 내린 사람 수와 종착역에서 탄 사람 수는 0이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1072 게임 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1072-%EA%B2%8C%EC%9E%84-with-python/</link>
+      <pubDate>Fri, 07 Apr 2023 15:18:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1072-%EA%B2%8C%EC%9E%84-with-python/</guid>
+      <description>📌 BOJ 1072 게임 💡 조건 형택이는 잠시 코딩을 하는 사이에 자신의 게임 실력이 눈에 띄게 향상된 것을 알았다.
+형택이는 앞으로의 모든 게임에서 지지 않는다.
+형택이는 게임 기록을 삭제 할 수 없기 때문에, 자신의 예전 기록이 현재 자신의 엄청난 실력을 증명하지 못한다고 생각했다.
+게임 기록은 다음과 같이 생겼다.
+게임 횟수 : X 이긴 게임 : Y (Z%) Z는 형택이의 승률이고, 소수점은 버린다. 예를 들어, X=53, Y=47이라면, Z=88이다. X와 Y가 주어졌을 때, 형택이가 게임을 최소 몇 번 더 해야 Z가 변하는지 구하는 문제</description>
+    </item>
+    <item>
+      <title>[BOJ] 9658 돌 게임 4 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-9658-%EB%8F%8C-%EA%B2%8C%EC%9E%84-4-with-python/</link>
+      <pubDate>Fri, 07 Apr 2023 15:07:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-9658-%EB%8F%8C-%EA%B2%8C%EC%9E%84-4-with-python/</guid>
+      <description>📌 BOJ 9658 돌 게임 4 💡 조건 탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개, 3개 또는 4개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 지게 된다. 두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 문제. 게임은 상근이가 먼저 시작한다. 첫째 줄에 N이 주어진다. (1 ≤ N ≤ 1000)
+상근이가 게임을 이기면 SK를, 창영이가 게임을 이기면 CY을 출력한다. 다이나믹 프로그래밍 유형의 문제 🔖 예제 및 실행결과 예제 1 6 실행결과 1 SK ⌨️ 문제 풀이 돌 게임 3 와의 상황을 반대로 계산하면 된다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 9657 돌 게임 3 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-9657-%EB%8F%8C-%EA%B2%8C%EC%9E%84-3-with-python/</link>
+      <pubDate>Tue, 04 Apr 2023 17:46:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-9657-%EB%8F%8C-%EA%B2%8C%EC%9E%84-3-with-python/</guid>
+      <description>📌 BOJ 9657 돌 게임 3 💡 조건 탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개, 3개 또는 4개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 이기게 된다. 두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 문제. 게임은 상근이가 먼저 시작한다. 첫째 줄에 N이 주어진다. (1 ≤ N ≤ 1000)
+상근이가 게임을 이기면 SK를, 창영이가 게임을 이기면 CY을 출력한다. 다이나믹 프로그래밍 유형의 문제 🔖 예제 및 실행결과 예제 1 6 실행결과 1 SK ⌨️ 문제 풀이 상근이를 기준으로 DP 배열을 구성할 것이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 9656 돌 게임2 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-9656-%EB%8F%8C-%EA%B2%8C%EC%9E%842-with-python/</link>
+      <pubDate>Tue, 04 Apr 2023 17:31:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-9656-%EB%8F%8C-%EA%B2%8C%EC%9E%842-with-python/</guid>
+      <description>📌 BOJ 9656 돌 게임2 💡 조건 탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개 또는 3개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 지게 된다. 두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 문제. 게임은 상근이가 먼저 시작한다. 첫째 줄에 N이 주어진다. (1 ≤ N ≤ 1000)
+상근이가 게임을 이기면 SK를, 창영이가 게임을 이기면 CY을 출력한다. 다이나믹 프로그래밍 유형의 문제 🔖 예제 및 실행결과 예제 1 4 실행결과 1 SK ⌨️ 문제 풀이 BOJ 9655 돌 게임 의 문제 풀이와 매우 비슷하다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 9655 돌 게임 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-9655-%EB%8F%8C-%EA%B2%8C%EC%9E%84-with-python/</link>
+      <pubDate>Tue, 04 Apr 2023 17:19:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-9655-%EB%8F%8C-%EA%B2%8C%EC%9E%84-with-python/</guid>
+      <description>📌 BOJ 9655 돌 게임 💡 조건 탁자 위에 돌 N개가 있다. 상근이와 창영이는 턴을 번갈아가면서 돌을 가져가며, 돌은 1개 또는 3개 가져갈 수 있다. 마지막 돌을 가져가는 사람이 게임을 이기게 된다. 두 사람이 완벽하게 게임을 했을 때, 이기는 사람을 구하는 문제. 게임은 상근이가 먼저 시작한다. 첫째 줄에 N이 주어진다. (1 ≤ N ≤ 1000)
+상근이가 게임을 이기면 SK를, 창영이가 게임을 이기면 CY을 출력한다. 다이나믹 프로그래밍 유형의 문제 🔖 예제 및 실행결과 예제 1 5 실행결과 1 SK ⌨️ 문제 풀이 상근이를 기준으로 DP 배열을 구성할 것이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 3943 헤일스톤수열 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-3943-%ED%97%A4%EC%9D%BC%EC%8A%A4%ED%86%A4%EC%88%98%EC%97%B4-with-python/</link>
+      <pubDate>Tue, 04 Apr 2023 17:09:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-3943-%ED%97%A4%EC%9D%BC%EC%8A%A4%ED%86%A4%EC%88%98%EC%97%B4-with-python/</guid>
+      <description>📌 BOJ 3943 헤일스톤수열 💡 조건 헤일스톤 수열은 아래와 같이 정의한다. n이 짝수라면, 2로 나눈다. n이 홀수라면, 3을 곱한 뒤 1을 더한다. 헤일스톤 추측은 임의의 양의 정수 n으로 수열을 시작한다면, 항상 4, 2, 1, 4, 2, 1,&amp;hellip;로 끝난다는 추측이다. 이 문제에서는 1이 나오면 수열이 끝난 것으로 처리한다. n이 주어졌을 때, 이 수열에서 가장 큰 값을 찾아 출력하는 문제 첫째 줄에 테스트 케이스의 개수 T(1 ≤ T ≤ 100,000)가 주어진다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1652 누울 자리를 찾아라 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1652-%EB%88%84%EC%9A%B8-%EC%9E%90%EB%A6%AC%EB%A5%BC-%EC%B0%BE%EC%95%84%EB%9D%BC-with-python/</link>
+      <pubDate>Mon, 03 Apr 2023 16:40:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1652-%EB%88%84%EC%9A%B8-%EC%9E%90%EB%A6%AC%EB%A5%BC-%EC%B0%BE%EC%95%84%EB%9D%BC-with-python/</guid>
+      <description>📌 BOJ 1652 누울 자리를 찾아라 💡 조건 코레스코 콘도에 있는 방은 NxN의 정사각형모양으로 생겼다.
+방 안에는 옮길 수 없는 짐들이 이것저것 많이 있어서 영식이의 누울 자리를 차지하고 있었다. 영식이가 누울 수 있는 자리에는 조건이 있다.
+똑바로 연속해서 2칸 이상의 빈 칸이 존재하면 그 곳에 몸을 양 옆으로 쭉 뻗으면서 누울 수 있다.
+가로로 누울 수도 있고 세로로 누울 수도 있다. 누울 때는 무조건 몸을 쭉 뻗기 때문에 반드시 벽이나 짐에 닿게 된다.</description>
+    </item>
     <item>
       <title>[BOJ] 1789 수들의 합 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1789-%EC%88%98%EB%93%A4%EC%9D%98-%ED%95%A9-with-python/</link>
@@ -63,12 +151,12 @@ A += C 후, C += 1, B += 1 (2)번의 반복문은 A가 입력 받은 S 보다 �
 첫 줄에 100 이하의 양의 정수 N이 주어진다.</description>
     </item>
     <item>
-      <title>[BOJ] 12760 with Python</title>
+      <title>[BOJ] temp with Python</title>
       <link>https://jxun-h.github.io/posts/temp/temp/</link>
       <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
       <description>
-📌 BOJ 12760 </description>
+📌 BOJ temp </description>
     </item>
     <item>
       <title>[BOJ] 1992 쿼드트리 with Python</title>

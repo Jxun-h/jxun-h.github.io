@@ -11,8 +11,37 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 03 Apr 2023 16:26:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2023 13:03:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 15792 A/B - 2 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-15792-ab-2-with-python/</link>
+      <pubDate>Mon, 10 Apr 2023 13:03:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-15792-ab-2-with-python/</guid>
+      <description>📌 BOJ 15792 A/B - 2 💡 조건 두 정수 A와 B를 입력받은 다음, A/B 의 값을 출력하는 문제. 첫째 줄에 A와 B가 주어진다. (0 &amp;lt; A, B ≤ 10,000) 이 문제는 서브태스크가 있다. 구현, 수학 유형의 문제 🔖 예제 및 실행결과 예제 1 1 3 실행결과 1 0.33333333333333333333333333333333 예제 2 4 5 실행결과 2 0.8 ⌨️ 문제 풀이 해당 문제의 서브태스크 10번을 보면, 절대/상대 오차 허용 범위가 10**-1000 이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2455 지능형 기차 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2455-%EC%A7%80%EB%8A%A5%ED%98%95-%EA%B8%B0%EC%B0%A8-with-python/</link>
+      <pubDate>Mon, 10 Apr 2023 11:36:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2455-%EC%A7%80%EB%8A%A5%ED%98%95-%EA%B8%B0%EC%B0%A8-with-python/</guid>
+      <description>📌 BOJ 2455 지능형 기차 💡 조건 기차에는 타거나 내리는 사람 수를 자동으로 인식할 수 있는 장치가 있다.
+이 장치를 이용하여 출발역에서 종착역까지 가는 도중 기차 안에 사람이 가장 많을 때의 사람 수를 계산하려고 한다.
+기차를 이용하는 사람들은 질서 의식이 투철하여, 역에서 기차에 탈 때, 내릴 사람이 모두 내린 후에 기차에 탄다고 가정한다.
+이 기차는 다음 조건을 만족하면서 운행된다고 가정한다.
+기차는 역 번호 순서대로 운행한다. 출발역에서 내린 사람 수와 종착역에서 탄 사람 수는 0이다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1072 게임 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1072-%EA%B2%8C%EC%9E%84-with-python/</link>
+      <pubDate>Fri, 07 Apr 2023 15:18:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1072-%EA%B2%8C%EC%9E%84-with-python/</guid>
+      <description>📌 BOJ 1072 게임 💡 조건 형택이는 잠시 코딩을 하는 사이에 자신의 게임 실력이 눈에 띄게 향상된 것을 알았다.
+형택이는 앞으로의 모든 게임에서 지지 않는다.
+형택이는 게임 기록을 삭제 할 수 없기 때문에, 자신의 예전 기록이 현재 자신의 엄청난 실력을 증명하지 못한다고 생각했다.
+게임 기록은 다음과 같이 생겼다.
+게임 횟수 : X 이긴 게임 : Y (Z%) Z는 형택이의 승률이고, 소수점은 버린다. 예를 들어, X=53, Y=47이라면, Z=88이다. X와 Y가 주어졌을 때, 형택이가 게임을 최소 몇 번 더 해야 Z가 변하는지 구하는 문제</description>
+    </item>
     <item>
       <title>[BOJ] 1789 수들의 합 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1789-%EC%88%98%EB%93%A4%EC%9D%98-%ED%95%A9-with-python/</link>
