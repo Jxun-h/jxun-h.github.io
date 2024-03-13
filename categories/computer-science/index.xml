@@ -182,13 +182,6 @@ EX) 지하철 노선도 방향성 그래프(Directed Graph)
 필수적인 요소 - 1, 2 좋은 프로그래밍의 습관 - 3, 4, 5 성능과 관련 - 6, 7 💡 성능 분석 VS 성능 측정 성능 분석 시뮬레이션, 복잡도 성능 측정 실제로 실행시켜서 실행 시간을 측정 💡 복잡도의 정의 공간 복잡도 : 프로그램 실행에 사용되는 메모리 시간 복잡도 : 프로그램 실행에 걸리는 시간 💡 시간복잡도 실행에 걸리는 시간(T[p]) = 컴파일 시간 + 실행 시간 컴파일 시간은 고정 and 한번만 필요 T[p]는 컴퓨터 사양에 따라 변화한다.</description>
     </item>
     <item>
-      <title></title>
-      <link>https://jxun-h.github.io/posts/data-structure/temp/</link>
-      <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/data-structure/temp/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>[CS] 1. 자료구조의 정의와 알고리즘의 정의 및 표현</title>
       <link>https://jxun-h.github.io/posts/data-structure/cs-1.-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98-%EC%A0%95%EC%9D%98-%EB%B0%8F-%ED%91%9C%ED%98%84/</link>
       <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>

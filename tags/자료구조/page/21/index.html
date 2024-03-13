@@ -149,33 +149,6 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">[Programmers] 블록 이동하기 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.
-board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x &#43; dx[i], pos1_y &#43; dy[i], pos2_x &#43; dx[i], pos2_y &#43; dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-12-12 00:00:00 +0000 UTC'>December 12, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 블록 이동하기 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[BOJ] 11497 통나무 건너뛰기 with Python
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 BOJ 11497 통나무 건너뛰기 💡 조건 첫 줄에 통나무의 개수를 나타내는 정수 (5 ≤ N ≤ 10,000)
-둘째 줄에 각 통나무의 높이를 나타내는 정수 (1 ≤ Li ≤ 100,000) 통나무 건너뛰기의 난이도는 인접한 두 통나무 간의 높이의 차의 최댓값으로 결정된다.
-가장 첫 통나무와 가장 마지막 통나무 역시 인접해 있다. 그리디 알고리즘유형의 문제 🔖 예제 및 실행결과 예제 3 7 13 10 12 11 10 11 12 5 2 4 5 7 9 8 6 6 6 6 6 6 6 6 실행결과 1 4 0 ⌨️ 문제 풀이 단순히 정렬을 해도 되지만, 첫 통나무와 마지막 통나무가 인접해있다는 조건이 있다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2021-12-06 00:00:00 +0000 UTC'>December 6, 2021</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [BOJ] 11497 통나무 건너뛰기 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">[Programmers] 외벽 점검 with Python
     </h2>
   </header>
@@ -291,6 +264,37 @@ oi != hi
   </div>
   <footer class="entry-footer"><span title='2021-10-25 00:00:00 +0000 UTC'>October 25, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
   <a class="entry-link" aria-label="post link to [BOJ] 13334 철로 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-13334-%EC%B2%A0%EB%A1%9C-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[BOJ] 1043 거짓말 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 BOJ 1043 거짓말 💡 조건 N, M은 50 이하의 자연수 각각 사람의 수, 파티의 수
+진실을 아는 사람의 수는 0 이상 50 이하의 정수
+각 파티마다 오는 사람의 수는 1 이상 50 이하의 정수 지민이는 모든 파티에 참가해야한다.
+지민이는 이야기를 과장되게 한다. 또한 지민이는 거짓말쟁이가 되기 싫다.
+이야기의 진실을 아는 사람이 파티에 있으면 과장해서 말할 수 없다. 과장된 이야기를 할 수 있는 파티 개수의 최댓값을 구하는 문제. 자료구조의 활용을 요구하는 유형의 문제 🔖 예제 및 실행결과 예제 4 5 1 1 1 1 1 2 1 3 1 4 2 4 1 실행결과 2 ⌨️ 문제 풀이 cnt라는 리스트에 파티의 수만큼 원소를 만들어주고, 각 값을 1로 둔다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-10-20 00:00:00 +0000 UTC'>October 20, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [BOJ] 1043 거짓말 with Python" href="https://jxun-h.github.io/posts/problem-solving/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Programmers] 표 편집 with Python
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 Programmers - 표 편집 💡 조건 및 풀이 표의 원본 행의 개수를 나타내는 변수 n
+5 ≤ n ≤ 1,000,000 처음에 선택되어 있는 행의 위치 k
+0 ≤ k &lt; n 수행한 명령어들이 담긴 문자열 배열 cmd
+1 ≤ cmd의 원소 개수 ≤ 200,000 cmd의 각 원소는 &#34;U X&#34;, &#34;D X&#34;, &#34;C&#34;, &#34;Z&#34; 중 하나 Linked List 자료구조 문제 표의 모든 행을 제거하여, 행이 하나도 남지 않는 경우는 입력으로 주어지지 않는다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2021-10-17 00:00:00 +0000 UTC'>October 17, 2021</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [Programmers] 표 편집 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

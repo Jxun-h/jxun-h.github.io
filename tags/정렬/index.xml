@@ -32,14 +32,6 @@
 첫 줄에 100 이하의 양의 정수 N이 주어진다.</description>
     </item>
     <item>
-      <title>[BOJ] temp with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/temp/</link>
-      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
-      <description>
-📌 BOJ temp </description>
-    </item>
-    <item>
       <title>[BOJ] 1722 순열의 순서 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/</link>
       <pubDate>Tue, 09 Aug 2022 17:18:00 +0000</pubDate>
@@ -164,6 +156,14 @@ course 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순�
       <guid>https://jxun-h.github.io/posts/problem-solving/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</guid>
       <description>📌 BOJ 3273 두 수의 합 💡 조건 및 풀이 n개의 서로 다른 정수로 이루어진 수열 A가 있다. 1 &amp;lt;= A[i] &amp;lt;= 1000000 n의 크기는 1 &amp;lt;= n &amp;lt;= 100000 x의 크기는 1 &amp;lt;= x &amp;lt;= 2000000 sort + binary search 유형의 문제 자연수 x가 주어졌을 때, A[i] + A[j] = x 를 만족하는 쌍의 수를 구한다.
 (A[i], A[j]) 🔖 예제 및 실행결과 예제 9 5 12 7 10 9 1 2 3 11 13 실행결과 3 ⌨️ 문제 풀이 Python 언어의 배열 이진 분할 알고리즘을 사용할 수 있는 bisect 사용.</description>
+    </item>
+    <item>
+      <title>[BOJ] temp with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/temp/</link>
+      <pubDate>Sat, 01 Apr 0000 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
+      <description>
+📌 BOJ temp </description>
     </item>
   </channel>
 </rss>

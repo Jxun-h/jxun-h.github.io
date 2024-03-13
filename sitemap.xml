@@ -188,9 +188,6 @@
     <loc>https://jxun-h.github.io/posts/problem-solving/boj-14469-%EC%86%8C%EA%B0%80-%EA%B8%B8%EC%9D%84-%EA%B1%B4%EB%84%88%EA%B0%84-%EC%9D%B4%EC%9C%A0-3-with-python/</loc>
     <lastmod>2023-04-01T22:41:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/temp/temp/</loc>
-    <lastmod>2023-04-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://jxun-h.github.io/posts/problem-solving/boj-1992-%EC%BF%BC%EB%93%9C%ED%8A%B8%EB%A6%AC-with-python/</loc>
     <lastmod>2023-03-31T17:57:00+00:00</lastmod>
   </url><url>
@@ -310,9 +307,6 @@
   </url><url>
     <loc>https://jxun-h.github.io/posts/data-structure/cs-2.-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%84%EC%82%B0/</loc>
     <lastmod>2022-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/posts/data-structure/temp/</loc>
-    <lastmod>2022-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/posts/data-structure/cs-1.-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98-%EC%A0%95%EC%9D%98-%EB%B0%8F-%ED%91%9C%ED%98%84/</loc>
     <lastmod>2022-07-05T00:00:00+00:00</lastmod>
@@ -967,5 +961,8 @@
     <loc>https://jxun-h.github.io/search/</loc>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/</loc>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/temp/temp/</loc>
+    <lastmod>0000-04-01T00:00:00+00:00</lastmod>
   </url>
 </urlset>

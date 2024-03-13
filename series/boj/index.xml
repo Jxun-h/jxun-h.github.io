@@ -317,14 +317,6 @@ A += C 후, C += 1, B += 1 (2)번의 반복문은 A가 입력 받은 S 보다 �
 첫 줄에 100 이하의 양의 정수 N이 주어진다.</description>
     </item>
     <item>
-      <title>[BOJ] temp with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/temp/</link>
-      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
-      <description>
-📌 BOJ temp </description>
-    </item>
-    <item>
       <title>[BOJ] 1992 쿼드트리 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1992-%EC%BF%BC%EB%93%9C%ED%8A%B8%EB%A6%AC-with-python/</link>
       <pubDate>Fri, 31 Mar 2023 17:57:00 +0000</pubDate>
@@ -1906,6 +1898,14 @@ permutations라는 순열 함수를 사용했다.
 짝수 N이 주어졌을 때, 골드바흐 파티션의 개수를 구해보자. 두 소수의 순서만 다른 것은 같은 파티션이다.
 첫째 줄에 테스트 케이스의 개수 T (1 ≤ T ≤ 100)가 주어진다.
 각 테스트 케이스는 한 줄로 이루어져 있고, 정수 N은 짝수이고, 2 &amp;lt; N ≤ 1,000,000을 만족한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] temp with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/temp/</link>
+      <pubDate>Sat, 01 Apr 0000 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
+      <description>
+📌 BOJ temp </description>
     </item>
   </channel>
 </rss>
