@@ -11,8 +11,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2023 17:05:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 10707 수도요금 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-10707-%EC%88%98%EB%8F%84%EC%9A%94%EA%B8%88-with-python/</link>
+      <pubDate>Mon, 10 Apr 2023 17:05:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-10707-%EC%88%98%EB%8F%84%EC%9A%94%EA%B8%88-with-python/</guid>
+      <description>📌 BOJ 10707 수도요금 💡 조건 JOI군이 살고 있는 지역에는 X사와 Y사, 두 개의 수도회사가 있다.
+두 회사의 수도요금은 한 달간 수도의 사용량에 따라 (2)번과 같이 정해진다. X사 : 1리터당 A엔.
+Y사 : 기본요금은 B엔이고, 사용량이 C리터 이하라면 요금은 기본요금만 청구된다.
+용량이 C리터가 넘었을 경우 기본요금 B엔에 더해서 추가요금이 붙는다.
+추가요금은 사용량이 C리터를 넘었을 경우 1리터를 넘었을 때마다 D엔이다. JOI군의 집에서 한 달간 쓰는 수도의 양은 P리터이다. 수도요금이 최대한 싸게 되도록 수도회사를 고를 때, JOI군의 집의 1달간 수도요금을 구하여라.</description>
+    </item>
     <item>
       <title>[BOJ] 8974 희주의 수학시험 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-8974-%ED%9D%AC%EC%A3%BC%EC%9D%98-%EC%88%98%ED%95%99%EC%8B%9C%ED%97%98-with-python/</link>

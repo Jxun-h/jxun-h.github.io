@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Apr 2023 17:23:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 24480 알고리즘 수업 - 깊이 우선 탐색 2 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-24480-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%EC%97%85-%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-2-with-python/</link>
+      <pubDate>Mon, 10 Apr 2023 17:23:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-24480-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%88%98%EC%97%85-%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-2-with-python/</guid>
+      <description>📌 BOJ 24480 알고리즘 수업 - 깊이 우선 탐색 2 💡 조건 N개의 정점과 M개의 간선으로 구성된 **무방향 그래프(undirected graph)**가 주어진다. 정점 번호는 1번부터 N번이고 모든 간선의 가중치는 1이다. 정점 R에서 시작하여 깊이 우선 탐색으로 노드를 방문할 경우 노드의 방문 순서를 출력하자. 깊이 우선 탐색 의사 코드는 다음과 같다. 인접 정점은 내림차순으로 방문한다. 첫째 줄에 정점의 수 N (5 ≤ N ≤ 100,000), 간선의 수 M (1 ≤ M ≤ 200,000), 시작 정점 R (1 ≤ R ≤ N)이 주어진다.</description>
+    </item>
     <item>
       <title>[BOJ] 1520 내리막 길 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</link>
