@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jul 2022 23:07:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 14494 다이나믹이 뭐예요? with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/</link>
+      <pubDate>Thu, 14 Jul 2022 23:07:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/</guid>
+      <description>📌 BOJ 14494 다이나믹이 뭐예요? 💡 조건 다이나믹 프로그래밍(동적 계획법),
+다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.
+다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서
+(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)
+반복되는 똑같은 연산 횟수를 줄이는 것.
+다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,
+D[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,
+D[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] + D[i][j-1]를 세워서 해결할 수도 있다.</description>
+    </item>
     <item>
       <title>[BOJ] 2225 합분해 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-2225-%ED%95%A9%EB%B6%84%ED%95%B4-with-python/</link>

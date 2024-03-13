@@ -11,8 +11,56 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 07 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jul 2022 23:07:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/series/boj/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 14494 다이나믹이 뭐예요? with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/</link>
+      <pubDate>Thu, 14 Jul 2022 23:07:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/</guid>
+      <description>📌 BOJ 14494 다이나믹이 뭐예요? 💡 조건 다이나믹 프로그래밍(동적 계획법),
+다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.
+다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서
+(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)
+반복되는 똑같은 연산 횟수를 줄이는 것.
+다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,
+D[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,
+D[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] + D[i][j-1]를 세워서 해결할 수도 있다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 3079 입국심사 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-3079-%EC%9E%85%EA%B5%AD%EC%8B%AC%EC%82%AC-with-python/</link>
+      <pubDate>Thu, 14 Jul 2022 20:36:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-3079-%EC%9E%85%EA%B5%AD%EC%8B%AC%EC%82%AC-with-python/</guid>
+      <description>📌 BOJ 3079 입국심사 💡 조건 상근이와 친구들은 오스트레일리아로 여행을 떠났다. 상근이와 친구들은 총 M명이고, 지금 공항에서 한 줄로 서서 입국심사를 기다리고 있다.
+(1 ≤ N ≤ 100,000, 1 ≤ M ≤ 1,000,000,000)
+입국심사대는 총 N개가 있다. 각 입국심사관이 심사를 하는데 걸리는 시간은 사람마다 모두 다르다.
+k번 심사대에 앉아있는 심사관이 한 명을 심사를 하는데 드는 시간은 Tk이다.
+(1 ≤ Tk ≤ 109)
+가장 처음에 모든 심사대는 비어있고, 심사를 할 준비를 모두 끝냈다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 2548 대표 자연수 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2548-%EB%8C%80%ED%91%9C-%EC%9E%90%EC%97%B0%EC%88%98-with-python/</link>
+      <pubDate>Tue, 12 Jul 2022 15:52:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2548-%EB%8C%80%ED%91%9C-%EC%9E%90%EC%97%B0%EC%88%98-with-python/</guid>
+      <description>📌 BOJ 2548 대표 자연수 💡 조건 정보초등학교의 연아는 여러 개의 자연수가 주어졌을 때, 이를 대표할 수 있는 대표 자연수에 대하여 연구하였다.
+그 결과 어떤 자연수가 다음과 같은 성질을 가지면 대표 자연수로 적당할 것이라고 판단하였다.
+“대표 자연수는 주어진 모든 자연수들에 대하여 그 차이를 계산하여 그 차이들 전체의 합을 최소로 하는 자연수이다.”
+예를 들어 주어진 자연수들이 [4, 3, 2, 2, 9, 10]이라 하자.
+이때 대표 자연수는 3 혹은 4가 된다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 1939 중량제한 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1939-%EC%A4%91%EB%9F%89%EC%A0%9C%ED%95%9C-with-python/</link>
+      <pubDate>Tue, 12 Jul 2022 15:12:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1939-%EC%A4%91%EB%9F%89%EC%A0%9C%ED%95%9C-with-python/</guid>
+      <description>📌 BOJ 1939 중량제한 💡 조건 N(2 ≤ N ≤ 10,000)개의 섬으로 이루어진 나라가 있다. 이들 중 몇 개의 섬 사이에는 다리가 설치되어 있어서 차들이 다닐 수 있다.
+영식 중공업에서는 두 개의 섬에 공장을 세워 두고 물품을 생산하는 일을 하고 있다.
+물품을 생산하다 보면 공장에서 다른 공장으로 생산 중이던 물품을 수송해야 할 일이 생기곤 한다.
+그런데 각각의 다리마다 중량제한이 있기 때문에 무턱대고 물품을 옮길 순 없다.
+만약 중량제한을 초과하는 양의 물품이 다리를 지나게 되면 다리가 무너지게 된다.</description>
+    </item>
     <item>
       <title>[BOJ] 1068 트리 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/</link>

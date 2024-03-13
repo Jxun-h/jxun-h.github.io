@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 14494 다이나믹이 뭐예요? with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, DP, 백준, BOJ">
+<meta name="description" content="📌 BOJ 14494 다이나믹이 뭐예요? 💡 조건 다이나믹 프로그래밍(동적 계획법),
+다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.
+다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서
+(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)
+반복되는 똑같은 연산 횟수를 줄이는 것.
+다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,
+D[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,
+D[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] &#43; D[i][j-1]를 세워서 해결할 수도 있다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 14494 다이나믹이 뭐예요? with Python" />
+<meta property="og:description" content="📌 BOJ 14494 다이나믹이 뭐예요? 💡 조건 다이나믹 프로그래밍(동적 계획법),
+다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.
+다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서
+(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)
+반복되는 똑같은 연산 횟수를 줄이는 것.
+다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,
+D[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,
+D[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] &#43; D[i][j-1]를 세워서 해결할 수도 있다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-14T23:07:00+00:00" />
+<meta property="article:modified_time" content="2022-07-14T23:07:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-3079-%EC%9E%85%EA%B5%AD%EC%8B%AC%EC%82%AC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-2548-%EB%8C%80%ED%91%9C-%EC%9E%90%EC%97%B0%EC%88%98-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-1939-%EC%A4%91%EB%9F%89%EC%A0%9C%ED%95%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 14494 다이나믹이 뭐예요? with Python"/>
+<meta name="twitter:description" content="📌 BOJ 14494 다이나믹이 뭐예요? 💡 조건 다이나믹 프로그래밍(동적 계획법),
+다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.
+다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서
+(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)
+반복되는 똑같은 연산 횟수를 줄이는 것.
+다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,
+D[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,
+D[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] &#43; D[i][j-1]를 세워서 해결할 수도 있다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 14494 다이나믹이 뭐예요? with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 14494 다이나믹이 뭐예요? with Python",
+  "name": "[BOJ] 14494 다이나믹이 뭐예요? with Python",
+  "description": "📌 BOJ 14494 다이나믹이 뭐예요? 💡 조건 다이나믹 프로그래밍(동적 계획법),\n다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.\n다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서\n(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)\n반복되는 똑같은 연산 횟수를 줄이는 것.\n다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,\nD[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,\nD[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] + D[i][j-1]를 세워서 해결할 수도 있다.",
+  "keywords": [
+    "자료구조", "PS", "DP", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 14494 다이나믹이 뭐예요? 💡 조건 다이나믹 프로그래밍(동적 계획법),\n다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.\n다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서\n(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)\n반복되는 똑같은 연산 횟수를 줄이는 것.\n다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,\nD[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,\nD[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] + D[i][j-1]를 세워서 해결할 수도 있다.\n→, ↓, ↘의 세 방향만 사용해서 한 번에 한 칸씩 이동할 때,\n왼쪽 위 (1, 1)에서 출발하여 오른쪽 아래 (n, m)에 도착하는 경우의 수를 구하는 문제.\n(1 ≤ n, m ≤ 1,000)\n경우의 수가 엄청 커질 수 있으므로 경우의 수를 1,000,000,007(=109+7)로 나눈 나머지를 출력한다.\nDP 유형의 문제\n🔖 예제 및 실행결과 예제 4 5 실행결과 129 ⌨️ 문제 풀이 이번 문제는 다이나믹 프로그래밍의 기본형이라고 생각하고 풀이해보았다.\n문제에서 요구하는 것은 (1, 1)부터 (N, M)까지 도달하는 경우의 수를 구하는 것이다.\n(N * M) 크기의 2차원 배열을 DP 라고 한다면, 이 문제에서 바라는 값은 DP[N][M]에 있을 것이다.\n(3)번에서 구하려는 DP[N][M] 의 값은 각각 DP[N-1][M], DP[N][M-1], DP[N-1][M-1] 의 합으로 표현할 수 있다.\nDP[N-1][M] 또한 DP[N-2][M], DP[N-1][M-1], DP[N-2][M-2] 의 합으로 표현할 수 있다.\n이에 따라서 점화식은 DP[i][j] = (DP[i-1][j], DP[i][j-1], DP[i-1][j-1]) 이다.\n이를 int(1e9) + 7 로 나눈 나머지를 dp에 저장한다.\n🖥 소스 코드 from sys import stdin n, m = map(int, stdin.readline().split()) dp = [[0] * (m + 1) for _ in range(n + 1)] dp[0][0] = 1 for i in range(1, n + 1): for j in range(1, m + 1): dp[i][j] = (dp[i-1][j] + dp[i][j-1] + dp[i-1][j-1]) % (int(1e9) + 7) print(dp[n][m]) ",
+  "wordCount" : "270",
+  "inLanguage": "en",
+  "datePublished": "2022-07-14T23:07:00Z",
+  "dateModified": "2022-07-14T23:07:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 14494 다이나믹이 뭐예요? with Python
+    </h1>
+    <div class="post-meta"><span title='2022-07-14 23:07:00 +0000 UTC'>July 14, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[BOJ]%2014494%20%eb%8b%a4%ec%9d%b4%eb%82%98%eb%af%b9%ec%9d%b4%20%eb%ad%90%ec%98%88%ec%9a%94?%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem14494-target_blankboj-14494-다이나믹이-뭐예요a">📌 <a href="https://www.acmicpc.net/problem/14494" target="_blank">BOJ 14494 다이나믹이 뭐예요?</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem14494-target_blankboj-14494-다이나믹이-뭐예요a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>
+<p>다이나믹 프로그래밍(동적 계획법),<br>
+다이나믹은 이름이 엄청 거창하지만 사실 이름에 비해 개념은 간단하다.</p>
+</li>
+<li>
+<p>다이나믹의 기본 아이디어는 바로 이전에 계산한 값을 사용해서<br>
+(= 이미 계산된 값을 사용해서, 어려운 말로 메모이제이션.)<br>
+반복되는 똑같은 연산 횟수를 줄이는 것.</p>
+</li>
+<li>
+<p>다차원 배열로도 가능하다. 오른쪽, 아래쪽으로만 움직일 수 있을 때,<br>
+D[1][1]에서 D[x][y]까지 도달하는 경우의 수를 구하는 문제는 일일히 모든 경우를 다 계산할 필요 없이,<br>
+D[i][j] = (i, j)에 도달하는 누적 경우의 수 = D[i-1][j] + D[i][j-1]를 세워서 해결할 수도 있다.</p>
+</li>
+<li>
+<p>→, ↓, ↘의 세 방향만 사용해서 한 번에 한 칸씩 이동할 때,<br>
+왼쪽 위 (1, 1)에서 출발하여 오른쪽 아래 (n, m)에 도착하는 경우의 수를 구하는 문제.<br>
+(1 ≤ n, m ≤ 1,000)</p>
+</li>
+<li>
+<p>경우의 수가 엄청 커질 수 있으므로 경우의 수를 1,000,000,007(=109+7)로 나눈 나머지를 출력한다.</p>
+</li>
+<li>
+<p><strong>DP</strong> 유형의 문제</p>
+</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">5</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">129</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p>이번 문제는 다이나믹 프로그래밍의 기본형이라고 생각하고 풀이해보았다.</p>
+</li>
+<li>
+<p>문제에서 요구하는 것은 (1, 1)부터 (N, M)까지 도달하는 경우의 수를 구하는 것이다.</p>
+</li>
+<li>
+<p>(N * M) 크기의 2차원 배열을 DP 라고 한다면, 이 문제에서 바라는 값은 DP[N][M]에 있을 것이다.</p>
+</li>
+<li>
+<p>(3)번에서 구하려는 DP[N][M] 의 값은 각각 DP[N-1][M], DP[N][M-1], DP[N-1][M-1] 의 합으로 표현할 수 있다.<br>
+DP[N-1][M] 또한 DP[N-2][M], DP[N-1][M-1], DP[N-2][M-2] 의 합으로 표현할 수 있다.</p>
+</li>
+<li>
+<p>이에 따라서 점화식은 DP[i][j] = (DP[i-1][j], DP[i][j-1], DP[i-1][j-1]) 이다.</p>
+</li>
+<li>
+<p>이를 int(1e9) + 7 로 나눈 나머지를 dp에 저장한다.</p>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">dp</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">%</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">)</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">m</span><span class="p">])</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/dp/">DP</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[CS] 13.이진트리의 추가 연산</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-3079-%EC%9E%85%EA%B5%AD%EC%8B%AC%EC%82%AC-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 3079 입국심사 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
