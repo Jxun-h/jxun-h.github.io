@@ -11,8 +11,45 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Jul 2022 00:57:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jul 2022 18:51:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/series/computer-science/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CS] 17.그래프의 개념과 표현</title>
+      <link>https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/</link>
+      <pubDate>Sun, 17 Jul 2022 18:51:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/</guid>
+      <description>📌 그래프의 개념과 표현 💡 그래프 소개 그래프(Graph)란? 연결되어 있는 객체 간의 관계를 표현하는 자료구조 지하철 노선도, SNS 친구 관계, 컴퓨터 네트워크 💡 그래프 데이터 타입 그래프 G의 두가지 구성요소
+V(G) : G에 포함된 Vertex(정점)들의 집합 E(G) : G에 포함된 Edge(간선)들의 집합 무방향성 그래프(Undirected Graph)
+Vertex 의 쌍을 나타내는 Edge가 방향성이 없다. (u, v), (v, u) 는 동일한 Edge 를 표현하는 것이다.
+EX) 지하철 노선도 방향성 그래프(Directed Graph)
+각 Edge에 방향성이 존재하는 그래프 (u, v) : v -&amp;gt; v 인 Edge를 표현하는 것이다.</description>
+    </item>
+    <item>
+      <title>[CS] 16.이진 검색 트리</title>
+      <link>https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/</link>
+      <pubDate>Sun, 17 Jul 2022 16:46:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/</guid>
+      <description>📌 이진 검색 트리 💡 이진 검색 트리(Binary Search Trees) 히프의 문제점
+임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N) 트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N) 이진 검색 트리란?
+트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색 O(Log N), 하지만 정렬된 상태를 유지해야한다. 이진 검색 트리의 정의
+모든 노드는 유일한 키 값을 가지고 있다. 왼쪽 서브 트리에 저장된 키 값 &amp;lt; 루트 노드의 키 값 오른쪽 서브 트리에 저장된 키 값 &amp;gt; 루트 노드의 키 값 양쪽 서브 트리도 이진 검색 트리이다.</description>
+    </item>
+    <item>
+      <title>[CS] 15.히프의 개념과 응용</title>
+      <link>https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/</link>
+      <pubDate>Sun, 17 Jul 2022 03:18:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/</guid>
+      <description>📌 히프의 개념과 응용 💡 히프(Heap)의 정의 최대 트리와 최대 히프
+최대 트리(Max Tree) 트리의 모든 노드에 대해서 노드의 데이터 값이 자식 노드의 데이터 값보다 크거나 같은 트리 최대 히프(Max Heap) 최대트리 이면서, 완전 이진트리. 최소 트리와 최소 히프
+최소 트리(Min Tree) 트리의 모든 노드에 대해서 노드의 데이터 값이 자식 노드의 데이터 값다 작거나 같은 트리 최소 히프(Min Heap) 최소트리 이면서, 완전 이진트리. 최대 히프의 root 노드는 항상 모든 노드들보다 큰 값을 가지고 있다.</description>
+    </item>
+    <item>
+      <title>[CS] 14.스레드 이진트리</title>
+      <link>https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/</link>
+      <pubDate>Sun, 17 Jul 2022 02:41:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/</guid>
+      <description>📌 스레드 이진트리 💡 스레드 이진트리(Threaded Binary Tree) 스레드 이진트리의 기본 개념 n개의 노드를 갖는 이진 트리에는 2n 개의 링크가 존재한다. 2n 개의 링크 중에 n+1 개의 링크 값은 null이다. null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads) 니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다. 스레드의 이용 ptr -&amp;gt; left_child = NULL 일 경우, ptr -&amp;gt; left_child 를 ptr의 중위행선자를 가리키도록 변경한다.</description>
+    </item>
     <item>
       <title>[CS] 13.이진트리의 추가 연산</title>
       <link>https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/</link>
@@ -72,7 +109,7 @@
       <link>https://jxun-h.github.io/posts/data-structure/cs-7.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%EA%B5%AC%ED%98%84/</link>
       <pubDate>Sun, 10 Jul 2022 04:00:00 +0000</pubDate>
       <guid>https://jxun-h.github.io/posts/data-structure/cs-7.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%EA%B5%AC%ED%98%84/</guid>
-      <description>📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }\*a, \*b, \*c 💡 다항식의 덧셈 알고리즘 d = a + b
+      <description>📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }*a, *b, *c 💡 다항식의 덧셈 알고리즘 d = a + b
 각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우</description>
     </item>
     <item>

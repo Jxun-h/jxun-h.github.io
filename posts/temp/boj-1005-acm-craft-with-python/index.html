@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 1005 ACM Craft with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, BFS, 백준, BOJ">
+<meta name="description" content="📌 BOJ 1005 ACM Craft 💡 조건 서기 2012년! 드디어 2년간 수많은 국민들을 기다리게 한 게임 ACM Craft (Association of Construction Manager Craft)가 발매되었다.
+이 게임은 지금까지 나온 게임들과는 다르게 ACM크래프트는 다이나믹한 게임 진행을 위해 건물을 짓는 순서가 정해져 있지 않다.
+즉, 첫 번째 게임과 두 번째 게임이 건물을 짓는 순서가 다를 수도 있다.
+매 게임시작 시 건물을 짓는 순서가 주어진다. 또한 모든 건물은 각각 건설을 시작하여 완성이 될 때까지 Delay가 존재한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/temp/boj-1005-acm-craft-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 1005 ACM Craft with Python" />
+<meta property="og:description" content="📌 BOJ 1005 ACM Craft 💡 조건 서기 2012년! 드디어 2년간 수많은 국민들을 기다리게 한 게임 ACM Craft (Association of Construction Manager Craft)가 발매되었다.
+이 게임은 지금까지 나온 게임들과는 다르게 ACM크래프트는 다이나믹한 게임 진행을 위해 건물을 짓는 순서가 정해져 있지 않다.
+즉, 첫 번째 게임과 두 번째 게임이 건물을 짓는 순서가 다를 수도 있다.
+매 게임시작 시 건물을 짓는 순서가 주어진다. 또한 모든 건물은 각각 건설을 시작하여 완성이 될 때까지 Delay가 존재한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/temp/boj-1005-acm-craft-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-17T22:33:00+00:00" />
+<meta property="article:modified_time" content="2022-07-17T22:33:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1081-%ED%95%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-17086-%EC%95%84%EA%B8%B0-%EC%83%81%EC%96%B4-2-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-14495-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EB%B9%84%EC%8A%A4%EB%AC%B4%EB%A6%AC%ED%95%9C-%EC%88%98%EC%97%B4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-10159-%EC%A0%80%EC%9A%B8-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 1005 ACM Craft with Python"/>
+<meta name="twitter:description" content="📌 BOJ 1005 ACM Craft 💡 조건 서기 2012년! 드디어 2년간 수많은 국민들을 기다리게 한 게임 ACM Craft (Association of Construction Manager Craft)가 발매되었다.
+이 게임은 지금까지 나온 게임들과는 다르게 ACM크래프트는 다이나믹한 게임 진행을 위해 건물을 짓는 순서가 정해져 있지 않다.
+즉, 첫 번째 게임과 두 번째 게임이 건물을 짓는 순서가 다를 수도 있다.
+매 게임시작 시 건물을 짓는 순서가 주어진다. 또한 모든 건물은 각각 건설을 시작하여 완성이 될 때까지 Delay가 존재한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 1005 ACM Craft with Python",
+      "item": "https://jxun-h.github.io/posts/temp/boj-1005-acm-craft-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 1005 ACM Craft with Python",
+  "name": "[BOJ] 1005 ACM Craft with Python",
+  "description": "📌 BOJ 1005 ACM Craft 💡 조건 서기 2012년! 드디어 2년간 수많은 국민들을 기다리게 한 게임 ACM Craft (Association of Construction Manager Craft)가 발매되었다.\n이 게임은 지금까지 나온 게임들과는 다르게 ACM크래프트는 다이나믹한 게임 진행을 위해 건물을 짓는 순서가 정해져 있지 않다.\n즉, 첫 번째 게임과 두 번째 게임이 건물을 짓는 순서가 다를 수도 있다.\n매 게임시작 시 건물을 짓는 순서가 주어진다. 또한 모든 건물은 각각 건설을 시작하여 완성이 될 때까지 Delay가 존재한다.",
+  "keywords": [
+    "자료구조", "PS", "BFS", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 1005 ACM Craft 💡 조건 서기 2012년! 드디어 2년간 수많은 국민들을 기다리게 한 게임 ACM Craft (Association of Construction Manager Craft)가 발매되었다.\n이 게임은 지금까지 나온 게임들과는 다르게 ACM크래프트는 다이나믹한 게임 진행을 위해 건물을 짓는 순서가 정해져 있지 않다.\n즉, 첫 번째 게임과 두 번째 게임이 건물을 짓는 순서가 다를 수도 있다.\n매 게임시작 시 건물을 짓는 순서가 주어진다. 또한 모든 건물은 각각 건설을 시작하여 완성이 될 때까지 Delay가 존재한다.\n프로게이머 최백준은 애인과의 데이트 비용을 마련하기 위해 서강대학교배 ACM크래프트 대회에 참가했다!\n최백준은 화려한 컨트롤 실력을 가지고 있기 때문에 모든 경기에서 특정 건물만 짓는다면 무조건 게임에서 이길 수 있다.\n매 게임마다 특정건물을 짓기 위한 순서가 달라지므로 최백준은 좌절하고 있었다.\n백준이를 위해 특정건물을 가장 빨리 지을 때까지 걸리는 최소시간을 알아내는 문제.\n첫째 줄에는 테스트케이스의 개수 T가 주어진다.\n첫째 줄에 건물의 개수 N과 건물간의 건설순서 규칙의 총 개수 K이 주어진다. (건물의 번호는 1번부터 N번까지 존재한다)\n둘째 줄에는 각 건물당 건설에 걸리는 시간 D1, D2, …, DN이 공백을 사이로 주어진다.\n셋째 줄부터 K+2줄까지 건설순서 X Y가 주어진다. (이는 건물 X를 지은 다음에 건물 Y를 짓는 것이 가능하다는 의미이다)\n마지막 줄에는 백준이가 승리하기 위해 건설해야 할 건물의 번호 W가 주어진다.\n2 ≤ N ≤ 1000\n1 ≤ K ≤ 100,000\n1 ≤ X, Y, W ≤ N\n0 ≤ Di ≤ 100,000, Di는 정수\nBFS, 그래프탐색 유형의 문제\n🔖 예제 및 실행결과 예제 2 4 4 10 1 100 10 1 2 1 3 2 4 3 4 4 8 8 10 20 1 5 8 7 1 43 1 2 1 3 2 4 2 5 3 6 5 7 6 7 7 8 7 실행결과 120 39 ⌨️ 문제 풀이 문제를 요약해보자면, 아래와 같다.\n각 테스트 케이스마다 건물을 지을 수 있는 순서는 다르다. 백준이가 이기기 위해서는 특정 건물을 지어야 승리가 가능하다. 특정 건물을 짓기 위해서는 선행되는 건물을 지을 필요가 있다. 간단하게 정리를 해보면 우리는 건설순서가 정해져 있는 건물을 차례로 건설하면서, W번 건물을 지을 때까지의 최소 시간을 구해야한다.\n이러한 문제에 사용할 수 있는 알고리즘은 위상정렬인데, 위상정렬의 개념고 위에 써놓은 것과 개념이 크게 다르지 않다.\n위상정렬이란, 순서가 정해져있는 작업을 차례로 수행해야할 때 그 순서를 결정해주기 위해서 사용하는 알고리즘이다.\n건물의 개수 N과 건물간의 건설순서 규칙의 총 개수 K 를 입력받아, 위상정렬 알고리즘에 필요한 indegree 리스트를 n + 1 개 만들어준다.\n또한 N + 1개의 노드를 가진 그래프도 생성한다.\n각 건물을 건설하는데에 필요한 시간을 입력받은 후, 건설순서를 입력받아 그래프에 입력한다.\n만약 a, b를 입력 받았다면, graph[a].append(b) 이며 indegree[b] += 1 이다.\nb 건물을 건설하기 위해서는 a 건물을 건설해야한다는 뜻이기 때문에 +1 이 되는 것이다.\n이후, W 를 입력받아 위상정렬 알고리즘의 로직이 있는 topology_sort() 함수에 W를 넘겨준다.\n위상정렬 알고리즘에서는, indegree 리스트에서의 값이 0인 것을 q에 먼저 넣고 처리를 한다.\nindegree 리스트에서의 값은 해당 건물이 지어지기 위해서는 먼저 지어져야할 건물이 있다는 것을 의미하기 때문이다.\n위상정렬 함수에서는 DP 리스트를 만들어 사용자가 어떤 건물을 지었을 때의 소요시간을 체크한다.\n큐에서 뺀 건물 번호(now) 를 기준으로 그래프를 따라 순회하면서, 순회하는 건물의 번호(node)에 해당하는 indegree의 값을 1씩 빼준다.\n그리고 DP[node] 에 해당하는 값을 DP[now] + 건설에 필요한 시간[node] 값과 비교해 가장 큰 값으로 갱신한다.\n이후, indegree[node] 의 값이 0 이라면 queue에 추가하고 반복한다.\nqueue 가 모두 빌 때까지 순회를 마쳤다면, DP[W] 의 값을 반환하고 출력한다.\nDP[W]의 값은 W 번 건물이 지어지는 최소 시간을 의미한다.\n🖥 소스 코드 from collections import deque from sys import stdin def topology_sort(w): q = deque() dp = [0 for _ in range(n + 1)] for i in range(1, n + 1): if indegree[i] == 0: q.append(i) dp[i] = arr[i] while q: now = q.popleft() for node in graph[now]: indegree[node] -= 1 dp[node] = max(dp[now] + arr[node], dp[node]) if indegree[node] == 0: q.append(node) return dp[w] for tc in range(int(stdin.readline())): n, m = map(int, stdin.readline().split()) indegree = [0] * (n + 1) graph = [[] for _ in range(n + 1)] arr = [0] + list(map(int, stdin.readline().split())) for _ in range(m): a, b = map(int, stdin.readline().split()) graph[a].append(b) indegree[b] += 1 w = int(stdin.readline()) print(topology_sort(w)) 💾 느낀점 위상정렬이란, 순서가 정해져있는 작업을 차례로 수행해야할 때 그 순서를 결정해주기 위해서 사용하는 알고리즘.\n이를 어떻게 사용하고, 응용해야할지 더 연습이 필요할 것 같다. 복잡해보이지만, 개념과 필요한 상황을 잘 이해한다면\n충분히 잘 사용할 수 있을 것 같은 느낌이다. ",
+  "wordCount" : "673",
+  "inLanguage": "en",
+  "datePublished": "2022-07-17T22:33:00Z",
+  "dateModified": "2022-07-17T22:33:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/temp/boj-1005-acm-craft-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 1005 ACM Craft with Python
+    </h1>
+    <div class="post-meta"><span title='2022-07-17 22:33:00 +0000 UTC'>July 17, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/temp/[BOJ]%201005%20ACM%20Craft%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem1005-target_blankboj-1005-acm-crafta">📌 <a href="https://www.acmicpc.net/problem/1005" target="_blank">BOJ 1005 ACM Craft</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1005-target_blankboj-1005-acm-crafta">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>
+<p>서기 2012년! 드디어 2년간 수많은 국민들을 기다리게 한 게임 ACM Craft (Association of Construction Manager Craft)가 발매되었다.</p>
+</li>
+<li>
+<p>이 게임은 지금까지 나온 게임들과는 다르게 ACM크래프트는 다이나믹한 게임 진행을 위해 건물을 짓는 순서가 정해져 있지 않다.<br>
+즉, 첫 번째 게임과 두 번째 게임이 건물을 짓는 순서가 다를 수도 있다.<br>
+<strong>매 게임시작 시 건물을 짓는 순서가 주어진다. 또한 모든 건물은 각각 건설을 시작하여 완성이 될 때까지 Delay가 존재한다.</strong></p>
+</li>
+</ol>
+<br>
+<center><img src='/1005_1.png' /></center>
+<br>
+<ol start="3">
+<li>
+<p>프로게이머 최백준은 애인과의 데이트 비용을 마련하기 위해 서강대학교배 ACM크래프트 대회에 참가했다!<br>
+최백준은 화려한 컨트롤 실력을 가지고 있기 때문에 모든 경기에서 특정 건물만 짓는다면 무조건 게임에서 이길 수 있다.</p>
+</li>
+<li>
+<p>매 게임마다 특정건물을 짓기 위한 순서가 달라지므로 최백준은 좌절하고 있었다.<br>
+백준이를 위해 특정건물을 가장 빨리 지을 때까지 걸리는 최소시간을 알아내는 문제.</p>
+</li>
+<li>
+<p>첫째 줄에는 테스트케이스의 개수 T가 주어진다.<br>
+첫째 줄에 건물의 개수 N과 건물간의 건설순서 규칙의 총 개수 K이 주어진다. (건물의 번호는 1번부터 N번까지 존재한다)</p>
+</li>
+<li>
+<p>둘째 줄에는 각 건물당 건설에 걸리는 시간 D1, D2, &hellip;, DN이 공백을 사이로 주어진다.<br>
+셋째 줄부터 K+2줄까지 건설순서 X Y가 주어진다. (이는 건물 X를 지은 다음에 건물 Y를 짓는 것이 가능하다는 의미이다)<br>
+마지막 줄에는 백준이가 승리하기 위해 건설해야 할 건물의 번호 W가 주어진다.</p>
+</li>
+<li>
+<p>2 ≤ N ≤ 1000<br>
+1 ≤ K ≤ 100,000<br>
+1 ≤ X, Y, W ≤ N<br>
+0 ≤ Di ≤ 100,000, Di는 정수</p>
+</li>
+<li>
+<p><strong>BFS, 그래프탐색</strong> 유형의 문제</p>
+</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">10</span> <span class="mi">1</span> <span class="mi">100</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">10</span> <span class="mi">20</span> <span class="mi">1</span> <span class="mi">5</span> <span class="mi">8</span> <span class="mi">7</span> <span class="mi">1</span> <span class="mi">43</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">120</span>
+</span></span><span class="line"><span class="cl"><span class="mi">39</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p>문제를 요약해보자면, 아래와 같다.</p>
+<ul>
+<li>각 테스트 케이스마다 건물을 지을 수 있는 순서는 다르다.</li>
+<li>백준이가 이기기 위해서는 특정 건물을 지어야 승리가 가능하다.</li>
+<li>특정 건물을 짓기 위해서는 선행되는 건물을 지을 필요가 있다.</li>
+</ul>
+</li>
+<li>
+<p>간단하게 정리를 해보면 우리는 <strong>건설순서가 정해져 있는 건물을 차례로 건설하면서, W번 건물을 지을 때까지의 최소 시간을 구해야한다.</strong><br>
+이러한 문제에 사용할 수 있는 알고리즘은 위상정렬인데, 위상정렬의 개념고 위에 써놓은 것과 개념이 크게 다르지 않다.<br>
+<strong>위상정렬이란, 순서가 정해져있는 작업을 차례로 수행해야할 때 그 순서를 결정해주기 위해서 사용하는 알고리즘이다.</strong></p>
+</li>
+<li>
+<p>건물의 개수 N과 건물간의 건설순서 규칙의 총 개수 K 를 입력받아, 위상정렬 알고리즘에 필요한 indegree 리스트를 n + 1 개 만들어준다.<br>
+또한 N + 1개의 노드를 가진 그래프도 생성한다.<br>
+각 건물을 건설하는데에 필요한 시간을 입력받은 후, 건설순서를 입력받아 그래프에 입력한다.<br>
+만약 a, b를 입력 받았다면, graph[a].append(b) 이며 indegree[b] += 1 이다.<br>
+<strong>b 건물을 건설하기 위해서는 a 건물을 건설해야한다는 뜻이기 때문에</strong> +1 이 되는 것이다.</p>
+</li>
+<li>
+<p>이후, W 를 입력받아 위상정렬 알고리즘의 로직이 있는 topology_sort() 함수에 W를 넘겨준다.<br>
+위상정렬 알고리즘에서는, indegree 리스트에서의 값이 0인 것을 q에 먼저 넣고 처리를 한다.<br>
+indegree 리스트에서의 값은 해당 건물이 지어지기 위해서는 먼저 지어져야할 건물이 있다는 것을 의미하기 때문이다.</p>
+</li>
+<li>
+<p>위상정렬 함수에서는 DP 리스트를 만들어 사용자가 어떤 건물을 지었을 때의 소요시간을 체크한다.<br>
+큐에서 뺀 건물 번호(now) 를 기준으로 그래프를 따라 순회하면서, 순회하는 건물의 번호(node)에 해당하는 indegree의 값을 1씩 빼준다.<br>
+그리고 DP[node] 에 해당하는 값을 DP[now] + 건설에 필요한 시간[node] 값과 비교해 가장 큰 값으로 갱신한다.</p>
+</li>
+<li>
+<p>이후, indegree[node] 의 값이 0 이라면 queue에 추가하고 반복한다.<br>
+queue 가 모두 빌 때까지 순회를 마쳤다면, DP[W] 의 값을 반환하고 출력한다.<br>
+DP[W]의 값은 W 번 건물이 지어지는 최소 시간을 의미한다.</p>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">topology_sort</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">indegree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">now</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">now</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">indegree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">now</span><span class="p">]</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">node</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">node</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">indegree</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">tc</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">indegree</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">graph</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">indegree</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">topology_sort</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>위상정렬이란, 순서가 정해져있는 작업을 차례로 수행해야할 때 그 순서를 결정해주기 위해서 사용하는 알고리즘.<br>
+이를 어떻게 사용하고, 응용해야할지 더 연습이 필요할 것 같다. 복잡해보이지만, 개념과 필요한 상황을 잘 이해한다면<br>
+충분히 잘 사용할 수 있을 것 같은 느낌이다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/bfs/">BFS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/temp/boj-1081-%ED%95%A9-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 1081 합 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/temp/boj-17086-%EC%95%84%EA%B8%B0-%EC%83%81%EC%96%B4-2-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 17086 아기 상어 2 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

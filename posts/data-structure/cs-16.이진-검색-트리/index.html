@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[CS] 16.이진 검색 트리 | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, CS, Computer Science">
+<meta name="description" content="📌 이진 검색 트리 💡 이진 검색 트리(Binary Search Trees) 히프의 문제점
+임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N) 트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N) 이진 검색 트리란?
+트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색 O(Log N), 하지만 정렬된 상태를 유지해야한다. 이진 검색 트리의 정의
+모든 노드는 유일한 키 값을 가지고 있다. 왼쪽 서브 트리에 저장된 키 값 &lt; 루트 노드의 키 값 오른쪽 서브 트리에 저장된 키 값 &gt; 루트 노드의 키 값 양쪽 서브 트리도 이진 검색 트리이다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[CS] 16.이진 검색 트리" />
+<meta property="og:description" content="📌 이진 검색 트리 💡 이진 검색 트리(Binary Search Trees) 히프의 문제점
+임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N) 트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N) 이진 검색 트리란?
+트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색 O(Log N), 하지만 정렬된 상태를 유지해야한다. 이진 검색 트리의 정의
+모든 노드는 유일한 키 값을 가지고 있다. 왼쪽 서브 트리에 저장된 키 값 &lt; 루트 노드의 키 값 오른쪽 서브 트리에 저장된 키 값 &gt; 루트 노드의 키 값 양쪽 서브 트리도 이진 검색 트리이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-17T16:46:00+00:00" />
+<meta property="article:modified_time" content="2022-07-17T16:46:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[CS] 16.이진 검색 트리"/>
+<meta name="twitter:description" content="📌 이진 검색 트리 💡 이진 검색 트리(Binary Search Trees) 히프의 문제점
+임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N) 트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N) 이진 검색 트리란?
+트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색 O(Log N), 하지만 정렬된 상태를 유지해야한다. 이진 검색 트리의 정의
+모든 노드는 유일한 키 값을 가지고 있다. 왼쪽 서브 트리에 저장된 키 값 &lt; 루트 노드의 키 값 오른쪽 서브 트리에 저장된 키 값 &gt; 루트 노드의 키 값 양쪽 서브 트리도 이진 검색 트리이다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[CS] 16.이진 검색 트리",
+      "item": "https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[CS] 16.이진 검색 트리",
+  "name": "[CS] 16.이진 검색 트리",
+  "description": "📌 이진 검색 트리 💡 이진 검색 트리(Binary Search Trees) 히프의 문제점\n임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N) 트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N) 이진 검색 트리란?\n트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색 O(Log N), 하지만 정렬된 상태를 유지해야한다. 이진 검색 트리의 정의\n모든 노드는 유일한 키 값을 가지고 있다. 왼쪽 서브 트리에 저장된 키 값 \u0026lt; 루트 노드의 키 값 오른쪽 서브 트리에 저장된 키 값 \u0026gt; 루트 노드의 키 값 양쪽 서브 트리도 이진 검색 트리이다.",
+  "keywords": [
+    "자료구조", "CS", "Computer Science"
+  ],
+  "articleBody": "\n📌 이진 검색 트리 💡 이진 검색 트리(Binary Search Trees) 히프의 문제점\n임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N) 트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N) 이진 검색 트리란?\n트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색 O(Log N), 하지만 정렬된 상태를 유지해야한다. 이진 검색 트리의 정의\n모든 노드는 유일한 키 값을 가지고 있다. 왼쪽 서브 트리에 저장된 키 값 \u003c 루트 노드의 키 값 오른쪽 서브 트리에 저장된 키 값 \u003e 루트 노드의 키 값 양쪽 서브 트리도 이진 검색 트리이다. 💡 검색 연산 기본 개념 if(key == root -\u003e data) return if(key \u003c root -\u003e data) search(root -\u003e left_child) if(key \u003e root -\u003e data) search(root -\u003e right_child) 순환 알고리즘 혹은 반복문을 이용하여 구현한다. 시간 복잡도는 O(트리의 Depth) 💡 이진 검색 트리에 노드 추가 기본 개념\n추가할 키 값이 이미 트리에 존재하는지 확인한다.\n- 트리의 유일성을 보장한다. 검색 알고리즘 수행 후, 알고리즘이 종료되는 곳에 새로운 노드를 추가한다. modified_search(root, key)\nkey 가 존재할 경우, return NULL 검색 알고리즘에서 방문한 마지막 노드에 대한 Pointer return 검색 성능은 O(Log N) 이 보장되는 것이 장점이다. 💡 이진 검색트리에서 노드 삭제 중위 순회를 이용하면, 오름차순으로 출력이 가능하다. 리프 노드 삭제 parent -\u003e left_child = NULL child 가 하나밖에 없는 노드의 삭제 삭제된 자리에 child node 를 위치하게 한다. 두개의 children 을 갖는 노드를 삭제 왼쪽 서브트리에서 가장 큰 노드\nor 오른쪽 서브트리에서 가장 작은 노드를 삭제된 자리에 위치 시킨다. 💡 이진 검색 트리의 깊이 데이터가 정렬된 순서로 입력 : O(N) 1,2,3,4 : 편향 이진 트리 데이터가 무작위 순서로 입력 : O(Log N) 균형 이진 검색 트리 : AVL Tree, Red-Black Tree 정렬된 데이터가 들어와도 O(Log N)을 보장한다. ",
+  "wordCount" : "271",
+  "inLanguage": "en",
+  "datePublished": "2022-07-17T16:46:00Z",
+  "dateModified": "2022-07-17T16:46:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [CS] 16.이진 검색 트리
+    </h1>
+    <div class="post-meta"><span title='2022-07-17 16:46:00 +0000 UTC'>July 17, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Data%20Structure/[CS]%2016.%ec%9d%b4%ec%a7%84%20%ea%b2%80%ec%83%89%20%ed%8a%b8%eb%a6%ac.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-이진-검색-트리">📌 이진 검색 트리<a hidden class="anchor" aria-hidden="true" href="#-이진-검색-트리">#</a></h2>
+<br>
+<h3 id="-이진-검색-트리binary-search-trees">💡 이진 검색 트리(Binary Search Trees)<a hidden class="anchor" aria-hidden="true" href="#-이진-검색-트리binary-search-trees">#</a></h3>
+<ol>
+<li>
+<p>히프의 문제점</p>
+<ol>
+<li>임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N)</li>
+<li>트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N)</li>
+</ol>
+</li>
+<li>
+<p>이진 검색 트리란?</p>
+<ol>
+<li>트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색
+<ul>
+<li>O(Log N), 하지만 정렬된 상태를 유지해야한다.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>이진 검색 트리의 정의</p>
+<ol>
+<li>모든 노드는 유일한 키 값을 가지고 있다.</li>
+<li>왼쪽 서브 트리에 저장된 키 값 &lt; 루트 노드의 키 값</li>
+<li>오른쪽 서브 트리에 저장된 키 값 &gt; 루트 노드의 키 값</li>
+<li>양쪽 서브 트리도 이진 검색 트리이다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-검색-연산">💡 검색 연산<a hidden class="anchor" aria-hidden="true" href="#-검색-연산">#</a></h3>
+<ol>
+<li>기본 개념
+<ol>
+<li><code>if(key == root -&gt; data) return</code></li>
+<li><code>if(key &lt; root -&gt; data) search(root -&gt; left_child)</code></li>
+<li><code>if(key &gt; root -&gt; data) search(root -&gt; right_child)</code></li>
+<li>순환 알고리즘 혹은 반복문을 이용하여 구현한다.
+<ul>
+<li>시간 복잡도는 O(트리의 Depth)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-이진-검색-트리에-노드-추가">💡 이진 검색 트리에 노드 추가<a hidden class="anchor" aria-hidden="true" href="#-이진-검색-트리에-노드-추가">#</a></h3>
+<ol>
+<li>
+<p>기본 개념</p>
+<ol>
+<li>추가할 키 값이 이미 트리에 존재하는지 확인한다.<br>
+<strong>- 트리의 유일성을 보장한다.</strong></li>
+<li>검색 알고리즘 수행 후, 알고리즘이 종료되는 곳에 새로운 노드를 추가한다.</li>
+</ol>
+</li>
+<li>
+<p>modified_search(root, key)</p>
+<ol>
+<li>key 가 존재할 경우, <code>return NULL</code></li>
+<li>검색 알고리즘에서 방문한 마지막 노드에 대한 <code>Pointer return</code></li>
+<li><strong>검색 성능은 O(Log N) 이 보장되는 것이 장점이다.</strong></li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-이진-검색트리에서-노드-삭제">💡 이진 검색트리에서 노드 삭제<a hidden class="anchor" aria-hidden="true" href="#-이진-검색트리에서-노드-삭제">#</a></h3>
+<ul>
+<li>중위 순회를 이용하면, 오름차순으로 출력이 가능하다.</li>
+</ul>
+<ol>
+<li>리프 노드 삭제
+<ol>
+<li><code>parent -&gt; left_child = NULL</code></li>
+</ol>
+</li>
+</ol>
+<center><img src='/cs_16_1.png' /></center>
+<br>
+<ol start="2">
+<li>child 가 하나밖에 없는 노드의 삭제
+<ol>
+<li>삭제된 자리에 child node 를 위치하게 한다.</li>
+</ol>
+</li>
+</ol>
+<center><img src='/cs_16_2.png' /></center>
+<br>
+<ol start="3">
+<li>두개의 children 을 갖는 노드를 삭제
+<ol>
+<li>왼쪽 서브트리에서 가장 큰 노드<br>
+or</li>
+<li>오른쪽 서브트리에서 가장 작은 노드를 삭제된 자리에 위치 시킨다.</li>
+</ol>
+</li>
+</ol>
+<center><img src='/cs_16_3.png' /></center>
+<br>
+<h3 id="-이진-검색-트리의-깊이">💡 이진 검색 트리의 깊이<a hidden class="anchor" aria-hidden="true" href="#-이진-검색-트리의-깊이">#</a></h3>
+<ol>
+<li>데이터가 정렬된 순서로 입력 : O(N)
+<ul>
+<li>1,2,3,4 : 편향 이진 트리</li>
+</ul>
+</li>
+<li>데이터가 무작위 순서로 입력 : O(Log N)</li>
+<li>균형 이진 검색 트리 : AVL Tree, Red-Black Tree
+<ul>
+<li>정렬된 데이터가 들어와도 O(Log N)을 보장한다.</li>
+</ul>
+</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/cs/">CS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/computer-science/">Computer Science</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[CS] 17.그래프의 개념과 표현</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[CS] 15.히프의 개념과 응용</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

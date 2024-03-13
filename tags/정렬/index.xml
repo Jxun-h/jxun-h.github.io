@@ -11,8 +11,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Jul 2022 15:52:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Aug 2022 17:18:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%A0%95%EB%A0%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1722 순열의 순서 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/</link>
+      <pubDate>Tue, 09 Aug 2022 17:18:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/</guid>
+      <description>📌 BOJ 1722 순열의 순서 💡 조건 1부터 N까지의 수를 임의로 배열한 순열은 총 N! = N×(N-1)×…×2×1 가지가 있다.
+임의의 순열은 정렬을 할 수 있다.
+예를 들어 N=3인 경우 {1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1}의 순서로 생각할 수 있다.
+N이 주어지면, 아래의 두 소문제 중에 하나를 풀어야 한다.
+k가 주어지면 k번째 순열을 구하고, 임의의 순열이 주어지면 이 순열이 몇 번째 순열인지를 출력하는 문제</description>
+    </item>
     <item>
       <title>[BOJ] 2548 대표 자연수 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-2548-%EB%8C%80%ED%91%9C-%EC%9E%90%EC%97%B0%EC%88%98-with-python/</link>

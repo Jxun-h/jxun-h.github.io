@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[CS] 14.스레드 이진트리 | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, CS, Computer Science">
+<meta name="description" content="📌 스레드 이진트리 💡 스레드 이진트리(Threaded Binary Tree) 스레드 이진트리의 기본 개념 n개의 노드를 갖는 이진 트리에는 2n 개의 링크가 존재한다. 2n 개의 링크 중에 n&#43;1 개의 링크 값은 null이다. null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads) 니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다. 스레드의 이용 ptr -&gt; left_child = NULL 일 경우, ptr -&gt; left_child 를 ptr의 중위행선자를 가리키도록 변경한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[CS] 14.스레드 이진트리" />
+<meta property="og:description" content="📌 스레드 이진트리 💡 스레드 이진트리(Threaded Binary Tree) 스레드 이진트리의 기본 개념 n개의 노드를 갖는 이진 트리에는 2n 개의 링크가 존재한다. 2n 개의 링크 중에 n&#43;1 개의 링크 값은 null이다. null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads) 니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다. 스레드의 이용 ptr -&gt; left_child = NULL 일 경우, ptr -&gt; left_child 를 ptr의 중위행선자를 가리키도록 변경한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-17T02:41:00+00:00" />
+<meta property="article:modified_time" content="2022-07-17T02:41:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[CS] 14.스레드 이진트리"/>
+<meta name="twitter:description" content="📌 스레드 이진트리 💡 스레드 이진트리(Threaded Binary Tree) 스레드 이진트리의 기본 개념 n개의 노드를 갖는 이진 트리에는 2n 개의 링크가 존재한다. 2n 개의 링크 중에 n&#43;1 개의 링크 값은 null이다. null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads) 니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다. 스레드의 이용 ptr -&gt; left_child = NULL 일 경우, ptr -&gt; left_child 를 ptr의 중위행선자를 가리키도록 변경한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[CS] 14.스레드 이진트리",
+      "item": "https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[CS] 14.스레드 이진트리",
+  "name": "[CS] 14.스레드 이진트리",
+  "description": "📌 스레드 이진트리 💡 스레드 이진트리(Threaded Binary Tree) 스레드 이진트리의 기본 개념 n개의 노드를 갖는 이진 트리에는 2n 개의 링크가 존재한다. 2n 개의 링크 중에 n+1 개의 링크 값은 null이다. null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads) 니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다. 스레드의 이용 ptr -\u0026gt; left_child = NULL 일 경우, ptr -\u0026gt; left_child 를 ptr의 중위행선자를 가리키도록 변경한다.",
+  "keywords": [
+    "자료구조", "CS", "Computer Science"
+  ],
+  "articleBody": "\n📌 스레드 이진트리 💡 스레드 이진트리(Threaded Binary Tree) 스레드 이진트리의 기본 개념 n개의 노드를 갖는 이진 트리에는 2n 개의 링크가 존재한다. 2n 개의 링크 중에 n+1 개의 링크 값은 null이다. null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads) 니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다. 스레드의 이용 ptr -\u003e left_child = NULL 일 경우, ptr -\u003e left_child 를 ptr의 중위행선자를 가리키도록 변경한다. 중위행선자(inorder predecessor) : 중위 순회에서 현재 노드 바로 앞에 나오는 노드 ptr -\u003e right_child = NULL 일 경우, ptr -\u003e right_child 를 ptr의 중위후속자를 가리키도록 변경한다. 중위후속자(inorder successor) : 중위 순회에서 현재 노드 바로 뒤에 나오는 노드 노드의 구조 struct thread_tree{ short int left_thread; # True or False struct thread_tree *left_child; # left_child = true : 스레드 # left_child = false : 왼쪽 자식 노드 char data; struct thread_tree *right_child; # right_thread 에 따라 결정된다. short int right_thread; # true or false } 💡 헤드노드(Head Node) 헤드노드의 역할 가장 왼쪽 노드의 Inorder predecessor 가장 오른쪽 노드의 Inorder successor 💡 스레드를 이용한 중위순회 ptr이 현재 노드를 가리킨다고 가정한다. # 중위순회에서 ptr 다음 노드 = ptr -\u003e right_child if ptr -\u003e right_thread == TRUE otherwise # ptr 의 right_child 로 이동한 후, left_child 를 따라 내려간다. # \u003e\u003e left_thread == TRUE 인 노드를 만날 때까지 내려간다. 중위 후속자 발견 알고리즘(insucc) struct thread_tree *insucc(struct thread_tree *ptr){ # 스레드 이진 트리에서 ptr이 가리키는 노드의 inorder success를 반환 struct thread_tree *temp = ptr -\u003e right_child; # right_child 가 자식 노드 if (!ptr -\u003e right_child){ # 왼쪽 끝에 도달할 때까지 반복한다. while(!temp -\u003e left_child){ temp = temp -\u003e left_child; } } return temp; } 💡 중위 순회 알고리즘(tinorder) void tinorder(struct thread_tree *tree){ // 스레드 이진트리를 중위순회, 헤드 노드부터 시작한다. struct thread_tree *temp = tree; for(;;){ temp = insucc(temp); if(temp==tree){ break; } printf(\"%3c\", temp -\u003e data); } } 💡 스레드 이진트리에서 노드를 추가 문제 정의 새로운 노드를 parent 노드의 right_child 로 추가한다. parent -\u003e right_thread 의 값이 true 인 경우 parent -\u003e right_thread 의 값이 false 인 경우 ",
+  "wordCount" : "332",
+  "inLanguage": "en",
+  "datePublished": "2022-07-17T02:41:00Z",
+  "dateModified": "2022-07-17T02:41:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [CS] 14.스레드 이진트리
+    </h1>
+    <div class="post-meta"><span title='2022-07-17 02:41:00 +0000 UTC'>July 17, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Data%20Structure/[CS]%2014.%ec%8a%a4%eb%a0%88%eb%93%9c%20%ec%9d%b4%ec%a7%84%ed%8a%b8%eb%a6%ac.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-스레드-이진트리">📌 스레드 이진트리<a hidden class="anchor" aria-hidden="true" href="#-스레드-이진트리">#</a></h2>
+<br>
+<h3 id="-스레드-이진트리threaded-binary-tree">💡 스레드 이진트리(Threaded Binary Tree)<a hidden class="anchor" aria-hidden="true" href="#-스레드-이진트리threaded-binary-tree">#</a></h3>
+<ol>
+<li>스레드 이진트리의 기본 개념
+<ol>
+<li>n개의 노드를 갖는 이진 트리에는 <strong>2n 개의 링크</strong>가 존재한다.</li>
+<li>2n 개의 링크 중에 <strong>n+1 개의 링크 값은 null</strong>이다.</li>
+<li>null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads)</li>
+<li>니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다.</li>
+</ol>
+</li>
+<li>스레드의 이용
+<ol>
+<li>ptr -&gt; left_child = NULL 일 경우, ptr -&gt; left_child 를 ptr의 중위행선자를 가리키도록 변경한다.
+<ul>
+<li>중위행선자(inorder predecessor) : 중위 순회에서 현재 노드 바로 앞에 나오는 노드</li>
+</ul>
+</li>
+<li>ptr -&gt; right_child = NULL 일 경우, ptr -&gt; right_child 를 ptr의 중위후속자를 가리키도록 변경한다.
+<ul>
+<li>중위후속자(inorder successor) : 중위 순회에서 현재 노드 바로 뒤에 나오는 노드</li>
+</ul>
+</li>
+<li>노드의 구조</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">thread_tree</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">short</span> <span class="kt">int</span> <span class="n">left_thread</span><span class="p">;</span> <span class="err">#</span> <span class="n">True</span> <span class="n">or</span> <span class="n">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">thread_tree</span> <span class="o">*</span><span class="n">left_child</span><span class="p">;</span> <span class="err">#</span> <span class="n">left_child</span> <span class="o">=</span> <span class="nb">true</span> <span class="o">:</span> <span class="err">스레드</span>
+</span></span><span class="line"><span class="cl">                                    <span class="cp"># left_child = false : 왼쪽 자식 노드
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">thread_tree</span> <span class="o">*</span><span class="n">right_child</span><span class="p">;</span> <span class="err">#</span> <span class="n">right_thread</span> <span class="err">에</span> <span class="err">따라</span> <span class="err">결정된다</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">short</span> <span class="kt">int</span> <span class="n">right_thread</span><span class="p">;</span> <span class="err">#</span> <span class="nb">true</span> <span class="n">or</span> <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span></code></pre></div><center><img src='/cs_14_1.png' /></center>
+<br>
+<h3 id="-헤드노드head-node">💡 헤드노드(Head Node)<a hidden class="anchor" aria-hidden="true" href="#-헤드노드head-node">#</a></h3>
+<ol>
+<li>헤드노드의 역할
+<ol>
+<li>가장 왼쪽 노드의 Inorder predecessor</li>
+<li>가장 오른쪽 노드의 Inorder successor</li>
+</ol>
+</li>
+</ol>
+<center><img src='/cs_14_2.png' /></center>
+<br>
+<h3 id="-스레드를-이용한-중위순회">💡 스레드를 이용한 중위순회<a hidden class="anchor" aria-hidden="true" href="#-스레드를-이용한-중위순회">#</a></h3>
+<ol>
+<li>ptr이 현재 노드를 가리킨다고 가정한다.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp"># 중위순회에서 ptr 다음 노드 = ptr -&gt; right_child
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">if</span> <span class="n">ptr</span> <span class="o">-&gt;</span> <span class="n">right_thread</span> <span class="o">==</span> <span class="n">TRUE</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">otherwise</span>
+</span></span><span class="line"><span class="cl"><span class="cp"># ptr 의 right_child 로 이동한 후, left_child 를 따라 내려간다.
+</span></span></span><span class="line"><span class="cl"><span class="cp"># &gt;&gt; left_thread == TRUE 인 노드를 만날 때까지 내려간다.
+</span></span></span></code></pre></div><ol>
+<li>중위 후속자 발견 알고리즘(insucc)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">thread_tree</span> <span class="o">*</span><span class="nf">insucc</span><span class="p">(</span><span class="k">struct</span> <span class="nc">thread_tree</span> <span class="o">*</span><span class="n">ptr</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="cp"># 스레드 이진 트리에서 ptr이 가리키는 노드의 inorder success를 반환
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="k">struct</span> <span class="nc">thread_tree</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">ptr</span> <span class="o">-&gt;</span> <span class="n">right_child</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cp"># right_child 가 자식 노드
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ptr</span> <span class="o">-&gt;</span> <span class="n">right_child</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="cp"># 왼쪽 끝에 도달할 때까지 반복한다.
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">left_child</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">left_child</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><br>
+<h3 id="-중위-순회-알고리즘tinorder">💡 중위 순회 알고리즘(tinorder)<a hidden class="anchor" aria-hidden="true" href="#-중위-순회-알고리즘tinorder">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">tinorder</span><span class="p">(</span><span class="k">struct</span> <span class="nc">thread_tree</span> <span class="o">*</span><span class="n">tree</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 스레드 이진트리를 중위순회, 헤드 노드부터 시작한다.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">thread_tree</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">tree</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(;;){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">temp</span> <span class="o">=</span> <span class="n">insucc</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">==</span><span class="n">tree</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%3c&#34;</span><span class="p">,</span> <span class="n">temp</span> <span class="o">-&gt;</span> <span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><br>
+<h3 id="-스레드-이진트리에서-노드를-추가">💡 스레드 이진트리에서 노드를 추가<a hidden class="anchor" aria-hidden="true" href="#-스레드-이진트리에서-노드를-추가">#</a></h3>
+<ol>
+<li>문제 정의
+<ol>
+<li>새로운 노드를 parent 노드의 right_child 로 추가한다.</li>
+<li>parent -&gt; right_thread 의 값이 true 인 경우</li>
+<li>parent -&gt; right_thread 의 값이 false 인 경우</li>
+</ol>
+</li>
+</ol>
+<center><img src='/cs_14_3.png' /></center>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/cs/">CS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/computer-science/">Computer Science</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[CS] 15.히프의 개념과 응용</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/temp/boj-14495-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EB%B9%84%EC%8A%A4%EB%AC%B4%EB%A6%AC%ED%95%9C-%EC%88%98%EC%97%B4-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 14495 피보나치 비스무리한 수열 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

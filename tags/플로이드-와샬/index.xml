@@ -11,8 +11,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jul 2022 01:25:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%99%80%EC%83%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 10159 저울 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-10159-%EC%A0%80%EC%9A%B8-with-python/</link>
+      <pubDate>Sun, 17 Jul 2022 01:25:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-10159-%EC%A0%80%EC%9A%B8-with-python/</guid>
+      <description>📌 BOJ 10159 저울 💡 조건 무게가 서로 다른 N 개의 물건이 있다. 각 물건은 1부터 N 까지 번호가 매겨져 있다.
+우리는 일부 물건 쌍에 대해서 양팔 저울로 어떤 것이 무거운 것인지를 측정한 결과표를 가지고 있다.
+이 결과표로부터 직접 측정하지 않은 물건 쌍의 비교 결과를 알아낼 수도 있고 알아내지 못할 수도 있다.
+예를 들어, 총 6개의 물건이 있고, 다음 5개의 비교 결과가 주어졌다고 가정하자. ([1]은 1번 물건의 무게를 의미한다.)</description>
+    </item>
     <item>
       <title>[BOJ] 1058 친구 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1058-%EC%B9%9C%EA%B5%AC-with-python/</link>

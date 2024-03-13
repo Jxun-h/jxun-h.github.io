@@ -149,6 +149,63 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">[CS] 17.그래프의 개념과 표현
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 그래프의 개념과 표현 💡 그래프 소개 그래프(Graph)란? 연결되어 있는 객체 간의 관계를 표현하는 자료구조 지하철 노선도, SNS 친구 관계, 컴퓨터 네트워크 💡 그래프 데이터 타입 그래프 G의 두가지 구성요소
+V(G) : G에 포함된 Vertex(정점)들의 집합 E(G) : G에 포함된 Edge(간선)들의 집합 무방향성 그래프(Undirected Graph)
+Vertex 의 쌍을 나타내는 Edge가 방향성이 없다. (u, v), (v, u) 는 동일한 Edge 를 표현하는 것이다.
+EX) 지하철 노선도 방향성 그래프(Directed Graph)
+각 Edge에 방향성이 존재하는 그래프 (u, v) : v -&gt; v 인 Edge를 표현하는 것이다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-07-17 18:51:00 +0000 UTC'>July 17, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [CS] 17.그래프의 개념과 표현" href="https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[CS] 16.이진 검색 트리
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 이진 검색 트리 💡 이진 검색 트리(Binary Search Trees) 히프의 문제점
+임의의 데이터를 갖는 노드를 삭제할 경우의 시간 복잡도 : O(N) 트리에서 특정 데이터를 갖는 노드를 검색하는 시간 복잡도 : O(N) 이진 검색 트리란?
+트리 내에서 특정 데이터(Key 값) 을 갖는 노드를 효율적으로 검색 O(Log N), 하지만 정렬된 상태를 유지해야한다. 이진 검색 트리의 정의
+모든 노드는 유일한 키 값을 가지고 있다. 왼쪽 서브 트리에 저장된 키 값 &lt; 루트 노드의 키 값 오른쪽 서브 트리에 저장된 키 값 &gt; 루트 노드의 키 값 양쪽 서브 트리도 이진 검색 트리이다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-07-17 16:46:00 +0000 UTC'>July 17, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [CS] 16.이진 검색 트리" href="https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[CS] 15.히프의 개념과 응용
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 히프의 개념과 응용 💡 히프(Heap)의 정의 최대 트리와 최대 히프
+최대 트리(Max Tree) 트리의 모든 노드에 대해서 노드의 데이터 값이 자식 노드의 데이터 값보다 크거나 같은 트리 최대 히프(Max Heap) 최대트리 이면서, 완전 이진트리. 최소 트리와 최소 히프
+최소 트리(Min Tree) 트리의 모든 노드에 대해서 노드의 데이터 값이 자식 노드의 데이터 값다 작거나 같은 트리 최소 히프(Min Heap) 최소트리 이면서, 완전 이진트리. 최대 히프의 root 노드는 항상 모든 노드들보다 큰 값을 가지고 있다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-07-17 03:18:00 +0000 UTC'>July 17, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [CS] 15.히프의 개념과 응용" href="https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[CS] 14.스레드 이진트리
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 스레드 이진트리 💡 스레드 이진트리(Threaded Binary Tree) 스레드 이진트리의 기본 개념 n개의 노드를 갖는 이진 트리에는 2n 개의 링크가 존재한다. 2n 개의 링크 중에 n&#43;1 개의 링크 값은 null이다. null 링크를 다른 노드에 대한 pointer 로 대체한다. (= Threads) 니는 루트를 제외한 모든 노드는 부모 노드가 있기 때문에 트리의 링크 수는 n-1 개이다. 스레드의 이용 ptr -&gt; left_child = NULL 일 경우, ptr -&gt; left_child 를 ptr의 중위행선자를 가리키도록 변경한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-07-17 02:41:00 +0000 UTC'>July 17, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [CS] 14.스레드 이진트리" href="https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">[CS] 13.이진트리의 추가 연산
     </h2>
   </header>
@@ -229,58 +286,6 @@
   </div>
   <footer class="entry-footer"><span title='2022-07-10 05:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
   <a class="entry-link" aria-label="post link to [CS] 8. 원형 연결리스트" href="https://jxun-h.github.io/posts/data-structure/cs-8.-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[CS] 7. 연결리스트를 이용한 다항식의 구현
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }\*a, \*b, \*c 💡 다항식의 덧셈 알고리즘 d = a &#43; b
-각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-07-10 04:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [CS] 7. 연결리스트를 이용한 다항식의 구현" href="https://jxun-h.github.io/posts/data-structure/cs-7.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%EA%B5%AC%ED%98%84/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[CS] 6. 연결리스트의 개념
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 연결리스트의 개념 💡 자기참조 구조체 동일한 타입의 구조체에 대한 포인터를 속성으로 포함하는 구조체 Link Node 구조체에 대한 포인터 -&gt; 메모리의 주소를 가리키는 자료형 여러 개의 Node 구조체를 연결하는 역할 💡 연결리스트 단순 연결리스트(Singly Linked List)
-자기 참조 구조체(Node)들의 연결 천번째 노드에 대한 포인터만 유지 리스트의 이름 = 첫번째 노드의 수조 이후 노드들은 구조체의 Link 포인터를 통해 참조 마지막 노드의 Link 포인터는 NULL로 설정한다. 다른 연결리스트
-이중 연결 리스트(Doubly Linked List) 앞 뒤의 노드들의 정보를 가지고 있다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-07-10 03:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [CS] 6. 연결리스트의 개념" href="https://jxun-h.github.io/posts/data-structure/cs-6.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EA%B0%9C%EB%85%90/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[CS] 5. 배열을 이용한 희소행렬의 표현
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 배열을 이용한 희소행렬의 표현 💡 희소행렬 행렬의 표현 2차원 배열 : Array[MaxRows][MaxCols] 0이 많이 포함된 경우, 희소행렬이라고 한다. 0이 아닌 데이터의 수 &lt; 0인 데이터의 수 만약 1000 * 1000 행렬에서 0이 아닌 원소가 10개라면, 메모리 낭비일 수 있다. 💡 희소행렬의 표현 동기 : 공간 낭비를 줄이자. &lt;Row, Column, Value&gt; 의 쌍을 저장 빠른 전치를 위해서 Row 의 오름차순으로 저장 희소행렬 -&gt; 배열 맨 처음에 행렬의 정보기록 = (행, 열, 0이 아닌 데이터의 수) 💡 행렬의 전치 전치연산 (Transposing a Matrix) row &amp; column 을 교환 &lt;j, i, value&gt; 를 희소행렬 M의 어디에 저장하는가?...</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-07-10 02:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [CS] 5. 배열을 이용한 희소행렬의 표현" href="https://jxun-h.github.io/posts/data-structure/cs-5.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%9D%AC%EC%86%8C%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[CS] 4. 배열을 이용한 다항식의 표현
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 배열을 이용한 다항식의 표현 💡 순서리스트 (Orderd List) 데이터들의 순서가 유지되는 집합
-집합이란, 원소들의 모임, 순서를 중요시 하지 않음. 한 주의 요일들 섞여진 카드들 미국의 2차 세계 대전 참전 연도 스위스의 2차 세계 대전 참전 연도 (원소가 없는 집합도 순서리스트에 포함된다.) 💡 순서리스트의 연산 순서리스트에 적용 가능한 연산들 리스트 길이 연산 리스트의 모든 데이터들을 왼쪽에서 오른쪽으로 읽기 리스트로부터 i번째 데이터를 검색 리스트로부터 i번째 데이터를 교체 리스트의 i번째 위치에 새로운 데이터 추가 (i번째 이후에 있던 데이터는 한 칸씩 밀림) 리스트의 i번째 위치에 있는 데이터를 삭제 (i번째 이후에 있던 데이터는 한 칸씩 당겨짐) 💡 다항식 소개 순서리스트를 구현하는 방법 배열 : i번째 데이터를 배열 i에 저장 연결리스트 💡 C 언어에서 다항식 구현 방법 1 : 모든 지수의 계수들을 내림차순으로 저장...</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-07-10 01:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [CS] 4. 배열을 이용한 다항식의 표현" href="https://jxun-h.github.io/posts/data-structure/cs-4.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%ED%91%9C%ED%98%84/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

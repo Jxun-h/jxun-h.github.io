@@ -11,8 +11,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Jul 2022 23:07:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jul 2022 01:39:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 14495 피보나치 비스무리한 수열 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-14495-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EB%B9%84%EC%8A%A4%EB%AC%B4%EB%A6%AC%ED%95%9C-%EC%88%98%EC%97%B4-with-python/</link>
+      <pubDate>Sun, 17 Jul 2022 01:39:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-14495-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98-%EB%B9%84%EC%8A%A4%EB%AC%B4%EB%A6%AC%ED%95%9C-%EC%88%98%EC%97%B4-with-python/</guid>
+      <description>📌 BOJ 14495 피보나치 비스무리한 수열 💡 조건 피보나치 비스무리한 수열은 f(n) = f(n-1) + f(n-3)인 수열이다.
+f(1) = f(2) = f(3) = 1이며 피보나치 비스무리한 수열을 나열하면 다음과 같다.
+자연수 n을 입력받아 n번째 피보나치 비스무리한 수열을 구하는 문제.
+자연수 n의 범위는 (1 ≤ n ≤ 116) 이다.
+DP 유형의 문제
+🔖 예제 및 실행결과 예제 10 실행결과 19 ⌨️ 문제 풀이 문제에 점화식이 주어졌다. 🖥 소스 코드 from sys import stdin dp = [0 for _ in range(120)] dp[0:3] = [1, 1, 1, 2] for x in range(4, 117): dp[x] = (dp[x - 3] + dp[x - 1]) print(dp[int(stdin.</description>
+    </item>
     <item>
       <title>[BOJ] 14494 다이나믹이 뭐예요? with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-14494-%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%EC%9D%B4-%EB%AD%90%EC%98%88%EC%9A%94-with-python/</link>

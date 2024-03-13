@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>[CS] 7. 연결리스트를 이용한 다항식의 구현 | Jxun-h Dev Log</title>
 <meta name="keywords" content="자료구조, CS, Computer Science">
-<meta name="description" content="📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }\*a, \*b, \*c 💡 다항식의 덧셈 알고리즘 d = a &#43; b
+<meta name="description" content="📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }*a, *b, *c 💡 다항식의 덧셈 알고리즘 d = a &#43; b
 각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우">
 <meta name="author" content="Jxun-h">
 <link rel="canonical" href="https://jxun-h.github.io/posts/data-structure/cs-7.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%EA%B5%AC%ED%98%84/">
@@ -56,20 +56,20 @@
 
     </style>
 </noscript><meta property="og:title" content="[CS] 7. 연결리스트를 이용한 다항식의 구현" />
-<meta property="og:description" content="📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }\*a, \*b, \*c 💡 다항식의 덧셈 알고리즘 d = a &#43; b
+<meta property="og:description" content="📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }*a, *b, *c 💡 다항식의 덧셈 알고리즘 d = a &#43; b
 각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jxun-h.github.io/posts/data-structure/cs-7.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%EA%B5%AC%ED%98%84/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-10T04:00:00+00:00" />
 <meta property="article:modified_time" content="2022-07-10T04:00:00+00:00" />
-<meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-10.%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-9.-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-8.-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-16.%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89-%ED%8A%B8%EB%A6%AC/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-15.%ED%9E%88%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9D%91%EC%9A%A9/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-14.%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
 
 <meta name="twitter:title" content="[CS] 7. 연결리스트를 이용한 다항식의 구현"/>
-<meta name="twitter:description" content="📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }\*a, \*b, \*c 💡 다항식의 덧셈 알고리즘 d = a &#43; b
+<meta name="twitter:description" content="📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }*a, *b, *c 💡 다항식의 덧셈 알고리즘 d = a &#43; b
 각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우"/>
 
 
@@ -99,11 +99,11 @@
   "@type": "BlogPosting",
   "headline": "[CS] 7. 연결리스트를 이용한 다항식의 구현",
   "name": "[CS] 7. 연결리스트를 이용한 다항식의 구현",
-  "description": "📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }\\*a, \\*b, \\*c 💡 다항식의 덧셈 알고리즘 d = a + b\n각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우",
+  "description": "📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }*a, *b, *c 💡 다항식의 덧셈 알고리즘 d = a + b\n각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우",
   "keywords": [
     "자료구조", "CS", "Computer Science"
   ],
-  "articleBody": "\n📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }\\*a, \\*b, \\*c 💡 다항식의 덧셈 알고리즘 d = a + b\n각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우\n",
+  "articleBody": "\n📌 연결리스트를 이용한 다항식의 구현 💡 다항식의 연결리스트 표현 다항식의 구조체 struct poly{ int coef; // 계수 int expon; // 지수 struct poly *link; // 링크 }*a, *b, *c 💡 다항식의 덧셈 알고리즘 d = a + b\n각 다항식 최고차 항부터 차례대로 비교하며 연산 최고차 항의 지수가 동일할 경우\n",
   "wordCount" : "50",
   "inLanguage": "en",
   "datePublished": "2022-07-10T04:00:00Z",
@@ -215,7 +215,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span> <span class="n">expon</span><span class="p">;</span>          <span class="c1">// 지수
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">struct</span> <span class="nc">poly</span> <span class="o">*</span><span class="n">link</span><span class="p">;</span>  <span class="c1">// 링크
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="err">\</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="err">\</span><span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="err">\</span><span class="o">*</span><span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">c</span>
 </span></span></code></pre></div><br>
 <center><img src='/cs_7_1.png' /></center>
 <br>

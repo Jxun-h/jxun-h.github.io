@@ -11,8 +11,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Jul 2022 20:06:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1081 합 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-1081-%ED%95%A9-with-python/</link>
+      <pubDate>Fri, 22 Jul 2022 20:06:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-1081-%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 1081 합 💡 조건 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 문제.
+0 ≤ L ≤ U ≤ 2,000,000,000
+수학 유형의 문제
+🔖 예제 및 실행결과 예제 24660 308357171 실행결과 11379854844 ⌨️ 문제 풀이 가장 먼저 문제를 보며 주목해야할 부분은 L과 U의 범위이다.
+L과 U의 범위는 최대 20억까지로, 일일히 검사했을 때 최악의 경우에는 0부터 20억까지의 모든 수를 검사해야하기 때문에
+문제에서 주어진 2초라는 시간 안에 절대 해결할 수가 없다.</description>
+    </item>
     <item>
       <title>[BOJ] 18291 비요뜨의 징검다리 건너기 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</link>

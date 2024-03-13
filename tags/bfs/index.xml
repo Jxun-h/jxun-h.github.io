@@ -11,8 +11,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Jul 2022 15:12:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jul 2022 22:33:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/bfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1005 ACM Craft with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/boj-1005-acm-craft-with-python/</link>
+      <pubDate>Sun, 17 Jul 2022 22:33:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/boj-1005-acm-craft-with-python/</guid>
+      <description>📌 BOJ 1005 ACM Craft 💡 조건 서기 2012년! 드디어 2년간 수많은 국민들을 기다리게 한 게임 ACM Craft (Association of Construction Manager Craft)가 발매되었다.
+이 게임은 지금까지 나온 게임들과는 다르게 ACM크래프트는 다이나믹한 게임 진행을 위해 건물을 짓는 순서가 정해져 있지 않다.
+즉, 첫 번째 게임과 두 번째 게임이 건물을 짓는 순서가 다를 수도 있다.
+매 게임시작 시 건물을 짓는 순서가 주어진다. 또한 모든 건물은 각각 건설을 시작하여 완성이 될 때까지 Delay가 존재한다.</description>
+    </item>
     <item>
       <title>[BOJ] 1939 중량제한 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1939-%EC%A4%91%EB%9F%89%EC%A0%9C%ED%95%9C-with-python/</link>
