@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 12920 평범한 배낭 2 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 냅색, 비트마스킹, 백준, BOJ">
+<meta name="description" content="📌 BOJ 12920 평범한 배낭 2 💡 조건 민호는 BOJ 캠프에 가기 위해 가방을 싸려고 한다. 가방에 어떠한 물건들을 넣냐에 따라 민호의 만족도가 달라진다.
+집에 있는 모든 물건들을 넣으면 민호가 느낄 수 있는 만족도는 최대가 될 것이다.
+하지만 민호가 들 수 있는 가방의 무게는 정해져 있어 이를 초과해 물건을 넣을수가 없다.
+민호가 만족도를 최대로 느낄 수 있는 경우를 찾아보자.
+단, 집에 동일한 물건들이 여러개가 있을 수 있기 때문에 한 물건을 두개 이상 챙기는 것도 가능하다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/ps/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 12920 평범한 배낭 2 with Python" />
+<meta property="og:description" content="📌 BOJ 12920 평범한 배낭 2 💡 조건 민호는 BOJ 캠프에 가기 위해 가방을 싸려고 한다. 가방에 어떠한 물건들을 넣냐에 따라 민호의 만족도가 달라진다.
+집에 있는 모든 물건들을 넣으면 민호가 느낄 수 있는 만족도는 최대가 될 것이다.
+하지만 민호가 들 수 있는 가방의 무게는 정해져 있어 이를 초과해 물건을 넣을수가 없다.
+민호가 만족도를 최대로 느낄 수 있는 경우를 찾아보자.
+단, 집에 동일한 물건들이 여러개가 있을 수 있기 때문에 한 물건을 두개 이상 챙기는 것도 가능하다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/ps/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-01T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/temp/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-2225-%ED%95%A9%EB%B6%84%ED%95%B4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/ps/boj-6236-%EC%9A%A9%EB%8F%88-%EA%B4%80%EB%A6%AC-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 12920 평범한 배낭 2 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 12920 평범한 배낭 2 💡 조건 민호는 BOJ 캠프에 가기 위해 가방을 싸려고 한다. 가방에 어떠한 물건들을 넣냐에 따라 민호의 만족도가 달라진다.
+집에 있는 모든 물건들을 넣으면 민호가 느낄 수 있는 만족도는 최대가 될 것이다.
+하지만 민호가 들 수 있는 가방의 무게는 정해져 있어 이를 초과해 물건을 넣을수가 없다.
+민호가 만족도를 최대로 느낄 수 있는 경우를 찾아보자.
+단, 집에 동일한 물건들이 여러개가 있을 수 있기 때문에 한 물건을 두개 이상 챙기는 것도 가능하다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 12920 평범한 배낭 2 with Python",
+      "item": "https://jxun-h.github.io/posts/ps/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 12920 평범한 배낭 2 with Python",
+  "name": "[BOJ] 12920 평범한 배낭 2 with Python",
+  "description": "📌 BOJ 12920 평범한 배낭 2 💡 조건 민호는 BOJ 캠프에 가기 위해 가방을 싸려고 한다. 가방에 어떠한 물건들을 넣냐에 따라 민호의 만족도가 달라진다.\n집에 있는 모든 물건들을 넣으면 민호가 느낄 수 있는 만족도는 최대가 될 것이다.\n하지만 민호가 들 수 있는 가방의 무게는 정해져 있어 이를 초과해 물건을 넣을수가 없다.\n민호가 만족도를 최대로 느낄 수 있는 경우를 찾아보자.\n단, 집에 동일한 물건들이 여러개가 있을 수 있기 때문에 한 물건을 두개 이상 챙기는 것도 가능하다.",
+  "keywords": [
+    "자료구조", "PS", "냅색", "비트마스킹", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 12920 평범한 배낭 2 💡 조건 민호는 BOJ 캠프에 가기 위해 가방을 싸려고 한다. 가방에 어떠한 물건들을 넣냐에 따라 민호의 만족도가 달라진다.\n집에 있는 모든 물건들을 넣으면 민호가 느낄 수 있는 만족도는 최대가 될 것이다.\n하지만 민호가 들 수 있는 가방의 무게는 정해져 있어 이를 초과해 물건을 넣을수가 없다.\n민호가 만족도를 최대로 느낄 수 있는 경우를 찾아보자.\n단, 집에 동일한 물건들이 여러개가 있을 수 있기 때문에 한 물건을 두개 이상 챙기는 것도 가능하다.\n첫 번째 줄에 N, M (1 ≤ N ≤ 100, 1 ≤ M ≤ 10,000) 이 빈칸을 구분으로 주어진다.\nN은 민호의 집에 있는 물건의 종류의 수이고 M은 민호가 들 수 있는 가방의 최대 무게다.\n두 번째 줄부터 N개의 줄에 걸쳐 민호의 집에 있는 물건의 정보가 주어진다.\n각의 줄은 V, C, K (1 ≤ V ≤ M, 1 ≤ C, K ≤ 10,000, 1 ≤ V * K ≤ 10,000) 으로 이루어져 있다.\nV는 물건의 무게, C는 물건을 가방에 넣었을 때 올라가는 민호의 만족도, K는 물건의 개수이다.\n최대 무게를 넘기지 않게 물건을 담았을 때 민호가 느낄 수 있는 최대 만족도를 출력한다.\n냅색 알고리즘, 비트마스킹 유형의 문제\n🔖 예제 및 실행결과 예제 2 3 2 7 1 1 9 3 실행결과 27 ⌨️ 문제 풀이 평범한 배낭 문제 시리즈이다.\n평범한 배낭 1 문제는 냅색, DP 문제이다.\n물품의 수 N, 버틸 수 있는 무게 K 라고 한다면 시간복잡도 O(NK)로 풀이할 수 있다.\n하지만 이 문제는 물건의 개수가 여러개이다. 즉, 물건이 중복으로 들어갈 수 있다는 것이다.\n물건이 중복으로 들어갈 수 있으며, V = 1, M = 10000, K = 10000 이라고 하면 while 반복문이 약 1억번 가까이 돌게 된다.\n이러면 무조건 TLE. 또한 일반 냅색에서는 2차원 배열을 이용했지만, 이 문제에서는 1차원 배열로 계산할 수 있다.\nO(NM * logK)로 해결할 수 있는 알고리즘을 생각해봐야한다.\n다른 분들의 풀이를 확인하니, 비트마스킹 아이디어를 통해서 수를 표현하는 것을 알 수 있었다.\n이 아이디어의 핵심은 모든 수는 2의 제곱수들의 합으로 표현할 수 있다는 것이다.\n만약 같은 물건이 약 15개라고 한다면 이를 2의 제곱수들의 합으로 표현했을 때, 1 + 2 + 4 + 8 로 표현할 수 있다.\n그렇다면 DP 테이블에 1개, 2개, 4개, 8개 추가한 경우를 갱신시켜주면 된다.\nDP 테이블을 M + 1 개 만들어주고, 무게와 만족도를 저장할 리스트를 생성한다.\n반복문을 N번 순회하면서 물건의 무게(V), 만족도(C), 물건의 개수(K)를 입력받는다.\n입력받은 물건을 한개 넣었을 경우부터 2 를 곱하면서 넣을 수 있는 개수를 계산하면서 만족도와 무게를 계산한다.\n계산한 각 값을 weight, satisfaction 리스트에 넣어준다. idx는 2를 곱해 2의 제곱수로 만들어준다.\n이미 계산한 2의 제곱수는 제외할 수 있도록 K에서 tmp를 빼준다.\n이후의 풀이는 냅색알고리즘과 같다.\nweight 리스트의 길이만큼 for 문을 순회(i)하고, 들 수 있는 최대 무게(M)부터 1까지 -1씩 내려가면서 순회(j)한다.\n이 때, j만큼 무게를 들 수 있을 때, weight 리스트의 i번째에 해당하는 물건을 넣을 수 있다면 dp[j]를 아래와 같이 갱신한다.\ndp[j] = max(dp[j], dp[j-weight[i]] + satisfaction[i]) dp[j] 째의 값과 (dp[현재 들 수 있는 최대무게 - i번째 물건의 무게] + i번째 물건의 만족도) 를 비교하여 갱신한다.\n🖥 소스 코드 N, M = map(int, input().split()) dp = [0 for _ in range(M+1)] weight, satisfaction = [], [] for _ in range(N): V, C, K = map(int, input().split()) idx = 1 while K \u003e 0: tmp = min(idx, K) weight.append(V * tmp) satisfaction.append(C * tmp) idx *= 2 K -= tmp for i in range(len(weight)): for j in range(M, 0, -1): if j \u003e= weight[i]: dp[j] = max(dp[j], dp[j-weight[i]] + satisfaction[i]) print(dp[M]) 💾 느낀점 안그래도 어려운 냅색에서 비트마스크의 개념이 들어가니 매우 어려웠다.\n냅색도 냅색이지만, 모든 자연수가 2의 거듭제곱 수로 나타낼 수 있다는 아이디어는 생각치도 못했다.\n(2)번의 아이디어를 기억하고 나중에 꼭 이러한 유형의 문제에서 적용할 수 있어야겠다.\n",
+  "wordCount" : "575",
+  "inLanguage": "en",
+  "datePublished": "2022-07-01T00:00:00Z",
+  "dateModified": "2022-07-01T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/ps/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 12920 평범한 배낭 2 with Python
+    </h1>
+    <div class="post-meta"><span title='2022-07-01 00:00:00 +0000 UTC'>July 1, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/PS/[BOJ]%2012920%20%ed%8f%89%eb%b2%94%ed%95%9c%20%eb%b0%b0%eb%82%ad%202%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem12920-target_blankboj-12920-평범한-배낭-2a">📌 <a href="https://www.acmicpc.net/problem/12920" target="_blank">BOJ 12920 평범한 배낭 2</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem12920-target_blankboj-12920-평범한-배낭-2a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>
+<p>민호는 BOJ 캠프에 가기 위해 가방을 싸려고 한다. 가방에 어떠한 물건들을 넣냐에 따라 민호의 만족도가 달라진다.</p>
+</li>
+<li>
+<p>집에 있는 모든 물건들을 넣으면 민호가 느낄 수 있는 만족도는 최대가 될 것이다.<br>
+하지만 민호가 들 수 있는 가방의 무게는 정해져 있어 이를 초과해 물건을 넣을수가 없다.</p>
+</li>
+<li>
+<p>민호가 만족도를 최대로 느낄 수 있는 경우를 찾아보자.<br>
+단, 집에 동일한 물건들이 여러개가 있을 수 있기 때문에 한 물건을 두개 이상 챙기는 것도 가능하다.</p>
+</li>
+<li>
+<p>첫 번째 줄에 N, M (1 ≤ N ≤ 100, 1 ≤ M ≤ 10,000) 이 빈칸을 구분으로 주어진다.<br>
+N은 민호의 집에 있는 물건의 종류의 수이고 M은 민호가 들 수 있는 가방의 최대 무게다.</p>
+</li>
+<li>
+<p>두 번째 줄부터 N개의 줄에 걸쳐 민호의 집에 있는 물건의 정보가 주어진다.<br>
+각의 줄은 V, C, K (1 ≤ V ≤ M, 1 ≤ C, K ≤ 10,000, 1 ≤ V * K ≤ 10,000) 으로 이루어져 있다.<br>
+V는 물건의 무게, C는 물건을 가방에 넣었을 때 올라가는 민호의 만족도, K는 물건의 개수이다.</p>
+</li>
+<li>
+<p>최대 무게를 넘기지 않게 물건을 담았을 때 민호가 느낄 수 있는 최대 만족도를 출력한다.</p>
+</li>
+<li>
+<p><strong>냅색 알고리즘, 비트마스킹</strong> 유형의 문제</p>
+</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">7</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">9</span> <span class="mi">3</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">27</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p>평범한 배낭 문제 시리즈이다.<br>
+<a href="https://www.acmicpc.net/problem/12865">평범한 배낭 1</a> 문제는 냅색, DP 문제이다.<br>
+물품의 수 N, 버틸 수 있는 무게 K 라고 한다면 시간복잡도 O(NK)로 풀이할 수 있다.</p>
+</li>
+<li>
+<p>하지만 이 문제는 물건의 개수가 여러개이다. 즉, <strong>물건이 중복으로 들어갈 수 있다는 것이다.</strong><br>
+물건이 중복으로 들어갈 수 있으며, V = 1, M = 10000, K = 10000 이라고 하면 while 반복문이 약 1억번 가까이 돌게 된다.<br>
+이러면 무조건 TLE. 또한 일반 냅색에서는 2차원 배열을 이용했지만, 이 문제에서는 1차원 배열로 계산할 수 있다.</p>
+</li>
+<li>
+<p>O(NM * logK)로 해결할 수 있는 알고리즘을 생각해봐야한다.<br>
+다른 분들의 풀이를 확인하니, 비트마스킹 아이디어를 통해서 수를 표현하는 것을 알 수 있었다.<br>
+이 아이디어의 핵심은 모든 수는 2의 제곱수들의 합으로 표현할 수 있다는 것이다.</p>
+</li>
+<li>
+<p>만약 같은 물건이 약 15개라고 한다면 이를 2의 제곱수들의 합으로 표현했을 때, 1 + 2 + 4 + 8 로 표현할 수 있다.<br>
+그렇다면 DP 테이블에 1개, 2개, 4개, 8개 추가한 경우를 갱신시켜주면 된다.</p>
+</li>
+<li>
+<p>DP 테이블을 M + 1 개 만들어주고, 무게와 만족도를 저장할 리스트를 생성한다.</p>
+</li>
+<li>
+<p>반복문을 N번 순회하면서 물건의 무게(V), 만족도(C), 물건의 개수(K)를 입력받는다.<br>
+입력받은 물건을 한개 넣었을 경우부터 2 를 곱하면서 넣을 수 있는 개수를 계산하면서 만족도와 무게를 계산한다.<br>
+계산한 각 값을 weight, satisfaction 리스트에 넣어준다. idx는 2를 곱해 2의 제곱수로 만들어준다.<br>
+이미 계산한 2의 제곱수는 제외할 수 있도록 K에서 tmp를 빼준다.</p>
+</li>
+<li>
+<p>이후의 풀이는 냅색알고리즘과 같다.<br>
+weight 리스트의 길이만큼 for 문을 순회(i)하고, 들 수 있는 최대 무게(M)부터 1까지 -1씩 내려가면서 순회(j)한다.</p>
+</li>
+<li>
+<p>이 때, j만큼 무게를 들 수 있을 때, weight 리스트의 i번째에 해당하는 물건을 넣을 수 있다면 dp[j]를 아래와 같이 갱신한다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="n">weight</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">satisfaction</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span></code></pre></div></li>
+<li>
+<p>dp[j] 째의 값과 (dp[현재 들 수 있는 최대무게 - i번째 물건의 무게] + i번째 물건의 만족도) 를 비교하여 갱신한다.</p>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">N</span><span class="p">,</span> <span class="n">M</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">weight</span><span class="p">,</span> <span class="n">satisfaction</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">V</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">idx</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">K</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">weight</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">V</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">satisfaction</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">C</span> <span class="o">*</span> <span class="n">tmp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">idx</span> <span class="o">*=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        <span class="n">K</span> <span class="o">-=</span> <span class="n">tmp</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">weight</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">weight</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="n">weight</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">satisfaction</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">M</span><span class="p">])</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>
+<p>안그래도 어려운 냅색에서 비트마스크의 개념이 들어가니 매우 어려웠다.</p>
+</li>
+<li>
+<p>냅색도 냅색이지만, 모든 자연수가 2의 거듭제곱 수로 나타낼 수 있다는 아이디어는 생각치도 못했다.</p>
+</li>
+<li>
+<p>(2)번의 아이디어를 기억하고 나중에 꼭 이러한 유형의 문제에서 적용할 수 있어야겠다.</p>
+</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%83%85%EC%83%89/">냅색</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B9%84%ED%8A%B8%EB%A7%88%EC%8A%A4%ED%82%B9/">비트마스킹</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/temp/temp/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 12760 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/ps/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 14890 경사로 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
