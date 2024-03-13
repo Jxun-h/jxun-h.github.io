@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 1520 내리막 길 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</link>
       <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</guid>
       <description>📌 BOJ 1520 내리막 길 💡 조건 지도는 아래 그림과 같이 직사각형 모양이며 여러 칸으로 나뉘어져 있다.
 한 칸은 한 지점을 나타내는데 각 칸에는 그 지점의 높이가 쓰여 있으며, 각 지점 사이의 이동은 지도에서 상하좌우 이웃한 곳끼리만 가능하다.
 현재 제일 왼쪽 위 칸이 나타내는 지점에 있는 세준이는 제일 오른쪽 아래 칸이 나타내는 지점으로 가려고 한다.
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>[BOJ] 20166 문자열 지옥에 빠진 호석 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</link>
       <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</guid>
       <description>📌 BOJ 20166 문자열 지옥에 빠진 호석 💡 조건 정신을 차려보니 바닥에는 격자 모양의 타일이 가득한 세상이었고, 각 타일마다 알파벳 소문자가 하나씩 써있다더라.
 두려움에 가득해 미친듯이 앞만 보고 달려 끝을 찾아 헤맸지만 이 세상은 끝이 없었고,
 달리다 지쳐 바닥에 드러누우니 하늘에 이런 문구가 핏빛 구름으로 떠다니고 있었다.
@@ -36,18 +36,18 @@
     </item>
     <item>
       <title>[BOJ] 15658 연산자 끼워넣기 (2) with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/</link>
       <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/</guid>
       <description>📌 BOJ 15658 연산자 끼워넣기 (2) 💡 조건 N개의 수로 이루어진 수열 A1, A2, &amp;hellip;, AN
 N(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작거나 같은 4개의 정수가 주어지는데,
 차례대로 덧셈(+)의 개수, 뺄셈(-)의 개수, 곱셈(×)의 개수, 나눗셈(÷)의 개수이다. 수와 수 사이에 연산자를 하나씩 넣어서, 수식을 하나 만들 수 있다. 이때, 주어진 수의 순서를 바꾸면 안 된다. 식의 계산은 연산자 우선 순위를 무시하고 앞에서부터 진행해야 한다.</description>
     </item>
     <item>
       <title>[BOJ] 1094 막대기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</link>
       <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1094 막대기 💡 조건 64cm인 막대를 가지고 있다.
 지민이는 원래 가지고 있던 막대를 더 작은 막대로 자른다음에, 풀로 붙여서 길이가 Xcm인 막대를 만들려고 한다. 아래는 막대를 자르는 방법이다. 지민이가 가지고 있는 막대의 길이를 모두 더한다.
 처음에는 64cm 막대 하나만 가지고 있다. 이때, 합이 X보다 크다면, 아래와 같은 과정을 반복한다.
@@ -56,9 +56,9 @@ N(2 ≤ N ≤ 11), (1 ≤ Ai ≤ 100) 입력 값중 셋째 줄에 4N보다 작�
     </item>
     <item>
       <title>[BOJ] 14502 연구소 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</link>
       <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</guid>
       <description>📌 BOJ 14502 연구소 💡 조건 연구소는 크기가 N×M인 직사각형으로 나타낼 수 있으며, 직사각형은 1×1 크기의 정사각형으로 나누어져 있다. 새로 세울 수 있는 벽의 개수는 3개이며, 꼭 3개를 세워야 한다. 벽을 3개 세운 뒤, 바이러스가 퍼질 수 없는 곳을 안전 영역이라고 한다. 지도의 세로 크기 N과 가로 크기 M이 주어진다. (3 ≤ N, M ≤ 8) 0은 빈 칸, 1은 벽, 2는 바이러스가 있는 위치이다. 2의 개수는 2보다 크거나 같고, 10보다 작거나 같은 자연수이다.</description>
     </item>
   </channel>

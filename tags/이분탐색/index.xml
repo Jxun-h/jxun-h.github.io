@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 6236 용돈 관리 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-6236-%EC%9A%A9%EB%8F%88-%EA%B4%80%EB%A6%AC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-6236-%EC%9A%A9%EB%8F%88-%EA%B4%80%EB%A6%AC-with-python/</link>
       <pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-6236-%EC%9A%A9%EB%8F%88-%EA%B4%80%EB%A6%AC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-6236-%EC%9A%A9%EB%8F%88-%EA%B4%80%EB%A6%AC-with-python/</guid>
       <description>📌 BOJ 6236 용돈 관리 💡 조건 현우는 앞으로 N일 동안 자신이 사용할 금액을 계산하였고, 돈을 펑펑 쓰지 않기 위해 정확히 M번만 통장에서 돈을 빼서 쓰기로 하였다.
 현우는 통장에서 K원을 인출하며, 통장에서 뺀 돈으로 하루를 보낼 수 있으면 그대로 사용하고,
 모자라게 되면 남은 금액은 통장에 집어넣고 다시 K원을 인출한다.
@@ -26,9 +26,9 @@
     </item>
     <item>
       <title>[BOJ] 2512 예산 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-2512-%EC%98%88%EC%82%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2512-%EC%98%88%EC%82%B0-with-python/</link>
       <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-2512-%EC%98%88%EC%82%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2512-%EC%98%88%EC%82%B0-with-python/</guid>
       <description>📌 BOJ 2512 예산 💡 조건 국가의 역할 중 하나는 여러 지방의 예산요청을 심사하여 국가의 예산을 분배하는 것이다.
 국가예산의 총액은 미리 정해져 있어서 모든 예산요청을 배정해 주기는 어려울 수도 있다.
 그래서 정해진 총액 이하에서 가능한 한 최대의 총 예산을 다음과 같은 방법으로 배정한다.
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>[BOJ] 6010 Music Notes with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-6010-music-notes-with-python/</link>
       <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-6010-music-notes-with-python/</guid>
       <description>📌 BOJ 6010 Music Notes 💡 조건 노래는 음표 N개로 구성되며, i 번째 음표는 B_i 비트동안 지속된다.
 N(1 &amp;lt;= N &amp;lt;= 50,000), B_i(1 &amp;lt;= B_i &amp;lt;= 10,000)
 어떤 노래도 5억 비트 보다 길지 않다.
@@ -49,9 +49,9 @@ Q(1 &amp;lt;= Q &amp;lt;= 50,000)</description>
     </item>
     <item>
       <title>[BOJ] 3151 합이 0 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</link>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</guid>
       <description>📌 BOJ 3151 합이 0 💡 조건 1 ≤ N ≤ 10000
 -10000 ≤ Ai ≤ 10000
 대회는 정확히 3명으로 구성된 팀만 참가가 가능하다.
@@ -62,9 +62,9 @@ N명의 학생들의 코딩 실력 Ai가 -10000부터 10000사이의 정수로 �
     </item>
     <item>
       <title>[BOJ] 20444 색종이와 가위 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</link>
       <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</guid>
       <description>📌 BOJ 20444 색종이와 가위 💡 조건 색종이를 자를 때는 다음과 같은 규칙을 따른다.
 색종이는 직사각형이며, 색종이를 자를 때는 한 변에 평행하게 자른다. 자르기 시작했으면, 경로 상의 모든 색종이를 자를 때까지 멈추지 않는다. 이미 자른 곳을 또 자를 수 없다. 하나의 색종이를 정확히 n번의 가위질로 k개의 색종이 조각으로 만들 수 있는지 궁금해졌다.
 정수 n, k가 주어진다. (1 ≤ n ≤ 231-1, 1 ≤ k ≤ 263-1)
@@ -72,17 +72,17 @@ n번의 가위질로 k개의 색종이 조각을 만들 수 있다면 YES, 아�
     </item>
     <item>
       <title>[BOJ] 2343 기타 레슨 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</link>
       <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</guid>
       <description>📌 BOJ 2343 기타 레슨 💡 조건 강의의 수 N (1 ≤ N ≤ 100,000)
 블루레이의 수 M (1 ≤ M ≤ N) 블루레이를 녹화할 때, 강의의 순서가 바뀌면 안 된다. 각 강의의 길이가 분 단위(자연수)로 주어진다. 가능한 블루레이의 크기 중 최소를 구하는 문제. 이분탐색 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 9 3 1 2 3 4 5 6 7 8 9 실행결과 17 ⌨️ 문제 풀이 이분탐색을 위해 left, right, mid 변수를 초기화 해줍니다.</description>
     </item>
     <item>
       <title>[Programmers] 순위 검색 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</link>
       <pubDate>Thu, 14 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</guid>
       <description>📌 Programmers - 순위 검색 💡 조건 및 풀이 조건을 만족하는 사람 중 코딩테스트 점수를 X점 이상 받은 사람은 모두 몇 명인가?
 를 구하는 문제
 &#39;-&#39; 표시는 해당 조건을 고려하지 않겠다는 의미.
@@ -93,9 +93,9 @@ n번의 가위질로 k개의 색종이 조각을 만들 수 있다면 YES, 아�
     </item>
     <item>
       <title>[BOJ] 3273 두 수의 합 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</guid>
       <description>📌 BOJ 3273 두 수의 합 💡 조건 및 풀이 n개의 서로 다른 정수로 이루어진 수열 A가 있다. 1 &amp;lt;= A[i] &amp;lt;= 1000000 n의 크기는 1 &amp;lt;= n &amp;lt;= 100000 x의 크기는 1 &amp;lt;= x &amp;lt;= 2000000 sort + binary search 유형의 문제 자연수 x가 주어졌을 때, A[i] + A[j] = x 를 만족하는 쌍의 수를 구한다.
 (A[i], A[j]) 🔖 예제 및 실행결과 예제 9 5 12 7 10 9 1 2 3 11 13 실행결과 3 ⌨️ 문제 풀이 Python 언어의 배열 이진 분할 알고리즘을 사용할 수 있는 bisect 사용.</description>
     </item>

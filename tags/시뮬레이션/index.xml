@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 14499 주사위 굴리기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-14499-%EC%A3%BC%EC%82%AC%EC%9C%84-%EA%B5%B4%EB%A6%AC%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14499-%EC%A3%BC%EC%82%AC%EC%9C%84-%EA%B5%B4%EB%A6%AC%EA%B8%B0-with-python/</link>
       <pubDate>Tue, 14 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-14499-%EC%A3%BC%EC%82%AC%EC%9C%84-%EA%B5%B4%EB%A6%AC%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14499-%EC%A3%BC%EC%82%AC%EC%9C%84-%EA%B5%B4%EB%A6%AC%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 14499 주사위 굴리기 💡 조건 크기가 N×M인 지도가 존재한다. 지도의 오른쪽은 동쪽, 위쪽은 북쪽이다.
 이 지도의 위에 주사위가 하나 놓여져 있으며, 주사위의 전개도는 아래와 같다.
 지도의 좌표는 (r, c)로 나타내며, r는 북쪽으로부터 떨어진 칸의 개수, c는 서쪽으로부터 떨어진 칸의 개수이다. 주사위는 지도 위에 윗 면이 1이고, 동쪽을 바라보는 방향이 3인 상태로 놓여져 있으며,
@@ -25,18 +25,18 @@
     </item>
     <item>
       <title>[BOJ] 20436 ZOAC 3 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-20436-zoac-3-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/</link>
       <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-20436-zoac-3-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/</guid>
       <description>📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.
 성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,
 a에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|+|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다.</description>
     </item>
     <item>
       <title>[BOJ] 8911 거북이 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-8911-%EA%B1%B0%EB%B6%81%EC%9D%B4-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-8911-%EA%B1%B0%EB%B6%81%EC%9D%B4-with-python/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-8911-%EA%B1%B0%EB%B6%81%EC%9D%B4-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-8911-%EA%B1%B0%EB%B6%81%EC%9D%B4-with-python/</guid>
       <description>📌 BOJ 8911 거북이 💡 조건 2차원 평면 위에서 움직일 수 있는 거북이 로봇을 하나 가지고 있다. 거북이 로봇에게 내릴 수 있는 명령은 다음과 같이 네가지가 있다.
 F: 한 눈금 앞으로
 B: 한 눈금 뒤로
@@ -46,33 +46,33 @@ R: 오른쪽으로 90도 회전 L과 R명령을 내렸을 때, 로봇은 이동�
     </item>
     <item>
       <title>[BOJ] 1531 투명 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1531-%ED%88%AC%EB%AA%85-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1531-%ED%88%AC%EB%AA%85-with-python/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1531-%ED%88%AC%EB%AA%85-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1531-%ED%88%AC%EB%AA%85-with-python/</guid>
       <description>📌 BOJ 1531 투명 💡 조건 세준이는 1×1크기의 그림으로 모자이크한 100×100크기의 그림을 가지고 있다. 어느 날 이 모자이크 중 일부 그림이 너무 보기 싫어서 N개의 불투명한 종이로 그림을 가리기 시작했다. 그림의 현재 부분 위에 M개 이하의 종이가 올려져 있으면 그림은 그 부분에서 보이게 된다. N은 0보다 크거나 같고, 50보다 작거나 같다. M은 0보다 크거나 같고, 50보다 작거나 같다. 왼쪽 아래 모서리의 x, y좌표, 오른쪽 위 모서리의 x, y좌표 순으로 주어진다.</description>
     </item>
     <item>
       <title>[BOJ] 1236 성 지키기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</link>
       <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1236 성 지키기 💡 조건 직사각형 모양의 성을 가지고 있다. 성의 1층은 몇 명의 경비원에 의해서 보호되고 있다.
 영식이는 모든 행과 모든 열에 한 명 이상의 경비원이 있으면 좋겠다고 생각했다. 성의 크기와 경비원이 어디있는지 주어졌을 때, 몇 명의 경비원을 최소로 추가해야 영식이를 만족시키는지 구하는 문제 0 &amp;lt;= N, M &amp;lt;= 50 성의 상태는 .은 빈칸, X는 경비원이 있는 칸이다. 구현, 시뮬레이션유형의 문제 🔖 예제 및 실행결과 예제 4 4 .</description>
     </item>
     <item>
       <title>[BOJ] 11504 돌려 돌려 돌림판! with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</link>
       <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</guid>
       <description>📌 BOJ 11504 돌려 돌려 돌림판! 💡 조건 첫 번째 줄에 테스트케이스의 개수 T 테스트케이스의 첫 줄에는 돌림판을 N등분할 정수 N (1 ≤ N ≤ 100)
 X, Y의 길이 M (1 ≤ M ≤ 9, M ≤ N)
 다음 3개의 줄에 X의 각 자리수, Y의 각 자리수, 돌림판의 상태 돌림판에서 X ≤ Z ≤ Y를 만족하는 M자리의 수 Z가 몇 개가 있는 지를 출력 X와 Y사이에 있는 수가 123 밖에 없는 데 돌림판에서 2번 나온다면, 1이 아닌 2를 출력 구현, 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 3 8 3 2 0 0 3 1 1 3 7 8 3 1 9 2 7 5 2 8 8 9 9 1 3 2 5 4 6 3 0 0 0 9 9 9 1 2 3 4 5 6 실행결과 1 0 6 ⌨️ 문제 풀이 돌림판의 숫자를 입력받아, m개의 개수만큼 이어붙여 새로운 숫자를 만든다.</description>
     </item>
     <item>
       <title>[BOJ] 1063 킹 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1063-%ED%82%B9-with-python/</link>
       <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1063-%ED%82%B9-with-python/</guid>
       <description>📌 BOJ 1063 킹 💡 조건 체스판의 크기는 8*8
 체스판에서의 말의 위치는 알파벳 하나와 숫자 하나로 구성되어 있다.
 알파벳은 열(column), 숫자는 행(row)을 상징한다.
@@ -86,26 +86,26 @@ X, Y의 길이 M (1 ≤ M ≤ 9, M ≤ N)
     </item>
     <item>
       <title>[Programmers] 블록 이동하기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</link>
       <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</guid>
       <description>📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.
 board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x + dx[i], pos1_y + dy[i], pos2_x + dx[i], pos2_y + dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos.</description>
     </item>
     <item>
       <title>[Programmers] 자물쇠와 열쇠 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</link>
       <pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</guid>
       <description>📌 Programmers 자물쇠와 열쇠 with Python 💡 조건 key는 M x M(3 ≤ M ≤ 20, M은 자연수) 크기 2차원 배열
 lock은 N x N(3 ≤ N ≤ 20, N은 자연수) 크기 2차원 배열
 M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 있으며, 열쇠도 돌기가 있다. 열쇠는 회전이 가능하다. 자물쇠 부분이 회전할 수 있는 열쇠와 겹쳐져서 모두 1이 된다면 열 수 있으니 True, 열 수 없다면 False를 반환 구현 &amp;amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[0, 0, 0, 0], [1, 1, 1, 0], [0, 0, 0, 0], [1, 0, 1, 0]])) 실행결과 true ⌨️ 문제 풀이 N과 M의 최대 크기가 20이니, 열쇠의 최소크기인 3만큼 자물쇠의 길이에 곱해서 맵을 뻥튀기 시킨다.</description>
     </item>
     <item>
       <title>[Programmers] 기둥과 보 설치 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/</guid>
       <description>📌 Programmers 기둥과 보 설치 with Python 💡 조건 5 &amp;lt;= n &amp;lt;= 100
 1 &amp;lt;= 입력받을 기둥과 보의 개수 &amp;lt;= 1000
 `입력받을 기둥 혹은 보의 정보의 데이터 개수 == 4&#39;
@@ -118,17 +118,17 @@ M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 �
     </item>
     <item>
       <title>[BOJ] 1713 후보 추천하기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</link>
       <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1713 후보 추천하기 💡 조건 사진틀의 개수 N이 주어진다. (1 ≤ N ≤ 20)
 총 추천 횟수는 1,000번 이하이며 학생을 나타내는 번호는 1부터 100까지의 자연수 사진틀의 개수와 전체 학생의 추천 결과가 추천받은 순서대로 주어졌을 때, 최종 후보가 누구인지 결정 구현 &amp;amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 3 9 2 1 4 3 5 6 2 7 2 실행결과 2 6 7 ⌨️ 문제 풀이 추천받은 순서대로 주어진 리스트를 순회하며 student (dict) 에 없으면 새로 추가하고,</description>
     </item>
     <item>
       <title>[BOJ] 1743 음식물 피하기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</link>
       <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1743 음식물 피하기 💡 조건 통로의 세로 길이 N(1 ≤ N ≤ 100)
 통로의 가로 길이 M(1 ≤ M ≤ 100)
 음식물 쓰레기의 개수 K(1 ≤ K ≤ N×M)
@@ -136,9 +136,9 @@ K개의 줄에 음식물이 떨어진 좌표 (r, c) DFS 유형의 문제(깊이�
     </item>
     <item>
       <title>[BOJ] 1244 스위치 켜고 끄기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/</link>
       <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1244 스위치 켜고 끄기 💡 조건 및 풀이 첫째 줄은 스위치 개수. 스위치 개수는 100 이하인 양의 정수.
 둘째 줄은 각 스위치의 상태. 켜져 있으면 1, 꺼져있으면 0이라고 표시
 셋째 줄에는 학생 수. 학생수는 100 이하인 양의 정수

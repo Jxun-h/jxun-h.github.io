@@ -15,16 +15,16 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 8974 희주의 수학시험 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-8974-%ED%9D%AC%EC%A3%BC%EC%9D%98-%EC%88%98%ED%95%99%EC%8B%9C%ED%97%98-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-8974-%ED%9D%AC%EC%A3%BC%EC%9D%98-%EC%88%98%ED%95%99%EC%8B%9C%ED%97%98-with-python/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-8974-%ED%9D%AC%EC%A3%BC%EC%9D%98-%EC%88%98%ED%95%99%EC%8B%9C%ED%97%98-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-8974-%ED%9D%AC%EC%A3%BC%EC%9D%98-%EC%88%98%ED%95%99%EC%8B%9C%ED%97%98-with-python/</guid>
       <description>📌 BOJ 8974 희주의 수학시험 💡 조건 연습문제 중에 하나가 정수를 적어나가는 것이였는데 수열은 1이 한 개, 2가 두 개, 3이 세 개.. 와 같이 만들어진다. 이제 강민이는 희주에게 두 개의 정수 A, B를 부를텐데, 그럼 희주는 주어진 수열에서 A번째와 B번째 사이에 있는 모든 수들의 합을 말해야한다. 희주에게 문제를 내기 위해 정답을 계산하는 문제 사칙연산, 구현 유형의 문제 🔖 예제 및 실행결과 예제 3 7 실행결과 15 ⌨️ 문제 풀이 반복문을 50회 순회하면서, 각 숫자에 해당하는만큼 리스트에 숫자를 append()한다.</description>
     </item>
     <item>
       <title>[BOJ] 1026 보물 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1026-%EB%B3%B4%EB%AC%BC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1026-%EB%B3%B4%EB%AC%BC-with-python/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1026-%EB%B3%B4%EB%AC%BC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1026-%EB%B3%B4%EB%AC%BC-with-python/</guid>
       <description>📌 BOJ 1026 보물 💡 조건 길이가 N인 정수 배열 A와 B가 있다. 다음과 같이 함수 S를 정의하자. S = A[0] × B[0] + ... + A[N-1] × B[N-1] S의 값을 가장 작게 만들기 위해 A의 수를 재배열하자. 단, B에 있는 수는 재배열하면 안 된다. N은 50보다 작거나 같은 자연수이고, A와 B의 각 원소는 100보다 작거나 같은 음이 아닌 정수이다. 정렬, 사칙연산 유형의 문제 🔖 예제 및 실행결과 예제 5 1 1 1 6 0 2 7 8 3 1 실행결과 18 ⌨️ 문제 풀이 가장 큰 수와 가장 작은 수를 곱하여 더하면 최솟값이 나온다.</description>
     </item>
   </channel>

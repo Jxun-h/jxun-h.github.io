@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%88%84%EC%A0%81%ED%95%A9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 20438 출석체크 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</link>
       <pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</guid>
       <description>📌 BOJ 20438 출석체크 💡 조건 학생들은 접속 순서대로 3번부터 N + 2번까지 입장 번호를 받게 된다.
 지환이가 한 학생에게 출석 코드를 보내게 되면, 해당 학생은 본인의 입장 번호의 배수인 학생들에게 출석 코드를 보내어
 해당 강의의 출석을 할 수 있게끔 한다. 하지만, K명의 졸고 있는 학생들은 출석 코드를 제출하지 않고, 다른 학생들에게 보내지 않는다.
@@ -26,24 +26,24 @@
     </item>
     <item>
       <title>[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</link>
       <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</guid>
       <description>📌 BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1 💡 조건 어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다. 방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000) N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE &amp;lt; TX ≤ 2,100,000,000)
 모기는 [TE, Tx)동안 존재한다. 첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다.</description>
     </item>
     <item>
       <title>[BOJ] 2143 두 배열의 합 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</link>
       <pubDate>Tue, 12 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</guid>
       <description>📌 BOJ 2143 두 배열의 합 💡 조건 및 풀이 (-1,000,000,000 ≤ T ≤ 1,000,000,000) (1 ≤ n ≤ 1,000) (1 ≤ m ≤ 1,000) 누적합 유형의 문제 두 배열의 부분배열을 사용하여 합을 구해 T를 만들 수 있는 개수를 구한다. 🔖 예제 및 실행결과 예제 5 4 1 3 1 2 3 1 3 2 실행결과 7 ⌨️ 문제 풀이 A 부분 배열의 합들과 B 부분 배열의 합들을 더해 T가 만들어지는 경우의 수를 구하는 문제였다.</description>
     </item>
     <item>
       <title>[BOJ] 16507 어두운 건 무서워 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</guid>
       <description>📌 BOJ 16507 어두운 건 무서워 💡 조건 및 풀이 사진 크기를 의미하는 1 &amp;lt;= R, C &amp;lt;= 1000 사진 일부분의 밝기 평균을 알아볼 개수 Q Q개의 각 줄에는 사진의 일부분을 나타내기 위한 두 꼭짓점을 의미하는 정수 r1, c1, r2, c2 가 주어진다.
 (1 ≤ r1 ≤ r2 ≤ R, 1 ≤ c1 ≤ c2 ≤ C) 누적합 문제 Q개의 각 줄에 주어진 사진에서 두 점 (r1, c1)과 (r2, c2)를 꼭짓점으로 하는 직사각형의 밝기 평균을 출력한다.</description>
     </item>

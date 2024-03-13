@@ -115,6 +115,11 @@
                 </a>
             </li>
             <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
                 <a href="https://jxun-h.github.io/archives/" title="Archive">
                     <span>Archive</span>
                 </a>
@@ -157,7 +162,7 @@
 board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x &#43; dx[i], pos1_y &#43; dy[i], pos2_x &#43; dx[i], pos2_y &#43; dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-12 00:00:00 +0000 UTC'>December 12, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 블록 이동하기 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 블록 이동하기 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -171,7 +176,7 @@ board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 
 만약 친구들이 모두 투입되어도 외벽을 모두 점검할 수 없다면, -1을 출력....</p>
   </div>
   <footer class="entry-footer"><span title='2021-12-06 00:00:00 +0000 UTC'>December 6, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 외벽 점검 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 외벽 점검 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -185,7 +190,7 @@ lock은 N x N(3 ≤ N ≤ 20, N은 자연수) 크기 2차원 배열
 M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 있으며, 열쇠도 돌기가 있다. 열쇠는 회전이 가능하다. 자물쇠 부분이 회전할 수 있는 열쇠와 겹쳐져서 모두 1이 된다면 열 수 있으니 True, 열 수 없다면 False를 반환 구현 &amp; 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[0, 0, 0, 0], [1, 1, 1, 0], [0, 0, 0, 0], [1, 0, 1, 0]])) 실행결과 true ⌨️ 문제 풀이 N과 M의 최대 크기가 20이니, 열쇠의 최소크기인 3만큼 자물쇠의 길이에 곱해서 맵을 뻥튀기 시킨다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-11-29 00:00:00 +0000 UTC'>November 29, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 자물쇠와 열쇠 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 자물쇠와 열쇠 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -205,7 +210,7 @@ M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 �
 반환하는 데이터는 x, y, 기둥 순으로 정렬하여 반환한다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-11-28 00:00:00 +0000 UTC'>November 28, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 기둥과 보 설치 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 기둥과 보 설치 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -222,7 +227,7 @@ M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 �
 즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[&#34;100&#34;,&#34;ryan&#34;,&#34;music&#34;,&#34;2&#34;],[&#34;200&#34;,&#34;apeach&#34;,&#34;math&#34;,&#34;2&#34;],[&#34;300&#34;,&#34;tube&#34;,&#34;computer&#34;,&#34;3&#34;],[&#34;400&#34;,&#34;con&#34;,&#34;computer&#34;,&#34;4&#34;],[&#34;500&#34;,&#34;muzi&#34;,&#34;music&#34;,&#34;3&#34;],[&#34;600&#34;,&#34;apeach&#34;,&#34;music&#34;,&#34;2&#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-11-27 00:00:00 +0000 UTC'>November 27, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 후보키 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 후보키 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -236,7 +241,7 @@ M은 항상 N 이하, key와 lock의 원소는 0 또는 1 자물쇠는 홈이 �
 유저 아이디 사용자가 닉네임으로 채팅방에 입장 - &#34;Enter 유저 아이디 닉네임&#34; (ex. &#34;Enter uid1234 Muzi&#34;) 구현 유형의 문제 🔖 예제 및 실행결과 예제 record = [&#34;Enter uid1234 Muzi&#34;, &#34;Enter uid4567 Prodo&#34;,&#34;Leave uid1234&#34;,&#34;Enter uid1234 Prodo&#34;,&#34;Change uid4567 Ryan&#34;] 실행결과 [&#34;Prodo님이 들어왔습니다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-11-21 00:00:00 +0000 UTC'>November 21, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 오픈채팅방 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 오픈채팅방 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -252,7 +257,7 @@ play_time, adv_time은 HH:MM:SS 형식이며,
 00:00:01 &lt;= play_time, adv_time &lt;= 99:59:59 공익광고 재생시간은 동영상 재생시간보다 짧거나 같다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-10-17 00:00:00 +0000 UTC'>October 17, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 광고 삽입 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 광고 삽입 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -267,7 +272,7 @@ play_time, adv_time은 HH:MM:SS 형식이며,
 1 ≤ cmd의 원소 개수 ≤ 200,000 cmd의 각 원소는 &#34;U X&#34;, &#34;D X&#34;, &#34;C&#34;, &#34;Z&#34; 중 하나 Linked List 자료구조 문제 표의 모든 행을 제거하여, 행이 하나도 남지 않는 경우는 입력으로 주어지지 않는다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-10-17 00:00:00 +0000 UTC'>October 17, 2021</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 표 편집 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 표 편집 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -285,7 +290,7 @@ play_time, adv_time은 HH:MM:SS 형식이며,
 🔖 예제 및 실행결과 예제 info = [&#34;java backend junior pizza 150&#34;, &#34;python frontend senior chicken 210&#34;, &#34;python frontend senior chicken 150&#34;,&#34;cpp backend senior pizza 260&#34;, &#34;java backend junior chicken 80&#34;, &#34;python backend senior chicken 50&#34;] query = [&#34;java and backend and junior and pizza 100&#34;, &#34;python and frontend and senior and chicken 200&#34;, &#34;cpp and - and senior and pizza 250&#34;, &#34;- and backend and senior and - 150&#34;, &#34;- and - and - and chicken 100&#34;, &#34;- and - and - and - 150&#34;] 실행결과 [1,1,1,1,2,4] ⌨️ 문제 풀이 info 배열을 순회하며 얻은 데이터를 잘라 배열로 만들고, 그 배열을 각각 데이터와 점수 부분으로 나누어 준다....</p>
   </div>
   <footer class="entry-footer"><span title='2021-10-14 00:00:00 +0000 UTC'>October 14, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 순위 검색 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 순위 검색 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -300,7 +305,7 @@ course 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순�
 배열의 각 원소에 저장된 문자열 또한 알파벳 오름차순으로 정렬...</p>
   </div>
   <footer class="entry-footer"><span title='2021-10-13 00:00:00 +0000 UTC'>October 13, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [Programmers] 메뉴 리뉴얼 with Python" href="https://jxun-h.github.io/posts/ps/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/"></a>
+  <a class="entry-link" aria-label="post link to [Programmers] 메뉴 리뉴얼 with Python" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

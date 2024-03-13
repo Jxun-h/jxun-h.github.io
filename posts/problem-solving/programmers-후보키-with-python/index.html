@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Programmers] 후보키 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, set, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.
+1 &lt;= relation 의 컬럼의 길이 &lt;= 8
+1 &lt;= relation 의 로우의 길이 &lt;= 20
+1 &lt;= relation 의 모든 문자열의 길이 &lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.
+중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.
+즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[&#34;100&#34;,&#34;ryan&#34;,&#34;music&#34;,&#34;2&#34;],[&#34;200&#34;,&#34;apeach&#34;,&#34;math&#34;,&#34;2&#34;],[&#34;300&#34;,&#34;tube&#34;,&#34;computer&#34;,&#34;3&#34;],[&#34;400&#34;,&#34;con&#34;,&#34;computer&#34;,&#34;4&#34;],[&#34;500&#34;,&#34;muzi&#34;,&#34;music&#34;,&#34;3&#34;],[&#34;600&#34;,&#34;apeach&#34;,&#34;music&#34;,&#34;2&#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[Programmers] 후보키 with Python" />
+<meta property="og:description" content="📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.
+1 &lt;= relation 의 컬럼의 길이 &lt;= 8
+1 &lt;= relation 의 로우의 길이 &lt;= 20
+1 &lt;= relation 의 모든 문자열의 길이 &lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.
+중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.
+즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[&#34;100&#34;,&#34;ryan&#34;,&#34;music&#34;,&#34;2&#34;],[&#34;200&#34;,&#34;apeach&#34;,&#34;math&#34;,&#34;2&#34;],[&#34;300&#34;,&#34;tube&#34;,&#34;computer&#34;,&#34;3&#34;],[&#34;400&#34;,&#34;con&#34;,&#34;computer&#34;,&#34;4&#34;],[&#34;500&#34;,&#34;muzi&#34;,&#34;music&#34;,&#34;3&#34;],[&#34;600&#34;,&#34;apeach&#34;,&#34;music&#34;,&#34;2&#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-27T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[Programmers] 후보키 with Python"/>
+<meta name="twitter:description" content="📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.
+1 &lt;= relation 의 컬럼의 길이 &lt;= 8
+1 &lt;= relation 의 로우의 길이 &lt;= 20
+1 &lt;= relation 의 모든 문자열의 길이 &lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.
+중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.
+즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[&#34;100&#34;,&#34;ryan&#34;,&#34;music&#34;,&#34;2&#34;],[&#34;200&#34;,&#34;apeach&#34;,&#34;math&#34;,&#34;2&#34;],[&#34;300&#34;,&#34;tube&#34;,&#34;computer&#34;,&#34;3&#34;],[&#34;400&#34;,&#34;con&#34;,&#34;computer&#34;,&#34;4&#34;],[&#34;500&#34;,&#34;muzi&#34;,&#34;music&#34;,&#34;3&#34;],[&#34;600&#34;,&#34;apeach&#34;,&#34;music&#34;,&#34;2&#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Programmers] 후보키 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Programmers] 후보키 with Python",
+  "name": "[Programmers] 후보키 with Python",
+  "description": "📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.\n1 \u0026lt;= relation 의 컬럼의 길이 \u0026lt;= 8\n1 \u0026lt;= relation 의 로우의 길이 \u0026lt;= 20\n1 \u0026lt;= relation 의 모든 문자열의 길이 \u0026lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.\n중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.\n즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[\u0026#34;100\u0026#34;,\u0026#34;ryan\u0026#34;,\u0026#34;music\u0026#34;,\u0026#34;2\u0026#34;],[\u0026#34;200\u0026#34;,\u0026#34;apeach\u0026#34;,\u0026#34;math\u0026#34;,\u0026#34;2\u0026#34;],[\u0026#34;300\u0026#34;,\u0026#34;tube\u0026#34;,\u0026#34;computer\u0026#34;,\u0026#34;3\u0026#34;],[\u0026#34;400\u0026#34;,\u0026#34;con\u0026#34;,\u0026#34;computer\u0026#34;,\u0026#34;4\u0026#34;],[\u0026#34;500\u0026#34;,\u0026#34;muzi\u0026#34;,\u0026#34;music\u0026#34;,\u0026#34;3\u0026#34;],[\u0026#34;600\u0026#34;,\u0026#34;apeach\u0026#34;,\u0026#34;music\u0026#34;,\u0026#34;2\u0026#34;]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다.",
+  "keywords": [
+    "자료구조", "PS", "set", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 Programmers 후보키 with Python 💡 조건 relation 은 2차원 문자열 배열이다.\n1 \u003c= relation 의 컬럼의 길이 \u003c= 8\n1 \u003c= relation 의 로우의 길이 \u003c= 20\n1 \u003c= relation 의 모든 문자열의 길이 \u003c= 8, 알파벳 소문자와 숫자로만 이루어져 있다.\n중복되는 튜플은 없다. 학생들의 인적사항이 주어졌을 때, 후보 키의 최대 개수를 구하라.\n즉, 학생들을 구별할 수 있는 유일성과 최소성을 지키는 키의 조합의 개수를 구하면 된다. 조합의 개수를 구하는 문제 🔖 예제 및 실행결과 예제 [[\"100\",\"ryan\",\"music\",\"2\"],[\"200\",\"apeach\",\"math\",\"2\"],[\"300\",\"tube\",\"computer\",\"3\"],[\"400\",\"con\",\"computer\",\"4\"],[\"500\",\"muzi\",\"music\",\"3\"],[\"600\",\"apeach\",\"music\",\"2\"]] 실행결과 2 ⌨️ 문제 풀이 row와 column 의 개수를 구해 변수로 둔다.\n키값이 될 수 있는 1개부터 column 의 길이의 조합을 각각 구해서 candidates에 저장한다.\n1번에서 구한 조합의 경우의 수를 순회하면서 해당되는 relation 의 데이터를 tmp 에 저장한 후\nset() 으로 자료형을 변경하여 중복을 제거한 후, row의 개수와 비교한다.\n만약 같다면, 후보키가 될 수 있는 것이기에 unique 변수에 저장한다\n추출한 데이터가 유일성을 가지는지에 대해서 검사하는 것.\nanswer 변수에 3번 작업을 통해 나온 unique 변수에 있는 데이터를 set() 자료형으로 중복을 제거한 뒤 저장한다.\nunique 변수의 길이만큼 순회하면서 (i)\ni 이후의 각 키조합에 (j) i가 포함이 되어 있다면, answer에서 j를 제거한다.\ni가 j에 포함이 된다면, j는 원소 하나가 빠져도 최소성을 만족하지 않기에 제거하는 것.\nanswer의 길이를 반환\n🖥 소스 코드 from itertools import combinations def solution(relation): col = len(relation[0]) row = len(relation) candidates = [] for i in range(1, col + 1): candidates.extend(combinations(range(col), i)) unique = [] for candi in candidates: tmp = [tuple([item[i] for i in candi]) for item in relation] if len(set(tmp)) == row: unique.append(candi) answer = set(unique) for i in range(len(unique)): for j in range(i + 1, len(unique)): if len(unique[i]) == len(set(unique[i]) \u0026 set(unique[j])): answer.discard(unique[j]) return len(answer) 💾 느낀점 조합을 사용하여 문제에서 제시한 최소성과 유일성을 이해하고 문제를 풀이해야했다. 주어진 데이터의 길이의 크기가 작아서 완전탐색을 통해서 할 수 있었다. set() 자료구조의 성질을 통해서 중복을 제거할 수 있다는 것을 알고 있다면 더 편하게 풀 수 있는 문제였다. ",
+  "wordCount" : "303",
+  "inLanguage": "en",
+  "datePublished": "2021-11-27T00:00:00Z",
+  "dateModified": "2021-11-27T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [Programmers] 후보키 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-11-27 00:00:00 +0000 UTC'>November 27, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[Programmers]%20%ed%9b%84%eb%b3%b4%ed%82%a4%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons42890-target_blankprogrammers-후보키-with-pythona">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/42890" target="_blank">Programmers 후보키 with Python</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons42890-target_blankprogrammers-후보키-with-pythona">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>relation 은 2차원 문자열 배열이다.<br>
+<code>1 &lt;= relation 의 컬럼의 길이 &lt;= 8</code><br>
+<code>1 &lt;= relation 의 로우의 길이 &lt;= 20</code><br>
+<code>1 &lt;= relation 의 모든 문자열의 길이 &lt;= 8, 알파벳 소문자와 숫자로만 이루어져 있다.</code><br>
+<strong><code>중복되는 튜플은 없다.</code></strong></li>
+<li>학생들의 인적사항이 주어졌을 때, <strong>후보 키의 최대 개수</strong>를 구하라.<br>
+즉, 학생들을 구별할 수 있는 <strong>유일성과 최소성을 지키는 키의 조합의 개수</strong>를 구하면 된다.</li>
+<li><strong>조합의 개수를 구하는 문제</strong></li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[[</span><span class="s2">&#34;100&#34;</span><span class="p">,</span><span class="s2">&#34;ryan&#34;</span><span class="p">,</span><span class="s2">&#34;music&#34;</span><span class="p">,</span><span class="s2">&#34;2&#34;</span><span class="p">],[</span><span class="s2">&#34;200&#34;</span><span class="p">,</span><span class="s2">&#34;apeach&#34;</span><span class="p">,</span><span class="s2">&#34;math&#34;</span><span class="p">,</span><span class="s2">&#34;2&#34;</span><span class="p">],[</span><span class="s2">&#34;300&#34;</span><span class="p">,</span><span class="s2">&#34;tube&#34;</span><span class="p">,</span><span class="s2">&#34;computer&#34;</span><span class="p">,</span><span class="s2">&#34;3&#34;</span><span class="p">],[</span><span class="s2">&#34;400&#34;</span><span class="p">,</span><span class="s2">&#34;con&#34;</span><span class="p">,</span><span class="s2">&#34;computer&#34;</span><span class="p">,</span><span class="s2">&#34;4&#34;</span><span class="p">],[</span><span class="s2">&#34;500&#34;</span><span class="p">,</span><span class="s2">&#34;muzi&#34;</span><span class="p">,</span><span class="s2">&#34;music&#34;</span><span class="p">,</span><span class="s2">&#34;3&#34;</span><span class="p">],[</span><span class="s2">&#34;600&#34;</span><span class="p">,</span><span class="s2">&#34;apeach&#34;</span><span class="p">,</span><span class="s2">&#34;music&#34;</span><span class="p">,</span><span class="s2">&#34;2&#34;</span><span class="p">]]</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p><code>row</code>와 <code>column</code> 의 개수를 구해 변수로 둔다.<br>
+키값이 될 수 있는 1개부터 <code>column</code> 의 길이의 조합을 각각 구해서 <code>candidates</code>에 저장한다.</p>
+</li>
+<li>
+<p>1번에서 구한 조합의 경우의 수를 순회하면서 해당되는 <code>relation</code> 의 데이터를 <code>tmp</code> 에 저장한 후<br>
+<code>set()</code> 으로 자료형을 변경하여 중복을 제거한 후, <code>row의 개수</code>와 비교한다.<br>
+만약 같다면, 후보키가 될 수 있는 것이기에 <code>unique</code> 변수에 저장한다<br>
+<strong>추출한 데이터가 유일성을 가지는지에 대해서 검사하는 것.</strong></p>
+</li>
+<li>
+<p><code>answer</code> 변수에 3번 작업을 통해 나온 <code>unique</code> 변수에 있는 데이터를 <code>set()</code> 자료형으로 중복을 제거한 뒤 저장한다.<br>
+<code>unique</code> 변수의 길이만큼 순회하면서 <strong>(i)</strong><br>
+<code>i</code> 이후의 각 키조합에 <strong>(j)</strong> <code>i</code>가 포함이 되어 있다면, answer에서 <code>j</code>를 제거한다.<br>
+<code>i</code>가 <code>j</code>에 포함이 된다면, <code>j</code>는 원소 하나가 빠져도 <code>최소성</code>을 만족하지 않기에 제거하는 것.</p>
+</li>
+<li>
+<p><code>answer</code>의 길이를 반환</p>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">relation</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">col</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">relation</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">row</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">relation</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">col</span><span class="p">),</span> <span class="n">i</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">unique</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">candi</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">([</span><span class="n">item</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">candi</span><span class="p">])</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">relation</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span> <span class="o">==</span> <span class="n">row</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">unique</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">candi</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">unique</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">unique</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">unique</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">unique</span><span class="p">[</span><span class="n">j</span><span class="p">])):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">answer</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="n">unique</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<ol>
+<li>조합을 사용하여 문제에서 제시한 최소성과 유일성을 이해하고 문제를 풀이해야했다.</li>
+<li>주어진 데이터의 길이의 크기가 작아서 완전탐색을 통해서 할 수 있었다.</li>
+<li><code>set()</code> 자료구조의 성질을 통해서 중복을 제거할 수 있다는 것을 알고 있다면 더 편하게 풀 수 있는 문제였다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/set/">set</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[Programmers] 기둥과 보 설치 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 14725 개미굴 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

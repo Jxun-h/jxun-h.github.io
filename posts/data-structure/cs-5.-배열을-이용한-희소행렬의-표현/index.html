@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[CS] 5. 배열을 이용한 희소행렬의 표현 | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, CS, Computer Science">
+<meta name="description" content="📌 배열을 이용한 희소행렬의 표현 💡 희소행렬 행렬의 표현 2차원 배열 : Array[MaxRows][MaxCols] 0이 많이 포함된 경우, 희소행렬이라고 한다. 0이 아닌 데이터의 수 &lt; 0인 데이터의 수 만약 1000 * 1000 행렬에서 0이 아닌 원소가 10개라면, 메모리 낭비일 수 있다. 💡 희소행렬의 표현 동기 : 공간 낭비를 줄이자. &lt;Row, Column, Value&gt; 의 쌍을 저장 빠른 전치를 위해서 Row 의 오름차순으로 저장 희소행렬 -&gt; 배열 맨 처음에 행렬의 정보기록 = (행, 열, 0이 아닌 데이터의 수) 💡 행렬의 전치 전치연산 (Transposing a Matrix) row &amp; column 을 교환 &lt;j, i, value&gt; 를 희소행렬 M의 어디에 저장하는가?">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/data-structure/cs-5.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%9D%AC%EC%86%8C%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[CS] 5. 배열을 이용한 희소행렬의 표현" />
+<meta property="og:description" content="📌 배열을 이용한 희소행렬의 표현 💡 희소행렬 행렬의 표현 2차원 배열 : Array[MaxRows][MaxCols] 0이 많이 포함된 경우, 희소행렬이라고 한다. 0이 아닌 데이터의 수 &lt; 0인 데이터의 수 만약 1000 * 1000 행렬에서 0이 아닌 원소가 10개라면, 메모리 낭비일 수 있다. 💡 희소행렬의 표현 동기 : 공간 낭비를 줄이자. &lt;Row, Column, Value&gt; 의 쌍을 저장 빠른 전치를 위해서 Row 의 오름차순으로 저장 희소행렬 -&gt; 배열 맨 처음에 행렬의 정보기록 = (행, 열, 0이 아닌 데이터의 수) 💡 행렬의 전치 전치연산 (Transposing a Matrix) row &amp; column 을 교환 &lt;j, i, value&gt; 를 희소행렬 M의 어디에 저장하는가?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/data-structure/cs-5.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%9D%AC%EC%86%8C%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-10T02:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-10T02:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-10.%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-9.-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-8.-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[CS] 5. 배열을 이용한 희소행렬의 표현"/>
+<meta name="twitter:description" content="📌 배열을 이용한 희소행렬의 표현 💡 희소행렬 행렬의 표현 2차원 배열 : Array[MaxRows][MaxCols] 0이 많이 포함된 경우, 희소행렬이라고 한다. 0이 아닌 데이터의 수 &lt; 0인 데이터의 수 만약 1000 * 1000 행렬에서 0이 아닌 원소가 10개라면, 메모리 낭비일 수 있다. 💡 희소행렬의 표현 동기 : 공간 낭비를 줄이자. &lt;Row, Column, Value&gt; 의 쌍을 저장 빠른 전치를 위해서 Row 의 오름차순으로 저장 희소행렬 -&gt; 배열 맨 처음에 행렬의 정보기록 = (행, 열, 0이 아닌 데이터의 수) 💡 행렬의 전치 전치연산 (Transposing a Matrix) row &amp; column 을 교환 &lt;j, i, value&gt; 를 희소행렬 M의 어디에 저장하는가?"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[CS] 5. 배열을 이용한 희소행렬의 표현",
+      "item": "https://jxun-h.github.io/posts/data-structure/cs-5.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%9D%AC%EC%86%8C%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[CS] 5. 배열을 이용한 희소행렬의 표현",
+  "name": "[CS] 5. 배열을 이용한 희소행렬의 표현",
+  "description": "📌 배열을 이용한 희소행렬의 표현 💡 희소행렬 행렬의 표현 2차원 배열 : Array[MaxRows][MaxCols] 0이 많이 포함된 경우, 희소행렬이라고 한다. 0이 아닌 데이터의 수 \u0026lt; 0인 데이터의 수 만약 1000 * 1000 행렬에서 0이 아닌 원소가 10개라면, 메모리 낭비일 수 있다. 💡 희소행렬의 표현 동기 : 공간 낭비를 줄이자. \u0026lt;Row, Column, Value\u0026gt; 의 쌍을 저장 빠른 전치를 위해서 Row 의 오름차순으로 저장 희소행렬 -\u0026gt; 배열 맨 처음에 행렬의 정보기록 = (행, 열, 0이 아닌 데이터의 수) 💡 행렬의 전치 전치연산 (Transposing a Matrix) row \u0026amp; column 을 교환 \u0026lt;j, i, value\u0026gt; 를 희소행렬 M의 어디에 저장하는가?",
+  "keywords": [
+    "자료구조", "CS", "Computer Science"
+  ],
+  "articleBody": "\n📌 배열을 이용한 희소행렬의 표현 💡 희소행렬 행렬의 표현 2차원 배열 : Array[MaxRows][MaxCols] 0이 많이 포함된 경우, 희소행렬이라고 한다. 0이 아닌 데이터의 수 \u003c 0인 데이터의 수 만약 1000 * 1000 행렬에서 0이 아닌 원소가 10개라면, 메모리 낭비일 수 있다. 💡 희소행렬의 표현 동기 : 공간 낭비를 줄이자. 의 쌍을 저장 빠른 전치를 위해서 Row 의 오름차순으로 저장 희소행렬 -\u003e 배열 맨 처음에 행렬의 정보기록 = (행, 열, 0이 아닌 데이터의 수) 💡 행렬의 전치 전치연산 (Transposing a Matrix) row \u0026 column 을 교환 를 희소행렬 M의 어디에 저장하는가? \u003c0, 0, 15\u003e -\u003e \u003c0, 0, 15\u003e \u003c0, 3, 22\u003e -\u003e \u003c3, 0, 22\u003e \u003c0, 5, 15\u003e -\u003e \u003c5, 0, 15\u003e 전치연산을 위한 연속적인 삽입으로 인해 기존에 저장된 항목들의 이동이 불가피 -\u003e row 정렬이 깨져버림 💡 전치 연산의 구현 : Transpose Column을 기준으로 순회하면서 뒤집어 저장한다. 성능분석 O(Columns * Elements) ~ O(Columns^2 * Rows) 복잡도 : O(Rows * Columns) 💡 전치연산의 구현 각 Column 이 저장될 곳을 미리 파악 -\u003e Column index 각 Column index 저장을 위한 추가적인 공간을 사용한다. row_terms = 2 1 2 2 0 1 starting_pos = 1 3 4 6 8 8 복잡도 : O(columns + Elements) Elements = columns * row 일 때, Element 의 시간복잡도는 O(Columns * Row * Columns) ",
+  "wordCount" : "211",
+  "inLanguage": "en",
+  "datePublished": "2022-07-10T02:00:00Z",
+  "dateModified": "2022-07-10T02:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/data-structure/cs-5.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%9D%AC%EC%86%8C%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [CS] 5. 배열을 이용한 희소행렬의 표현
+    </h1>
+    <div class="post-meta"><span title='2022-07-10 02:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Data%20Structure/[CS]%205.%20%eb%b0%b0%ec%97%b4%ec%9d%84%20%ec%9d%b4%ec%9a%a9%ed%95%9c%20%ed%9d%ac%ec%86%8c%ed%96%89%eb%a0%ac%ec%9d%98%20%ed%91%9c%ed%98%84.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-배열을-이용한-희소행렬의-표현">📌 배열을 이용한 희소행렬의 표현<a hidden class="anchor" aria-hidden="true" href="#-배열을-이용한-희소행렬의-표현">#</a></h2>
+<br>
+<h3 id="-희소행렬">💡 희소행렬<a hidden class="anchor" aria-hidden="true" href="#-희소행렬">#</a></h3>
+<ol>
+<li>행렬의 표현
+<ol>
+<li>2차원 배열 : Array[MaxRows][MaxCols]</li>
+<li>0이 많이 포함된 경우, 희소행렬이라고 한다.</li>
+<li>0이 아닌 데이터의 수 &lt; 0인 데이터의 수</li>
+<li>만약 1000 * 1000 행렬에서 0이 아닌 원소가 10개라면, 메모리 낭비일 수 있다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-희소행렬의-표현">💡 희소행렬의 표현<a hidden class="anchor" aria-hidden="true" href="#-희소행렬의-표현">#</a></h3>
+<ol>
+<li>동기 : 공간 낭비를 줄이자.
+<ol>
+<li>&lt;Row, Column, Value&gt; 의 쌍을 저장</li>
+<li>빠른 전치를 위해서 Row 의 오름차순으로 저장</li>
+<li>희소행렬 -&gt; 배열 맨 처음에 행렬의 정보기록 = (행, 열, 0이 아닌 데이터의 수)</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-행렬의-전치">💡 행렬의 전치<a hidden class="anchor" aria-hidden="true" href="#-행렬의-전치">#</a></h3>
+<ol>
+<li>전치연산 (Transposing a Matrix)
+<ol>
+<li>row &amp; column 을 교환</li>
+<li>&lt;j, i, value&gt; 를 희소행렬 M의 어디에 저장하는가?
+<ol>
+<li>&lt;0, 0, 15&gt; -&gt; &lt;0, 0, 15&gt;</li>
+<li>&lt;0, 3, 22&gt; -&gt; &lt;3, 0, 22&gt;</li>
+<li>&lt;0, 5, 15&gt; -&gt; &lt;5, 0, 15&gt;</li>
+</ol>
+</li>
+<li>전치연산을 위한 연속적인 삽입으로 인해 기존에 저장된 항목들의 이동이 불가피 -&gt; row 정렬이 깨져버림</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-전치-연산의-구현--transpose">💡 전치 연산의 구현 : Transpose<a hidden class="anchor" aria-hidden="true" href="#-전치-연산의-구현--transpose">#</a></h3>
+<ol>
+<li>Column을 기준으로 순회하면서 뒤집어 저장한다.</li>
+<li>성능분석
+<ol>
+<li>O(Columns * Elements) ~ O(Columns^2 * Rows)</li>
+<li>복잡도 : O(Rows * Columns)</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-전치연산의-구현">💡 전치연산의 구현<a hidden class="anchor" aria-hidden="true" href="#-전치연산의-구현">#</a></h3>
+<ol>
+<li>각 Column 이 저장될 곳을 미리 파악 -&gt; Column index</li>
+<li>각 Column index 저장을 위한 추가적인 공간을 사용한다.
+<ol>
+<li>row_terms = 2 1 2 2 0 1</li>
+<li>starting_pos = 1 3 4 6 8 8</li>
+</ol>
+</li>
+<li>복잡도 : O(columns + Elements)</li>
+<li>Elements = columns * row 일 때, Element 의 시간복잡도는 O(Columns * Row * Columns)</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/cs/">CS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/computer-science/">Computer Science</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/data-structure/cs-6.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EA%B0%9C%EB%85%90/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[CS] 6. 연결리스트의 개념</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/data-structure/cs-4.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%ED%91%9C%ED%98%84/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[CS] 4. 배열을 이용한 다항식의 표현</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

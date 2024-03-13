@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, imos, 누적합, 좌표압축, 백준, BOJ">
+<meta name="description" content="📌 BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1 💡 조건 어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다. 방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000) N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE &lt; TX ≤ 2,100,000,000)
+모기는 [TE, Tx)동안 존재한다. 첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python" />
+<meta property="og:description" content="📌 BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1 💡 조건 어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다. 방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000) N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE &lt; TX ≤ 2,100,000,000)
+모기는 [TE, Tx)동안 존재한다. 첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-17T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/temp/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1 💡 조건 어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다. 방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000) N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE &lt; TX ≤ 2,100,000,000)
+모기는 [TE, Tx)동안 존재한다. 첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python",
+  "name": "[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python",
+  "description": "📌 BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1 💡 조건 어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다. 방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000) N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE \u0026lt; TX ≤ 2,100,000,000)\n모기는 [TE, Tx)동안 존재한다. 첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다.",
+  "keywords": [
+    "자료구조", "PS", "imos", "누적합", "좌표압축", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1 💡 조건 어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다. 방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000) N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE \u003c TX ≤ 2,100,000,000)\n모기는 [TE, Tx)동안 존재한다. 첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다.\n방에 모기가 가장 많이 있는 시간대의 연속 구간 전체를 [TEm, TXm)이라고 할 때,\n둘째 줄에 TEm, TXm을 공백으로 구분하여 출력한다.\n단, 여러 가지 방법이 있으면 가장 빠른 시작 시각을 기준으로 출력한다. 모기들의 방 입장, 퇴장 시각이 주어졌을 때 모기들이 가장 많이 있는 시간대와 해당 시간대에 모기가 몇 마리가 있는지 구하는 문제 imos, 누적 합, 좌표압축 유형의 문제 🔖 예제 및 실행결과 예제 1 3 2 16 4 6 6 10 실행결과 1 2 4 10 예제 2 3 0 16 0 6 0 10 실행결과 2 3 0 6 ⌨️ 문제 풀이 먼저, 나는 좌표 압축 + imos 알고리즘을 통해 문제를 풀이했다.\n좌표압축이란 모든 구간이 아니라, 중요한 구간 혹은 숫자만 들고있는 기법이다.\n순위가 중요한 알고리즘에서 입력값의 개수 \u003c 입력값의 범위일때 사용한다.\n문제에서 주어지는 모기들이 존재하는 시간은 최대 100만 개이다.\n모기들이 존재할 수 있는 시간대는 0에서 최대 21억까지이기 때문에 모든 구간을 순회하면서 구간합을 구할 수는 없다.\n따라서 (2)번에서 설명한 좌표압축을 통해 내가 필요한, 중요한 구간의 번호만 관리해야 한다.\n이 때, 모기들이 존재할 수 있는 구간은 최대 200만개의 정보가 되기에 중요한 정보를 모두 리스트에 넣어 관리할 수 있다.\n(4)번의 생각을 구현하기 위해서 나는 time_set = set() 집합 자료형을 통해 중복을 제거했다.\n이 set() 자료형의 길이 + 1만큼 리스트를 생성했다.\n생성한 리스트에 각 모기의 좌표를 update 해주면 중복제거가 되며, 이를 다시 리스트로 만들어주고 정렬한다.\n(5)번의 작업을 진행하면서, 각 시간대를 저장할 time 리스트에 각 구간을 tuple로 묶어넣어 관리한다.\n예제 1번을 예로 들었을 때, set() 자료형에는 {2, 4, 6, 10, 16} 이 들어가 있고, 이를 기준으로 만든 배열을 대응 시키면\n2는 인덱스 0, 4는 인덱스 1에 대응된다.\n대응되는 관계를 dictionary 자료형을 사용해 저장해주면 관리가 쉽다.\ntime_set 의 길이 + 1만큼 생성한 리스트는 imos 알고리즘을 사용해 구간을 갱신시킬 것.\nimos 알고리즘이란, 각 쿼리가 구간 [s, e] 내의 값을 갱신시키는 경우,\n이를 매 쿼리마다 일일히 갱신하지 않고, 시작과 끝만 기록해두었다가 마지막에 한 번의 처리로 값을 시뮬레이팅하는 방법이다.\n아무리 많은 쿼리가 있더라도, O(N)의 시간을 보장한다.(개사기)\n모기가 존재하는 구간의 정보를 담아두었던 time을 순회하면서, 1. 모기가 있는 구간의 시작(s) 시간이 prefix 리스트에 대응하는 원소값에 +1을 해준다.\n이는 dictionary[s] += 1 을 통해서 쉽게 할 수 있다. 2. 모기가 있는 구간의 끝(e) 시간이 prefix 리스트에 대응하는 원소값에 -1을 해준다.\n이제 prefix 리스트를 순회하면서 구간합을 구해주며, 이 prefix 리스트의 max값을 구해 max_val에 저장한다.\n문제 지문에서 단, 여러 가지 방법이 있으면 가장 빠른 시작 시각을 기준으로 출력한다. 라고 했다.\nprefix를 순회하면서 max_val이 어느 인덱스부터 시작하는지 저장하고, 어느 구간에서 달라지는지 저장한 뒤, 출력하면 된다.\n🖥 소스 코드 from sys import stdin n = int(stdin.readline()) time = [] time_set = set() for i in range(n): s, e = map(int, stdin.readline().split()) time.append((s, e)) time_set.update([s, e]) d = {} cnt = 0 time_set = list(time_set) time_set.sort() for i in time_set: d[i] = cnt cnt += 1 prefix = [0 for _ in range(len(time_set) + 1)] for s, e in time: prefix[d[s]] += 1 prefix[d[e]] -= 1 max_val = 0 for i in range(len(time_set)): prefix[i] = prefix[i] + prefix[i - 1] if prefix[i] \u003e max_val: max_val = prefix[i] print(max_val) ans = [0, 0] tf = False for i in range(len(time_set) + 1): if prefix[i] == max_val and not tf: ans[0] = time_set[i] tf = True if prefix[i] != max_val and tf: ans[1] = time_set[i] break print(*ans) 💾 느낀점 imos 알고리즘, 구간합의 확장 좌표압축을 통해 관리하려는 데이터의 수 최소화하기 (1), (2) 를 통해 prefix 를 할 때, 큰 범위를 좁게 좁혀 구할 수 있는 방법 ",
+  "wordCount" : "615",
+  "inLanguage": "en",
+  "datePublished": "2022-05-17T00:00:00Z",
+  "dateModified": "2022-05-17T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python
+    </h1>
+    <div class="post-meta"><span title='2022-05-17 00:00:00 +0000 UTC'>May 17, 2022</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[BOJ]%2020440%20%eb%8b%88%ea%b0%80%20%ec%8b%ab%ec%96%b4%20%ec%8b%ab%ec%96%b4%20%eb%84%88%eb%ac%b4%20%ec%8b%ab%ec%96%b4%20%ec%8b%ab%ec%96%b4%20%ec%98%a4%ec%a7%80%20%eb%a7%88%20%eb%82%b4%ea%b2%8c%20%ec%b0%9d%ec%a9%8d%eb%8c%80%ec%a7%80%eb%a7%88%20-%201%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem20440-target_blankboj-20440-니가-싫어-싫어-너무-싫어-싫어-오지-마-내게-찝쩍대지마---1a">📌 <a href="https://www.acmicpc.net/problem/20440" target="_blank">BOJ 20440 니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마 - 1</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem20440-target_blankboj-20440-니가-싫어-싫어-너무-싫어-싫어-오지-마-내게-찝쩍대지마---1a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>어떤 모기가 방에 언제 입장했고 언제 퇴장했는지를 기록할 수 있다.</li>
+<li>방에 출입한 모기의 마릿수 N(1 ≤ N ≤ 1,000,000)</li>
+<li>N개의 줄에 모기의 입장 시각 TE과 퇴장 시각 TX이 주어진다. (0 ≤ TE &lt; TX ≤ 2,100,000,000)<br>
+모기는 [TE, Tx)동안 존재한다.</li>
+<li>첫째 줄에 지동이 방에 모기가 가장 많이 있는 시간대의 모기 마릿수를 출력한다.<br>
+방에 모기가 가장 많이 있는 시간대의 연속 구간 전체를 [TEm, TXm)이라고 할 때,<br>
+둘째 줄에 TEm, TXm을 공백으로 구분하여 출력한다.<br>
+<strong>단, 여러 가지 방법이 있으면 가장 빠른 시작 시각을 기준으로 출력한다.</strong></li>
+<li>모기들의 방 입장, 퇴장 시각이 주어졌을 때 모기들이 가장 많이 있는 시간대와 해당 시간대에 모기가 몇 마리가 있는지 구하는 문제</li>
+<li><strong>imos, 누적 합, 좌표압축</strong> 유형의 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제-1">예제 1<a hidden class="anchor" aria-hidden="true" href="#예제-1">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span> <span class="mi">10</span>
+</span></span></code></pre></div><h4 id="실행결과-1">실행결과 1<a hidden class="anchor" aria-hidden="true" href="#실행결과-1">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">10</span>
+</span></span></code></pre></div><p><img loading="lazy" src="https://upload.acmicpc.net/e6a3a59c-b626-48eb-ac61-92582a7d9332/-/preview/" alt="예제 1"  />
+</p>
+<h4 id="예제-2">예제 2<a hidden class="anchor" aria-hidden="true" href="#예제-2">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="mi">10</span>
+</span></span></code></pre></div><h4 id="실행결과-2">실행결과 2<a hidden class="anchor" aria-hidden="true" href="#실행결과-2">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="mi">6</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p>먼저, 나는 좌표 압축 + imos 알고리즘을 통해 문제를 풀이했다.</p>
+</li>
+<li>
+<p>좌표압축이란 <strong>모든 구간이 아니라, 중요한 구간 혹은 숫자만 들고있는 기법</strong>이다.<br>
+순위가 중요한 알고리즘에서 입력값의 개수 &lt; 입력값의 범위일때 사용한다.</p>
+</li>
+<li>
+<p>문제에서 주어지는 모기들이 존재하는 시간은 최대 100만 개이다.<br>
+모기들이 존재할 수 있는 시간대는 0에서 최대 21억까지이기 때문에 모든 구간을 순회하면서 구간합을 구할 수는 없다.<br>
+따라서 (2)번에서 설명한 좌표압축을 통해 내가 필요한, 중요한 구간의 번호만 관리해야 한다.</p>
+</li>
+<li>
+<p>이 때, 모기들이 존재할 수 있는 구간은 최대 200만개의 정보가 되기에 중요한 정보를 모두 리스트에 넣어 관리할 수 있다.</p>
+</li>
+<li>
+<p>(4)번의 생각을 구현하기 위해서 나는 time_set = set() 집합 자료형을 통해 중복을 제거했다.<br>
+이 set() 자료형의 길이 + 1만큼 리스트를 생성했다.<br>
+생성한 리스트에 각 모기의 좌표를 update 해주면 중복제거가 되며, 이를 다시 리스트로 만들어주고 정렬한다.</p>
+</li>
+<li>
+<p>(5)번의 작업을 진행하면서, 각 시간대를 저장할 time 리스트에 각 구간을 tuple로 묶어넣어 관리한다.<br>
+예제 1번을 예로 들었을 때, set() 자료형에는 {2, 4, 6, 10, 16} 이 들어가 있고, 이를 기준으로 만든 배열을 대응 시키면<br>
+2는 인덱스 0, 4는 인덱스 1에 대응된다.</p>
+</li>
+<li>
+<p>대응되는 관계를 dictionary 자료형을 사용해 저장해주면 관리가 쉽다.</p>
+</li>
+<li>
+<p>time_set 의 길이 + 1만큼 생성한 리스트는 imos 알고리즘을 사용해 구간을 갱신시킬 것.</p>
+</li>
+<li>
+<p>imos 알고리즘이란, 각 쿼리가 구간 [s, e] 내의 값을 갱신시키는 경우,<br>
+이를 <strong>매 쿼리마다 일일히 갱신하지 않고</strong>, <strong>시작과 끝만 기록</strong>해두었다가 마지막에 한 번의 처리로 값을 시뮬레이팅하는 방법이다.<br>
+<strong>아무리 많은 쿼리가 있더라도, O(N)의 시간을 보장한다.</strong>(개사기)</p>
+</li>
+<li>
+<p>모기가 존재하는 구간의 정보를 담아두었던 time을 순회하면서,
+1.  모기가 있는 구간의 시작(s) 시간이 prefix 리스트에 대응하는 원소값에 +1을 해준다.<br>
+이는 dictionary[s] += 1 을 통해서 쉽게 할 수 있다.
+2.  모기가 있는 구간의 끝(e) 시간이 prefix 리스트에 대응하는 원소값에 -1을 해준다.</p>
+</li>
+<li>
+<p>이제 prefix 리스트를 순회하면서 구간합을 구해주며, 이 prefix 리스트의 max값을 구해 max_val에 저장한다.</p>
+</li>
+<li>
+<p>문제 지문에서 <strong>단, 여러 가지 방법이 있으면 가장 빠른 시작 시각을 기준으로 출력한다.</strong> 라고 했다.<br>
+prefix를 순회하면서 max_val이 어느 인덱스부터 시작하는지 저장하고, 어느 구간에서 달라지는지 저장한 뒤, 출력하면 된다.</p>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">time</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">time_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time_set</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="n">s</span><span class="p">,</span> <span class="n">e</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">time_set</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">time_set</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">time_set</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">time_set</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">cnt</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">prefix</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_set</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">time</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prefix</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prefix</span><span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="n">e</span><span class="p">]]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">max_val</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_set</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max_val</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_val</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">max_val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ans</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">tf</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_set</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">max_val</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">tf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tf</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">max_val</span> <span class="ow">and</span> <span class="n">tf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">time_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">ans</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>imos 알고리즘, 구간합의 확장</li>
+<li>좌표압축을 통해 관리하려는 데이터의 수 최소화하기</li>
+<li>(1), (2) 를 통해 prefix 를 할 때, 큰 범위를 좁게 좁혀 구할 수 있는 방법</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/imos/">imos</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%88%84%EC%A0%81%ED%95%A9/">누적합</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%A2%8C%ED%91%9C%EC%95%95%EC%B6%95/">좌표압축</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 20436 ZOAC 3 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-18004-from-a-to-b-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 18004 From A to B with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

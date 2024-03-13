@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84-%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 17839 Baba is Rabbit with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-17839-baba-is-rabbit-with-python/</link>
       <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-17839-baba-is-rabbit-with-python/</guid>
       <description>📌 BOJ 17839 Baba is Rabbit 💡 조건 N(1 ≤ N ≤ 100,000) N개의 줄에 걸쳐 명령이 주어진다.
 각 명령은 p is q의 형태로 주어지며, p와 q는 첫 글자가 영문 대문자이고, 나머지 글자는 영문 소문자인 길이 10 이내의 문자열이다. Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 사물을 사전순으로 출력한다.
 단, 적용할 수 있는 명령이 없다면, 아무것도 출력하지 않는다. 그래프 탐색, BFS 유형의 문제 🔖 예제 및 실행결과 예제 1 1 Rabbit is Carrot 실행결과 1 예제 2 3 Rabbit is Carrot Baba is Cat Cat is Rabbit 실행결과 2 Carrot Cat Rabbit ⌨️ 문제 풀이 Baba에 명령을 한 번 이상 적용한 결과로 나올 수 있는 결과를 뽑아야하는 문제이다.</description>

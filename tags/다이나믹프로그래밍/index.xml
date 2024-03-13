@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Programmers] 광고 삽입 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</link>
       <pubDate>Sun, 17 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</guid>
       <description>📌 Programmers - 광고 삽입 💡 조건 및 풀이 동영상에 광고를 넣어야한다. 시청자가 가장 많은 구간에 광고를 넣어야한다.
 = 시청자 수 구간합이 가장 큰 곳에 광고를 넣어야한다. 동영상 재생시간 길이 play_time, 공익광고의 재생시간 길이 adv_time,
 시청자들이 해당 동영상을 재생했던 구간 정보 logs 구간합을 구해 답을 이끌어내는 유형의 문제 play_time, adv_time은 길이 8로 고정된 문자열
@@ -26,9 +26,9 @@ play_time, adv_time은 HH:MM:SS 형식이며,
     </item>
     <item>
       <title>[BOJ] 15486 퇴사 2 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</guid>
       <description>📌 BOJ 15486 퇴사 2 💡 조건 및 풀이 퇴사가 남은 일 수 N. 1 &amp;lt;= N &amp;lt;= 1500000 T, P 의 길이는 N과 같으며, 1 &amp;lt;= Ti &amp;lt;= 50, 1 &amp;lt;= Pi &amp;lt;= 1000 N + 1 에 해당하는 날짜부터는 상담을 할 수 없다. DP 유형의 문제 상담을 통해 취한 이익 중, 가장 큰 값을 반환하는 문제. 🔖 예제 및 실행결과 예제 10 5 50 4 40 3 30 2 20 1 10 1 10 2 20 3 30 4 40 5 50 실행결과 90 ```python &amp;lt;br&amp;gt; ### ⌨️ 문제 풀이 1.</description>
     </item>
   </channel>

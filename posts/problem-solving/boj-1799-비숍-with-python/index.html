@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 1799 비숍 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="백트래킹, PS, 재귀, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 1799 비숍 💡 조건 및 풀이 체스판의 크기는 10 이하의 자연수 비숍을 놓을 수 있는 곳에는 1, 비숍을 놓을 수 없는 곳에는 0 대각선 방향으로 움직이는 비숍이 이동할 수 있는 경로에 비숍을 놓을 수 없다. 백트래킹 유형의 문제 🔖 예제 및 실행결과 예제 5 1 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 1 0 1 1 1 실행결과 7 ⌨️ 문제 풀이 흑과 백을 구분할 수 있는 체스판을 True 와 False 를 사용해 다시 만든다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/boj-1799-%EB%B9%84%EC%88%8D-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 1799 비숍 with Python" />
+<meta property="og:description" content="📌 BOJ 1799 비숍 💡 조건 및 풀이 체스판의 크기는 10 이하의 자연수 비숍을 놓을 수 있는 곳에는 1, 비숍을 놓을 수 없는 곳에는 0 대각선 방향으로 움직이는 비숍이 이동할 수 있는 경로에 비숍을 놓을 수 없다. 백트래킹 유형의 문제 🔖 예제 및 실행결과 예제 5 1 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 1 0 1 1 1 실행결과 7 ⌨️ 문제 풀이 흑과 백을 구분할 수 있는 체스판을 True 와 False 를 사용해 다시 만든다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/boj-1799-%EB%B9%84%EC%88%8D-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-11T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/temp/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 1799 비숍 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 1799 비숍 💡 조건 및 풀이 체스판의 크기는 10 이하의 자연수 비숍을 놓을 수 있는 곳에는 1, 비숍을 놓을 수 없는 곳에는 0 대각선 방향으로 움직이는 비숍이 이동할 수 있는 경로에 비숍을 놓을 수 없다. 백트래킹 유형의 문제 🔖 예제 및 실행결과 예제 5 1 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 1 0 1 1 1 실행결과 7 ⌨️ 문제 풀이 흑과 백을 구분할 수 있는 체스판을 True 와 False 를 사용해 다시 만든다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 1799 비숍 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/boj-1799-%EB%B9%84%EC%88%8D-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 1799 비숍 with Python",
+  "name": "[BOJ] 1799 비숍 with Python",
+  "description": "📌 BOJ 1799 비숍 💡 조건 및 풀이 체스판의 크기는 10 이하의 자연수 비숍을 놓을 수 있는 곳에는 1, 비숍을 놓을 수 없는 곳에는 0 대각선 방향으로 움직이는 비숍이 이동할 수 있는 경로에 비숍을 놓을 수 없다. 백트래킹 유형의 문제 🔖 예제 및 실행결과 예제 5 1 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 1 0 1 1 1 실행결과 7 ⌨️ 문제 풀이 흑과 백을 구분할 수 있는 체스판을 True 와 False 를 사용해 다시 만든다.",
+  "keywords": [
+    "백트래킹", "PS", "재귀", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 1799 비숍 💡 조건 및 풀이 체스판의 크기는 10 이하의 자연수 비숍을 놓을 수 있는 곳에는 1, 비숍을 놓을 수 없는 곳에는 0 대각선 방향으로 움직이는 비숍이 이동할 수 있는 경로에 비숍을 놓을 수 없다. 백트래킹 유형의 문제 🔖 예제 및 실행결과 예제 5 1 1 0 1 1 0 1 0 0 0 1 0 1 0 1 1 0 0 0 0 1 0 1 1 1 실행결과 7 ⌨️ 문제 풀이 흑과 백을 구분할 수 있는 체스판을 True 와 False 를 사용해 다시 만든다. 비숍을 놓을 수 있는 좌표를 흑과 백으로 나누어 각각 black 과 white 리스트에 넣어준다. 비숍을 놓고, 놓을 수 없는 곳을 표시할 때 사용할 isused 리스트를 생성한다. 재귀함수를 타고 각 좌표에 해당하는 곳이 isused01, isused02 모두 사용 중이거나\n놓을 수 없는 자리라면 index를 하나 늘리고 다시 재귀. 4번에 해장하지 않으면 비숍을 놓고 놓은 비숍 개수와 index를 1씩 늘리고 재귀 재귀를 빠져나오면 직전에 놓았던 비숍의 정보를 제거하고 다음 좌표로 넘어가기 위해 index + 1 하고 재귀 index값이 흰색 혹은 검정색 비숍 좌표의 길이와 같다면 검정색의 최댓값과 흰색의 최댓값을 각각 Bcnt와 Wcnt에 저장한다. 🖥 소스 코드 from sys import stdin n = int(stdin.readline()) chess_map = [] black = [] white = [] color = [[0] * n for _ in range(n)] for i in range(n): for j in range(n): color[i][j] = (i % 2 == 0 and j % 2 == 0) or (i % 2 != 0 and j % 2 != 0) for i in range(n): chess_map.append(list(map(int, input().split()))) for j in range(n): # True가 검은색 if chess_map[i][j] == 1 and color[i][j] == 1: black.append((i, j)) # False가 흰색 if chess_map[i][j] == 1 and color[i][j] == 0: white.append((i, j)) # 검은색인 경우 Bcnt = 0 # 흰색인 경우 Wcnt = 0 isused01 = [0] * (n * 2 - 1) isused02 = [0] * (n * 2 - 1) def fun(bishop, index, count): global Bcnt, Wcnt if index == len(bishop): rx, ry = bishop[index - 1] # 블랙이면 Bcnt 최대값 if color[rx][ry]: Bcnt = max(Bcnt, count) # 흰색이면 Wcnt 최대값 else: Wcnt = max(Wcnt, count) return x, y = bishop[index] if isused01[x + y] or isused02[x - y + n - 1]: fun(bishop, index + 1, count) else: isused01[x + y] = 1 isused02[x - y + n - 1] = 1 fun(bishop, index + 1, count + 1) isused01[x + y] = 0 isused02[x - y + n - 1] = 0 fun(bishop, index + 1, count) if len(black) \u003e 0: fun(black, 0, 0) if len(white) \u003e 0: fun(white, 0, 0) print(Bcnt + Wcnt) 💾 느낀점 무지성 백트래킹으로 풀려다가 시간초과가 떴다. 백트래킹을 잘하려면 재귀를 잘 짤줄 알아야하는데 아직도 재귀함수가 약점이다. 흑, 백 칸을 구분지어 구현하는데에도 헷갈리는 부분이 있었다. 함수를 구현하고서도 이해가 안되는 부분이 있어서 별표를 많이 쳐놨다. 다시는 풀고 싶지 않은 유형이지만, 그래도 옛날보다는 나아지는 느낌을 받는다.\n다시 풀어봐야겠다. ",
+  "wordCount" : "467",
+  "inLanguage": "en",
+  "datePublished": "2021-10-11T00:00:00Z",
+  "dateModified": "2021-10-11T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/boj-1799-%EB%B9%84%EC%88%8D-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 1799 비숍 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-10-11 00:00:00 +0000 UTC'>October 11, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[BOJ]%201799%20%eb%b9%84%ec%88%8d%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem1799-target_blankboj-1799-비숍a">📌 <a href="https://www.acmicpc.net/problem/1799" target="_blank">BOJ 1799 비숍</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1799-target_blankboj-1799-비숍a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li><strong>체스판의 크기는 10 이하의 자연수</strong></li>
+<li>비숍을 놓을 수 있는 곳에는 <code>1</code>, 비숍을 놓을 수 없는 곳에는 <code>0</code></li>
+<li>대각선 방향으로 움직이는 비숍이 이동할 수 있는 경로에 비숍을 놓을 수 없다.</li>
+<li><strong>백트래킹 유형의 문제</strong></li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">7</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>흑과 백을 구분할 수 있는 체스판을 <code>True</code> 와 <code>False</code> 를 사용해 다시 만든다.</li>
+<li>비숍을 놓을 수 있는 좌표를 흑과 백으로 나누어 각각 <code>black</code> 과 <code>white</code> 리스트에 넣어준다.</li>
+<li>비숍을 놓고, 놓을 수 없는 곳을 표시할 때 사용할 <code>isused</code> 리스트를 생성한다.</li>
+<li>재귀함수를 타고 각 좌표에 해당하는 곳이 <code>isused01</code>, <code>isused02</code> 모두 사용 중이거나<br>
+놓을 수 없는 자리라면 <code>index</code>를 하나 늘리고 다시 재귀.</li>
+<li><code>4번</code>에 해장하지 않으면 비숍을 놓고 놓은 비숍 개수와 <code>index</code>를 1씩 늘리고 재귀</li>
+<li>재귀를 빠져나오면 <strong>직전에 놓았던 비숍의 정보를 제거하고 다음 좌표로 넘어가기 위해 <code>index + 1</code> 하고 재귀</strong></li>
+<li><code>index</code>값이 흰색 혹은 검정색 비숍 좌표의 길이와 같다면 검정색의 최댓값과 흰색의 최댓값을 각각 <code>Bcnt</code>와 <code>Wcnt</code>에 저장한다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">chess_map</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">black</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">white</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">color</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">chess_map</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># True가 검은색</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">chess_map</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">black</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># False가 흰색</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">chess_map</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">white</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 검은색인 경우</span>
+</span></span><span class="line"><span class="cl"><span class="n">Bcnt</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 흰색인 경우</span>
+</span></span><span class="line"><span class="cl"><span class="n">Wcnt</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">isused01</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">isused02</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">bishop</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">count</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">global</span> <span class="n">Bcnt</span><span class="p">,</span> <span class="n">Wcnt</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">bishop</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span> <span class="o">=</span> <span class="n">bishop</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 블랙이면 Bcnt 최대값</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">color</span><span class="p">[</span><span class="n">rx</span><span class="p">][</span><span class="n">ry</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Bcnt</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Bcnt</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 흰색이면 Wcnt 최대값</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Wcnt</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Wcnt</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bishop</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">isused01</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">]</span> <span class="ow">or</span> <span class="n">isused02</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fun</span><span class="p">(</span><span class="n">bishop</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isused01</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isused02</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fun</span><span class="p">(</span><span class="n">bishop</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isused01</span><span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isused02</span><span class="p">[</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fun</span><span class="p">(</span><span class="n">bishop</span><span class="p">,</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">black</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fun</span><span class="p">(</span><span class="n">black</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">white</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fun</span><span class="p">(</span><span class="n">white</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">Bcnt</span> <span class="o">+</span> <span class="n">Wcnt</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ul>
+<li>무지성 백트래킹으로 풀려다가 시간초과가 떴다.</li>
+<li>백트래킹을 잘하려면 재귀를 잘 짤줄 알아야하는데 아직도 재귀함수가 약점이다.</li>
+<li>흑, 백 칸을 구분지어 구현하는데에도 헷갈리는 부분이 있었다.</li>
+<li>함수를 구현하고서도 이해가 안되는 부분이 있어서 별표를 많이 쳐놨다.</li>
+<li>다시는 풀고 싶지 않은 유형이지만, 그래도 옛날보다는 나아지는 느낌을 받는다.<br>
+다시 풀어봐야겠다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/">백트래킹</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%AC%EA%B7%80/">재귀</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 2143 두 배열의 합 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 1967 트리의 지름 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

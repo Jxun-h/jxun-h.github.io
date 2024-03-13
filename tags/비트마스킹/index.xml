@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%B9%84%ED%8A%B8%EB%A7%88%EC%8A%A4%ED%82%B9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 12920 평범한 배낭 2 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/</guid>
       <description>📌 BOJ 12920 평범한 배낭 2 💡 조건 민호는 BOJ 캠프에 가기 위해 가방을 싸려고 한다. 가방에 어떠한 물건들을 넣냐에 따라 민호의 만족도가 달라진다.
 집에 있는 모든 물건들을 넣으면 민호가 느낄 수 있는 만족도는 최대가 될 것이다.
 하지만 민호가 들 수 있는 가방의 무게는 정해져 있어 이를 초과해 물건을 넣을수가 없다.
@@ -26,9 +26,9 @@
     </item>
     <item>
       <title>[BOJ] 1094 막대기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</link>
       <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1094 막대기 💡 조건 64cm인 막대를 가지고 있다.
 지민이는 원래 가지고 있던 막대를 더 작은 막대로 자른다음에, 풀로 붙여서 길이가 Xcm인 막대를 만들려고 한다. 아래는 막대를 자르는 방법이다. 지민이가 가지고 있는 막대의 길이를 모두 더한다.
 처음에는 64cm 막대 하나만 가지고 있다. 이때, 합이 X보다 크다면, 아래와 같은 과정을 반복한다.

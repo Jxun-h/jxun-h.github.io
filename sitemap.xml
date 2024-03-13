@@ -2,58 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/categories/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/computer-science/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/series/computer-science/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/categories/computer-science/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/cs/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/series/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</loc>
+    <lastmod>2022-07-15T00:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/</loc>
+    <lastmod>2022-07-12T14:37:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/</loc>
+    <lastmod>2022-07-12T14:21:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-10.%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8/</loc>
+    <lastmod>2022-07-12T13:50:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-9.-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%97%B0%EC%82%B0/</loc>
+    <lastmod>2022-07-12T13:31:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-8.-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/</loc>
+    <lastmod>2022-07-10T05:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-7.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%EA%B5%AC%ED%98%84/</loc>
+    <lastmod>2022-07-10T04:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-6.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EA%B0%9C%EB%85%90/</loc>
+    <lastmod>2022-07-10T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-5.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%9D%AC%EC%86%8C%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84/</loc>
+    <lastmod>2022-07-10T02:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-4.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%ED%91%9C%ED%98%84/</loc>
+    <lastmod>2022-07-10T01:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-3.-%EB%B0%B0%EC%97%B4%EA%B3%BC-%EA%B5%AC%EC%A1%B0%EC%B2%B4%EC%9D%98-%EC%A0%95%EC%9D%98/</loc>
+    <lastmod>2022-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/temp/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/</loc>
+    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/categories/algorithm/</loc>
+    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/bfs/</loc>
+    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/boj/</loc>
+    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/series/boj/</loc>
+    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/ps/</loc>
+    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/</loc>
+    <lastmod>2022-07-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-2.-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98-%EB%B3%B5%EC%9E%A1%EB%8F%84-%EA%B3%84%EC%82%B0/</loc>
+    <lastmod>2022-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/temp/</loc>
+    <lastmod>2022-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/data-structure/cs-1.-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%9D%98-%EC%A0%95%EC%9D%98%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%98-%EC%A0%95%EC%9D%98-%EB%B0%8F-%ED%91%9C%ED%98%84/</loc>
+    <lastmod>2022-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/temp/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/</loc>
+    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/%EA%B5%AC%EC%84%B1%EC%A0%81/</loc>
+    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0/</loc>
+    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/%EC%95%A0%EB%93%9C%ED%98%B9/</loc>
+    <lastmod>2022-07-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://jxun-h.github.io/posts/temp/temp/</loc>
     <lastmod>2022-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/categories/algorithm/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/tags/boj/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/series/boj/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/categories/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/posts/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/tags/ps/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/series/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/tags/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/</loc>
     <lastmod>2022-07-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%83%85%EC%83%89/</loc>
     <lastmod>2022-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%B9%84%ED%8A%B8%EB%A7%88%EC%8A%A4%ED%82%B9/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</loc>
     <lastmod>2022-07-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%A0%95%EB%A0%AC/</loc>
     <lastmod>2022-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/</loc>
@@ -65,10 +137,10 @@
     <loc>https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/</loc>
     <lastmod>2022-06-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2225-%ED%95%A9%EB%B6%84%ED%95%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2225-%ED%95%A9%EB%B6%84%ED%95%B4-with-python/</loc>
     <lastmod>2022-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-6236-%EC%9A%A9%EB%8F%88-%EA%B4%80%EB%A6%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-6236-%EC%9A%A9%EB%8F%88-%EA%B4%80%EB%A6%AC-with-python/</loc>
     <lastmod>2022-06-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/dp/</loc>
@@ -77,79 +149,76 @@
     <loc>https://jxun-h.github.io/tags/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/</loc>
     <lastmod>2022-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1700-%EB%A9%80%ED%8B%B0%ED%83%AD-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1700-%EB%A9%80%ED%8B%B0%ED%83%AD-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81-with-python/</loc>
     <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/</loc>
     <lastmod>2022-06-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10451-%EC%88%9C%EC%97%B4-%EC%82%AC%EC%9D%B4%ED%81%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10451-%EC%88%9C%EC%97%B4-%EC%82%AC%EC%9D%B4%ED%81%B4-with-python/</loc>
     <lastmod>2022-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14499-%EC%A3%BC%EC%82%AC%EC%9C%84-%EA%B5%B4%EB%A6%AC%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14499-%EC%A3%BC%EC%82%AC%EC%9C%84-%EA%B5%B4%EB%A6%AC%EA%B8%B0-with-python/</loc>
     <lastmod>2022-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1525-%ED%8D%BC%EC%A6%90-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1525-%ED%8D%BC%EC%A6%90-with-python/</loc>
     <lastmod>2022-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1915-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95-with-python/</loc>
-    <lastmod>2022-06-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/tags/bfs/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1915-%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%A0%95%EC%82%AC%EA%B0%81%ED%98%95-with-python/</loc>
     <lastmod>2022-06-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/</loc>
     <lastmod>2022-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2644-%EC%B4%8C%EC%88%98%EA%B3%84%EC%82%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2644-%EC%B4%8C%EC%88%98%EA%B3%84%EC%82%B0-with-python/</loc>
     <lastmod>2022-06-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1520-%EB%82%B4%EB%A6%AC%EB%A7%89-%EA%B8%B8-with-python/</loc>
     <lastmod>2022-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2512-%EC%98%88%EC%82%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2512-%EC%98%88%EC%82%B0-with-python/</loc>
     <lastmod>2022-06-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/dfs/</loc>
     <lastmod>2022-06-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1238-%ED%8C%8C%ED%8B%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1238-%ED%8C%8C%ED%8B%B0-with-python/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1309-%EB%8F%99%EB%AC%BC%EC%9B%90-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1309-%EB%8F%99%EB%AC%BC%EC%9B%90-with-python/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1057-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1057-%ED%86%A0%EB%84%88%EB%A8%BC%ED%8A%B8-with-python/</loc>
     <lastmod>2022-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20438-%EC%B6%9C%EC%84%9D%EC%B2%B4%ED%81%AC-with-python/</loc>
     <lastmod>2022-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%88%84%EC%A0%81%ED%95%A9/</loc>
     <lastmod>2022-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-17485-%EC%A7%84%EC%9A%B0%EC%9D%98-%EB%8B%AC-%EC%97%AC%ED%96%89-large-with-python/</loc>
     <lastmod>2022-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20166-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%80%EC%98%A5%EC%97%90-%EB%B9%A0%EC%A7%84-%ED%98%B8%EC%84%9D-with-python/</loc>
     <lastmod>2022-06-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%99%84%EC%A0%84%ED%83%90%EC%83%89/</loc>
     <lastmod>2022-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-13459-%EA%B5%AC%EC%8A%AC-%ED%83%88%EC%B6%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-13459-%EA%B5%AC%EC%8A%AC-%ED%83%88%EC%B6%9C-with-python/</loc>
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-6010-music-notes-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-6010-music-notes-with-python/</loc>
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2637-%EC%9E%A5%EB%82%9C%EA%B0%90-%EC%A1%B0%EB%A6%BD-with-python/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-3151-%ED%95%A9%EC%9D%B4-0-with-python/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%9C%84%EC%83%81%EC%A0%95%EB%A0%AC/</loc>
@@ -158,31 +227,31 @@
     <loc>https://jxun-h.github.io/tags/%ED%88%AC%ED%8F%AC%EC%9D%B8%ED%84%B0/</loc>
     <lastmod>2022-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</loc>
     <lastmod>2022-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2342-dance-dance-revolution-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2342-dance-dance-revolution-with-python/</loc>
     <lastmod>2022-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/</loc>
     <lastmod>2022-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-17204-%EC%A3%BD%EC%9D%8C%EC%9D%98-%EA%B2%8C%EC%9E%84-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-17204-%EC%A3%BD%EC%9D%8C%EC%9D%98-%EA%B2%8C%EC%9E%84-with-python/</loc>
     <lastmod>2022-05-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20444-%EC%83%89%EC%A2%85%EC%9D%B4%EC%99%80-%EA%B0%80%EC%9C%84-with-python/</loc>
     <lastmod>2022-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-22252-%EC%A0%95%EB%B3%B4-%EC%83%81%EC%9D%B8-%ED%98%B8%EC%84%9D-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-22252-%EC%A0%95%EB%B3%B4-%EC%83%81%EC%9D%B8-%ED%98%B8%EC%84%9D-with-python/</loc>
     <lastmod>2022-05-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%ED%81%90/</loc>
     <lastmod>2022-05-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20436-zoac-3-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/</loc>
     <lastmod>2022-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/</loc>
     <lastmod>2022-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/imos/</loc>
@@ -191,100 +260,100 @@
     <loc>https://jxun-h.github.io/tags/%EC%A2%8C%ED%91%9C%EC%95%95%EC%B6%95/</loc>
     <lastmod>2022-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-18004-from-a-to-b-with-python/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-17839-baba-is-rabbit-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-17839-baba-is-rabbit-with-python/</loc>
     <lastmod>2022-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1951-%ED%99%9C%EC%9E%90-with-python/</loc>
     <lastmod>2022-05-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84-%ED%83%90%EC%83%89/</loc>
     <lastmod>2022-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14562-%ED%83%9C%EA%B6%8C%EC%99%95-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14562-%ED%83%9C%EA%B6%8C%EC%99%95-with-python/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20125-%EC%BF%A0%ED%82%A4%EC%9D%98-%EC%8B%A0%EC%B2%B4-%EC%B8%A1%EC%A0%95-with-python/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14696-%EB%94%B1%EC%A7%80%EB%86%80%EC%9D%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14696-%EB%94%B1%EC%A7%80%EB%86%80%EC%9D%B4-with-python/</loc>
     <lastmod>2022-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-16926-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-1-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-16926-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-1-with-python/</loc>
     <lastmod>2022-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11508-2&#43;1-%EC%84%B8%EC%9D%BC-with-python/</loc>
     <lastmod>2022-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-12970-ab-with-python/</loc>
     <lastmod>2022-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2012-%EB%93%B1%EC%88%98-%EB%A7%A4%EA%B8%B0%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2012-%EB%93%B1%EC%88%98-%EB%A7%A4%EA%B8%B0%EA%B8%B0-with-python/</loc>
     <lastmod>2022-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2302-%EA%B7%B9%EC%9E%A5-%EC%A2%8C%EC%84%9D-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2302-%EA%B7%B9%EC%9E%A5-%EC%A2%8C%EC%84%9D-with-python/</loc>
     <lastmod>2022-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1145-%EC%A0%81%EC%96%B4%EB%8F%84-%EB%8C%80%EB%B6%80%EB%B6%84%EC%9D%98-%EB%B0%B0%EC%88%98-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1145-%EC%A0%81%EC%96%B4%EB%8F%84-%EB%8C%80%EB%B6%80%EB%B6%84%EC%9D%98-%EB%B0%B0%EC%88%98-with-python/</loc>
     <lastmod>2022-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1343-%ED%8F%B4%EB%A6%AC%EC%98%A4%EB%AF%B8%EB%85%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1343-%ED%8F%B4%EB%A6%AC%EC%98%A4%EB%AF%B8%EB%85%B8-with-python/</loc>
     <lastmod>2022-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1038-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EC%88%98-with-python/</loc>
     <lastmod>2022-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-12761-%EB%8F%8C%EB%8B%A4%EB%A6%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-12761-%EB%8F%8C%EB%8B%A4%EB%A6%AC-with-python/</loc>
     <lastmod>2022-03-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%B0%B1%ED%8A%B8%EB%9E%98%ED%82%B9/</loc>
     <lastmod>2022-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10211-maximum-subarray-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10211-maximum-subarray-with-python/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11104-fridge-of-your-dreams-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11104-fridge-of-your-dreams-with-python/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%A7%84%EC%88%98%EB%B3%80%ED%99%98/</loc>
     <lastmod>2022-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-8911-%EA%B1%B0%EB%B6%81%EC%9D%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-8911-%EA%B1%B0%EB%B6%81%EC%9D%B4-with-python/</loc>
     <lastmod>2022-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-8974-%ED%9D%AC%EC%A3%BC%EC%9D%98-%EC%88%98%ED%95%99%EC%8B%9C%ED%97%98-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-8974-%ED%9D%AC%EC%A3%BC%EC%9D%98-%EC%88%98%ED%95%99%EC%8B%9C%ED%97%98-with-python/</loc>
     <lastmod>2022-03-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%82%AC%EC%B9%99%EC%97%B0%EC%82%B0/</loc>
     <lastmod>2022-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2631-%EC%A4%84%EC%84%B8%EC%9A%B0%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2631-%EC%A4%84%EC%84%B8%EC%9A%B0%EA%B8%B0-with-python/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2636-%EC%B9%98%EC%A6%88-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2636-%EC%B9%98%EC%A6%88-with-python/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-5671-%ED%98%B8%ED%85%94-%EB%B0%A9-%EB%B2%88%ED%98%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-5671-%ED%98%B8%ED%85%94-%EB%B0%A9-%EB%B2%88%ED%98%B8-with-python/</loc>
     <lastmod>2022-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1758-%EC%95%8C%EB%B0%94%EC%83%9D-%EA%B0%95%ED%98%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1758-%EC%95%8C%EB%B0%94%EC%83%9D-%EA%B0%95%ED%98%B8-with-python/</loc>
     <lastmod>2022-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10166-%EA%B4%80%EC%A4%91%EC%84%9D-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10166-%EA%B4%80%EC%A4%91%EC%84%9D-with-python/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-12788-%EC%A0%9C-2%ED%9A%8C-iupc%EB%8A%94-%EC%9E%98-%EA%B0%9C%EC%B5%9C%EB%90%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-12788-%EC%A0%9C-2%ED%9A%8C-iupc%EB%8A%94-%EC%9E%98-%EA%B0%9C%EC%B5%9C%EB%90%A0-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-with-python/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-5698-tautogram-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-5698-tautogram-with-python/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%8A%A4%ED%83%9D/</loc>
@@ -293,106 +362,103 @@
     <loc>https://jxun-h.github.io/tags/%EC%A0%95%EC%88%98%EB%A1%A0/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2493-%ED%83%91-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2493-%ED%83%91-with-python/</loc>
     <lastmod>2022-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-3187-%EC%96%91%EC%B9%98%EA%B8%B0-%EA%BF%8D-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-3187-%EC%96%91%EC%B9%98%EA%B8%B0-%EA%BF%8D-with-python/</loc>
     <lastmod>2022-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1531-%ED%88%AC%EB%AA%85-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1531-%ED%88%AC%EB%AA%85-with-python/</loc>
     <lastmod>2022-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2096-%EB%82%B4%EB%A0%A4%EA%B0%80%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2096-%EB%82%B4%EB%A0%A4%EA%B0%80%EA%B8%B0-with-python/</loc>
     <lastmod>2022-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1269-%EB%8C%80%EC%B9%AD-%EC%B0%A8%EC%A7%91%ED%95%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1269-%EB%8C%80%EC%B9%AD-%EC%B0%A8%EC%A7%91%ED%95%A9-with-python/</loc>
     <lastmod>2022-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-12760-%EC%B5%9C%ED%9B%84%EC%9D%98-%EC%8A%B9%EC%9E%90%EB%8A%94-%EB%88%84%EA%B5%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-12760-%EC%B5%9C%ED%9B%84%EC%9D%98-%EC%8A%B9%EC%9E%90%EB%8A%94-%EB%88%84%EA%B5%AC-with-python/</loc>
     <lastmod>2022-03-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%ED%95%B4%EC%8B%9C%EB%A7%B5/</loc>
     <lastmod>2022-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10163-%EC%83%89%EC%A2%85%EC%9D%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10163-%EC%83%89%EC%A2%85%EC%9D%B4-with-python/</loc>
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-12018-yonsei-toto-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-12018-yonsei-toto-with-python/</loc>
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-4811-%EC%95%8C%EC%95%BD-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-4811-%EC%95%8C%EC%95%BD-with-python/</loc>
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9081-%EB%8B%A8%EC%96%B4-%EB%A7%9E%EC%B6%94%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9081-%EB%8B%A8%EC%96%B4-%EB%A7%9E%EC%B6%94%EA%B8%B0-with-python/</loc>
     <lastmod>2022-03-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1660-%EC%BA%A1%ED%8B%B4-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1660-%EC%BA%A1%ED%8B%B4-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1755-%EC%88%AB%EC%9E%90%EB%86%80%EC%9D%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1755-%EC%88%AB%EC%9E%90%EB%86%80%EC%9D%B4-with-python/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1788-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%EC%88%98%EC%9D%98-%ED%99%95%EC%9E%A5-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1788-%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%EC%88%98%EC%9D%98-%ED%99%95%EC%9E%A5-with-python/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1822-%EC%B0%A8%EC%A7%91%ED%95%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1822-%EC%B0%A8%EC%A7%91%ED%95%A9-with-python/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-15965-k%EB%B2%88%EC%A7%B8-%EC%86%8C%EC%88%98-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-15965-k%EB%B2%88%EC%A7%B8-%EC%86%8C%EC%88%98-with-python/</loc>
     <lastmod>2022-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-16935-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-3-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-16935-%EB%B0%B0%EC%97%B4-%EB%8F%8C%EB%A6%AC%EA%B8%B0-3-with-python/</loc>
     <lastmod>2022-03-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%97%90%EB%9D%BC%ED%86%A0%EC%8A%A4%ED%85%8C%EB%84%A4%EC%8A%A4%EC%9D%98-%EC%B2%B4/</loc>
     <lastmod>2022-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10384-%ED%8C%AC%EA%B7%B8%EB%9E%A8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10384-%ED%8C%AC%EA%B7%B8%EB%9E%A8-with-python/</loc>
     <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9742-%EC%88%9C%EC%97%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9742-%EC%88%9C%EC%97%B4-with-python/</loc>
     <lastmod>2022-03-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-6443-%EC%95%A0%EB%84%88%EA%B7%B8%EB%9E%A8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-6443-%EC%95%A0%EB%84%88%EA%B7%B8%EB%9E%A8-with-python/</loc>
     <lastmod>2022-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-8394-%EC%95%85%EC%88%98-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-8394-%EC%95%85%EC%88%98-with-python/</loc>
     <lastmod>2022-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1342-%ED%96%89%EC%9A%B4%EC%9D%98-%EB%AC%B8%EC%9E%90%EC%97%B4-with-python/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-18243-small-world-network-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-18243-small-world-network-with-python/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1855-%EC%95%94%ED%98%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1855-%EC%95%94%ED%98%B8-with-python/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2697-%EB%8B%A4%EC%9D%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2697-%EB%8B%A4%EC%9D%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-with-python/</loc>
     <lastmod>2022-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/tags/%EA%B7%B8%EB%9E%98%ED%94%84-%EC%9D%B4%EB%A1%A0/</loc>
-    <lastmod>2022-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</loc>
     <lastmod>2022-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</loc>
     <lastmod>2022-02-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</loc>
     <lastmod>2022-02-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10546-%EB%B0%B0%EB%B6%80%EB%A5%B8-%EB%A7%88%EB%9D%BC%ED%86%A0%EB%84%88-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10546-%EB%B0%B0%EB%B6%80%EB%A5%B8-%EB%A7%88%EB%9D%BC%ED%86%A0%EB%84%88-with-python/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11501-%EC%A3%BC%EC%8B%9D-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11501-%EC%A3%BC%EC%8B%9D-with-python/</loc>
     <lastmod>2022-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9372-%EC%83%81%EA%B7%BC%EC%9D%B4%EC%9D%98-%EC%97%AC%ED%96%89-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9372-%EC%83%81%EA%B7%BC%EC%9D%B4%EC%9D%98-%EC%97%AC%ED%96%89-with-python/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%9C%A0%EB%8B%88%EC%98%A8-%ED%8C%8C%EC%9D%B8%EB%93%9C/</loc>
@@ -401,46 +467,46 @@
     <loc>https://jxun-h.github.io/tags/%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C-%ED%98%B8%EC%A0%9C%EB%B2%95/</loc>
     <lastmod>2022-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2075-n%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2075-n%EB%B2%88%EC%A7%B8-%ED%81%B0-%EC%88%98-with-python/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</loc>
     <lastmod>2022-02-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-15970-%ED%99%94%EC%82%B4%ED%91%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-15970-%ED%99%94%EC%82%B4%ED%91%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0-with-python/</loc>
     <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-19941-%ED%96%84%EB%B2%84%EA%B1%B0-%EB%B6%84%EB%B0%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-19941-%ED%96%84%EB%B2%84%EA%B1%B0-%EB%B6%84%EB%B0%B0-with-python/</loc>
     <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11048-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11048-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-13565-%EC%B9%A8%ED%88%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-13565-%EC%B9%A8%ED%88%AC-with-python/</loc>
     <lastmod>2022-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2477-%EC%B0%B8%EC%99%B8%EB%B0%AD-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2477-%EC%B0%B8%EC%99%B8%EB%B0%AD-with-python/</loc>
     <lastmod>2022-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9663-n-queen-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9663-n-queen-with-python/</loc>
     <lastmod>2022-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1759-%EC%95%94%ED%98%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1759-%EC%95%94%ED%98%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0-with-python/</loc>
     <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2422-%ED%95%9C%EC%9C%A4%EC%A0%95%EC%9D%B4-%EC%9D%B4%ED%83%88%EB%A6%AC%EC%95%84%EC%97%90-%EA%B0%80%EC%84%9C-%EC%95%84%EC%9D%B4%EC%8A%A4%ED%81%AC%EB%A6%BC%EC%9D%84-%EC%82%AC%EB%A8%B9%EB%8A%94%EB%8D%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2422-%ED%95%9C%EC%9C%A4%EC%A0%95%EC%9D%B4-%EC%9D%B4%ED%83%88%EB%A6%AC%EC%95%84%EC%97%90-%EA%B0%80%EC%84%9C-%EC%95%84%EC%9D%B4%EC%8A%A4%ED%81%AC%EB%A6%BC%EC%9D%84-%EC%82%AC%EB%A8%B9%EB%8A%94%EB%8D%B0-with-python/</loc>
     <lastmod>2022-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11655-rot13-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11655-rot13-with-python/</loc>
     <lastmod>2022-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1236-%EC%84%B1-%EC%A7%80%ED%82%A4%EA%B8%B0-with-python/</loc>
     <lastmod>2022-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14248-%EC%A0%90%ED%94%84-%EC%A0%90%ED%94%84-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14248-%EC%A0%90%ED%94%84-%EC%A0%90%ED%94%84-with-python/</loc>
     <lastmod>2022-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-6603-%EB%A1%9C%EB%98%90-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-6603-%EB%A1%9C%EB%98%90-with-python/</loc>
     <lastmod>2022-02-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%9E%AC%EA%B7%80/</loc>
@@ -452,73 +518,73 @@
     <loc>https://jxun-h.github.io/tags/%ED%83%90%EC%83%89/</loc>
     <lastmod>2022-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2535-%EC%95%84%EC%8B%9C%EC%95%84-%EC%A0%95%EB%B3%B4%EC%98%AC%EB%A6%BC%ED%94%BC%EC%95%84%EB%93%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2535-%EC%95%84%EC%8B%9C%EC%95%84-%EC%A0%95%EB%B3%B4%EC%98%AC%EB%A6%BC%ED%94%BC%EC%95%84%EB%93%9C-with-python/</loc>
     <lastmod>2022-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1940-%EC%A3%BC%EB%AA%BD-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1940-%EC%A3%BC%EB%AA%BD-with-python/</loc>
     <lastmod>2022-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/</loc>
     <lastmod>2022-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-16234-%EC%9D%B8%EA%B5%AC-%EC%9D%B4%EB%8F%99-with-python/</loc>
     <lastmod>2022-02-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14500-%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14500-%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8-with-python/</loc>
     <lastmod>2022-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-15658-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-2-with-python/</loc>
     <lastmod>2022-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1904-01%ED%83%80%EC%9D%BC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1904-01%ED%83%80%EC%9D%BC-with-python/</loc>
     <lastmod>2022-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9933-%EB%AF%BC%EA%B7%A0%EC%9D%B4%EC%9D%98-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-with-python-copy/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9933-%EB%AF%BC%EA%B7%A0%EC%9D%B4%EC%9D%98-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-with-python-copy/</loc>
     <lastmod>2022-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1058-%EC%B9%9C%EA%B5%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1058-%EC%B9%9C%EA%B5%AC-with-python/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%99%80%EC%83%AC/</loc>
     <lastmod>2022-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1021-%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1021-%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-with-python/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1026-%EB%B3%B4%EB%AC%BC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1026-%EB%B3%B4%EB%AC%BC-with-python/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%ED%81%90/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</loc>
     <lastmod>2022-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20291-%ED%8C%8C%EC%9D%BC-%EC%A0%95%EB%A6%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20291-%ED%8C%8C%EC%9D%BC-%EC%A0%95%EB%A6%AC-with-python/</loc>
     <lastmod>2022-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14502-%EC%97%B0%EA%B5%AC%EC%86%8C-with-python/</loc>
     <lastmod>2022-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</loc>
     <lastmod>2022-01-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%88%9C%EC%97%B4/</loc>
     <lastmod>2022-01-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10819-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10819-%EC%B0%A8%EC%9D%B4%EB%A5%BC-%EC%B5%9C%EB%8C%80%EB%A1%9C-with-python/</loc>
     <lastmod>2022-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11504-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A0%A4-%EB%8F%8C%EB%A6%BC%ED%8C%90-with-python/</loc>
     <lastmod>2022-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1535-%EC%95%88%EB%85%95-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1535-%EC%95%88%EB%85%95-with-python/</loc>
     <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</loc>
     <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
@@ -527,106 +593,106 @@
     <loc>https://jxun-h.github.io/tags/%EB%B0%B0%EB%82%AD-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</loc>
     <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1063-%ED%82%B9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1063-%ED%82%B9-with-python/</loc>
     <lastmod>2021-12-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-18511-%ED%81%B0-%EC%88%98-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-18511-%ED%81%B0-%EC%88%98-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0-with-python/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</loc>
     <lastmod>2021-12-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/</loc>
     <lastmod>2021-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14620-%EA%BD%83%EA%B8%B8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14620-%EA%BD%83%EA%B8%B8-with-python/</loc>
     <lastmod>2021-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1411-%EB%B9%84%EC%8A%B7%ED%95%9C-%EB%8B%A8%EC%96%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1411-%EB%B9%84%EC%8A%B7%ED%95%9C-%EB%8B%A8%EC%96%B4-with-python/</loc>
     <lastmod>2021-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</loc>
     <lastmod>2021-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2615-%EC%98%A4%EB%AA%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2615-%EC%98%A4%EB%AA%A9-with-python/</loc>
     <lastmod>2021-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/</loc>
     <lastmod>2021-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/series/programmers/</loc>
     <lastmod>2021-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/</loc>
     <lastmod>2021-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/</loc>
     <lastmod>2021-12-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/set/</loc>
     <lastmod>2021-12-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2304-%EC%B0%BD%EA%B3%A0-%EB%8B%A4%EA%B0%81%ED%98%95-with-python/</loc>
     <lastmod>2021-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/</loc>
     <lastmod>2021-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/</loc>
     <lastmod>2021-11-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/</loc>
     <lastmod>2021-11-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-14725-%EA%B0%9C%EB%AF%B8%EA%B5%B4-with-python/</loc>
     <lastmod>2021-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/</loc>
     <lastmod>2021-11-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%ED%8A%B8%EB%9D%BC%EC%9D%B4/</loc>
     <lastmod>2021-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-12100-2048easy-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-12100-2048easy-with-python/</loc>
     <lastmod>2021-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-13334-%EC%B2%A0%EB%A1%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-13334-%EC%B2%A0%EB%A1%9C-with-python/</loc>
     <lastmod>2021-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%ED%81%90/</loc>
     <lastmod>2021-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1043-%EA%B1%B0%EC%A7%93%EB%A7%90-with-python/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2343-%EA%B8%B0%ED%83%80-%EB%A0%88%EC%8A%A8-with-python/</loc>
     <lastmod>2021-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-3184-%EC%96%91-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-3184-%EC%96%91-with-python/</loc>
     <lastmod>2021-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1713-%ED%9B%84%EB%B3%B4-%EC%B6%94%EC%B2%9C%ED%95%98%EA%B8%B0-with-python/</loc>
     <lastmod>2021-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1743-%EC%9D%8C%EC%8B%9D%EB%AC%BC-%ED%94%BC%ED%95%98%EA%B8%B0-with-python/</loc>
     <lastmod>2021-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1244-%EC%8A%A4%EC%9C%84%EC%B9%98-%EC%BC%9C%EA%B3%A0-%EB%81%84%EA%B8%B0-with-python/</loc>
     <lastmod>2021-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B4%91%EA%B3%A0-%EC%82%BD%EC%9E%85-with-python/</loc>
     <lastmod>2021-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%ED%91%9C-%ED%8E%B8%EC%A7%91-with-python/</loc>
     <lastmod>2021-10-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
@@ -638,46 +704,46 @@
     <loc>https://jxun-h.github.io/tags/%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/</loc>
     <lastmod>2021-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%9C%EC%9C%84-%EA%B2%80%EC%83%89-with-python/</loc>
     <lastmod>2021-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-10775-%EA%B3%B5%ED%95%AD-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-10775-%EA%B3%B5%ED%95%AD-with-python/</loc>
     <lastmod>2021-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/</loc>
     <lastmod>2021-10-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/union-find/</loc>
     <lastmod>2021-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/prefix-sum/</loc>
     <lastmod>2021-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1799-%EB%B9%84%EC%88%8D-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1799-%EB%B9%84%EC%88%8D-with-python/</loc>
     <lastmod>2021-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/</loc>
     <lastmod>2021-10-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-13305-%EC%A3%BC%EC%9C%A0%EC%86%8C-with-python/</loc>
     <lastmod>2021-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-6987-%EC%9B%94%EB%93%9C%EC%BB%B5-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-6987-%EC%9B%94%EB%93%9C%EC%BB%B5-with-python/</loc>
     <lastmod>2021-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-16507-%EC%96%B4%EB%91%90%EC%9A%B4-%EA%B1%B4-%EB%AC%B4%EC%84%9C%EC%9B%8C-with-python/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-17521-byte-coin-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-17521-byte-coin-with-python/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EC%99%84%EC%A0%84%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/</loc>
@@ -686,51 +752,57 @@
     <loc>https://jxun-h.github.io/tags/%ED%8A%B8%EB%A6%AC/</loc>
     <lastmod>2021-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-2458-%ED%82%A4-%EC%88%9C%EC%84%9C-with-python-feat.-pypy3/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-2458-%ED%82%A4-%EC%88%9C%EC%84%9C-with-python-feat.-pypy3/</loc>
     <lastmod>2021-09-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/</loc>
     <lastmod>2021-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-4779-%EC%B9%B8%ED%86%A0%EC%96%B4-%EC%A7%91%ED%95%A9-with-python/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-5568-%EC%B9%B4%EB%93%9C-%EB%86%93%EA%B8%B0-with-python/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jxun-h.github.io/tags/%EB%B6%84%ED%95%A0%EC%A0%95%EB%B3%B5/</loc>
     <lastmod>2021-08-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-1620-%EB%82%98%EB%8A%94%EC%95%BC-%ED%8F%AC%EC%BC%93%EB%AA%AC-%EB%A7%88%EC%8A%A4%ED%84%B0-%EC%9D%B4%EB%8B%A4%EC%86%9C-with-python/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-3273-%EB%91%90-%EC%88%98%EC%9D%98-%ED%95%A9-with-python/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/programmers-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/programmers-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88-with-python/</loc>
     <lastmod>2021-08-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</loc>
+    <loc>https://jxun-h.github.io/posts/problem-solving/boj-4179-%EB%B6%88-with-python/</loc>
     <lastmod>2021-08-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jxun-h.github.io/posts/temp/boj-17103-%EA%B3%A8%EB%93%9C%EB%B0%94%ED%9D%90-%ED%8C%8C%ED%8B%B0%EC%85%98-with-python/</loc>
   </url><url>
     <loc>https://jxun-h.github.io/about/</loc>
   </url><url>
     <loc>https://jxun-h.github.io/archives/</loc>
   </url><url>
+    <loc>https://jxun-h.github.io/boards/</loc>
+  </url><url>
     <loc>https://jxun-h.github.io/resume/</loc>
   </url><url>
     <loc>https://jxun-h.github.io/search/</loc>
+  </url><url>
+    <loc>https://jxun-h.github.io/tags/%EC%86%8C%EC%88%98%ED%8C%90%EB%B3%84/</loc>
   </url>
 </urlset>

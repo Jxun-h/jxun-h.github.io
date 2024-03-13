@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 9996 한국이 그리울 땐 서버에 접속하지 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/</link>
       <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/</guid>
       <description>📌 BOJ 9996 한국이 그리울 땐 서버에 접속하지 💡 조건 선영이는 한국에 두고온 서버에 접속해서 디렉토리 안에 들어있는 파일 이름을 보면서 그리움을 잊기로 했다.
 매일 밤, 파일 이름을 보면서 파일 하나하나에 얽힌 사연을 기억하면서 한국을 생각하고 있었다.
 한국에 있는 서버가 망가졌고, 그 결과 특정 패턴과 일치하는 파일 이름을 적절히 출력하지 못하는 버그가 생겼다.
@@ -26,94 +26,94 @@
     </item>
     <item>
       <title>[BOJ] 20114 미아 노트 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</link>
       <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-20114-%EB%AF%B8%EC%95%84-%EB%85%B8%ED%8A%B8-with-python/</guid>
       <description>📌 BOJ 20114 미아 노트 💡 조건 노트에 적힌 문자열이 번진 패턴은 일정했는데, 가령 &amp;ldquo;abc&amp;rdquo; 문자가 세로로 3글자씩, 가로로 2글자씩 번진 경우는 다음과 같았다. 아쉽게도 번진 문자열의 일부는 지워진 상태였다.
 너무 많이 지워져버려서 해당 자리의 문자를 유추할 수 없는 경우, 완전히 문자열을 복원하지 못할 수도 있다. 첫째 줄에 원래 문자열의 길이 N, 세로로 번진 글자의 개수 H, 가로로 번진 글자의 개수 W가 주어진다.
 (1 ≤ N ≤ 100, 1 ≤ H ≤ 10, 1 ≤ W ≤ 10) H개의 줄에 걸쳐 N × W 길이의 문자열이 주어진다.</description>
     </item>
     <item>
       <title>[BOJ] 1343 폴리오미노 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1343-%ED%8F%B4%EB%A6%AC%EC%98%A4%EB%AF%B8%EB%85%B8-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1343-%ED%8F%B4%EB%A6%AC%EC%98%A4%EB%AF%B8%EB%85%B8-with-python/</link>
       <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1343-%ED%8F%B4%EB%A6%AC%EC%98%A4%EB%AF%B8%EB%85%B8-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1343-%ED%8F%B4%EB%A6%AC%EC%98%A4%EB%AF%B8%EB%85%B8-with-python/</guid>
       <description>📌 BOJ 1343 폴리오미노 💡 조건 AAAA와 BB 폴리오미노 2개를 무한개만큼 가지고 있다. &amp;lsquo;.&amp;lsquo;와 &amp;lsquo;X&amp;rsquo;로 이루어진 보드판이 주어졌을 때, 민식이는 겹침없이 &amp;lsquo;X&amp;rsquo;를 모두 폴리오미노로 덮으려고 한다.
 &amp;lsquo;.&amp;lsquo;는 폴리오미노로 덮으면 안 된다. 폴리오미노로 모두 덮은 보드판을 출력하는 문제 보드판의 크기는 최대 50이다. 문자열 유형의 문제 🔖 예제 및 실행결과 예제 XXXXXX 실행결과 AAAABB ⌨️ 문제 풀이 AAAA 네개가 들어갈 수 있다면 먼저 XXXX를 AAAA로 변경해준다. 그 후 XX를 BB로 변경해준다. 변경 후에도 X가 남아있다면 -1 출력</description>
     </item>
     <item>
       <title>[BOJ] 11899 괄호 끼워넣기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 11899 괄호 끼워넣기 💡 조건 올바르지 않은 괄호열이 주어질 때, 올바른 괄호열으로 만들기 위해 앞과 뒤에 붙여야 할 괄호의 최소 개수를 구하는 문제. S의 길이는 1 이상 50 이하이며 불가능한 경우는 주어지지 않는다. 괄호열이란 여는 괄호 ‘(’와 닫는 괄호 ‘)’로만 구성된 문자열을 말합니다. 올바른 괄호열은 아래와 같이 정의할 수 있다. &amp;ldquo;()&amp;ldquo;는 올바른 괄호열입니다. A가 올바른 괄호열이라면 &amp;ldquo;(A)&amp;rdquo; 역시 올바른 괄호열입니다. A와 B가 모두 올바른 괄호열이라면 &amp;ldquo;AB&amp;rdquo; 역시 올바른 괄호열입니다.</description>
     </item>
     <item>
       <title>[BOJ] 5698 Tautogram with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-5698-tautogram-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-5698-tautogram-with-python/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-5698-tautogram-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-5698-tautogram-with-python/</guid>
       <description>📌 BOJ 5698 Tautogram 💡 조건 Tautogram은 매우 특별한 형태의 두운법으로, 인접한 단어가 같은 글자로 시작하는 것을 말한다. 문장이 Tautogram이 되려면, 모든 단어가 같은 글자로 시작해야 한다. 선영이의 편지에 있는 문장이 주어졌을 때, Tautogram인지 아닌지 알아내는 프로그램을 작성하시오. 문장은 최대 50개의 단어로 이루어져 있으며, 공백으로 구분되어져 있다. 단어는 알파벳 대문자와 소문자로 이루어져 있고, 길이는 최대 20이다. 마지막 테스트 케이스의 다음 줄에는 &amp;lsquo;*&amp;lsquo;이 하나 주어진다.
 입력으로 주어진 문장이 Tautogram이라면 &amp;lsquo;Y&amp;rsquo;를, 아니라면 &amp;lsquo;N&amp;rsquo;을 출력한다.</description>
     </item>
     <item>
       <title>[BOJ] 1855 암호 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1855-%EC%95%94%ED%98%B8-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1855-%EC%95%94%ED%98%B8-with-python/</link>
       <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1855-%EC%95%94%ED%98%B8-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1855-%EC%95%94%ED%98%B8-with-python/</guid>
       <description>📌 BOJ 1855 암호 💡 조건 먼저 암호화 할 문자열을 1,1부터 위에서 아래 순서대로 채운다. 그리고 가장 밑의 행을 채운 후에는 오른쪽 열에서 다시 같은 과정을 반복한다. 암호화 된 문자열과 몇 개의 열로 암호화를 하였는지 주어져 있을 때 원래의 문자열을 구하는 프로그램을 작성하는 문제. 열의 개수 K(1 ≤ K ≤ 20)가 주어진다.
 두 번째 줄에는 암호화 된 문자열(모두 영소문자)이 주어진다. (문자열의 길이는 200 이하이며 K의 배수이다.) 구현, 문자열 유형의 문제 🔖 예제 및 실행결과 예제 3 aeijfbcgklhd 실행결과 abcdefghijkl ⌨️ 문제 풀이 열의 개수와 문자열을 입력받고, 열의 개수에 맞게 문자열을 쪼개서 arr 리스트에 저장한다.</description>
     </item>
     <item>
       <title>[BOJ] 2697 다음수 구하기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-2697-%EB%8B%A4%EC%9D%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2697-%EB%8B%A4%EC%9D%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-with-python/</link>
       <pubDate>Tue, 01 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-2697-%EB%8B%A4%EC%9D%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2697-%EB%8B%A4%EC%9D%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 2697 다음수 구하기 💡 조건 A의 다음수는 A와 구성이 같으면서, A보다 큰 수 중에서 가장 작은 수. A와 B의 구성이 같다는 말은 A를 이루고 있는 각 자리수의 등장 횟수가, B를 이루는 각 자리수의 등장 횟수와 같을 때. 첫째 줄에 테스트 케이스의 개수 T(1&amp;lt;=T&amp;lt;=1,000)가 주어진다.
 둘째 줄부터 T개 줄에는 각 테스트 케이스가 주어진다. 테스트 케이스는 한 줄로 이루어져 있으며, 수 A이다. A는 최대 80자리 자연수이다. 어떤 수 A가 주어졌을 때, A의 다음수를 구하는 프로그램을 작성하는 문제.</description>
     </item>
     <item>
       <title>[BOJ] 14425 문자열 집합 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</link>
       <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14425-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%A7%91%ED%95%A9-with-python/</guid>
       <description>📌 BOJ 14425 문자열 집합 💡 조건 N개의 문자열로 이루어진 집합 S 입력으로 주어지는 M개의 문자열 중에서 집합 S에 포함되어 있는 것이 총 몇 개인지 구하는 문제 N과 M (1 ≤ N ≤ 10,000, 1 ≤ M ≤ 10,000) 어지는 문자열은 알파벳 소문자로만 이루어져 있으며, 길이는 500을 넘지 않는다. 집합 S에 같은 문자열이 여러 번 주어지는 경우는 없다. 문자열, 자료구조 유형의 문제 🔖 예제 및 실행결과 예제 5 11 baekjoononlinejudge startlink codeplus sundaycoding codingsh baekjoon codeplus codeminus startlink starlink sundaycoding codingsh codinghs sondaycoding startrink icerink 실행결과 4 ⌨️ 문제 풀이 n개의 문자열을 dictionary 자료형 변수에 넣는다 m 개의 문자열을 입력 받으면서 만약 입력 받은 문자열이 만들어둔 dictionary 변수에 있다면</description>
     </item>
     <item>
       <title>[BOJ] 15722 빙글빙글 스네일 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</link>
       <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-15722-%EB%B9%99%EA%B8%80%EB%B9%99%EA%B8%80-%EC%8A%A4%EB%84%A4%EC%9D%BC-with-python/</guid>
       <description>📌 BOJ 15722 빙글빙글 스네일 💡 조건 달팽이는 원점에서 시작하여 1초에 한 칸 씩, 시계방향으로 아래 그림과 같이 움직인다. 1초일 때 달팽이의 위치는 (0, 1)이다. 몇 초가 지났는지가 입력으로 주어질 때, 현재 달팽이의 위치를 좌표로 출력하는 문제 달팽이가 움직인 시간이 n초로 주어진다. (0 ≤ n ≤ 1000, n은 0이상의 정수) 구현, 시뮬레이션 유형의 문제 🔖 예제 및 실행결과 예제 9 실행결과 -1 2 ⌨️ 문제 풀이 달팽이의 첫 위치를 [0, 0]으로 지정한다.</description>
     </item>
     <item>
       <title>[BOJ] 11655 ROT13 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-11655-rot13-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-11655-rot13-with-python/</link>
       <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-11655-rot13-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-11655-rot13-with-python/</guid>
       <description>📌 BOJ 11655 ROT13 💡 조건 ROT13은 카이사르 암호의 일종으로 영어 알파벳을 13글자씩 밀어서 만든다.
 &amp;ldquo;Baekjoon Online Judge&amp;quot;를 ROT13으로 암호화하면 &amp;ldquo;Onrxwbba Bayvar Whqtr&amp;quot;가 된다.
 ROT13으로 암호화한 내용을 원래 내용으로 바꾸려면 암호화한 문자열을 다시 ROT13하면 된다. S를 ROT13으로 암호화한 내용을 출력하는 문제 구현, 문자열유형의 문제 🔖 예제 및 실행결과 예제 Baekjoon Online Judge 실행결과 Onrxwbba Bayvar Whqtr ⌨️ 문제 풀이 각 문자열을 순회하면서 아스키코드에 해당하는 숫자를 대문자일 경우와 소문자일 경우를 나눠 처리를 하고</description>
     </item>
     <item>
       <title>[BOJ] 9933 민균이의 비밀번호 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-9933-%EB%AF%BC%EA%B7%A0%EC%9D%B4%EC%9D%98-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-with-python-copy/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-9933-%EB%AF%BC%EA%B7%A0%EC%9D%B4%EC%9D%98-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-with-python-copy/</link>
       <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-9933-%EB%AF%BC%EA%B7%A0%EC%9D%B4%EC%9D%98-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-with-python-copy/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-9933-%EB%AF%BC%EA%B7%A0%EC%9D%B4%EC%9D%98-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-with-python-copy/</guid>
       <description>📌 BOJ 9933 민균이의 비밀번호 💡 조건 민균이의 비밀번호가 &amp;ldquo;tulipan&amp;quot;인 경우에 목록에는 &amp;ldquo;napilut&amp;quot;도 존재해야 한다. 민균이의 파일에 적혀있는 단어가 모두 주어졌을 때, 비밀번호의 길이와 가운데 글자를 출력하는 프로그램을 작성하라. 단어의 수 N (2 ≤ N ≤ 100)이 주어진다. 단어는 알파벳 소문자로만 이루어져 있으며, 길이는 2보다 크고 14보다 작은 홀수이다. 구현, 문자열 유형의 문제 🔖 예제 및 실행결과 예제 4 las god psala sal 실행결과 3 a ⌨️ 문제 풀이 data 리스트에 입력되는 n개의 비밀번호를 저장한다.</description>
     </item>
     <item>
       <title>[BOJ] 1515 수 이어 쓰기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</link>
       <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1515-%EC%88%98-%EC%9D%B4%EC%96%B4-%EC%93%B0%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1515 수 이어 쓰기 💡 조건 1부터 N까지 모든 수를 차례대로 공백없이 한 줄에 다 썼다. 다솜이가 숫자의 일부를 지웠고, 지워지기 전의 숫자를 다시 쓰려고 하니 N이 기억나지 않는다. 남은 수를 이어 붙인 수가 주어질 경우, N의 최솟값을 구하는 문제. 일부 숫자를 지우고 남은 수를 이어붙인 수가 주어지며, 이 수는 최대 3000자리. 구현, 문자열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 00000000000000000000000000000000000000000000000000000000000000000000000 실행결과 400 ⌨️ 문제 풀이 1부터 수를 늘려가면서 완전탐색을 실행하면 된다.</description>
     </item>
     <item>
       <title>[Programmers] 문자열 압축 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</link>
       <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/</guid>
       <description>📌 Programmers - 문자열 압축 💡 조건 및 풀이 입력 받는 의 길이는 1 &amp;lt;= s &amp;lt;= 1000, 소문자로만 이루어져 있다. 문자열을 1개 단위로 자르는 것부터 s의 길이 만큼 자르는 것까지 계산 완전탐색, 구현 문제 문자열을 자르고 숫자를 붙이는 것에서 쓸데 없는 문자가 들어가지 않도록 주의 🔖 예제 및 실행결과 예제 print(solution(&amp;#34;aabbaccc&amp;#34;)) print(solution(&amp;#34;ababcdcdababcdcd&amp;#34;)) print(solution(&amp;#34;abcabcdede&amp;#34;)) print(solution(&amp;#34;abcabcabcabcdededededede&amp;#34;)) print(solution(&amp;#34;xababcdcdababcdcd&amp;#34;)) 실행결과 7 9 8 14 17 ⌨️ 문제 풀이 answer의 값을 s의 길이로 초기화.</description>
     </item>
   </channel>

@@ -15,54 +15,54 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 18291 비요뜨의 징검다리 건너기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</link>
       <pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-18291-%EB%B9%84%EC%9A%94%EB%9C%A8%EC%9D%98-%EC%A7%95%EA%B2%80%EB%8B%A4%EB%A6%AC-%EA%B1%B4%EB%84%88%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 18291 비요뜨의 징검다리 건너기 💡 조건 징검다리는 비요뜨가 있는 방향에서부터 반대 방향까지 차례로 1번, 2번, &amp;hellip;, N번의 번호를 가지고 있다.
 비요뜨는 1번 징검다리 위에 올라갔다. 그리고 아래 두 가지 규칙을 지키며 징검다리를 건너려고 한다.
 1 ≤ X ≤ N 인 임의의 정수 X에 대해, 현재 있는 징검다리의 번호를 i번이라고 할 때 i+X번 징검다리로 뛸 수 있다. N번째 징검다리를 지나쳐선 안 되고, 정확히 도착해야 한다 첫 번째 줄에 테스트 케이스의 수 T가 주어진다.</description>
     </item>
     <item>
       <title>[BOJ] 18004 From A to B with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-18004-from-a-to-b-with-python/</link>
       <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-18004-from-a-to-b-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-18004-from-a-to-b-with-python/</guid>
       <description>📌 BOJ 18004 From A to B 💡 조건 두 개의 정수인 a와 b가 입력된다. 일련의 작업을 수행하여 a를 b로 만들려고 한다. 다음의 두가지 작업만 할 수 있다. 짝수인 경우에만 2로 나누기. 1 더하기 (1 ≤ a , b ≤ 10 9 ) a 를 b 로 변환하는 데 필요한 주어진 연산의 최소 횟수를 출력하는 문제 수학, 그리디 알고리즘, BFS 유형의 문제 🔖 예제 및 실행결과 예제 103 27 실행결과 4 ⌨️ 문제 풀이 a 와 b 정수를 입력받고, a 를 b로 만드는 문제이다.</description>
     </item>
     <item>
       <title>[BOJ] 1951 활자 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1951-%ED%99%9C%EC%9E%90-with-python/</link>
       <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1951-%ED%99%9C%EC%9E%90-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1951-%ED%99%9C%EC%9E%90-with-python/</guid>
       <description>📌 BOJ 1951 활자 💡 조건 N(1 ≤ N ≤ 2,000,000,000) 가나다라는 글씨를 쓰기 위해서는 3개의 활자가 필요하다.
 N이하의 자연수를 활자로 표현하기 위해서는 몇 개의 활자가 필요한지 구하는 문제 10이하의 자연수를 활자로 표현하려면 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0 이렇게 11개의 활자가 필요하다. 첫째 줄에 필요한 활자의 수를 1234567로 나눈 나머지를 출력. 수학 유형의 문제 🔖 예제 및 실행결과 예제 10 실행결과 11 ⌨️ 문제 풀이 일단 먼저, N의 크기를 확인해보자.</description>
     </item>
     <item>
       <title>[BOJ] 12970 AB with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-12970-ab-with-python/</link>
       <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-12970-ab-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-12970-ab-with-python/</guid>
       <description>📌 BOJ 12970 AB 💡 조건 문자열의 길이 n 0 ≤ i &amp;lt; j &amp;lt; N 이면서 s[i] == &amp;lsquo;A&amp;rsquo; &amp;amp;&amp;amp; s[j] == &amp;lsquo;B&amp;rsquo;를 만족하는 (i, j) 쌍의 개수 K 개가 있다. N과 K가 주어진다. (2 ≤ N ≤ 50, 0 ≤ K ≤ N(N-1)/2) 문제의 조건을 만족하는 문자열 S를 출력한다. 가능한 S가 여러 가지라면, 아무거나 출력한다. S가 존재하지 않는 경우에는 -1을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 3 2 실행결과 ABB ⌨️ 문제 풀이 문자열 s는 B로 n만큼 채워서 초기화한다.</description>
     </item>
     <item>
       <title>[BOJ] 10166 관중석 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-10166-%EA%B4%80%EC%A4%91%EC%84%9D-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-10166-%EA%B4%80%EC%A4%91%EC%84%9D-with-python/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-10166-%EA%B4%80%EC%A4%91%EC%84%9D-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-10166-%EA%B4%80%EC%A4%91%EC%84%9D-with-python/</guid>
       <description>📌 BOJ 10166 관중석 💡 조건 반지름이 1인 원 위에는 좌석이 1개, 반지름이 2인 원 위에는 좌석이 2개, 이런 식으로 반지름이 D 인 원 위에는 좌석이 D 개가 있다. 무대에서 정확히 북쪽 방향에는 모든 원들에 좌석이 있으며, 하나의 원 위에 있는 좌석들은 동일한 간격을 두고 배치되어 있다. 공연에 반지름이 D1보다 같거나 크고, D2(D1 ≤ D2)보다 같거나 작은 원들에 배치된 좌석만을 활용하려고 한다. 좌석을 점으로 간주했을 때, 다른 좌석에 의해 무대 중심이 가려지는 좌석은 사용하지 않고, 그렇지 않은 좌석은 모두 사용한다.</description>
     </item>
     <item>
       <title>[BOJ] 15965 K번째 소수 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-15965-k%EB%B2%88%EC%A7%B8-%EC%86%8C%EC%88%98-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-15965-k%EB%B2%88%EC%A7%B8-%EC%86%8C%EC%88%98-with-python/</link>
       <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-15965-k%EB%B2%88%EC%A7%B8-%EC%86%8C%EC%88%98-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-15965-k%EB%B2%88%EC%A7%B8-%EC%86%8C%EC%88%98-with-python/</guid>
       <description>📌 BOJ 15965 K번째 소수 💡 조건 서브태스크가 존재한다. 2 이상의 자연수 N이 1과 N을 제외하고 어떤 자연수로도 나누어 떨어지지 않을 때 소수라고 한다. 자연수 K가 주어진다.(1 ≤ K ≤ 500,000) k번째 소수를 구하는 문제 수학, 에라토스테네스의 체 유형의 문제 🔖 예제 및 실행결과 예제 3 실행결과 5 ⌨️ 문제 풀이 에라토스테네스의 체를 사용하여 풀이를 하면 됩니다. i 가 소수일 때, i의 배수는 소수가 아니다 라는 아이디어에서 시작을 합니다. i가 소수로 판별이 되었다면, 10^7 까지 검사를 하면서 i의 배수는 모두 array 배열에서 0으로 체크합니다.</description>
     </item>
     <item>
       <title>[BOJ] 2628 종이 자르기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</link>
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2628-%EC%A2%85%EC%9D%B4-%EC%9E%90%EB%A5%B4%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 2628 종이 자르기 💡 조건 종이의 가로와 세로의 길이가 차례로 자연수로 주어진다. 가로와 세로의 길이는 최대 100㎝이다. 칼로 잘라야하는 점선의 개수가 주어진다.
 셋째 줄부터 마지막 줄까지 한 줄에 점선이 하나씩 아래와 같은 방법으로 입력된다.
 가로로 자르는 점선은 0과 점선 번호가 차례로 주어지고, 세로로 자르는 점선은 1과 점선 번호가 주어진다. 점선을 따라 이 종이를 칼로 자르려고 한다.
@@ -70,26 +70,26 @@ N이하의 자연수를 활자로 표현하기 위해서는 몇 개의 활자가
     </item>
     <item>
       <title>[BOJ] 2168 터널 위의 대각선 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</link>
       <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2168-%ED%84%B0%EB%84%90-%EC%9C%84%EC%9D%98-%EB%8C%80%EA%B0%81%EC%84%A0-with-python/</guid>
       <description>📌 BOJ 2168 터널 위의 대각선 💡 조건 한 변의 길이가 1cm인 정사각형 모양의 타일이 있다.
 이 타일들을 가로가 xcm, 세로가 ycm인 직사각형 모양의 벽에 빈틈없이 붙였다. x와 y는 정수이다. 직사각형에 붙어 있는 x*y개의 타일 중에는 대각선이 그려진 타일도 있고, 그렇지 않은 타일도 있다. x*y개의 타일 중에서 대각선이 그려져 있는 타일의 개수를 구하는 문제. x와 y는 1,000,000,000 이하의 자연수 수학, 정수론, 유클리드 호제법유형의 문제 🔖 예제 및 실행결과 예제 8 12 실행결과 16 ⌨️ 문제 풀이 유클리드 호제법과 관련된 문제입니다.</description>
     </item>
     <item>
       <title>[BOJ] 1292 쉽게 푸는 문제 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/</link>
       <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1292-%EC%89%BD%EA%B2%8C-%ED%91%B8%EB%8A%94-%EB%AC%B8%EC%A0%9C-with-python/</guid>
       <description>📌 BOJ 1292 쉽게 푸는 문제 💡 조건 1을 한 번, 2를 두 번, 3을 세 번, 이런 식으로 1 2 2 3 3 3 4 4 4 4 5 .. 이러한 수열을 만들고
 어느 일정한 구간을 주면 그 구간의 합을 구하는 문제 정수 A, B(1 ≤ A ≤ B ≤ 1,000)가 주어진다.
 수열에서 A번째 숫자부터 B번째 숫자까지 합을 구하면 된다. 다이나믹 프로그래밍, 수학, 구현유형의 문제 🔖 예제 및 실행결과 예제 3 7 실행결과 15 ⌨️ 문제 풀이 리스트에 구간합에 대해 값을 저장하여 arr[m] - arr[n-1]을 하여 출력하면 된다.</description>
     </item>
     <item>
       <title>[BOJ] 1094 막대기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</link>
       <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1094-%EB%A7%89%EB%8C%80%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 1094 막대기 💡 조건 64cm인 막대를 가지고 있다.
 지민이는 원래 가지고 있던 막대를 더 작은 막대로 자른다음에, 풀로 붙여서 길이가 Xcm인 막대를 만들려고 한다. 아래는 막대를 자르는 방법이다. 지민이가 가지고 있는 막대의 길이를 모두 더한다.
 처음에는 64cm 막대 하나만 가지고 있다. 이때, 합이 X보다 크다면, 아래와 같은 과정을 반복한다.
@@ -98,16 +98,16 @@ N이하의 자연수를 활자로 표현하기 위해서는 몇 개의 활자가
     </item>
     <item>
       <title>[BOJ] 14916 거스름돈 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</link>
       <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14916-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-with-python/</guid>
       <description>📌 BOJ 14916 거스름돈 💡 조건 동전의 개수가 최소가 되도록 거슬러 주어야 한다. 거스름돈 액수 n(1 ≤ n ≤ 100,000) DP, 수학 유형의 문제 🔖 예제 및 실행결과 예제 13 실행결과 5 ⌨️ 문제 풀이 5원 동전이 몇 개 일때 최소인지 구하면 된다. int(1e9)로 결과값을 초기하화 해두고, n // 5 개부터 한개씩 5원짜리를 줄여가며 최소 갯수를 구한다. 5원 개수에 해당하는 금액만큼 n에서 뺀 후, 2 로 나누어 떨어지지 않을 경우 continue 5월 개수에 해당하는 금액만큼 n에서 뺀 나머지 금액이 2로 나누어 떨어지면 res 갱신 🖥 소스 코드 from sys import stdin n = int(stdin.</description>
     </item>
     <item>
       <title>[BOJ] 13900 순서쌍의 곱의 합 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/</link>
       <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-13900-%EC%88%9C%EC%84%9C%EC%8C%8D%EC%9D%98-%EA%B3%B1%EC%9D%98-%ED%95%A9-with-python/</guid>
       <description>📌 BOJ 13900 순서쌍의 곱의 합 💡 조건 N개의 정수 중 서로 다른 위치의 두 수를 뽑는 모든 경우의 두 수의 곱을 구하라. (2 ≤ N ≤ 100,000)
 N개의 정수는 (0 &amp;lt;= x &amp;lt;= 100000) 수학 유형의 문제 🔖 예제 및 실행결과 예제 3 2 3 4 실행결과 26 ⌨️ 문제 풀이 숫자의 개수 N을 입력 받고, N개의 정수를 입력받아 list 에 저장한다.
 결과를 출력할 r 이라는 변수를 생성하고, N개의 정수를 입력받아 저장한 list를 sum() 함수를 사용해</description>

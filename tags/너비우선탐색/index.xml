@@ -15,27 +15,27 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 6118 숨바꼭질 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-6118-%EC%88%A8%EB%B0%94%EA%BC%AD%EC%A7%88-with-python/</guid>
       <description>📌 BOJ 6118 숨바꼭질 💡 조건 헛간의 개수 (2 &amp;lt;= N &amp;lt;= 20,000), 1부터 세아린다. 모든 헛간은 (1&amp;lt;= M &amp;lt;= 50,000)개의 양방향 길로 이어져 있다. 냄새는 1번 헛간에서의 거리가 멀어질수록 감소한다.
 거리 = 지나야 하는 길의 최소 개수. 숨어야 하는 가장 거리가 먼 헛간 번호, 가장 거리가 먼 헛간까지의 거리, 가장 거리가 먼 헛간과 같은 거리를 가지는 헛간의 수
 를 차례대로 출력하며, 가장 거리가 먼 헛간 번호가 여러개라면 가장 작은 수를 출력한다.</description>
     </item>
     <item>
       <title>[BOJ] 3184 양 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-3184-%EC%96%91-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-3184-%EC%96%91-with-python/</link>
       <pubDate>Tue, 19 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-3184-%EC%96%91-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-3184-%EC%96%91-with-python/</guid>
       <description>📌 BOJ 3184 양 💡 조건 R과 C가 주어지며(3 ≤ R, C ≤ 250), 각 수는 마당의 행과 열의 수를 의미한다.
 R개의 줄은 C개의 글자를 가진다. 이들은 마당의 구조(울타리, 양, 늑대의 위치)를 의미한다. 글자 &#39;.&#39; (점)은 빈 필드를 의미하며, 글자 &#39;#&#39;는 울타리를, &#39;o&#39;는 양, &#39;v&#39;는 늑대를 의미한다. 한 칸에서 수평, 수직만으로 이동할수 있다.
 영역 안의 양의 수가 늑대의 수보다 많다면 이기고, 늑대가 많으면 양은 사라진다. 넓이 우선 탐색(BFS) 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 6 6 .</description>
     </item>
     <item>
       <title>[BOJ] 1967 트리의 지름 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/</link>
       <pubDate>Mon, 11 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1967-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%A7%80%EB%A6%84-with-python/</guid>
       <description>📌 BOJ 1967 트리의 지름 💡 조건 및 풀이 노드의 개수 (1 ≤ n ≤ 10,000) 첫 번째 정수는 간선이 연결하는 두 노드 중 부모 노드의 번호
 두 번째 정수는 자식 노드
 세 번째 정수는 간선의 가중치 부모 노드의 번호가 작은 것이 먼저 입력되고,
@@ -44,23 +44,23 @@ R개의 줄은 C개의 글자를 가진다. 이들은 마당의 구조(울타리
     </item>
     <item>
       <title>[BOJ] 18352 특정 거리의 도시 찾기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-18352-%ED%8A%B9%EC%A0%95-%EA%B1%B0%EB%A6%AC%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%B0%BE%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 18352 특정 거리의 도시 찾기 💡 조건 및 풀이 1번부터 N번까지의 도시와 M개의 단방향 도로가 존재. 모든 도로의 거리는 1. 특정한 도시 X로부터 출발하여 도달할 수 있는 모든 도시 중에서, 최단 거리가 정확히 K인 모든 도시들의 번호를 출력. BFS 유형의 문제 도달할 수 있는 도시 중에서, 최단 거리가 K인 도시가 하나도 존재하지 않으면 -1을 출력 🔖 예제 및 실행결과 예제 4 4 2 1 1 2 1 3 2 3 2 4 실행결과 4 ⌨️ 문제 풀이 모든 도시가 1부터 시작하기 때문에 graph 리스트의 길이를 n + 1로 한다.</description>
     </item>
     <item>
       <title>[Programmers] 거리두기 확인하기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/</guid>
       <description>📌 Programmers - 거리두기 확인하기 💡 조건 및 풀이 대기실에 응시자들이 면접을 위해 대기를 하고 있다. 대기실에 있는 대기자들이 거리 두기를 잘 지키고 있을까? 대기실은 5개, 각 대기실은 5 * 5의 크기입니다. 응시자들 간의 거리는 맨해튼 거리는 2 이하로 앉을 수 없으니 3 이상이어야한다. 맨해튼 거리가 2이하여도 응시자 사이에 파티션으로 막혀 있으며 지나갈 다른 방법으로 응시자로의 경로가 없다면 상관이 없다. BFS 유형의 문제 두 테이블 T1, T2가 행렬 (r1, c1), (r2, c2)에 각각 위치하고 있다면,</description>
     </item>
     <item>
       <title>[BOJ] 4179 불! with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-4179-%EB%B6%88-with-python/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-4179-%EB%B6%88-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-4179-%EB%B6%88-with-python/</guid>
       <description>📌 BOJ 4179 불! 💡 조건 및 풀이 R * C 크기의 배열을 입력받아 지훈이가 미로에서 탈출 할 수 있는지 구하는 문제. R * C 크기의 배열은 최대 1000 * 1000 BFS 유형의 문제 미로의 벽에 붙어있으면 탈출이 가능하다. 불을 먼저 지른 후, 지훈이의 이동 가능 경로를 살핀다. 방문처리를 통해 한 번 갔던 곳은 다시 가지 않는다. 🔖 예제 및 실행결과 예제 4 4 #### #JF# #..# #..# 실행결과 3 ⌨️ 문제 풀이 과정방문처리용 리스트를 만들어 사용하니 시간초과와 메모리 초과가 떴다.</description>
     </item>
   </channel>

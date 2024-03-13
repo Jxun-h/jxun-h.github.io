@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%ED%83%90%EC%83%89/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 14248 점프 점프 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-14248-%EC%A0%90%ED%94%84-%EC%A0%90%ED%94%84-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14248-%EC%A0%90%ED%94%84-%EC%A0%90%ED%94%84-with-python/</link>
       <pubDate>Thu, 10 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-14248-%EC%A0%90%ED%94%84-%EC%A0%90%ED%94%84-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14248-%EC%A0%90%ED%94%84-%EC%A0%90%ED%94%84-with-python/</guid>
       <description>📌 BOJ 14248 점프 점프 💡 조건 돌다리의 돌 개수 n이 주어진다.(1≤n≤100,000) 그 위치에서 점프할 수 있는 거리 Ai (1≤Ai≤100,000) 현재위치에서 다른 돌을 적절히 밟아 해당하는 위치로 이동이 가능하다고 할 때, 영우가 방문 가능한 돌들의 개수를 구하는 문제. 탐색 알고리즘유형의 문제 🔖 예제 및 실행결과 예제 5 1 4 2 2 1 3 실행결과 5 ⌨️ 문제 풀이 입력으로 받은 점프할 수 있는 거리를 그래프에 넣어준다.
 인덱스 에러를 방지하기 위해 arr 리스트의 크기는 n + 1로 해준다.</description>
     </item>

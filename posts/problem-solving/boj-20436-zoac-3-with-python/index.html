@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 20436 ZOAC 3 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 구현, 시뮬레이션, 백준, BOJ">
+<meta name="description" content="📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.
+성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,
+a에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|&#43;|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 20436 ZOAC 3 with Python" />
+<meta property="og:description" content="📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.
+성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,
+a에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|&#43;|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-05-17T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/temp/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 20436 ZOAC 3 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.
+성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,
+a에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|&#43;|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 20436 ZOAC 3 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 20436 ZOAC 3 with Python",
+  "name": "[BOJ] 20436 ZOAC 3 with Python",
+  "description": "📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.\n성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,\na에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|+|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다.",
+  "keywords": [
+    "자료구조", "PS", "구현", "시뮬레이션", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 20436 ZOAC 3 💡 조건 독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.\n성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다. a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,\na에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|+|y1-y2| 만큼의 시간이 걸린다. 각 키를 누르는 데에는 1의 시간이 걸린다. 성우는 두 손을 동시에 움직일 수 없다.\n성우가 사용하는 키보드는 쿼티식 키보드이며, 아래 그림처럼 생겼다. 첫 번째 줄에는 두 알파벳 소문자 sL, sR이 주어진다. sL, sR은 각각 왼손 검지손가락, 오른손 검지손가락의 처음 위치이다.\n그 다음 줄에는 알파벳 소문자로 구성된 문자열이 주어진다. 문자열의 길이는 최대 100자이다. 빈 문자열은 주어지지 않는다.\n입력으로 주어진 문자열을 출력하는 데에 걸리는 시간의 최솟값을 출력한다. 구현, 시뮬레이션 유형의 문제 성우가 두 손을 동시에 움직이지 못하는 이유는 다음과 같다. 사람은 두 가지 이상의 일을 동시에 할 수 없다. 대학원생은 사람이다. 성우는 대학원생이다. 🔖 예제 및 실행결과 예제 z o zoac 실행결과 8 ⌨️ 문제 풀이 문제에 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다.\n라는 문구가 있다. 이는 자음과 모음을 따로 구분하여 구현을 하는 것이 좋을 것이라는 힌트를 얻을 수 있다. 키보드가 생긴 모양을 따라 keyboard 리스트를 생성하고, 모음을 따로 분리하여 모음 리스트를 생성한다면, 아래와 같이 만들 수 있다. keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] mo = 'yuiophjklbnm' 첫번째 줄에 주어진 손이 위치한 알파벳을 입력받아, 손 위치의 좌표를 저장한다. 각 문자마다 누르는 시간은 1만큼 소요되기 때문에, 입력하려고 하는 문자열을 순회하면서 ans + 1을 해준다. 입력하려는 문자 s 가 모음 리스트에 있을 때, 오른손에 해당하는 좌표로부터 누르려는 키까지의 거리를 계산하여 ans에 더해준다. 입력하려는 문자 s 가 모음 리스트에 없을 때, 왼손에 해당하는 좌표로부터 누르려는 키까지의 거리를 계산하여 ans에 더해준다. 🖥 소스 코드 from sys import stdin l, r = map(str, stdin.readline().rstrip().split()) string = stdin.readline().rstrip() keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] mo = 'yuiophjklbnm' xl, yl, xr, yr = None, None, None, None for i in range(len(keyboard)): if l in keyboard[i]: xl, yl = i, keyboard[i].index(l) if r in keyboard[i]: xr, yr = i, keyboard[i].index(r) ans = 0 for s in string: ans += 1 if s in mo: for i in range(len(keyboard)): if s in keyboard[i]: nx = i ny = keyboard[i].index(s) ans += abs(xr - nx) + abs(yr - ny) xr, yr = nx, ny break else: for i in range(len(keyboard)): if s in keyboard[i]: nx = i ny = keyboard[i].index(s) ans += abs(xl - nx) + abs(yl - ny) xl, yl = nx, ny break print(ans) ",
+  "wordCount" : "405",
+  "inLanguage": "en",
+  "datePublished": "2022-05-17T00:00:00Z",
+  "dateModified": "2022-05-17T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/boj-20436-zoac-3-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 20436 ZOAC 3 with Python
+    </h1>
+    <div class="post-meta"><span title='2022-05-17 00:00:00 +0000 UTC'>May 17, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[BOJ]%2020436%20ZOAC%203%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem20436-target_blankboj-20436-zoac-3a">📌 <a href="https://www.acmicpc.net/problem/20436" target="_blank">BOJ 20436 ZOAC 3</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem20436-target_blankboj-20436-zoac-3a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>독수리 타법이란 양 손의 검지손가락만을 이용해 타자를 치는 타법이다.<br>
+성우는 한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다.</li>
+<li>a의 좌표가 (x1, y1)이고, b의 좌표가 (x2, y2)일 때,<br>
+a에 위치한 성우의 손가락이 b로 이동하는 데에는 a와 b의 택시 거리 |x1-x2|+|y1-y2| 만큼의 시간이 걸린다.</li>
+<li>각 키를 누르는 데에는 1의 시간이 걸린다.</li>
+<li>성우는 두 손을 동시에 움직일 수 없다.<br>
+성우가 사용하는 키보드는 쿼티식 키보드이며, 아래 그림처럼 생겼다.</li>
+</ol>
+<br>
+<center><img src='/20436.png'/></center>
+<br>
+<ol start="5">
+<li>첫 번째 줄에는 두 알파벳 소문자 sL, sR이 주어진다. sL, sR은 각각 왼손 검지손가락, 오른손 검지손가락의 처음 위치이다.<br>
+그 다음 줄에는 알파벳 소문자로 구성된 문자열이 주어진다. 문자열의 길이는 최대 100자이다. 빈 문자열은 주어지지 않는다.<br>
+입력으로 주어진 문자열을 출력하는 데에 걸리는 시간의 최솟값을 출력한다.</li>
+<li><strong>구현, 시뮬레이션</strong> 유형의 문제</li>
+<li>성우가 두 손을 동시에 움직이지 못하는 이유는 다음과 같다.
+<ol>
+<li>사람은 두 가지 이상의 일을 동시에 할 수 없다.</li>
+<li>대학원생은 사람이다.</li>
+<li>성우는 대학원생이다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="n">z</span> <span class="n">o</span>
+</span></span><span class="line"><span class="cl"><span class="n">zoac</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">8</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>문제에 <strong>한글 자음 쪽 자판은 왼손 검지손가락으로 입력하고, 한글 모음 쪽 자판은 오른손 검지손가락으로 입력한다.</strong><br>
+라는 문구가 있다. 이는 자음과 모음을 따로 구분하여 구현을 하는 것이 좋을 것이라는 힌트를 얻을 수 있다.</li>
+<li>키보드가 생긴 모양을 따라 keyboard 리스트를 생성하고, 모음을 따로 분리하여 모음 리스트를 생성한다면, 아래와 같이 만들 수 있다.</li>
+<li><code>keyboard = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] mo = 'yuiophjklbnm'</code></li>
+<li>첫번째 줄에 주어진 손이 위치한 알파벳을 입력받아, 손 위치의 좌표를 저장한다.</li>
+<li>각 문자마다 누르는 시간은 1만큼 소요되기 때문에, 입력하려고 하는 문자열을 순회하면서 ans + 1을 해준다.</li>
+<li>입력하려는 문자 s 가 모음 리스트에 있을 때, 오른손에 해당하는 좌표로부터 누르려는 키까지의 거리를 계산하여 ans에 더해준다.</li>
+<li>입력하려는 문자 s 가 모음 리스트에 없을 때, 왼손에 해당하는 좌표로부터 누르려는 키까지의 거리를 계산하여 ans에 더해준다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="o">=</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">keyboard</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;qwertyuiop&#39;</span><span class="p">,</span> <span class="s1">&#39;asdfghjkl&#39;</span><span class="p">,</span> <span class="s1">&#39;zxcvbnm&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">mo</span> <span class="o">=</span> <span class="s1">&#39;yuiophjklbnm&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">xl</span><span class="p">,</span> <span class="n">yl</span><span class="p">,</span> <span class="n">xr</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keyboard</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">xl</span><span class="p">,</span> <span class="n">yl</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">xr</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">mo</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keyboard</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">nx</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ny</span> <span class="o">=</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">ans</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xr</span> <span class="o">-</span> <span class="n">nx</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">yr</span> <span class="o">-</span> <span class="n">ny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">xr</span><span class="p">,</span> <span class="n">yr</span> <span class="o">=</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">keyboard</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">nx</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ny</span> <span class="o">=</span> <span class="n">keyboard</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">ans</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xl</span> <span class="o">-</span> <span class="n">nx</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">yl</span> <span class="o">-</span> <span class="n">ny</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">xl</span><span class="p">,</span> <span class="n">yl</span> <span class="o">=</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/">구현</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/">시뮬레이션</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-22252-%EC%A0%95%EB%B3%B4-%EC%83%81%EC%9D%B8-%ED%98%B8%EC%84%9D-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 22252 정보 상인 호석 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-20440-%EB%8B%88%EA%B0%80-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EB%84%88%EB%AC%B4-%EC%8B%AB%EC%96%B4-%EC%8B%AB%EC%96%B4-%EC%98%A4%EC%A7%80-%EB%A7%88-%EB%82%B4%EA%B2%8C-%EC%B0%9D%EC%A9%8D%EB%8C%80%EC%A7%80%EB%A7%88-1-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 20440 🎵니가 싫어 싫어 너무 싫어 싫어 오지 마 내게 찝쩍대지마🎵 - 1 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Programmers] 수식최대화 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 스택, 알고리즘, 프로그래머스">
+<meta name="description" content="📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 &#43;, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = &#34;100-200*300-500&#43;20&#34; expression = &#34;50*6-3*2&#34; 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[Programmers] 수식최대화 with Python" />
+<meta property="og:description" content="📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 &#43;, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = &#34;100-200*300-500&#43;20&#34; expression = &#34;50*6-3*2&#34; 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-29T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[Programmers] 수식최대화 with Python"/>
+<meta name="twitter:description" content="📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 &#43;, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = &#34;100-200*300-500&#43;20&#34; expression = &#34;50*6-3*2&#34; 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Programmers] 수식최대화 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Programmers] 수식최대화 with Python",
+  "name": "[Programmers] 수식최대화 with Python",
+  "description": "📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 +, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = \u0026#34;100-200*300-500+20\u0026#34; expression = \u0026#34;50*6-3*2\u0026#34; 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다.",
+  "keywords": [
+    "자료구조", "PS", "스택", "알고리즘", "프로그래머스"
+  ],
+  "articleBody": "\n📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 +, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = \"100-200*300-500+20\" expression = \"50*6-3*2\" 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다. 입력받은 expression의 정보를 담을 변수를 하나 만들고,\n문자열에서 연산자를 구분한 뒤 숫자는 정수형 변수로 변환시켜 각각 리스트에 담는다. 연산자의 우선순위는 itertools 의 permutaions 를 사용해 순열을 만든 후\nset()을 통해 순열의 중복을 없앴다. 각 순열을 하나씩 for 문으로 꺼내고, 그 순열의 원소를 돌며 최댓값을 계산한다. 주어지는 문자열의 길이가 매우 길지 않은 점\npython 언어의 list와 문자열에 있는 index() 함수를 사용. 리스트의 index() 함수는 찾고자 하는 데이터의 가장 앞에 있는 것을 반환\n그렇기 때문에 같은 연산자인 경우 우선순위가 앞에 있다는 점을 만족한다 해당하는 인덱스의 연산자 앞 뒤의 숫자를 연산자에 맞게 계산 후,\n계산한 연산자와 피연산자를 뺀 자리에 계산값을 넣음 반복하여 1개 남은 원소 즉, 수식의 최종 계산값을 answer 와 비교해 큰 값으로 교체해주면 된다.\n뮬론 음수는 abs() 함수를 사용해 양수로 변경해주었다. 🖥 소스 코드 from itertools import permutations as pt def solution(expression): answer = -1e9 op, nums = [], [] a, b = -1, -1 new_ex = [] for i in range(len(expression)): if expression[i].isnumeric(): if a \u003c 0: a = i else: b = i else: if b \u003c 0: b = a op.append(expression[i]) nums.append((a, b)) new_ex.append(int(expression[a:b+1])) new_ex.append(expression[i]) a, b = -1, -1 if b \u003e -1: new_ex.append(int(expression[a:b+1])) else: new_ex.append(int(expression[a])) k = list(set(op)) for case in list(set(pt(k, len(k)))): temp_new_ex = new_ex[:] for j in case: while j in temp_new_ex: idx = temp_new_ex.index(j) if j == '*': temp = temp_new_ex[idx - 1] * temp_new_ex[idx + 1] elif j == '-': temp = temp_new_ex[idx - 1] - temp_new_ex[idx + 1] else: temp = temp_new_ex[idx - 1] + temp_new_ex[idx + 1] temp_new_ex = temp_new_ex[:idx - 1] + [temp] + temp_new_ex[idx + 2:] answer = max(answer, abs(temp_new_ex[0])) return answer 💾 느낀점 정규표현식으로 연산자와 피연산자를 구분하여 추출해서 풀면,\n시간복잡도가 더 줄 수도 있을 것 같다. 정규표현식을 더 공부하고 연습해보아야겠다. 이보다 expression의 길이가 더 길어 시간초과가 날 때는 어떻게 할 것인지\n연산을 더 줄일 수 있는 방법을 생각해봐야겠다. 괄호를 넣어 eval() 함수를 사용하는 것도 생각해보았는데, 실행 속도에서 생각해보니\n그리 좋지 않은 풀이 방법인 것 같아 사용하지 않았다. ",
+  "wordCount" : "395",
+  "inLanguage": "en",
+  "datePublished": "2021-08-29T00:00:00Z",
+  "dateModified": "2021-08-29T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [Programmers] 수식최대화 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-08-29 00:00:00 +0000 UTC'>August 29, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[Programmers]%20%ec%88%98%ec%8b%9d%20%ec%b5%9c%eb%8c%80%ed%99%94%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons67257-target_blankprogrammers---수식-최대화a">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/67257" target="_blank">Programmers - 수식 최대화</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons67257-target_blankprogrammers---수식-최대화a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li>계산 가능한 수식이 있는 <code>expression</code> 이 주어지며, 길이가 <code>3이상 100이하</code>인 문자열.</li>
+<li>연산자는 <code>+, -, *</code> 만 있다. 피연산자는 <code>0 이상 999</code> 이하다.</li>
+<li>같은 연산자는 앞에 있는 것이 더 우선순위가 높다.</li>
+<li><strong>연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다.</strong></li>
+<li>계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다.</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">expression</span> <span class="o">=</span> <span class="s2">&#34;100-200*300-500+20&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">expression</span> <span class="o">=</span> <span class="s2">&#34;50*6-3*2&#34;</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">60420</span>
+</span></span><span class="line"><span class="cl"><span class="mi">300</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>답으로 반환할 <code>answer</code>를 <code>-1e9</code>로 초기화한다.</li>
+<li>입력받은 <code>expression</code>의 정보를 담을 변수를 하나 만들고,<br>
+문자열에서 연산자를 구분한 뒤 숫자는 정수형 변수로 변환시켜 각각 리스트에 담는다.</li>
+<li>연산자의 우선순위는 <code>itertools</code> 의 <code>permutaions</code> 를 사용해 순열을 만든 후<br>
+<strong>set()을 통해 순열의 중복을 없앴다.</strong></li>
+<li>각 순열을 하나씩 for 문으로 꺼내고, 그 순열의 원소를 돌며 최댓값을 계산한다.</li>
+<li><strong>주어지는 문자열의 길이가 매우 길지 않은 점</strong><br>
+python 언어의 list와 문자열에 있는 <code>index()</code> 함수를 사용.</li>
+<li>리스트의 <code>index()</code> 함수는 찾고자 하는 데이터의 가장 앞에 있는 것을 반환<br>
+그렇기 때문에 <strong>같은 연산자인 경우 우선순위가 앞에 있다는 점을 만족</strong>한다</li>
+<li>해당하는 인덱스의 연산자 앞 뒤의 숫자를 연산자에 맞게 계산 후,<br>
+계산한 연산자와 피연산자를 뺀 자리에 계산값을 넣음</li>
+<li>반복하여 1개 남은 원소 즉, 수식의 최종 계산값을 <code>answer</code> 와 비교해 큰 값으로 교체해주면 된다.<br>
+뮬론 음수는 <code>abs()</code> 함수를 사용해 양수로 변경해주었다.</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span> <span class="k">as</span> <span class="n">pt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1e9</span>
+</span></span><span class="line"><span class="cl">    <span class="n">op</span><span class="p">,</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">new_ex</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">expression</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">a</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">b</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">op</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nums</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_ex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_ex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">new_ex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">a</span><span class="p">:</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">new_ex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">expression</span><span class="p">[</span><span class="n">a</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">k</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">op</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="k">case</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">pt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">k</span><span class="p">)))):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">temp_new_ex</span> <span class="o">=</span> <span class="n">new_ex</span><span class="p">[:]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="k">case</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">temp_new_ex</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">idx</span> <span class="o">=</span> <span class="n">temp_new_ex</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_new_ex</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">temp_new_ex</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_new_ex</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">temp_new_ex</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp_new_ex</span><span class="p">[</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">temp_new_ex</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">temp_new_ex</span> <span class="o">=</span> <span class="n">temp_new_ex</span><span class="p">[:</span><span class="n">idx</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">temp</span><span class="p">]</span> <span class="o">+</span> <span class="n">temp_new_ex</span><span class="p">[</span><span class="n">idx</span> <span class="o">+</span> <span class="mi">2</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">answer</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">temp_new_ex</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">answer</span>
+</span></span></code></pre></div><br>
+<h2 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h2>
+<ul>
+<li>정규표현식으로 연산자와 피연산자를 구분하여 추출해서 풀면,<br>
+시간복잡도가 더 줄 수도 있을 것 같다.</li>
+<li>정규표현식을 더 공부하고 연습해보아야겠다.</li>
+<li>이보다 expression의 길이가 더 길어 시간초과가 날 때는 어떻게 할 것인지<br>
+연산을 더 줄일 수 있는 방법을 생각해봐야겠다.</li>
+<li>괄호를 넣어 eval() 함수를 사용하는 것도 생각해보았는데, 실행 속도에서 생각해보니<br>
+그리 좋지 않은 풀이 방법인 것 같아 사용하지 않았다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%8A%A4%ED%83%9D/">스택</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[Programmers] 거리두기 확인하기 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%95%A9%EC%8A%B9-%ED%83%9D%EC%8B%9C-%EC%9A%94%EA%B8%88-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[Programmers] 합승 택시 요금 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

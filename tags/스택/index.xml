@@ -15,30 +15,30 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%8A%A4%ED%83%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 11899 괄호 끼워넣기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-11899-%EA%B4%84%ED%98%B8-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 11899 괄호 끼워넣기 💡 조건 올바르지 않은 괄호열이 주어질 때, 올바른 괄호열으로 만들기 위해 앞과 뒤에 붙여야 할 괄호의 최소 개수를 구하는 문제. S의 길이는 1 이상 50 이하이며 불가능한 경우는 주어지지 않는다. 괄호열이란 여는 괄호 ‘(’와 닫는 괄호 ‘)’로만 구성된 문자열을 말합니다. 올바른 괄호열은 아래와 같이 정의할 수 있다. &amp;ldquo;()&amp;ldquo;는 올바른 괄호열입니다. A가 올바른 괄호열이라면 &amp;ldquo;(A)&amp;rdquo; 역시 올바른 괄호열입니다. A와 B가 모두 올바른 괄호열이라면 &amp;ldquo;AB&amp;rdquo; 역시 올바른 괄호열입니다.</description>
     </item>
     <item>
       <title>[BOJ] 20546 🐜 기적의 매매법 🐜 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</link>
       <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-20546-%EA%B8%B0%EC%A0%81%EC%9D%98-%EB%A7%A4%EB%A7%A4%EB%B2%95-with-python-copy/</guid>
       <description>📌 BOJ 20546 🐜 기적의 매매법 🐜 💡 조건 모든 거래는 전량 매수와 전량 매도로 이루어진다. 현재 가지고 있는 현금이 100원이고 주가가 11원이라면 99원어치의 주식을 매수하는 것이다. 단, 현금이 100원 있고 주가가 101원이라면 주식을 살 수 없다. 성민이는 빚을 내서 주식을 하지는 않는다. 3일 연속 가격이 전일 대비 상승하는 주식은 다음날 무조건 가격이 하락한다고 가정한다. 따라서 현재 소유한 주식의 가격이 3일째 상승한다면, 전량 매도한다. 전일과 오늘의 주가가 동일하다면 가격이 상승한 것이 아니다.</description>
     </item>
     <item>
       <title>[BOJ] 2841 외계인의 기타 연주 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-2841-%EC%99%B8%EA%B3%84%EC%9D%B8%EC%9D%98-%EA%B8%B0%ED%83%80-%EC%97%B0%EC%A3%BC-with-python/</guid>
       <description>📌 BOJ 2841 외계인의 기타 연주 💡 조건 멜로디는 음의 연속이고, 각 음은 줄에서 해당하는 프렛을 누르고 줄을 튕기면 연주할 수 있다. 어떤 줄의 프렛을 여러 개 누르고 있다면, 가장 높은 프렛의 음이 발생. 멜로디에 포함되어 있는 음의 수 N과 한 줄에 있는 프렛의 수 P가 주어진다. (N ≤ 500,000, 2 ≤ P ≤ 300,000) 2번 프렛의 음을 연주하려고 한다면, 5번과 7번을 누르던 손가락을 뗀 다음에 2번 프렛을 누르고 연주해야 한다.</description>
     </item>
     <item>
       <title>[Programmers] 수식최대화 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/</link>
       <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/</guid>
       <description>📌 Programmers - 수식 최대화 💡 조건 및 풀이 계산 가능한 수식이 있는 expression 이 주어지며, 길이가 3이상 100이하인 문자열. 연산자는 +, -, * 만 있다. 피연산자는 0 이상 999 이하다. 같은 연산자는 앞에 있는 것이 더 우선순위가 높다. 연산자의 우선순위를 정해서 그것 먼저 계산해주면 된다. 계산된 음수는 양수로 바꾸어서 최댓값 계산을 한다. 🔖 예제 및 실행결과 예제 expression = &amp;#34;100-200*300-500+20&amp;#34; expression = &amp;#34;50*6-3*2&amp;#34; 실행결과 60420 300 ⌨️ 문제 풀이 답으로 반환할 answer를 -1e9로 초기화한다.</description>
     </item>
   </channel>

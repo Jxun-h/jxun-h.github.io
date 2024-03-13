@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Programmers] 거리두기 확인하기 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="BFS, PS, 너비우선탐색, 알고리즘, 프로그래머스">
+<meta name="description" content="📌 Programmers - 거리두기 확인하기 💡 조건 및 풀이 대기실에 응시자들이 면접을 위해 대기를 하고 있다. 대기실에 있는 대기자들이 거리 두기를 잘 지키고 있을까? 대기실은 5개, 각 대기실은 5 * 5의 크기입니다. 응시자들 간의 거리는 맨해튼 거리는 2 이하로 앉을 수 없으니 3 이상이어야한다. 맨해튼 거리가 2이하여도 응시자 사이에 파티션으로 막혀 있으며 지나갈 다른 방법으로 응시자로의 경로가 없다면 상관이 없다. BFS 유형의 문제 두 테이블 T1, T2가 행렬 (r1, c1), (r2, c2)에 각각 위치하고 있다면,">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[Programmers] 거리두기 확인하기 with Python" />
+<meta property="og:description" content="📌 Programmers - 거리두기 확인하기 💡 조건 및 풀이 대기실에 응시자들이 면접을 위해 대기를 하고 있다. 대기실에 있는 대기자들이 거리 두기를 잘 지키고 있을까? 대기실은 5개, 각 대기실은 5 * 5의 크기입니다. 응시자들 간의 거리는 맨해튼 거리는 2 이하로 앉을 수 없으니 3 이상이어야한다. 맨해튼 거리가 2이하여도 응시자 사이에 파티션으로 막혀 있으며 지나갈 다른 방법으로 응시자로의 경로가 없다면 상관이 없다. BFS 유형의 문제 두 테이블 T1, T2가 행렬 (r1, c1), (r2, c2)에 각각 위치하고 있다면," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-29T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[Programmers] 거리두기 확인하기 with Python"/>
+<meta name="twitter:description" content="📌 Programmers - 거리두기 확인하기 💡 조건 및 풀이 대기실에 응시자들이 면접을 위해 대기를 하고 있다. 대기실에 있는 대기자들이 거리 두기를 잘 지키고 있을까? 대기실은 5개, 각 대기실은 5 * 5의 크기입니다. 응시자들 간의 거리는 맨해튼 거리는 2 이하로 앉을 수 없으니 3 이상이어야한다. 맨해튼 거리가 2이하여도 응시자 사이에 파티션으로 막혀 있으며 지나갈 다른 방법으로 응시자로의 경로가 없다면 상관이 없다. BFS 유형의 문제 두 테이블 T1, T2가 행렬 (r1, c1), (r2, c2)에 각각 위치하고 있다면,"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Programmers] 거리두기 확인하기 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Programmers] 거리두기 확인하기 with Python",
+  "name": "[Programmers] 거리두기 확인하기 with Python",
+  "description": "📌 Programmers - 거리두기 확인하기 💡 조건 및 풀이 대기실에 응시자들이 면접을 위해 대기를 하고 있다. 대기실에 있는 대기자들이 거리 두기를 잘 지키고 있을까? 대기실은 5개, 각 대기실은 5 * 5의 크기입니다. 응시자들 간의 거리는 맨해튼 거리는 2 이하로 앉을 수 없으니 3 이상이어야한다. 맨해튼 거리가 2이하여도 응시자 사이에 파티션으로 막혀 있으며 지나갈 다른 방법으로 응시자로의 경로가 없다면 상관이 없다. BFS 유형의 문제 두 테이블 T1, T2가 행렬 (r1, c1), (r2, c2)에 각각 위치하고 있다면,",
+  "keywords": [
+    "BFS", "PS", "너비우선탐색", "알고리즘", "프로그래머스"
+  ],
+  "articleBody": "\n📌 Programmers - 거리두기 확인하기 💡 조건 및 풀이 대기실에 응시자들이 면접을 위해 대기를 하고 있다. 대기실에 있는 대기자들이 거리 두기를 잘 지키고 있을까? 대기실은 5개, 각 대기실은 5 * 5의 크기입니다. 응시자들 간의 거리는 맨해튼 거리는 2 이하로 앉을 수 없으니 3 이상이어야한다. 맨해튼 거리가 2이하여도 응시자 사이에 파티션으로 막혀 있으며 지나갈 다른 방법으로 응시자로의 경로가 없다면 상관이 없다. BFS 유형의 문제 두 테이블 T1, T2가 행렬 (r1, c1), (r2, c2)에 각각 위치하고 있다면,\nT1, T2 사이의 맨해튼 거리는 |r1 - r2| + |c1 - c2| 응시자, 테이블, 파티션 = P, O, X 정확성 테스트의 시간은 10초. 🔖 예제 및 실행결과 예제 places = [[\"POOOP\", \"OXXOX\", \"OPXPX\", \"OOXOX\", \"POXXP\"], [\"POOPX\", \"OXPXP\", \"PXXXO\", \"OXXXO\", \"OOOPP\"], [\"PXOPX\", \"OXOXP\", \"OXPOX\", \"OXXOP\", \"PXPOX\"], [\"OOOXX\", \"XOOOX\", \"OOOXX\", \"OXOOX\", \"OOOOO\"], [\"PXPXP\", \"XPXPX\", \"PXPXP\", \"XPXPX\", \"PXPXP\"]] 실행결과 [1, 0, 1, 1, 1] ⌨️ 문제 풀이 정확성 테스트가 있기 때문에 시간초과 및 메모리 초과에 신경을 써야한다.\n그러므로 응시자들의 좌표만 따로 배열로 받아서 맨해튼 거리를 구한 뒤 맨해튼 거리가 2 이하인 것들만 BFS를 통해\n응시자 사이가 파티션으로 막혀 있는지 확인한다.\n대기실을 BFS로 돌면서 큐에 이동 거리, 좌표, 움직인 이동 좌표를 배열로 넣어 주며,\n이동 거리가 맨해튼 거리보다 멀다면 BFS 과정을 skip 한다.\n두 응시자의 맨해튼 거리가 2 이하일 때, 사이에 파티션이 있는 경우를 처리 하지 못해서 테스트 케이스 5번이 틀렸다.\n내가 틀린 반례는 아래와 같다. 답은 1이다.\n[[\"OPXPO\", \"OOOOO\", \"OOOOO\", \"OOOOO\", \"OOOOO\"]] 🖥 소스 코드 from collections import deque dx, dy = [1, -1, 0, 0], [0, 0, -1, 1] def bfs(board, now, goal, dist): q = deque() visited = [] x, y = now q.append((0, x, y, [])) visited.append(now) check = False while q: cost, x, y, visit = q.popleft() # 움직인 거리가 맨헤튼 거리보다 많으면 넘어가기 if cost \u003e dist: continue if (x, y) == goal: for i, j in visit: if board[i][j] == 'X': check = True elif board[i][j] == 'O': return False for i in range(4): nx, ny = dx[i] + x, y + dy[i] if -1 \u003c nx \u003c 5 and -1 \u003c ny \u003c 5: if (nx, ny) not in visited: # 목표 지점을 visited 에 넣지 않는다. # 가능한 많은 경로를 염두에 두어 계산한다. if (nx, ny) != goal: visited.append((nx, ny)) temp = visit[:] temp.append((nx, ny)) q.append((cost + 1, nx, ny, temp)) return check def solution(places): answer = [] for i in range(len(places)): board = [] data = places[i] ps = [] # 대기실 리스트 만들기 for j in range(5): for k in range(5): if data[j][k] == 'P': ps.append((j, k)) board.append(list(data[j])) ps.sort() check = True for j in range(len(ps)): x1, y1 = ps[j] for k in range(j + 1, len(ps)): x2, y2 = ps[k] dist = abs(x1 - x2) + abs(y1 - y2) if dist \u003c 3: if not bfs(board, ps[j], ps[k], dist): check = False break if not check: break answer.append(1) if check else answer.append(0) return answer 💾 느낀점 어제 풀었던 불! 보다 쉬웠다. 반례 테스트 케이스를 찾는데 조금 어려움이 있었다. BFS는 짜기 나름인 것 같다. queue 에 넣는 정보를 다양하게 사용하는 법이 익숙해지고 있는 것 같아 좋다.\n그러나 visited 배열을 더 다양하게 사용하는 법을 연습해야겠다. ",
+  "wordCount" : "506",
+  "inLanguage": "en",
+  "datePublished": "2021-08-29T00:00:00Z",
+  "dateModified": "2021-08-29T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B1%B0%EB%A6%AC%EB%91%90%EA%B8%B0-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [Programmers] 거리두기 확인하기 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-08-29 00:00:00 +0000 UTC'>August 29, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[Programmers]%20%ea%b1%b0%eb%a6%ac%eb%91%90%ea%b8%b0%20%ed%99%95%ec%9d%b8%ed%95%98%ea%b8%b0%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons81302-target_blankprogrammers---거리두기-확인하기a">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/81302" target="_blank">Programmers - 거리두기 확인하기</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons81302-target_blankprogrammers---거리두기-확인하기a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li>대기실에 응시자들이 면접을 위해 대기를 하고 있다. 대기실에 있는 대기자들이 거리 두기를 잘 지키고 있을까?</li>
+<li>대기실은 5개, 각 대기실은 <code>5 * 5</code>의 크기입니다.</li>
+<li>응시자들 간의 거리는 맨해튼 거리는 2 이하로 앉을 수 없으니 3 이상이어야한다.</li>
+<li>맨해튼 거리가 2이하여도 응시자 사이에 파티션으로 막혀 있으며 지나갈 다른 방법으로 응시자로의 경로가 없다면 상관이 없다.</li>
+<li><strong>BFS 유형의 문제</strong></li>
+<li>두 테이블 <code>T1, T2</code>가 행렬 <code>(r1, c1), (r2, c2)</code>에 각각 위치하고 있다면,<br>
+<code>T1, T2</code> 사이의 맨해튼 거리는 <code>|r1 - r2| + |c1 - c2|</code></li>
+<li>응시자, 테이블, 파티션 = <code>P</code>, <code>O</code>, <code>X</code></li>
+<li><strong>정확성 테스트의 시간은 10초.</strong></li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">places</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&#34;POOOP&#34;</span><span class="p">,</span> <span class="s2">&#34;OXXOX&#34;</span><span class="p">,</span> <span class="s2">&#34;OPXPX&#34;</span><span class="p">,</span> <span class="s2">&#34;OOXOX&#34;</span><span class="p">,</span> <span class="s2">&#34;POXXP&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;POOPX&#34;</span><span class="p">,</span> <span class="s2">&#34;OXPXP&#34;</span><span class="p">,</span> <span class="s2">&#34;PXXXO&#34;</span><span class="p">,</span> <span class="s2">&#34;OXXXO&#34;</span><span class="p">,</span> <span class="s2">&#34;OOOPP&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;PXOPX&#34;</span><span class="p">,</span> <span class="s2">&#34;OXOXP&#34;</span><span class="p">,</span> <span class="s2">&#34;OXPOX&#34;</span><span class="p">,</span> <span class="s2">&#34;OXXOP&#34;</span><span class="p">,</span> <span class="s2">&#34;PXPOX&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;OOOXX&#34;</span><span class="p">,</span> <span class="s2">&#34;XOOOX&#34;</span><span class="p">,</span> <span class="s2">&#34;OOOXX&#34;</span><span class="p">,</span> <span class="s2">&#34;OXOOX&#34;</span><span class="p">,</span> <span class="s2">&#34;OOOOO&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;PXPXP&#34;</span><span class="p">,</span> <span class="s2">&#34;XPXPX&#34;</span><span class="p">,</span> <span class="s2">&#34;PXPXP&#34;</span><span class="p">,</span> <span class="s2">&#34;XPXPX&#34;</span><span class="p">,</span> <span class="s2">&#34;PXPXP&#34;</span><span class="p">]]</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p>정확성 테스트가 있기 때문에 시간초과 및 메모리 초과에 신경을 써야한다.<br>
+그러므로 응시자들의 좌표만 따로 배열로 받아서 맨해튼 거리를 구한 뒤 맨해튼 거리가 2 이하인 것들만 BFS를 통해<br>
+응시자 사이가 파티션으로 막혀 있는지 확인한다.</p>
+</li>
+<li>
+<p>대기실을 BFS로 돌면서 큐에 <code>이동 거리, 좌표, 움직인 이동 좌표</code>를 배열로 넣어 주며,<br>
+이동 거리가 맨해튼 거리보다 멀다면 BFS 과정을 skip 한다.</p>
+</li>
+<li>
+<p>두 응시자의 맨해튼 거리가 2 이하일 때, 사이에 파티션이 있는 경우를 처리 하지 못해서 테스트 케이스 5번이 틀렸다.<br>
+내가 틀린 반례는 아래와 같다. 답은 1이다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[[</span><span class="s2">&#34;OPXPO&#34;</span><span class="p">,</span> <span class="s2">&#34;OOOOO&#34;</span><span class="p">,</span> <span class="s2">&#34;OOOOO&#34;</span><span class="p">,</span> <span class="s2">&#34;OOOOO&#34;</span><span class="p">,</span> <span class="s2">&#34;OOOOO&#34;</span><span class="p">]]</span>   
+</span></span></code></pre></div></li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bfs</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">now</span><span class="p">,</span> <span class="n">goal</span><span class="p">,</span> <span class="n">dist</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">now</span>
+</span></span><span class="line"><span class="cl">    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="p">[]))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">check</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cost</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">visit</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 움직인 거리가 맨헤튼 거리보다 많으면 넘어가기</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">cost</span> <span class="o">&gt;</span> <span class="n">dist</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="n">goal</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">visit</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;X&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">check</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">                <span class="k">elif</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;O&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">nx</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="n">ny</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># 목표 지점을 visited 에 넣지 않는다.</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># 가능한 많은 경로를 염두에 두어 계산한다.</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">)</span> <span class="o">!=</span> <span class="n">goal</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">temp</span> <span class="o">=</span> <span class="n">visit</span><span class="p">[:]</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cost</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">temp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">check</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">places</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">places</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">board</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data</span> <span class="o">=</span> <span class="n">places</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ps</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 대기실 리스트 만들기</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;P&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ps</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">board</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ps</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">check</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">ps</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">ps</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dist</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="ow">not</span> <span class="n">bfs</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">ps</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">ps</span><span class="p">[</span><span class="n">k</span><span class="p">],</span> <span class="n">dist</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">check</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="ow">not</span> <span class="n">check</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">check</span> <span class="k">else</span> <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">answer</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ul>
+<li>어제 풀었던 불! 보다 쉬웠다.</li>
+<li>반례 테스트 케이스를 찾는데 조금 어려움이 있었다.</li>
+<li>BFS는 짜기 나름인 것 같다. queue 에 넣는 정보를 다양하게 사용하는 법이 익숙해지고 있는 것 같아 좋다.<br>
+그러나 visited 배열을 더 다양하게 사용하는 법을 연습해야겠다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/bfs/">BFS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%84%88%EB%B9%84%EC%9A%B0%EC%84%A0%ED%83%90%EC%83%89/">너비우선탐색</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/">프로그래머스</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-15486-%ED%87%B4%EC%82%AC-2-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 15486 퇴사 2 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%88%98%EC%8B%9D-%EC%B5%9C%EB%8C%80%ED%99%94-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[Programmers] 수식최대화 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

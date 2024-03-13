@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[CS] 6. 연결리스트의 개념 | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, CS, Computer Science">
+<meta name="description" content="📌 연결리스트의 개념 💡 자기참조 구조체 동일한 타입의 구조체에 대한 포인터를 속성으로 포함하는 구조체 Link Node 구조체에 대한 포인터 -&gt; 메모리의 주소를 가리키는 자료형 여러 개의 Node 구조체를 연결하는 역할 💡 연결리스트 단순 연결리스트(Singly Linked List)
+자기 참조 구조체(Node)들의 연결 천번째 노드에 대한 포인터만 유지 리스트의 이름 = 첫번째 노드의 수조 이후 노드들은 구조체의 Link 포인터를 통해 참조 마지막 노드의 Link 포인터는 NULL로 설정한다. 다른 연결리스트
+이중 연결 리스트(Doubly Linked List) 앞 뒤의 노드들의 정보를 가지고 있다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/data-structure/cs-6.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EA%B0%9C%EB%85%90/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[CS] 6. 연결리스트의 개념" />
+<meta property="og:description" content="📌 연결리스트의 개념 💡 자기참조 구조체 동일한 타입의 구조체에 대한 포인터를 속성으로 포함하는 구조체 Link Node 구조체에 대한 포인터 -&gt; 메모리의 주소를 가리키는 자료형 여러 개의 Node 구조체를 연결하는 역할 💡 연결리스트 단순 연결리스트(Singly Linked List)
+자기 참조 구조체(Node)들의 연결 천번째 노드에 대한 포인터만 유지 리스트의 이름 = 첫번째 노드의 수조 이후 노드들은 구조체의 Link 포인터를 통해 참조 마지막 노드의 Link 포인터는 NULL로 설정한다. 다른 연결리스트
+이중 연결 리스트(Doubly Linked List) 앞 뒤의 노드들의 정보를 가지고 있다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/data-structure/cs-6.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EA%B0%9C%EB%85%90/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-10T03:00:00+00:00" />
+<meta property="article:modified_time" content="2022-07-10T03:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-10.%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-9.-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-8.-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[CS] 6. 연결리스트의 개념"/>
+<meta name="twitter:description" content="📌 연결리스트의 개념 💡 자기참조 구조체 동일한 타입의 구조체에 대한 포인터를 속성으로 포함하는 구조체 Link Node 구조체에 대한 포인터 -&gt; 메모리의 주소를 가리키는 자료형 여러 개의 Node 구조체를 연결하는 역할 💡 연결리스트 단순 연결리스트(Singly Linked List)
+자기 참조 구조체(Node)들의 연결 천번째 노드에 대한 포인터만 유지 리스트의 이름 = 첫번째 노드의 수조 이후 노드들은 구조체의 Link 포인터를 통해 참조 마지막 노드의 Link 포인터는 NULL로 설정한다. 다른 연결리스트
+이중 연결 리스트(Doubly Linked List) 앞 뒤의 노드들의 정보를 가지고 있다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[CS] 6. 연결리스트의 개념",
+      "item": "https://jxun-h.github.io/posts/data-structure/cs-6.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EA%B0%9C%EB%85%90/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[CS] 6. 연결리스트의 개념",
+  "name": "[CS] 6. 연결리스트의 개념",
+  "description": "📌 연결리스트의 개념 💡 자기참조 구조체 동일한 타입의 구조체에 대한 포인터를 속성으로 포함하는 구조체 Link Node 구조체에 대한 포인터 -\u0026gt; 메모리의 주소를 가리키는 자료형 여러 개의 Node 구조체를 연결하는 역할 💡 연결리스트 단순 연결리스트(Singly Linked List)\n자기 참조 구조체(Node)들의 연결 천번째 노드에 대한 포인터만 유지 리스트의 이름 = 첫번째 노드의 수조 이후 노드들은 구조체의 Link 포인터를 통해 참조 마지막 노드의 Link 포인터는 NULL로 설정한다. 다른 연결리스트\n이중 연결 리스트(Doubly Linked List) 앞 뒤의 노드들의 정보를 가지고 있다.",
+  "keywords": [
+    "자료구조", "CS", "Computer Science"
+  ],
+  "articleBody": "\n📌 연결리스트의 개념 💡 자기참조 구조체 동일한 타입의 구조체에 대한 포인터를 속성으로 포함하는 구조체 Link Node 구조체에 대한 포인터 -\u003e 메모리의 주소를 가리키는 자료형 여러 개의 Node 구조체를 연결하는 역할 💡 연결리스트 단순 연결리스트(Singly Linked List)\n자기 참조 구조체(Node)들의 연결 천번째 노드에 대한 포인터만 유지 리스트의 이름 = 첫번째 노드의 수조 이후 노드들은 구조체의 Link 포인터를 통해 참조 마지막 노드의 Link 포인터는 NULL로 설정한다. 다른 연결리스트\n이중 연결 리스트(Doubly Linked List) 앞 뒤의 노드들의 정보를 가지고 있다. 원형 연결 리스트(Circular Linked List) 마지막 노트와 첫노드를 연결 연결리스트 연산 - 순회\n연결리스트의 길이 계산 각각의 노드를 정확히 한번만, 체계적인 방법으로 방문하는 과정 삽입 및 삭제를 하더라도 노드의 위치는 달라지지 않는다. 💡 배열과 연결 리스트의 비교 저장 방식의 차이 -\u003e 메모리의 인접한 곳에 저장한다.\n배열 : int Array[4]; 다음 데이터에 대한 주소를 알 필요가 없다. 연결리스트 : struct node에 대한 네 번의 malloc\n각 노드들은 메모리의 여러 곳에 나누어 저장한다. Link를 이용하여 다음 노드의 주소를 유지한다 메모리 사용 측면\n저장될 데이터의 수를 안다면 배열이 효과적이다. 데이터의 수를 모를 경우, 연결리스트가 유리하다. 새로 데이터가 입력될 때마다, malloc 실행 후 연결 정렬된 데이터의 순서 유지\n배열 데이터가 추가될 때 기존 데이터의 위치 변경이 가능하다. 이진 검색이 가능하다. 연결리스트\n기존 데이터의 위치 변경은 발생하지 않는다. 이진 검색이 불가능하다. ",
+  "wordCount" : "203",
+  "inLanguage": "en",
+  "datePublished": "2022-07-10T03:00:00Z",
+  "dateModified": "2022-07-10T03:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/data-structure/cs-6.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EC%9D%98-%EA%B0%9C%EB%85%90/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [CS] 6. 연결리스트의 개념
+    </h1>
+    <div class="post-meta"><span title='2022-07-10 03:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Data%20Structure/[CS]%206.%20%ec%97%b0%ea%b2%b0%eb%a6%ac%ec%8a%a4%ed%8a%b8%ec%9d%98%20%ea%b0%9c%eb%85%90.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-연결리스트의-개념">📌 연결리스트의 개념<a hidden class="anchor" aria-hidden="true" href="#-연결리스트의-개념">#</a></h2>
+<br>
+<h3 id="-자기참조-구조체">💡 자기참조 구조체<a hidden class="anchor" aria-hidden="true" href="#-자기참조-구조체">#</a></h3>
+<ol>
+<li>동일한 타입의 구조체에 대한 포인터를 속성으로 포함하는 구조체</li>
+<li>Link
+<ol>
+<li>Node 구조체에 대한 포인터 -&gt; 메모리의 주소를 가리키는 자료형</li>
+<li>여러 개의 Node 구조체를 연결하는 역할</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-연결리스트">💡 연결리스트<a hidden class="anchor" aria-hidden="true" href="#-연결리스트">#</a></h3>
+<ol>
+<li>
+<p>단순 연결리스트(Singly Linked List)</p>
+<ol>
+<li>자기 참조 구조체(Node)들의 연결</li>
+<li>천번째 노드에 대한 포인터만 유지
+<ol>
+<li>리스트의 이름 = 첫번째 노드의 수조</li>
+</ol>
+</li>
+<li>이후 노드들은 구조체의 Link 포인터를 통해 참조</li>
+<li>마지막 노드의 Link 포인터는 NULL로 설정한다.</li>
+</ol>
+</li>
+<li>
+<p>다른 연결리스트</p>
+<ol>
+<li>이중 연결 리스트(Doubly Linked List)
+<ol>
+<li>앞 뒤의 노드들의 정보를 가지고 있다.</li>
+</ol>
+</li>
+<li>원형 연결 리스트(Circular Linked List)
+<ol>
+<li>마지막 노트와 첫노드를 연결</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>연결리스트 연산 - 순회</p>
+<ol>
+<li>연결리스트의 길이 계산
+<ol>
+<li>각각의 노드를 정확히 한번만, 체계적인 방법으로 방문하는 과정</li>
+</ol>
+</li>
+<li>삽입 및 삭제를 하더라도 노드의 위치는 달라지지 않는다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-배열과-연결-리스트의-비교">💡 배열과 연결 리스트의 비교<a hidden class="anchor" aria-hidden="true" href="#-배열과-연결-리스트의-비교">#</a></h3>
+<ol>
+<li>
+<p>저장 방식의 차이 -&gt; 메모리의 인접한 곳에 저장한다.</p>
+<ol>
+<li>배열 : int Array[4];
+<ol>
+<li>다음 데이터에 대한 주소를 알 필요가 없다.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>연결리스트 : struct node에 대한 네 번의 malloc</p>
+<ol>
+<li>각 노드들은 메모리의 여러 곳에 나누어 저장한다.</li>
+<li>Link를 이용하여 다음 노드의 주소를 유지한다</li>
+</ol>
+</li>
+<li>
+<p>메모리 사용 측면</p>
+<ol>
+<li>저장될 데이터의 수를 안다면 배열이 효과적이다.</li>
+<li>데이터의 수를 모를 경우, 연결리스트가 유리하다.
+<ol>
+<li>새로 데이터가 입력될 때마다, malloc 실행 후 연결</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>정렬된 데이터의 순서 유지</p>
+<ol>
+<li>배열
+<ol>
+<li>데이터가 추가될 때 기존 데이터의 위치 변경이 가능하다.</li>
+<li>이진 검색이 가능하다.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>연결리스트</p>
+<ol>
+<li>기존 데이터의 위치 변경은 발생하지 않는다.</li>
+<li>이진 검색이 불가능하다.</li>
+</ol>
+</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/cs/">CS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/computer-science/">Computer Science</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/data-structure/cs-7.-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8B%A4%ED%95%AD%EC%8B%9D%EC%9D%98-%EA%B5%AC%ED%98%84/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[CS] 7. 연결리스트를 이용한 다항식의 구현</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/data-structure/cs-5.-%EB%B0%B0%EC%97%B4%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%9D%AC%EC%86%8C%ED%96%89%EB%A0%AC%EC%9D%98-%ED%91%9C%ED%98%84/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[CS] 5. 배열을 이용한 희소행렬의 표현</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

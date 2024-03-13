@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 9934 완전 이진 트리 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="트리, PS, 완전이진트리, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 BOJ 9934 완전 이진 트리 💡 조건 및 풀이 이진 트리의 깊이를 나타내는 1&lt;=K&lt;=10, 깊이가 K인 이진 트리는 총 2 * K - 1 개의 노드로 이루어져 있다. 가장 마지막 레벨을 제외한 모든 집은 왼쪽 자식과 오른쪽 자식을 갖는다. 이분탐색, 트리, 재귀구현 문제 모든 빌딩의 번호는 중복되지 않는다. 🔖 예제 및 실행결과 예제 3 1 6 4 3 5 2 7 실행결과 3 6 2 1 4 5 7 ⌨️ 문제 풀이 깊이가 k 인 2차원 리스트 res 를 생성하고, 이 리스트에 노드를 쌓을 것입니다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 9934 완전 이진 트리 with Python" />
+<meta property="og:description" content="📌 BOJ 9934 완전 이진 트리 💡 조건 및 풀이 이진 트리의 깊이를 나타내는 1&lt;=K&lt;=10, 깊이가 K인 이진 트리는 총 2 * K - 1 개의 노드로 이루어져 있다. 가장 마지막 레벨을 제외한 모든 집은 왼쪽 자식과 오른쪽 자식을 갖는다. 이분탐색, 트리, 재귀구현 문제 모든 빌딩의 번호는 중복되지 않는다. 🔖 예제 및 실행결과 예제 3 1 6 4 3 5 2 7 실행결과 3 6 2 1 4 5 7 ⌨️ 문제 풀이 깊이가 k 인 2차원 리스트 res 를 생성하고, 이 리스트에 노드를 쌓을 것입니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-12T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-1068-%ED%8A%B8%EB%A6%AC-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/boj-16956-%EB%8A%91%EB%8C%80%EC%99%80-%EC%96%91-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/temp/temp/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-12920-%ED%8F%89%EB%B2%94%ED%95%9C-%EB%B0%B0%EB%82%AD-2-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-14890-%EA%B2%BD%EC%82%AC%EB%A1%9C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 9934 완전 이진 트리 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 9934 완전 이진 트리 💡 조건 및 풀이 이진 트리의 깊이를 나타내는 1&lt;=K&lt;=10, 깊이가 K인 이진 트리는 총 2 * K - 1 개의 노드로 이루어져 있다. 가장 마지막 레벨을 제외한 모든 집은 왼쪽 자식과 오른쪽 자식을 갖는다. 이분탐색, 트리, 재귀구현 문제 모든 빌딩의 번호는 중복되지 않는다. 🔖 예제 및 실행결과 예제 3 1 6 4 3 5 2 7 실행결과 3 6 2 1 4 5 7 ⌨️ 문제 풀이 깊이가 k 인 2차원 리스트 res 를 생성하고, 이 리스트에 노드를 쌓을 것입니다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 9934 완전 이진 트리 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 9934 완전 이진 트리 with Python",
+  "name": "[BOJ] 9934 완전 이진 트리 with Python",
+  "description": "📌 BOJ 9934 완전 이진 트리 💡 조건 및 풀이 이진 트리의 깊이를 나타내는 1\u0026lt;=K\u0026lt;=10, 깊이가 K인 이진 트리는 총 2 * K - 1 개의 노드로 이루어져 있다. 가장 마지막 레벨을 제외한 모든 집은 왼쪽 자식과 오른쪽 자식을 갖는다. 이분탐색, 트리, 재귀구현 문제 모든 빌딩의 번호는 중복되지 않는다. 🔖 예제 및 실행결과 예제 3 1 6 4 3 5 2 7 실행결과 3 6 2 1 4 5 7 ⌨️ 문제 풀이 깊이가 k 인 2차원 리스트 res 를 생성하고, 이 리스트에 노드를 쌓을 것입니다.",
+  "keywords": [
+    "트리", "PS", "완전이진트리", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 9934 완전 이진 트리 💡 조건 및 풀이 이진 트리의 깊이를 나타내는 1\u003c=K\u003c=10, 깊이가 K인 이진 트리는 총 2 * K - 1 개의 노드로 이루어져 있다. 가장 마지막 레벨을 제외한 모든 집은 왼쪽 자식과 오른쪽 자식을 갖는다. 이분탐색, 트리, 재귀구현 문제 모든 빌딩의 번호는 중복되지 않는다. 🔖 예제 및 실행결과 예제 3 1 6 4 3 5 2 7 실행결과 3 6 2 1 4 5 7 ⌨️ 문제 풀이 깊이가 k 인 2차원 리스트 res 를 생성하고, 이 리스트에 노드를 쌓을 것입니다. Python 리스트 자료구조의 extend() 함수를 사용했습니다.\nextend는 리스트를 리스트 안으로 넣을 때 리스트의 원소만 넣어줍니다. 입력받은 빌딩번호의 길이를 2로 나누어 값을 mid 변수에 넣어 가지고 있습니다. res에 파라미터로 받은 depth 값을 넣어줍니다.\n가장 맨 처음으로 이분탐색을 통해 뽑아낸 가운데 값이 루트 노드입니다. 가운데 값을 기준으로 양쪽을 분리해 각각 다시 이분탐색을 수행합니다. 이분 탐색을 하다가, 파라미터로 받은 arr 리스트의 길이가 1인 경우 depth 에 해당하는\n리스트에 넣어줍니다. 만들어진 트리(res)를 출력해줍니다. 파이썬으로 재귀를 구현할 때,아래의 함수를 사용해야 에러가 나지 않는 경우가 많습니다.\n쓴다고 문제될 것이 없으니, 재귀를 구현하여 문제를 푸실 때 꼭 입력하세요.\nsetrecursionlimit(int(1e9))​ 🖥 소스 코드 from sys import stdin, setrecursionlimit setrecursionlimit(int(1e9)) k = int(stdin.readline()) arr = list(map(int, stdin.readline().split())) res = [[] for _ in range(k)] def binary_separation(arr, depth): if len(arr) == 1: res[depth].extend(arr) return length = len(arr) mid = length // 2 res[depth].append(arr[mid]) binary_separation(arr[:mid], depth + 1) binary_separation(arr[mid + 1:], depth + 1) binary_separation(arr, 0) for i in range(k): if i == 0: print(res[i][0]) else: print(*res[i]) 💾 느낀점 이분탐색과 재귀를 사용하여 문제를 푸는 방식에 익숙해진 것을 느꼈다. 분할 정복 문제를 풀다가 이 문제를 푸니 훨씬 도움이 되었다. ",
+  "wordCount" : "263",
+  "inLanguage": "en",
+  "datePublished": "2021-09-12T00:00:00Z",
+  "dateModified": "2021-09-12T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/boj-9934-%EC%99%84%EC%A0%84-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%AC-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 9934 완전 이진 트리 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-09-12 00:00:00 +0000 UTC'>September 12, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[BOJ]%209934%20%ec%99%84%ec%a0%84%20%ec%9d%b4%ec%a7%84%20%ed%8a%b8%eb%a6%ac%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem9934-target_blankboj-9934-완전-이진-트리a">📌 <a href="https://www.acmicpc.net/problem/9934" target="_blank">BOJ 9934 완전 이진 트리</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem9934-target_blankboj-9934-완전-이진-트리a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li>이진 트리의 깊이를 나타내는 <code>1&lt;=K&lt;=10</code>, 깊이가 <code>K</code>인 이진 트리는 총 <code>2 * K - 1</code> 개의 노드로 이루어져 있다.</li>
+<li><strong>가장 마지막 레벨을 제외한 모든 집은 왼쪽 자식과 오른쪽 자식을 갖는다.</strong></li>
+<li><strong>이분탐색, 트리, 재귀구현 문제</strong></li>
+<li>모든 빌딩의 번호는 중복되지 않는다.</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">6</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">2</span> <span class="mi">7</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">7</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>깊이가 <code>k</code> 인 2차원 리스트 <code>res</code> 를 생성하고, 이 리스트에 노드를 쌓을 것입니다.</li>
+<li>Python 리스트 자료구조의 <code>extend()</code> 함수를 사용했습니다.<br>
+<code>extend</code>는 리스트를 리스트 안으로 넣을 때 리스트의 원소만 넣어줍니다.</li>
+<li>입력받은 빌딩번호의 길이를 2로 나누어 값을 <code>mid</code> 변수에 넣어 가지고 있습니다.</li>
+<li><code>res</code>에 파라미터로 받은 <code>depth</code> 값을 넣어줍니다.<br>
+가장 맨 처음으로 이분탐색을 통해 뽑아낸 가운데 값이 루트 노드입니다.</li>
+<li>가운데 값을 기준으로 양쪽을 분리해 각각 다시 이분탐색을 수행합니다.</li>
+<li>이분 탐색을 하다가, 파라미터로 받은 <code>arr</code> 리스트의 길이가 1인 경우 <code>depth</code> 에 해당하는<br>
+리스트에 넣어줍니다.</li>
+<li>만들어진 트리(<code>res</code>)를 출력해줍니다.</li>
+<li>파이썬으로 재귀를 구현할 때,아래의 함수를 사용해야 에러가 나지 않는 경우가 많습니다.<br>
+쓴다고 문제될 것이 없으니, 재귀를 구현하여 문제를 푸실 때 꼭 입력하세요.<br>
+ </li>
+<li><code>setrecursionlimit(int(1e9))​</code></li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">setrecursionlimit</span>
+</span></span><span class="line"><span class="cl"><span class="n">setrecursionlimit</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="p">[[]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">binary_separation</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span><span class="p">[</span><span class="n">depth</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mid</span> <span class="o">=</span> <span class="n">length</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">[</span><span class="n">depth</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">binary_separation</span><span class="p">(</span><span class="n">arr</span><span class="p">[:</span><span class="n">mid</span><span class="p">],</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">binary_separation</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:],</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">binary_separation</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ul>
+<li>이분탐색과 재귀를 사용하여 문제를 푸는 방식에 익숙해진 것을 느꼈다.</li>
+<li>분할 정복 문제를 풀다가 이 문제를 푸니 훨씬 도움이 되었다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%ED%8A%B8%EB%A6%AC/">트리</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%99%84%EC%A0%84%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC/">완전이진트리</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-17521-byte-coin-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 17521 Byte Coin with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[Programmers] 문자열 압축 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

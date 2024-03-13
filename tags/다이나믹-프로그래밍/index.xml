@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EB%8B%A4%EC%9D%B4%EB%82%98%EB%AF%B9-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 9461 파도반 수열 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</link>
       <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-9461-%ED%8C%8C%EB%8F%84%EB%B0%98-%EC%88%98%EC%97%B4-with-python/</guid>
       <description>📌 BOJ 9461 파도반 💡 조건 첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 한 줄로 이루어져 있고, N이 주어진다.
 (1 ≤ N ≤ 100) 파도반 수열 P(N)은 나선에 있는 정삼각형의 변의 길이. P(1)부터 P(10)까지 첫 10개 숫자는 1, 1, 1, 2, 2, 3, 4, 5, 7, 9 각 테스트 케이스마다 정수 N을 입력받아 P(N)을 출력. Dynamic Programming 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 2 6 12 실행결과 3 16 ⌨️ 문제 풀이 문제에서 이미 점화식을 짜라고 P(1)부터 P(10)까지 제공해주었다.</description>
     </item>

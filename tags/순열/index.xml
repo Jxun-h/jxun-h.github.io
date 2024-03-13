@@ -15,9 +15,9 @@
     <atom:link href="https://jxun-h.github.io/tags/%EC%88%9C%EC%97%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[BOJ] 14888 연산자 끼워넣기 with Python</title>
-      <link>https://jxun-h.github.io/posts/ps/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</link>
       <pubDate>Mon, 24 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/ps/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14888-%EC%97%B0%EC%82%B0%EC%9E%90-%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0-with-python/</guid>
       <description>📌 BOJ 14888 연산자 끼워넣기 💡 조건 N개의 수로 이루어진 수열 A1, A2, &amp;hellip;, AN 수와 수 사이에 끼워넣을 수 있는 N-1개의 연산자
 연산자는 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷)으로만 이루어져 있다. 수의 개수 N(2 ≤ N ≤ 11)
 A1, A2, &amp;hellip;, AN이 주어진다. (1 ≤ Ai ≤ 100) 첫째 줄에 만들 수 있는 식의 결과의 최댓값을, 둘째 줄에는 최솟값을 출력 순열, 브루트포스 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 2 5 6 0 0 1 0 실행결과 30 30 ⌨️ 문제 풀이 permutations 라이브러리 import 연산자를 덧셈(+), 뺄셈(-), 곱셈(×), 나눗셈(÷) 순서대로 담은 gi 리스트 선언.</description>

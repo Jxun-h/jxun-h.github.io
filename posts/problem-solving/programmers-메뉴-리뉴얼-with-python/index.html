@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Programmers] 메뉴 리뉴얼 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="정렬, PS, 구현, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 Programmers - 메뉴 리뉴얼 💡 조건 및 풀이 orders 배열의 크기는 2 이상 20 이하. orders 배열의 각 원소는 크기가 2 이상 10 이하인 문자열.
+각 문자열은 알파벳 대문자로만 이루어져 있으며 중복은 허용 안함. course 배열의 크기는 1 이상 10 이하.
+course 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순으로 정렬 정답은 각 코스요리 메뉴의 구성을 문자열 형식으로 배열에 담아 사전 순으로 오름차순 정렬해서 return
+배열의 각 원소에 저장된 문자열 또한 알파벳 오름차순으로 정렬">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[Programmers] 메뉴 리뉴얼 with Python" />
+<meta property="og:description" content="📌 Programmers - 메뉴 리뉴얼 💡 조건 및 풀이 orders 배열의 크기는 2 이상 20 이하. orders 배열의 각 원소는 크기가 2 이상 10 이하인 문자열.
+각 문자열은 알파벳 대문자로만 이루어져 있으며 중복은 허용 안함. course 배열의 크기는 1 이상 10 이하.
+course 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순으로 정렬 정답은 각 코스요리 메뉴의 구성을 문자열 형식으로 배열에 담아 사전 순으로 오름차순 정렬해서 return
+배열의 각 원소에 저장된 문자열 또한 알파벳 오름차순으로 정렬" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-13T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[Programmers] 메뉴 리뉴얼 with Python"/>
+<meta name="twitter:description" content="📌 Programmers - 메뉴 리뉴얼 💡 조건 및 풀이 orders 배열의 크기는 2 이상 20 이하. orders 배열의 각 원소는 크기가 2 이상 10 이하인 문자열.
+각 문자열은 알파벳 대문자로만 이루어져 있으며 중복은 허용 안함. course 배열의 크기는 1 이상 10 이하.
+course 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순으로 정렬 정답은 각 코스요리 메뉴의 구성을 문자열 형식으로 배열에 담아 사전 순으로 오름차순 정렬해서 return
+배열의 각 원소에 저장된 문자열 또한 알파벳 오름차순으로 정렬"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Programmers] 메뉴 리뉴얼 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Programmers] 메뉴 리뉴얼 with Python",
+  "name": "[Programmers] 메뉴 리뉴얼 with Python",
+  "description": "📌 Programmers - 메뉴 리뉴얼 💡 조건 및 풀이 orders 배열의 크기는 2 이상 20 이하. orders 배열의 각 원소는 크기가 2 이상 10 이하인 문자열.\n각 문자열은 알파벳 대문자로만 이루어져 있으며 중복은 허용 안함. course 배열의 크기는 1 이상 10 이하.\ncourse 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순으로 정렬 정답은 각 코스요리 메뉴의 구성을 문자열 형식으로 배열에 담아 사전 순으로 오름차순 정렬해서 return\n배열의 각 원소에 저장된 문자열 또한 알파벳 오름차순으로 정렬",
+  "keywords": [
+    "정렬", "PS", "구현", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 Programmers - 메뉴 리뉴얼 💡 조건 및 풀이 orders 배열의 크기는 2 이상 20 이하. orders 배열의 각 원소는 크기가 2 이상 10 이하인 문자열.\n각 문자열은 알파벳 대문자로만 이루어져 있으며 중복은 허용 안함. course 배열의 크기는 1 이상 10 이하.\ncourse 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순으로 정렬 정답은 각 코스요리 메뉴의 구성을 문자열 형식으로 배열에 담아 사전 순으로 오름차순 정렬해서 return\n배열의 각 원소에 저장된 문자열 또한 알파벳 오름차순으로 정렬\n만약 가장 많이 함께 주문된 메뉴 구성이 여러 개라면, 모두 배열에 담아 return\n무조건 return 하는 배열의 길이가 1 이상 Python 조합(combinations) 라이브러리를 사용해 구현\ndict를 사용해도 되는 문제.\n정렬이 중요한 문제. 각 손님은 단품메뉴를 2개 이상 주문해야 한다. 최소 2명 이상의 손님으로부터 주문된 단품메뉴 조합에 대해서만 코스요리 메뉴 후보에 포함 🔖 예제 및 실행결과 예제 print(solution([\"ABCFG\", \"AC\", \"CDE\", \"ACDE\", \"BCFG\", \"ACDEH\"], [2, 3, 4])) 실행결과 [\"AC\", \"ACDE\", \"BCFG\", \"CDE\"] ⌨️ 문제 풀이 주문을 받은 orders 배열을 순차적으로 순회할 반복문.\n순회하며 메뉴들을 리스트로 만들어 정렬.\n코스를 만들 메뉴 개수를 순회할 반복문. « 여기까지 2중 반복문. j\n조합 라이브러리를 사용해 3번 반복문에서 나오는 코스의 메뉴개수만큼 메뉴를 뽑아서\n중복을 없앤 뒤 t문자열에 저장. (t는 j 개를 뽑아 만든 메뉴의 조합입니다.)\nlist(set(combinations(data, j))) # set()은 중복을 없애줍니다! t 가 점수판에 없으면 새로 등록시켜 1점 부여\nt 가 점수판에 있으면 1점 부여\n최소 2명 이상의 손님으로부터 주문된 단품메뉴 조합 만 해당하기 때문에\nscore에 저장된 점수가 1점 이상이라면 new_score에 (메뉴, 점수) 형식으로 저장 후 점수를 기준으로 정렬\n\"\"\" # lambda 설명 x 를 x[1] 기준으로 정렬할건데, -가 붙으면 역순입니다. \"\"\" new_score.sort(key=lambda x: -x[1]) 마지막으로 코스요리를 구성할 메뉴 개수를 순회하면서 new_score에 넣은 코스메뉴 후보들을 검사하면서\n정답으로 반환할 배열 answer에 넣어주고, 정렬을 한 뒤 반환 시켜준다.\n🖥 소스 코드 from itertools import combinations def solution(orders, course): answer = [] score = {} n = len(orders) for i in range(n): data = sorted(list(orders[i])) for j in course: for k in list(set(combinations(data, j))): t = ''.join(k) if t in score: score[t] += 1 else: score[t] = 1 new_score = [] for menu, num in score.items(): if num \u003e 1: new_score.append((menu, num)) new_score.sort(key=lambda x: -x[1]) for i in course: max_order = 0 for c, num in new_score: if len(c) == i: if max_order \u003c= num: max_order = num answer.append(c) else: break answer.sort() return answer 💾 느낀점 정렬을 할 때 lambda를 많이 사용한게 도움이 되었다. combinations를 사용해서 번거로운 일이 적어서 좋았다.\n이런 간편한 라이브러리를 알고 있다는 것보다 사용할 때를 알고 있다는게 기분 좋았다. 카카오 기춟문제는 문제도 길고 조건도 자세하게 써있는데 눈에 잘 안들어온다.\n아직 문제 압축능력이 부족한 것 같다. ",
+  "wordCount" : "414",
+  "inLanguage": "en",
+  "datePublished": "2021-10-13T00:00:00Z",
+  "dateModified": "2021-10-13T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/programmers-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [Programmers] 메뉴 리뉴얼 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-10-13 00:00:00 +0000 UTC'>October 13, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[Programmers]%20%eb%a9%94%eb%89%b4%20%eb%a6%ac%eb%89%b4%ec%96%bc%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons72411-target_blankprogrammers---메뉴-리뉴얼a">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/72411" target="_blank">Programmers - 메뉴 리뉴얼</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons72411-target_blankprogrammers---메뉴-리뉴얼a">#</a></h2>
+<br>
+<h3 id="-조건-및-풀이">💡 조건 및 풀이<a hidden class="anchor" aria-hidden="true" href="#-조건-및-풀이">#</a></h3>
+<ol>
+<li><code>orders</code> 배열의 크기는 2 이상 20 이하.</li>
+<li><code>orders</code> 배열의 각 원소는 크기가 2 이상 10 이하인 문자열.<br>
+각 문자열은 알파벳 대문자로만 이루어져 있으며 <strong>중복은 허용 안함.</strong></li>
+<li><code>course</code> 배열의 크기는 1 이상 10 이하.<br>
+<code>course</code> 배열의 각 원소는 2 이상 10 이하인 자연수가 오름차순으로 정렬</li>
+<li>정답은 각 코스요리 메뉴의 구성을 <strong>문자열 형식으로 배열에 담아 사전 순으로 오름차순 정렬</strong>해서 return<br>
+배열의 각 원소에 저장된 문자열 또한 알파벳 <strong>오름차순</strong>으로 정렬<br>
+만약 <strong>가장 많이 함께 주문된 메뉴 구성이 여러 개라면, 모두 배열에 담아 return</strong><br>
+<strong>무조건 <code>return 하는 배열의 길이가 1 이상</code></strong></li>
+<li><strong>Python 조합<code>(combinations)</code> 라이브러리를 사용해 구현</strong><br>
+dict를 사용해도 되는 문제.<br>
+정렬이 중요한 문제.</li>
+<li><strong>각 손님은 단품메뉴를 2개 이상 주문해야 한다.</strong></li>
+<li><strong>최소 2명 이상의 손님으로부터 주문</strong>된 <strong>단품메뉴 조합</strong>에 대해서만 코스요리 메뉴 후보에 포함</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">([</span><span class="s2">&#34;ABCFG&#34;</span><span class="p">,</span> <span class="s2">&#34;AC&#34;</span><span class="p">,</span> <span class="s2">&#34;CDE&#34;</span><span class="p">,</span> <span class="s2">&#34;ACDE&#34;</span><span class="p">,</span> <span class="s2">&#34;BCFG&#34;</span><span class="p">,</span> <span class="s2">&#34;ACDEH&#34;</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="s2">&#34;AC&#34;</span><span class="p">,</span> <span class="s2">&#34;ACDE&#34;</span><span class="p">,</span> <span class="s2">&#34;BCFG&#34;</span><span class="p">,</span> <span class="s2">&#34;CDE&#34;</span><span class="p">]</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p>주문을 받은 <code>orders</code> 배열을 순차적으로 순회할 반복문.</p>
+</li>
+<li>
+<p>순회하며 메뉴들을 리스트로 만들어 정렬.</p>
+</li>
+<li>
+<p>코스를 만들 메뉴 개수를 순회할 반복문. &laquo; 여기까지 2중 반복문. <code>j</code></p>
+</li>
+<li>
+<p><code>조합 라이브러리</code>를 사용해 3번 반복문에서 나오는 코스의 메뉴개수만큼 메뉴를 뽑아서<br>
+중복을 없앤 뒤 t문자열에 저장. <strong>(t는 j 개를 뽑아 만든 메뉴의 조합입니다.)</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">j</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># set()은 중복을 없애줍니다!</span>
+</span></span></code></pre></div></li>
+<li>
+<p><code>t</code> 가 점수판에 없으면 새로 등록시켜 <strong>1점 부여</strong><br>
+<code>t</code> 가 점수판에 있으면 <strong>1점 부여</strong></p>
+</li>
+<li>
+<p><strong>최소 2명 이상의 손님으로부터 주문</strong>된 <strong>단품메뉴 조합</strong> 만 해당하기 때문에<br>
+<code>score</code>에 저장된 점수가 1점 이상이라면 <code>new_score</code>에 <code>(메뉴, 점수)</code> 형식으로 저장 후 점수를 기준으로 정렬</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2"># lambda 설명
+</span></span></span><span class="line"><span class="cl"><span class="s2">x 를 x[1] 기준으로 정렬할건데, -가 붙으면 역순입니다.
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="n">new_score</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span></code></pre></div></li>
+<li>
+<p>마지막으로 코스요리를 구성할 메뉴 개수를 순회하면서 <code>new_score</code>에 넣은 코스메뉴 후보들을 검사하면서<br>
+정답으로 반환할 배열 <code>answer</code>에 넣어주고, <strong>정렬을 한 뒤 반환 시켜준다.</strong></p>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">orders</span><span class="p">,</span> <span class="n">course</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">score</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">orders</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">orders</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">course</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">j</span><span class="p">))):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">t</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">score</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">score</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">score</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">new_score</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">menu</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">score</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_score</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">menu</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">new_score</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">course</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_order</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">new_score</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">max_order</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">max_order</span> <span class="o">=</span> <span class="n">num</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">answer</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ul>
+<li>정렬을 할 때 <code>lambda</code>를 많이 사용한게 도움이 되었다.</li>
+<li><code>combinations</code>를 사용해서 번거로운 일이 적어서 좋았다.<br>
+이런 간편한 라이브러리를 알고 있다는 것보다 사용할 때를 알고 있다는게 기분 좋았다.</li>
+<li>카카오 기춟문제는 문제도 길고 조건도 자세하게 써있는데 눈에 잘 안들어온다.<br>
+아직 문제 압축능력이 부족한 것 같다.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%A0%95%EB%A0%AC/">정렬</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/">구현</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-10775-%EA%B3%B5%ED%95%AD-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 10775 공항 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-2143-%EB%91%90-%EB%B0%B0%EC%97%B4%EC%9D%98-%ED%95%A9-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 2143 두 배열의 합 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

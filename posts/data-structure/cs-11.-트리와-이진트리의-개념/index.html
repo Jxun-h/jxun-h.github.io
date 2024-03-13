@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[CS] 11. 트리와 이진트리의 개념 | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, CS, Computer Science">
+<meta name="description" content="📌 트리와 이진트리의 개념 💡 트리의 개념 트리란?
+계층적 구조의 자료를 표현할 때 사용 ex) 가계도, 회사의 조직도, 폴더 구조 등 트리의 정의
+하나 이상의 노드로 이루어진 유한 집합 Root(루트) 라고 하는 노드가 하나 존재한다. 나머지 노드들은 n(n &gt;= 0) 개의 집합 T[1], &hellip; ,T[n]으로 분할 이처럼 분할된 트리를 루트의 서브트리라고 한다. 💡 트리에 관련된 용어들 Level 1 : 노드의 차수(Degree), 트리의 차(Degree) Level 2 : 단일노드(Leaf node or Terminal node) Level 3 : 부모노드, 자식노드, 형제노드 Level 4 : 조상노드, 자손노드, level, 트리의 높이 or 깊이 💡 이진트리의 개념 이진트리(Binary Tree)란?">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[CS] 11. 트리와 이진트리의 개념" />
+<meta property="og:description" content="📌 트리와 이진트리의 개념 💡 트리의 개념 트리란?
+계층적 구조의 자료를 표현할 때 사용 ex) 가계도, 회사의 조직도, 폴더 구조 등 트리의 정의
+하나 이상의 노드로 이루어진 유한 집합 Root(루트) 라고 하는 노드가 하나 존재한다. 나머지 노드들은 n(n &gt;= 0) 개의 집합 T[1], &hellip; ,T[n]으로 분할 이처럼 분할된 트리를 루트의 서브트리라고 한다. 💡 트리에 관련된 용어들 Level 1 : 노드의 차수(Degree), 트리의 차(Degree) Level 2 : 단일노드(Leaf node or Terminal node) Level 3 : 부모노드, 자식노드, 형제노드 Level 4 : 조상노드, 자손노드, level, 트리의 높이 or 깊이 💡 이진트리의 개념 이진트리(Binary Tree)란?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-12T14:21:00+00:00" />
+<meta property="article:modified_time" content="2022-07-12T14:21:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-13.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B6%94%EA%B0%80-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-10.%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-9.-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%97%B0%EC%82%B0/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/data-structure/cs-8.-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[CS] 11. 트리와 이진트리의 개념"/>
+<meta name="twitter:description" content="📌 트리와 이진트리의 개념 💡 트리의 개념 트리란?
+계층적 구조의 자료를 표현할 때 사용 ex) 가계도, 회사의 조직도, 폴더 구조 등 트리의 정의
+하나 이상의 노드로 이루어진 유한 집합 Root(루트) 라고 하는 노드가 하나 존재한다. 나머지 노드들은 n(n &gt;= 0) 개의 집합 T[1], &hellip; ,T[n]으로 분할 이처럼 분할된 트리를 루트의 서브트리라고 한다. 💡 트리에 관련된 용어들 Level 1 : 노드의 차수(Degree), 트리의 차(Degree) Level 2 : 단일노드(Leaf node or Terminal node) Level 3 : 부모노드, 자식노드, 형제노드 Level 4 : 조상노드, 자손노드, level, 트리의 높이 or 깊이 💡 이진트리의 개념 이진트리(Binary Tree)란?"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[CS] 11. 트리와 이진트리의 개념",
+      "item": "https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[CS] 11. 트리와 이진트리의 개념",
+  "name": "[CS] 11. 트리와 이진트리의 개념",
+  "description": "📌 트리와 이진트리의 개념 💡 트리의 개념 트리란?\n계층적 구조의 자료를 표현할 때 사용 ex) 가계도, 회사의 조직도, 폴더 구조 등 트리의 정의\n하나 이상의 노드로 이루어진 유한 집합 Root(루트) 라고 하는 노드가 하나 존재한다. 나머지 노드들은 n(n \u0026gt;= 0) 개의 집합 T[1], \u0026hellip; ,T[n]으로 분할 이처럼 분할된 트리를 루트의 서브트리라고 한다. 💡 트리에 관련된 용어들 Level 1 : 노드의 차수(Degree), 트리의 차(Degree) Level 2 : 단일노드(Leaf node or Terminal node) Level 3 : 부모노드, 자식노드, 형제노드 Level 4 : 조상노드, 자손노드, level, 트리의 높이 or 깊이 💡 이진트리의 개념 이진트리(Binary Tree)란?",
+  "keywords": [
+    "자료구조", "CS", "Computer Science"
+  ],
+  "articleBody": "\n📌 트리와 이진트리의 개념 💡 트리의 개념 트리란?\n계층적 구조의 자료를 표현할 때 사용 ex) 가계도, 회사의 조직도, 폴더 구조 등 트리의 정의\n하나 이상의 노드로 이루어진 유한 집합 Root(루트) 라고 하는 노드가 하나 존재한다. 나머지 노드들은 n(n \u003e= 0) 개의 집합 T[1], … ,T[n]으로 분할 이처럼 분할된 트리를 루트의 서브트리라고 한다. 💡 트리에 관련된 용어들 Level 1 : 노드의 차수(Degree), 트리의 차(Degree) Level 2 : 단일노드(Leaf node or Terminal node) Level 3 : 부모노드, 자식노드, 형제노드 Level 4 : 조상노드, 자손노드, level, 트리의 높이 or 깊이 💡 이진트리의 개념 이진트리(Binary Tree)란? 모든 노드의 차수가 2를 넘지 않는 트리 = 일반 트리에 비해 구현이 쉽다. 왼쪽 서브트리와 오른쪽 서브트리가 구분된다. 이진트리의 정의\n유한한 개수의 노드들이 집합으로서 노드 수는 0이 될 수 있다. 하나의 루트노드와 왼쪽 서브트리, 그리고 오른쪽 서브트리로 구성되어있다. 각 서브트리는 다시 이진트리이다. 트리를 이진트리로 변환하는 방법\nLeft child - Right sibling 표현 노드 A의 제일 왼쪽 노드 : A의 왼쪽 자식 노드 A의 나머지 자식 노드들 : 자식 노드의 오른쪽 노드 💡 이진트리의 성질 최대 노드 수 이진 트리의 레벨 i 에서 최대 노드 수는 2^(i-1) (i \u003e 0) 깊이가 k인 이진트리가 가질 수 있는 최대 노드 수 단말 노드 수와 차수가 2인 노드 수\nN[0] : 단말 노드수 N[2] : 차수가 2인 노드의 수 = N[0] = N[2] + 1 정의 : 깊이가 K인 포화 이진트리(Full Binary Tree)\n깊이가 K 이고, 노드 수가 2 ** (k \u003e= 0) 인 이진트리 💡 완전이진트리(Complete Binary Tree) 완전이진트리란? 깊이가 K이고 노드 수가 N 인 이진트리의 각 노드들이 깊이가 K인 포화이진트리에서 1부터 N까지의 번호를 붙인 노드들과 1대1로 일치하는 이진트리. 마지막 레벨을 제외하고 포화이진트리이며, 마지막 레벨에서 왼쪽부터 빠짐없이 노드가 채워진 형태로 트리가 구성된 경우를 말한다. 💡 이진트리의 표현 배열 표현법 - 1차원 배열에 저장 (완전이진트리 저장에 적합)\n루트 노드는 [1] 에 저장한다. 부모 노드가 [i] 에 저장될 경우 왼쪽 자식 노드는 [i * 2]에 저장한다. 오른쪽 자식 노드는 [i * 2 + 1]에 저장한다. 이 때, i 번째 노드의 부모 인덱스는 i // 2 이다. 만약 2의 제곱수에 해당하는 인덱스에만 데이터가 들어가있다면, 그 트리는 편향 이진트리이다. 링크 표현법\n노드를 구조체로 표현 * 코드 stuct node{ char data; struct node *left_child; struct node *right_child; }; 노드의 수가 N 일 경우, 링크의 수 = 2N NULL 인 link 의 수는 N + 1 ",
+  "wordCount" : "369",
+  "inLanguage": "en",
+  "datePublished": "2022-07-12T14:21:00Z",
+  "dateModified": "2022-07-12T14:21:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/data-structure/cs-11.-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EA%B0%9C%EB%85%90/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [CS] 11. 트리와 이진트리의 개념
+    </h1>
+    <div class="post-meta"><span title='2022-07-12 14:21:00 +0000 UTC'>July 12, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Data%20Structure/[CS]%2011.%20%ed%8a%b8%eb%a6%ac%ec%99%80%20%ec%9d%b4%ec%a7%84%ed%8a%b8%eb%a6%ac%ec%9d%98%20%ea%b0%9c%eb%85%90.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-트리와-이진트리의-개념">📌 트리와 이진트리의 개념<a hidden class="anchor" aria-hidden="true" href="#-트리와-이진트리의-개념">#</a></h2>
+<br>
+<h3 id="-트리의-개념">💡 트리의 개념<a hidden class="anchor" aria-hidden="true" href="#-트리의-개념">#</a></h3>
+<ol>
+<li>
+<p>트리란?</p>
+<ol>
+<li>계층적 구조의 자료를 표현할 때 사용</li>
+<li>ex) 가계도, 회사의 조직도, 폴더 구조 등</li>
+</ol>
+</li>
+<li>
+<p>트리의 정의</p>
+<ol>
+<li>하나 이상의 노드로 이루어진 유한 집합</li>
+<li>Root(루트) 라고 하는 노드가 하나 존재한다.</li>
+<li>나머지 노드들은 n(n &gt;= 0) 개의 집합 T[1], &hellip; ,T[n]으로 분할
+<ol>
+<li>이처럼 분할된 트리를 루트의 서브트리라고 한다.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<br>
+<center><img src='/cs_11_1.png' /></center>
+<br>
+<h3 id="-트리에-관련된-용어들">💡 트리에 관련된 용어들<a hidden class="anchor" aria-hidden="true" href="#-트리에-관련된-용어들">#</a></h3>
+<ol>
+<li>Level 1 : 노드의 차수(Degree), 트리의 차(Degree)</li>
+<li>Level 2 : 단일노드(Leaf node or Terminal node)</li>
+<li>Level 3 : 부모노드, 자식노드, 형제노드</li>
+<li>Level 4 : 조상노드, 자손노드, level, 트리의 높이 or 깊이</li>
+</ol>
+<br>
+<center><img src='/cs_11_2.png' /></center>
+<br>
+<h3 id="-이진트리의-개념">💡 이진트리의 개념<a hidden class="anchor" aria-hidden="true" href="#-이진트리의-개념">#</a></h3>
+<ol>
+<li>이진트리(Binary Tree)란?
+<ol>
+<li>모든 노드의 차수가 2를 넘지 않는 트리
+<ol>
+<li>= 일반 트리에 비해 구현이 쉽다.</li>
+</ol>
+</li>
+<li>왼쪽 서브트리와 오른쪽 서브트리가 구분된다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<center><img src='/cs_11_3.png' /></center>
+<ol start="2">
+<li>
+<p>이진트리의 정의</p>
+<ol>
+<li>유한한 개수의 노드들이 집합으로서 노드 수는 0이 될 수 있다.</li>
+<li>하나의 루트노드와 왼쪽 서브트리, 그리고 오른쪽 서브트리로 구성되어있다.</li>
+<li>각 서브트리는 다시 이진트리이다.</li>
+</ol>
+</li>
+<li>
+<p>트리를 이진트리로 변환하는 방법</p>
+<ol>
+<li>Left child - Right sibling 표현
+<ol>
+<li>노드 A의 제일 왼쪽 노드 : A의 왼쪽 자식 노드</li>
+<li>A의 나머지 자식 노드들 : 자식 노드의 오른쪽 노드</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<br>
+<center><img src='/cs_11_4.png' /></center>
+<br>
+<h3 id="-이진트리의-성질">💡 이진트리의 성질<a hidden class="anchor" aria-hidden="true" href="#-이진트리의-성질">#</a></h3>
+<ol>
+<li>최대 노드 수
+<ol>
+<li>이진 트리의 레벨 i 에서 최대 노드 수는 2^(i-1) (i &gt; 0)</li>
+<li>깊이가 k인 이진트리가 가질 수 있는 최대 노드 수</li>
+</ol>
+</li>
+</ol>
+<br>
+<center><img src='/cs_11_5.png' /></center>
+<ol start="2">
+<li>
+<p>단말 노드 수와 차수가 2인 노드 수</p>
+<ol>
+<li>N[0] : 단말 노드수</li>
+<li>N[2] : 차수가 2인 노드의 수 = N[0] = N[2] + 1</li>
+</ol>
+</li>
+<li>
+<p>정의 : 깊이가 K인 포화 이진트리(Full Binary Tree)</p>
+<ol>
+<li>깊이가 K 이고, 노드 수가 2 ** (k &gt;= 0) 인 이진트리</li>
+</ol>
+</li>
+</ol>
+<br>
+<h3 id="-완전이진트리complete-binary-tree">💡 완전이진트리(Complete Binary Tree)<a hidden class="anchor" aria-hidden="true" href="#-완전이진트리complete-binary-tree">#</a></h3>
+<ol>
+<li>완전이진트리란?
+<ol>
+<li>깊이가 K이고 노드 수가 N 인 이진트리의 각 노드들이 깊이가 K인 포화이진트리에서 1부터 N까지의 번호를 붙인 노드들과 1대1로 일치하는 이진트리.</li>
+<li>마지막 레벨을 제외하고 포화이진트리이며, 마지막 레벨에서 왼쪽부터 빠짐없이 노드가 채워진 형태로 트리가 구성된 경우를 말한다.</li>
+</ol>
+</li>
+</ol>
+<br>
+<center><img src='/cs_11_6.png' /></center>
+<br>
+<h3 id="-이진트리의-표현">💡 이진트리의 표현<a hidden class="anchor" aria-hidden="true" href="#-이진트리의-표현">#</a></h3>
+<ol>
+<li>
+<p>배열 표현법 - 1차원 배열에 저장 (완전이진트리 저장에 적합)</p>
+<ol>
+<li>루트 노드는 [1] 에 저장한다.</li>
+<li>부모 노드가 [i] 에 저장될 경우
+<ol>
+<li>왼쪽 자식 노드는 [i * 2]에 저장한다.</li>
+<li>오른쪽 자식 노드는 [i * 2 + 1]에 저장한다.</li>
+<li>이 때, i 번째 노드의 부모 인덱스는 i // 2 이다.</li>
+</ol>
+</li>
+<li>만약 2의 제곱수에 해당하는 인덱스에만 데이터가 들어가있다면, 그 트리는 편향 이진트리이다.</li>
+</ol>
+</li>
+<li>
+<p>링크 표현법</p>
+<ol>
+<li>노드를 구조체로 표현 </li>
+<li>* 코드</li>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">stuct</span> <span class="n">node</span><span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">node</span> <span class="o">*</span><span class="n">left_child</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="nc">node</span> <span class="o">*</span><span class="n">right_child</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span></code></pre></div></li>
+<li>노드의 수가 N 일 경우, 링크의 수 = 2N</li>
+<li>NULL 인 link 의 수는 N + 1</li>
+</ol>
+</li>
+</ol>
+<br>
+<center><img src='/cs_11_7.png' /></center>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/cs/">CS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/computer-science/">Computer Science</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/data-structure/cs-12.%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%88%9C%ED%9A%8C/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[CS] 12.이진트리의 순회</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/data-structure/cs-10.%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[CS] 10.이중 연결 리스트</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

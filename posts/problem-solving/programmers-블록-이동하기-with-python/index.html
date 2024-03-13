@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Programmers] 블록 이동하기 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 구현, 시뮬레이션, 알고리즘, 백준, BOJ">
+<meta name="description" content="📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.
+board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x &#43; dx[i], pos1_y &#43; dy[i], pos2_x &#43; dx[i], pos2_y &#43; dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[Programmers] 블록 이동하기 with Python" />
+<meta property="og:description" content="📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.
+board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x &#43; dx[i], pos1_y &#43; dy[i], pos2_x &#43; dx[i], pos2_y &#43; dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-12T00:00:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%99%B8%EB%B2%BD-%EC%A0%90%EA%B2%80-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%ED%9B%84%EB%B3%B4%ED%82%A4-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/programmers-%EC%98%A4%ED%94%88%EC%B1%84%ED%8C%85%EB%B0%A9-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[Programmers] 블록 이동하기 with Python"/>
+<meta name="twitter:description" content="📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.
+board의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x &#43; dx[i], pos1_y &#43; dy[i], pos2_x &#43; dx[i], pos2_y &#43; dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Programmers] 블록 이동하기 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Programmers] 블록 이동하기 with Python",
+  "name": "[Programmers] 블록 이동하기 with Python",
+  "description": "📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.\nboard의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x + dx[i], pos1_y + dy[i], pos2_x + dx[i], pos2_y + dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos.",
+  "keywords": [
+    "자료구조", "PS", "구현", "시뮬레이션", "알고리즘", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 Programmers 블록 이동하기 with Python 💡 조건 board의 한 변의 길이는 5 이상 100 이하.\nboard의 원소는 0(이동가능 블록) 또는 1(이동불가 벽). 로봇이 처음에 놓여 있는 칸 (1, 1), (1, 2)는 항상 0으로 주어진다. 로봇은 회전할 수 있다. BFS, 시뮬레이션의 문제 (N, N) 좌표까지 도달하는 최소시간을 구하는 문제 🔖 예제 및 실행결과 예제 print(solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])) 실행결과 7 🖥 소스 코드 from collections import deque def get_next_pos(pos, board): next_pos = [] pos = list(pos) pos1_x, pos1_y, pos2_x, pos2_y = pos[0][0], pos[0][1], pos[1][0], pos[1][1] dx = [-1, 1, 0, 0] dy = [0, 0, -1, 1] for i in range(4): pos1_next_x, pos1_next_y, pos2_next_x, pos2_next_y = pos1_x + dx[i], pos1_y + dy[i], pos2_x + dx[i], pos2_y + dy[i] if board[pos1_next_x][pos1_next_y] == 0 and board[pos2_next_x][pos2_next_y] == 0: next_pos.append({(pos1_next_x, pos1_next_y), (pos2_next_x, pos2_next_y)}) if pos1_x == pos2_x: for i in [-1, 1]: if board[pos1_x + i][pos1_y] == 0 and board[pos2_x + i][pos2_y] == 0: next_pos.append({(pos1_x, pos1_y), (pos1_x + i, pos1_y)}) next_pos.append({(pos2_x, pos2_y), (pos2_x + i, pos2_y)}) elif pos1_y == pos2_y: for i in [-1, 1]: if board[pos1_x][pos1_y + i] == 0 and board[pos2_x][pos2_y + i] == 0: next_pos.append({(pos1_x, pos1_y), (pos1_x, pos1_y + i)}) next_pos.append({(pos2_x, pos2_y), (pos2_x, pos2_y + i)}) return next_pos def solution(board): n = len(board) new_board = [[1] * (n + 2) for _ in range(n + 2)] for i in range(n): for j in range(n): new_board[i + 1][j + 1] = board[i][j] q = deque() visited = [] pos = {(1, 1), (1, 2)} q.append((pos, 0)) visited.append(pos) while q: pos, cost = q.popleft() if (n, n) in pos: return cost for next_pos in get_next_pos(pos, new_board): if next_pos not in visited: q.append((next_pos, cost + 1)) visited.append(next_pos) return 0 ⌨️ 문제 풀이 가장 먼저, (n * n) 크기의 맵을 (n + 2) * (n + 2) 맵으로 새로 만들어\n맵 주변을 1로 둘러주어 이동하지 못하는 곳을 확실히 만들어준다. 시작 위치는 {(1, 1), (1, 2)} 로 pos에 저장한 뒤 큐에 넣는다.\n물론 방문한 기록을 남길 visited 리스트에도 저장한다. BFS의 방식으로 Queue가 빌 때까지 순회를 한다.\n단, 현재 위치에서 이동이 가능하거나 회전이 가능한 위치를 큐에 저장한다. 3번에서 말한 이동 및 회전이 가능한 좌표는 함수 get_next_pos()에서 반환하는 좌표값들을 기준으로 한다. get_next_pos 에서는 현재 위치에서 이동 및 가능한 좌표를 반환하는데, 아래의 조건을 잘 확인해야한다. 상하좌우 네 방향으로 이동이 가능한지 현재 로봇이 가로로 놓여져 있는 경우 회전이 가능한지 현재 로봇이 세로로 놓여져 있는 경우 회전이 가능한지 get_next_pos 에서 반환받은 좌표들 중, 이미 방문한 장소가 아니라면 방문처리를 하고 cost(걸린 시간) 을 큐와 함께 넣어준다. 💾 느낀점 로봇이 90도 회전하는 좌표에 대해서 처리하고 반환하는 것이 어려웠다. 좌표 계산이 헷갈려 힘이 들었다. 좌표 및 인덱싱에 대해 연습이 많이 필요할 것 같다. ",
+  "wordCount" : "447",
+  "inLanguage": "en",
+  "datePublished": "2021-12-12T00:00:00Z",
+  "dateModified": "2021-12-12T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/programmers-%EB%B8%94%EB%A1%9D-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/board/" title="Board">
+                    <span>Board</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [Programmers] 블록 이동하기 with Python
+    </h1>
+    <div class="post-meta"><span title='2021-12-12 00:00:00 +0000 UTC'>December 12, 2021</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[Programmers]%20%eb%b8%94%eb%a1%9d%20%ec%9d%b4%eb%8f%99%ed%95%98%ea%b8%b0%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpsprogrammerscokrlearncourses30lessons60063-target_blankprogrammers-블록-이동하기-with-pythona">📌 <a href="https://programmers.co.kr/learn/courses/30/lessons/60063" target="_blank">Programmers 블록 이동하기 with Python</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpsprogrammerscokrlearncourses30lessons60063-target_blankprogrammers-블록-이동하기-with-pythona">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li><code>board</code>의 한 변의 길이는 <code>5 이상 100 이하</code>.<br>
+<code>board</code>의 원소는 <code>0(이동가능 블록)</code> 또는 <code>1(이동불가 벽)</code>.</li>
+<li>로봇이 처음에 놓여 있는 칸 <code>(1, 1), (1, 2)</code>는 항상 0으로 주어진다.</li>
+<li>로봇은 회전할 수 있다.</li>
+<li><strong>BFS, 시뮬레이션</strong>의 문제</li>
+<li><code>(N, N)</code> 좌표까지 도달하는 최소시간을 구하는 문제</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">solution</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]))</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">7</span>
+</span></span></code></pre></div><br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">get_next_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">board</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">next_pos</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pos1_x</span><span class="p">,</span> <span class="n">pos1_y</span><span class="p">,</span> <span class="n">pos2_x</span><span class="p">,</span> <span class="n">pos2_y</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">dx</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pos1_next_x</span><span class="p">,</span> <span class="n">pos1_next_y</span><span class="p">,</span> <span class="n">pos2_next_x</span><span class="p">,</span> <span class="n">pos2_next_y</span> <span class="o">=</span> <span class="n">pos1_x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pos1_y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pos2_x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">pos2_y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">pos1_next_x</span><span class="p">][</span><span class="n">pos1_next_y</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">pos2_next_x</span><span class="p">][</span><span class="n">pos2_next_y</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">next_pos</span><span class="o">.</span><span class="n">append</span><span class="p">({(</span><span class="n">pos1_next_x</span><span class="p">,</span> <span class="n">pos1_next_y</span><span class="p">),</span> <span class="p">(</span><span class="n">pos2_next_x</span><span class="p">,</span> <span class="n">pos2_next_y</span><span class="p">)})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">pos1_x</span> <span class="o">==</span> <span class="n">pos2_x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">pos1_x</span> <span class="o">+</span> <span class="n">i</span><span class="p">][</span><span class="n">pos1_y</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">pos2_x</span> <span class="o">+</span> <span class="n">i</span><span class="p">][</span><span class="n">pos2_y</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">next_pos</span><span class="o">.</span><span class="n">append</span><span class="p">({(</span><span class="n">pos1_x</span><span class="p">,</span> <span class="n">pos1_y</span><span class="p">),</span> <span class="p">(</span><span class="n">pos1_x</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="n">pos1_y</span><span class="p">)})</span>
+</span></span><span class="line"><span class="cl">                <span class="n">next_pos</span><span class="o">.</span><span class="n">append</span><span class="p">({(</span><span class="n">pos2_x</span><span class="p">,</span> <span class="n">pos2_y</span><span class="p">),</span> <span class="p">(</span><span class="n">pos2_x</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="n">pos2_y</span><span class="p">)})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">pos1_y</span> <span class="o">==</span> <span class="n">pos2_y</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">board</span><span class="p">[</span><span class="n">pos1_x</span><span class="p">][</span><span class="n">pos1_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">board</span><span class="p">[</span><span class="n">pos2_x</span><span class="p">][</span><span class="n">pos2_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">next_pos</span><span class="o">.</span><span class="n">append</span><span class="p">({(</span><span class="n">pos1_x</span><span class="p">,</span> <span class="n">pos1_y</span><span class="p">),</span> <span class="p">(</span><span class="n">pos1_x</span><span class="p">,</span> <span class="n">pos1_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">)})</span>
+</span></span><span class="line"><span class="cl">                <span class="n">next_pos</span><span class="o">.</span><span class="n">append</span><span class="p">({(</span><span class="n">pos2_x</span><span class="p">,</span> <span class="n">pos2_y</span><span class="p">),</span> <span class="p">(</span><span class="n">pos2_x</span><span class="p">,</span> <span class="n">pos2_y</span> <span class="o">+</span> <span class="n">i</span><span class="p">)})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">next_pos</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">board</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">new_board</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_board</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">board</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">pos</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">q</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pos</span><span class="p">,</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cost</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">next_pos</span> <span class="ow">in</span> <span class="n">get_next_pos</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">new_board</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">next_pos</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">next_pos</span><span class="p">,</span> <span class="n">cost</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">next_pos</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>가장 먼저, <code>(n * n)</code> 크기의 맵을 <code>(n + 2) * (n + 2)</code> 맵으로 새로 만들어<br>
+<strong>맵 주변을 1로 둘러주어 이동하지 못하는 곳을 확실히 만들어준다.</strong></li>
+<li>시작 위치는 <code>{(1, 1), (1, 2)}</code> 로 <code>pos</code>에 저장한 뒤 큐에 넣는다.<br>
+물론 방문한 기록을 남길 <code>visited</code> 리스트에도 저장한다.</li>
+<li>BFS의 방식으로 <code>Queue</code>가 빌 때까지 순회를 한다.<br>
+단, 현재 위치에서 이동이 가능하거나 회전이 가능한 위치를 큐에 저장한다.</li>
+<li>3번에서 말한 이동 및 회전이 가능한 좌표는 함수 <code>get_next_pos()</code>에서 반환하는 좌표값들을 기준으로 한다.</li>
+<li><code>get_next_pos</code> 에서는 현재 위치에서 이동 및 가능한 좌표를 반환하는데, 아래의 조건을 잘 확인해야한다.
+<ol>
+<li>상하좌우 네 방향으로 이동이 가능한지</li>
+<li>현재 로봇이 가로로 놓여져 있는 경우 회전이 가능한지</li>
+<li>현재 로봇이 세로로 놓여져 있는 경우 회전이 가능한지</li>
+</ol>
+</li>
+<li><code>get_next_pos</code> 에서 반환받은 좌표들 중, 이미 방문한 장소가 아니라면 방문처리를 하고 <code>cost(걸린 시간)</code> 을 큐와 함께 넣어준다.</li>
+</ol>
+<br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>로봇이 90도 회전하는 좌표에 대해서 처리하고 반환하는 것이 어려웠다.</li>
+<li>좌표 계산이 헷갈려 힘이 들었다.</li>
+<li>좌표 및 인덱싱에 대해 연습이 많이 필요할 것 같다.</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EA%B5%AC%ED%98%84/">구현</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/">시뮬레이션</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-2615-%EC%98%A4%EB%AA%A9-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 2615 오목 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-11497-%ED%86%B5%EB%82%98%EB%AC%B4-%EA%B1%B4%EB%84%88%EB%9B%B0%EA%B8%B0-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 11497 통나무 건너뛰기 with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
