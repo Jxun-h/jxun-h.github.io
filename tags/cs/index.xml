@@ -11,8 +11,29 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 17 Jul 2022 18:51:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Aug 2022 18:41:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/cs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[CS] 19.최소 비용 신장트리</title>
+      <link>https://jxun-h.github.io/posts/data-structure/cs-19.%EC%B5%9C%EC%86%8C-%EB%B9%84%EC%9A%A9-%EC%8B%A0%EC%9E%A5%ED%8A%B8%EB%A6%AC/</link>
+      <pubDate>Tue, 09 Aug 2022 18:41:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/data-structure/cs-19.%EC%B5%9C%EC%86%8C-%EB%B9%84%EC%9A%A9-%EC%8B%A0%EC%9E%A5%ED%8A%B8%EB%A6%AC/</guid>
+      <description>📌최소 비용 신장트리 💡최소 비용 신장트리 정의
+가중치가 부여된 무방향 그래프에서 신장 트리의 비용
+가중치 : 두 vertex 사이의 거리 혹은 연결하는 비용
+= 신장트리를 구성하는 에지들의 비용의 합 최소 비용 신장트리 : 가장 비용이 적은 신장 트리 응용 분야
+도로 건설 : 도시를 모두 연결하면서 도로의 길이가 최소가 되도록 하는 문제
+ex) 통신, 배관 최소 비용 신장트리 알고리즘
+최소 비용 신장트리 알고리즘 그래프 내에 존재하는 Edge들만 사용한다. 정점의 개수가 n일 때, n - 1개의 Edge들만 사용한다.</description>
+    </item>
+    <item>
+      <title>[CS] 18.기초적인 그래프 연산들</title>
+      <link>https://jxun-h.github.io/posts/data-structure/cs-18.%EA%B8%B0%EC%B4%88%EC%A0%81%EC%9D%B8-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%97%B0%EC%82%B0%EB%93%A4/</link>
+      <pubDate>Tue, 09 Aug 2022 18:18:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/data-structure/cs-18.%EA%B8%B0%EC%B4%88%EC%A0%81%EC%9D%B8-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%97%B0%EC%82%B0%EB%93%A4/</guid>
+      <description>📌 기초적인 그래프 연산들 💡깊이 우선 탐색(Depth First Search) DFS 알고리즘 출발 정점, v의 인접리스트부터 방문한다. v에 인접하면서 아직 방문하지 않은 정점 w를 선택한다. w를 시작점으로 하여 다시 DFS를 시작한다. 순환 알고리즘을 이용하여 구현한다.(재귀) 💡너비 우선 탐색(Breath First Search) BFS 알고리즘 출발 정점, v의 인접 리스트부터 방문한다. v에 인접한 모든 vertex부터 방문한다. 그 다음, v에 인접한 첫번째 vertex에 인접한 vertex 중에서
+아직 방문하지 않은 vertex 들을 차례대로 다시 방문한다.</description>
+    </item>
     <item>
       <title>[CS] 17.그래프의 개념과 표현</title>
       <link>https://jxun-h.github.io/posts/data-structure/cs-17.%EA%B7%B8%EB%9E%98%ED%94%84%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%ED%91%9C%ED%98%84/</link>

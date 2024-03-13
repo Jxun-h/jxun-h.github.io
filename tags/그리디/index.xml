@@ -11,8 +11,27 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 16 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Apr 2023 16:26:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EA%B7%B8%EB%A6%AC%EB%94%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1789 수들의 합 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1789-%EC%88%98%EB%93%A4%EC%9D%98-%ED%95%A9-with-python/</link>
+      <pubDate>Mon, 03 Apr 2023 16:26:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1789-%EC%88%98%EB%93%A4%EC%9D%98-%ED%95%A9-with-python/</guid>
+      <description>📌 BOJ 1789 수들의 합 💡 조건 서로 다른 N개의 자연수의 합이 S라고 한다. S를 알 때, 자연수 N의 최댓값은 얼마일까? 첫째 줄에 자연수 S(1 ≤ S ≤ 4,294,967,295)가 주어진다. 첫째 줄에 자연수 N의 최댓값을 출력한다. 수학, 그리디 알고리즘 유형의 문제 🔖 예제 및 실행결과 예제 1 200 실행결과 1 19 ⌨️ 문제 풀이 계산하고 있는 계산값(A), 정답(B), 더할 수(C)를 각각 변수로 만든다. while를 이용해 반복적인 계산을 한다.
+A += C 후, C += 1, B += 1 (2)번의 반복문은 A가 입력 받은 S 보다 작을때만 반복한다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 14469 소가 길을 건너간 이유 3 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14469-%EC%86%8C%EA%B0%80-%EA%B8%B8%EC%9D%84-%EA%B1%B4%EB%84%88%EA%B0%84-%EC%9D%B4%EC%9C%A0-3-with-python/</link>
+      <pubDate>Sat, 01 Apr 2023 22:41:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14469-%EC%86%8C%EA%B0%80-%EA%B8%B8%EC%9D%84-%EA%B1%B4%EB%84%88%EA%B0%84-%EC%9D%B4%EC%9C%A0-3-with-python/</guid>
+      <description>📌 BOJ 14469 소가 길을 건너간 이유 3 💡 조건 N마리의 소가 이 농장에 방문하러 왔다. 소가 도착한 시간과 검문받는 데 걸리는 시간은 소마다 다르다. (물론 같을 수도 있다.)
+두 소가 동시에 검문을 받을 수는 없다. 예를 들어, 한 소가 5초에 도착했고 7초 동안 검문을 받으면,
+8초에 도착한 그 다음 소는 12초까지 줄을 서야 검문을 받을 수 있다.
+모든 소가 농장에 입장하려면 얼마나 걸리는지 구하는 문제.
+첫 줄에 100 이하의 양의 정수 N이 주어진다.</description>
+    </item>
     <item>
       <title>[BOJ] 1700 멀티탭 스케줄링 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-1700-%EB%A9%80%ED%8B%B0%ED%83%AD-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81-with-python/</link>

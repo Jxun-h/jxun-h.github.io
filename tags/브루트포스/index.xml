@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Apr 2023 16:14:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 10419 지각 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-10419-%EC%A7%80%EA%B0%81-with-python/</link>
+      <pubDate>Mon, 03 Apr 2023 16:14:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-10419-%EC%A7%80%EA%B0%81-with-python/</guid>
+      <description>📌 BOJ 10419 지각 💡 조건 교수님의 지각시간 0이상의 정수 t와 수업을 일찍 마쳐주는 시간 s 사이에는 s = t**2 의 관계가 있다. 창영이가 궁금한 경우의 수 T(1 ≤ T ≤ 100)가 첫 번째 줄에 주어지고, 이어서 T 개의 줄에 수업시간 d(1 ≤ d ≤ 10,000, d는 정수)가 차례대로 주어진다. 수업시간에 따른 교수님이 지각할 수 있는 최대 시간 t를 정수로 구해서 출력한다. 지각할 수 있는 최대의 시간을 알아보는 문제 브루트포스 유형의 문제 🔖 예제 및 실행결과 예제 1 5 1 2 5 6 7 실행결과 1 0 1 1 2 2 ⌨️ 문제 풀이 지각할 수 있는 최대시간을 구하려면, 수업시간 d의 최대값이 얼마인지 확인해봐야한다.</description>
+    </item>
     <item>
       <title>[BOJ] 9996 한국이 그리울 땐 서버에 접속하지 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-9996-%ED%95%9C%EA%B5%AD%EC%9D%B4-%EA%B7%B8%EB%A6%AC%EC%9A%B8-%EB%95%90-%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%98%EC%A7%80-with-python/</link>

@@ -11,13 +11,32 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Aug 2022 17:18:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Apr 2023 22:41:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%A0%95%EB%A0%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[BOJ] 14469 소가 길을 건너간 이유 3 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-14469-%EC%86%8C%EA%B0%80-%EA%B8%B8%EC%9D%84-%EA%B1%B4%EB%84%88%EA%B0%84-%EC%9D%B4%EC%9C%A0-3-with-python/</link>
+      <pubDate>Sat, 01 Apr 2023 22:41:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-14469-%EC%86%8C%EA%B0%80-%EA%B8%B8%EC%9D%84-%EA%B1%B4%EB%84%88%EA%B0%84-%EC%9D%B4%EC%9C%A0-3-with-python/</guid>
+      <description>📌 BOJ 14469 소가 길을 건너간 이유 3 💡 조건 N마리의 소가 이 농장에 방문하러 왔다. 소가 도착한 시간과 검문받는 데 걸리는 시간은 소마다 다르다. (물론 같을 수도 있다.)
+두 소가 동시에 검문을 받을 수는 없다. 예를 들어, 한 소가 5초에 도착했고 7초 동안 검문을 받으면,
+8초에 도착한 그 다음 소는 12초까지 줄을 서야 검문을 받을 수 있다.
+모든 소가 농장에 입장하려면 얼마나 걸리는지 구하는 문제.
+첫 줄에 100 이하의 양의 정수 N이 주어진다.</description>
+    </item>
+    <item>
+      <title>[BOJ] 12760 with Python</title>
+      <link>https://jxun-h.github.io/posts/temp/temp/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
+      <description>
+📌 BOJ 12760 </description>
+    </item>
+    <item>
       <title>[BOJ] 1722 순열의 순서 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/</link>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/</link>
       <pubDate>Tue, 09 Aug 2022 17:18:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/</guid>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/</guid>
       <description>📌 BOJ 1722 순열의 순서 💡 조건 1부터 N까지의 수를 임의로 배열한 순열은 총 N! = N×(N-1)×…×2×1 가지가 있다.
 임의의 순열은 정렬을 할 수 있다.
 예를 들어 N=3인 경우 {1, 2, 3}, {1, 3, 2}, {2, 1, 3}, {2, 3, 1}, {3, 1, 2}, {3, 2, 1}의 순서로 생각할 수 있다.
@@ -34,14 +53,6 @@ k가 주어지면 k번째 순열을 구하고, 임의의 순열이 주어지면 
 “대표 자연수는 주어진 모든 자연수들에 대하여 그 차이를 계산하여 그 차이들 전체의 합을 최소로 하는 자연수이다.”
 예를 들어 주어진 자연수들이 [4, 3, 2, 2, 9, 10]이라 하자.
 이때 대표 자연수는 3 혹은 4가 된다.</description>
-    </item>
-    <item>
-      <title>[BOJ] 12760 with Python</title>
-      <link>https://jxun-h.github.io/posts/temp/temp/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://jxun-h.github.io/posts/temp/temp/</guid>
-      <description>
-📌 BOJ 12760 </description>
     </item>
     <item>
       <title>[BOJ] 14562 태권왕 with Python</title>

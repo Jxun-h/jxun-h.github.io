@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[BOJ] 1081 합 with Python | Jxun-h Dev Log</title>
+<meta name="keywords" content="자료구조, PS, 수학, 백준, BOJ">
+<meta name="description" content="📌 BOJ 1081 합 💡 조건 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 문제.
+0 ≤ L ≤ U ≤ 2,000,000,000
+수학 유형의 문제
+🔖 예제 및 실행결과 예제 24660 308357171 실행결과 11379854844 ⌨️ 문제 풀이 가장 먼저 문제를 보며 주목해야할 부분은 L과 U의 범위이다.
+L과 U의 범위는 최대 20억까지로, 일일히 검사했을 때 최악의 경우에는 0부터 20억까지의 모든 수를 검사해야하기 때문에
+문제에서 주어진 2초라는 시간 안에 절대 해결할 수가 없다.">
+<meta name="author" content="Jxun-h">
+<link rel="canonical" href="https://jxun-h.github.io/posts/problem-solving/boj-1081-%ED%95%A9-with-python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jxun-h.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jxun-h.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jxun-h.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jxun-h.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jxun-h.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="[BOJ] 1081 합 with Python" />
+<meta property="og:description" content="📌 BOJ 1081 합 💡 조건 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 문제.
+0 ≤ L ≤ U ≤ 2,000,000,000
+수학 유형의 문제
+🔖 예제 및 실행결과 예제 24660 308357171 실행결과 11379854844 ⌨️ 문제 풀이 가장 먼저 문제를 보며 주목해야할 부분은 L과 U의 범위이다.
+L과 U의 범위는 최대 20억까지로, 일일히 검사했을 때 최악의 경우에는 0부터 20억까지의 모든 수를 검사해야하기 때문에
+문제에서 주어진 2초라는 시간 안에 절대 해결할 수가 없다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jxun-h.github.io/posts/problem-solving/boj-1081-%ED%95%A9-with-python/" /><meta property="og:image" content="https://jxun-h.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-22T20:06:00+00:00" />
+<meta property="article:modified_time" content="2022-07-22T20:06:00+00:00" />
+<meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-1789-%EC%88%98%EB%93%A4%EC%9D%98-%ED%95%A9-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-10419-%EC%A7%80%EA%B0%81-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-5692-%ED%8C%A9%ED%86%A0%EB%A6%AC%EC%96%BC-%EC%A7%84%EB%B2%95-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-5988-%ED%99%80%EC%88%98%EC%9D%BC%EA%B9%8C-%EC%A7%9D%EC%88%98%EC%9D%BC%EA%B9%8C-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-1676-%ED%8C%A9%ED%86%A0%EB%A6%AC%EC%96%BC-0%EC%9D%98-%EA%B0%9C%EC%88%98-with-python/" /><meta property="og:see_also" content="https://jxun-h.github.io/posts/problem-solving/boj-14469-%EC%86%8C%EA%B0%80-%EA%B8%B8%EC%9D%84-%EA%B1%B4%EB%84%88%EA%B0%84-%EC%9D%B4%EC%9C%A0-3-with-python/" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jxun-h.github.io/images/papermod-cover.png"/>
+
+<meta name="twitter:title" content="[BOJ] 1081 합 with Python"/>
+<meta name="twitter:description" content="📌 BOJ 1081 합 💡 조건 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 문제.
+0 ≤ L ≤ U ≤ 2,000,000,000
+수학 유형의 문제
+🔖 예제 및 실행결과 예제 24660 308357171 실행결과 11379854844 ⌨️ 문제 풀이 가장 먼저 문제를 보며 주목해야할 부분은 L과 U의 범위이다.
+L과 U의 범위는 최대 20억까지로, 일일히 검사했을 때 최악의 경우에는 0부터 20억까지의 모든 수를 검사해야하기 때문에
+문제에서 주어진 2초라는 시간 안에 절대 해결할 수가 없다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jxun-h.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[BOJ] 1081 합 with Python",
+      "item": "https://jxun-h.github.io/posts/problem-solving/boj-1081-%ED%95%A9-with-python/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[BOJ] 1081 합 with Python",
+  "name": "[BOJ] 1081 합 with Python",
+  "description": "📌 BOJ 1081 합 💡 조건 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 문제.\n0 ≤ L ≤ U ≤ 2,000,000,000\n수학 유형의 문제\n🔖 예제 및 실행결과 예제 24660 308357171 실행결과 11379854844 ⌨️ 문제 풀이 가장 먼저 문제를 보며 주목해야할 부분은 L과 U의 범위이다.\nL과 U의 범위는 최대 20억까지로, 일일히 검사했을 때 최악의 경우에는 0부터 20억까지의 모든 수를 검사해야하기 때문에\n문제에서 주어진 2초라는 시간 안에 절대 해결할 수가 없다.",
+  "keywords": [
+    "자료구조", "PS", "수학", "백준", "BOJ"
+  ],
+  "articleBody": "\n📌 BOJ 1081 합 💡 조건 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 문제.\n0 ≤ L ≤ U ≤ 2,000,000,000\n수학 유형의 문제\n🔖 예제 및 실행결과 예제 24660 308357171 실행결과 11379854844 ⌨️ 문제 풀이 가장 먼저 문제를 보며 주목해야할 부분은 L과 U의 범위이다.\nL과 U의 범위는 최대 20억까지로, 일일히 검사했을 때 최악의 경우에는 0부터 20억까지의 모든 수를 검사해야하기 때문에\n문제에서 주어진 2초라는 시간 안에 절대 해결할 수가 없다.\n(1)번에서 정리한대로, 우리는 L과 U의 범위를 입력받아 일일히 숫자 하나씩 검사하는 방법을 피해 각 숫자의 자릿수를 더해 답을 출력해야 한다.\nL, U 를 입력받아 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 것은 어느 일정 구간에 대한 합을 구하는 것과 같다.\n구간합의 개념으로 생각을 해보자.\nL - 1 까지 등장한 0~9의 개수를 K, U까지 등장한 0-9 의 개수를 P 라고 했을 때,\n(P - K) 는 L 부터 U 의 범위에 해당하는 0-9의 개수라는 것을 의미한다.\nL = 1000, U = 1234 라고 가정했을 때, 접근 방법은 두가지가 있다.\n1의 자리에서부터 0~9까지의 등장 횟수를 count 할 것인가? 가장 높은 자리에서부터 0-9까지의 등장 횟수를 count 할 것인가?\n일단 본인의 풀이는 1의 자리에서부터 0~9까지의 숫자를 count 했다. 먼저, 1의 자리에 어떤 숫자가 몇 번 등장하는지에 대해서 살펴보자. 먼저 0부터 살펴보자.\n10 ~ 90 : 10\n100 ~ 190, 200 ~ 290, … ,900~990 : 90\n1000 ~ 1090, 1100 ~ 1190 : 20\n1200 ~ 1230 : 4\n총 124 회\n1의 자리에서 5가 몇번 등장할까?\n15 ~ 95 : 10\n105 ~ 195, 205 ~ 295, … ,905 ~ 995 : 90\n1005 ~ 1095, 1105 ~ 1195 : 20\n1205 ~ 1225 : 3\n총 123 회\n10의 자리에서 4는 몇 번 등장할까?\n40 ~ 49 : 10\n140 ~ 149, 240 ~ 249, …, 940 ~ 949 : 90\n1040 ~ 1049, 1140 ~ 1149 : 20\n총 120 회.\n여기서 알 수 있는 것은, 우리는 이렇게 숫자의 자릿수 별로 각 숫자가 몇번씩 등장하는지 계산할 수 있다는 것이다.\n또한, 10의 자리에서 4가 몇 번 등장하는지를 셀 때에는 1234를 넘을 수 없기 때문에 1149까지 세어 120회가 나왔다.\n이제 소스코드 로직을 따라서 이해하면 쉽다.\nn_arr 은 입력받은 n - 1 까지 0 부터 9의 등장횟수를 저장한다.\nm_arr 은 입력받은 m까지 0 부터 9의 등장횟수를 저장한다.\n가장 먼저 1의 자리수에서 0~9까지의 등장횟수를 저장할 것이기 때문에 point 를 1로,\nn을 -1 해준뒤 n이 0이 아닐 때까지 while 반복을 한다.\nn % 10 이 9가 아닌 경우, n 의 각 자릿수의 숫자에 해당하는 n1081 합_arr 원소값에 point를 더해준다.\n예를 들면, 입력받은 n이 1234 부터 시작하여 1233, 1232, 1231, 1230 까지 각 자릿수에 해당하는 숫자를 point 만큼 올려준다.\nn \u003c 10 인 경우는 오른쪽 끝 부터 확인하여 n //= 10 을 반복해 한자리수가 남았을 때 처리해주는 로직이다. 이 경우는 거의 마지막에 해당하는 로직이니 이후에 알아볼 것이다.\nn \u003e= 10 인 경우는 만약 1234 라면 1의 자리를 볼 때, 4 이하는 124번이 등장하며, 5 이상은 123번이 등장한다. 이는 (n // 10 + 1) * point 로 표현할 수 있다.\n다시 n \u003c 10 인 경우를 보자면, 0부터 n까지의 각 자리에 대해서 point 만큼씩 더해주고, 0인 경우는 point 를 빼준다. 다른 숫자는 약 130회 등장하는 경우, 0은 120회 등장한다. 직접 계산해보자.\n0부터 n - 1 까지 0~9까지의 등장횟수를 n1081 합_arr에 저장했다면, 이제 0부터 m까지 0~9 등장횟수를 m1081 합_arr 에 같은 로직으로 저장한다.\n이후는 각자리의 합을 더하는 작업이다.\nn1081 합_arr, m1081 합_arr 을 순회하면서 각 등장횟수 (m1081 합_arr1081 합[i1081 합] - n1081 합_arr1081 합[i1081 합]) 에 i 를 곱해 ans 에 더해준다.\n이는 각 자리수를 더해주는 것과 같다.\n🖥 소스 코드 from sys import stdin n, m = map(int, stdin.readline().split()) n_arr = [0 for _ in range(10)] m_arr = [0 for _ in range(10)] n -= 1 point = 1 while n != 0: while n % 10 != 9: for i in str(n): n_arr[int(i)] += point n -= 1 if n \u003c 10: for i in range(n + 1): n_arr[i] += point n_arr[0] -= point break else: for i in range(10): n_arr[i] += (n // 10 + 1) * point n_arr[0] -= point point *= 10 n //= 10 point = 1 while m != 0: while m % 10 != 9: for i in str(m): m_arr[int(i)] += point m -= 1 if m \u003c 10: for i in range(m + 1): m_arr[i] += point m_arr[0] -= point break else: for i in range(10): m_arr[i] += (m // 10 + 1) * point m_arr[0] -= point point *= 10 m //= 10 ans = 0 for i in range(10): ans += (m_arr[i] - n_arr[i]) * i print(ans) 💾 느낀점 수학적 사고능력이 필요한 문제였다. 스스로는 이해하기 어려워, 나에게 알고리즘 적으로 도움을 주는 스승이자 동생에게 도움을 받아 이해했다.\n각 자리수 별로 0~9의 숫자가 몇 번 등장하는지 계산하는 것은 매우 헷갈리는 작업이었다.\n0의 등장횟수는 반드시 다시한번 체크하고 계산해보아야한다. 그렇지 않으면 1019 번 문제를 틀리게 된다.\n",
+  "wordCount" : "794",
+  "inLanguage": "en",
+  "datePublished": "2022-07-22T20:06:00Z",
+  "dateModified": "2022-07-22T20:06:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Jxun-h"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jxun-h.github.io/posts/problem-solving/boj-1081-%ED%95%A9-with-python/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jxun-h Dev Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jxun-h.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jxun-h.github.io/" accesskey="h" title="Jxun-h Dev Log (Alt + H)">Jxun-h Dev Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jxun-h.github.io/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jxun-h.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://jxun-h.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://jxun-h.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      [BOJ] 1081 합 with Python
+    </h1>
+    <div class="post-meta"><span title='2022-07-22 20:06:00 +0000 UTC'>July 22, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Jxun-h&nbsp;|&nbsp;<a href="https://github.com/Jxun-h/hugo_blog/tree/main/content/posts/Problem%20Solving/[BOJ]%201081%20%ed%95%a9%20with%20Python.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><br>
+<h2 id="-a-hrefhttpswwwacmicpcnetproblem1081-target_blankboj-1081-합a">📌 <a href="https://www.acmicpc.net/problem/1081" target="_blank">BOJ 1081 합</a><a hidden class="anchor" aria-hidden="true" href="#-a-hrefhttpswwwacmicpcnetproblem1081-target_blankboj-1081-합a">#</a></h2>
+<br>
+<h3 id="-조건">💡 조건<a hidden class="anchor" aria-hidden="true" href="#-조건">#</a></h3>
+<ol>
+<li>
+<p>L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 문제.<br>
+0 ≤ L ≤ U ≤ 2,000,000,000</p>
+</li>
+<li>
+<p><strong>수학</strong> 유형의 문제</p>
+</li>
+</ol>
+<br>
+<h3 id="-예제-및-실행결과">🔖 예제 및 실행결과<a hidden class="anchor" aria-hidden="true" href="#-예제-및-실행결과">#</a></h3>
+<h4 id="예제">예제<a hidden class="anchor" aria-hidden="true" href="#예제">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">24660</span> <span class="mi">308357171</span>
+</span></span></code></pre></div><h4 id="실행결과">실행결과<a hidden class="anchor" aria-hidden="true" href="#실행결과">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="mi">11379854844</span>
+</span></span></code></pre></div><br>
+<h3 id="-문제-풀이">⌨️ 문제 풀이<a hidden class="anchor" aria-hidden="true" href="#-문제-풀이">#</a></h3>
+<ol>
+<li>
+<p>가장 먼저 문제를 보며 주목해야할 부분은 L과 U의 범위이다.<br>
+L과 U의 범위는 최대 20억까지로, 일일히 검사했을 때 최악의 경우에는 0부터 20억까지의 모든 수를 검사해야하기 때문에<br>
+문제에서 주어진 2초라는 시간 안에 절대 해결할 수가 없다.</p>
+</li>
+<li>
+<p>(1)번에서 정리한대로, 우리는 L과 U의 범위를 입력받아 일일히 숫자 하나씩 검사하는 방법을 피해 각 숫자의 자릿수를 더해 답을 출력해야 한다.<br>
+L, U 를 입력받아 L보다 크거나 같고, U보다 작거나 같은 모든 정수의 각 자리의 합을 구하는 것은 어느 일정 구간에 대한 합을 구하는 것과 같다.<br>
+구간합의 개념으로 생각을 해보자.</p>
+</li>
+<li>
+<p>L - 1 까지 등장한 0~9의 개수를 K, U까지 등장한 0-9 의 개수를 P 라고 했을 때,<br>
+(P - K) 는 L 부터 U 의 범위에 해당하는 0-9의 개수라는 것을 의미한다.</p>
+</li>
+<li>
+<p>L = 1000, U = 1234 라고 가정했을 때, 접근 방법은 두가지가 있다.</p>
+<ul>
+<li>1의 자리에서부터 0~9까지의 등장 횟수를 count 할 것인가?</li>
+<li>가장 높은 자리에서부터 0-9까지의 등장 횟수를 count 할 것인가?<br>
+일단 본인의 풀이는 1의 자리에서부터 0~9까지의 숫자를 count 했다.</li>
+</ul>
+</li>
+<li>
+<p>먼저, 1의 자리에 어떤 숫자가 몇 번 등장하는지에 대해서 살펴보자. 먼저 0부터 살펴보자.<br>
+10 ~ 90 : 10<br>
+100 ~ 190, 200 ~ 290, &hellip; ,900~990 : 90<br>
+1000 ~ 1090, 1100 ~ 1190 : 20<br>
+1200 ~ 1230 : 4<br>
+총 124 회</p>
+</li>
+<li>
+<p>1의 자리에서 5가 몇번 등장할까?<br>
+15 ~ 95 : 10<br>
+105 ~ 195, 205 ~ 295, &hellip; ,905 ~ 995 : 90<br>
+1005 ~ 1095, 1105 ~ 1195 : 20<br>
+1205 ~ 1225 : 3<br>
+총 123 회</p>
+</li>
+<li>
+<p>10의 자리에서 4는 몇 번 등장할까?<br>
+40 ~ 49 : 10<br>
+140 ~ 149, 240 ~ 249, &hellip;, 940 ~ 949 : 90<br>
+1040 ~ 1049, 1140 ~ 1149 : 20<br>
+총 120 회.</p>
+</li>
+<li>
+<p>여기서 알 수 있는 것은, 우리는 이렇게 숫자의 자릿수 별로 각 숫자가 몇번씩 등장하는지 계산할 수 있다는 것이다.<br>
+또한, 10의 자리에서 4가 몇 번 등장하는지를 셀 때에는 1234를 넘을 수 없기 때문에 1149까지 세어 120회가 나왔다.<br>
+이제 소스코드 로직을 따라서 이해하면 쉽다.</p>
+</li>
+<li>
+<p><code>n_arr</code> 은 입력받은 <code>n - 1</code> 까지 0 부터 9의 등장횟수를 저장한다.<br>
+<code>m_arr</code> 은 입력받은 <code>m</code>까지 0 부터 9의 등장횟수를 저장한다.</p>
+</li>
+<li>
+<p>가장 먼저 1의 자리수에서 0~9까지의 등장횟수를 저장할 것이기 때문에 point 를 1로,<br>
+n을 -1 해준뒤 n이 0이 아닐 때까지 while 반복을 한다.</p>
+<ol>
+<li>
+<p>n % 10 이 9가 아닌 경우, n 의 각 자릿수의 숫자에 해당하는 n1081 합_arr 원소값에 point를 더해준다.<br>
+예를 들면, 입력받은 n이 1234 부터 시작하여 1233, 1232, 1231, 1230 까지 각 자릿수에 해당하는 숫자를 point 만큼 올려준다.</p>
+</li>
+<li>
+<p>n &lt; 10 인 경우는 오른쪽 끝 부터 확인하여 n //= 10 을 반복해 한자리수가 남았을 때 처리해주는 로직이다.
+이 경우는 거의 마지막에 해당하는 로직이니 이후에 알아볼 것이다.</p>
+</li>
+<li>
+<p>n &gt;= 10 인 경우는 만약 1234 라면 1의 자리를 볼 때, 4 이하는 124번이 등장하며, 5 이상은 123번이 등장한다.
+이는 <code>(n // 10 + 1) * point</code> 로 표현할 수 있다.</p>
+</li>
+<li>
+<p>다시 n &lt; 10 인 경우를 보자면, 0부터 n까지의 각 자리에 대해서 point 만큼씩 더해주고, 0인 경우는 point 를 빼준다.
+다른 숫자는 약 130회 등장하는 경우, 0은 120회 등장한다. 직접 계산해보자.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>0부터 n - 1 까지 0~9까지의 등장횟수를 n1081 합_arr에 저장했다면, 이제 0부터 m까지 0~9 등장횟수를 m1081 합_arr 에 같은 로직으로 저장한다.</p>
+</li>
+<li>
+<p>이후는 각자리의 합을 더하는 작업이다.<br>
+n1081 합_arr, m1081 합_arr 을 순회하면서 각 등장횟수 (m1081 합_arr1081 합[i1081 합] - n1081 합_arr1081 합[i1081 합]) 에 i 를 곱해 ans 에 더해준다.<br>
+이는 각 자리수를 더해주는 것과 같다.</p>
+</li>
+</ol>
+<br>
+<h3 id="-소스-코드">🖥 소스 코드<a hidden class="anchor" aria-hidden="true" href="#-소스-코드">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">stdin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n_arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">m_arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">point</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">9</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">n_arr</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">+=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">n_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">n_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">    <span class="n">point</span> <span class="o">*=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">//=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">point</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">m</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">m</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">!=</span> <span class="mi">9</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">m_arr</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">+=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">m_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">m_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">m</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">point</span>
+</span></span><span class="line"><span class="cl">    <span class="n">point</span> <span class="o">*=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">//=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans</span> <span class="o">+=</span> <span class="p">(</span><span class="n">m_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">n_arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+</span></span></code></pre></div><br>
+<h3 id="-느낀점">💾 느낀점<a hidden class="anchor" aria-hidden="true" href="#-느낀점">#</a></h3>
+<ol>
+<li>
+<p>수학적 사고능력이 필요한 문제였다. 스스로는 이해하기 어려워, 나에게 알고리즘 적으로 도움을 주는 스승이자 동생에게 도움을 받아 이해했다.</p>
+</li>
+<li>
+<p>각 자리수 별로 0~9의 숫자가 몇 번 등장하는지 계산하는 것은 매우 헷갈리는 작업이었다.</p>
+</li>
+<li>
+<p>0의 등장횟수는 반드시 다시한번 체크하고 계산해보아야한다. 그렇지 않으면 1019 번 문제를 틀리게 된다.</p>
+</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jxun-h.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/">자료구조</a></li>
+      <li><a href="https://jxun-h.github.io/tags/ps/">PS</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EC%88%98%ED%95%99/">수학</a></li>
+      <li><a href="https://jxun-h.github.io/tags/%EB%B0%B1%EC%A4%80/">백준</a></li>
+      <li><a href="https://jxun-h.github.io/tags/boj/">BOJ</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://jxun-h.github.io/posts/problem-solving/boj-1722-%EC%88%9C%EC%97%B4%EC%9D%98-%EC%88%9C%EC%84%9C-with-python/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>[BOJ] 1722 순열의 순서 with Python</span>
+  </a>
+  <a class="next" href="https://jxun-h.github.io/posts/problem-solving/boj-1005-acm-craft-with-python/">
+    <span class="title">Next »</span>
+    <br>
+    <span>[BOJ] 1005 ACM Craft with Python</span>
+  </a>
+</nav>
+
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2024 <a href="https://jxun-h.github.io/">Jxun-h Dev Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

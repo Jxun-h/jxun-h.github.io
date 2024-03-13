@@ -11,8 +11,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 31 Mar 2023 17:57:00 +0000</lastBuildDate>
     <atom:link href="https://jxun-h.github.io/tags/%EC%9E%AC%EA%B7%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[BOJ] 1992 쿼드트리 with Python</title>
+      <link>https://jxun-h.github.io/posts/problem-solving/boj-1992-%EC%BF%BC%EB%93%9C%ED%8A%B8%EB%A6%AC-with-python/</link>
+      <pubDate>Fri, 31 Mar 2023 17:57:00 +0000</pubDate>
+      <guid>https://jxun-h.github.io/posts/problem-solving/boj-1992-%EC%BF%BC%EB%93%9C%ED%8A%B8%EB%A6%AC-with-python/</guid>
+      <description>📌 BOJ 1992 쿼드트리 💡 조건 주어진 영상이 모두 0으로만 되어 있으면 압축 결과는 &amp;ldquo;0&amp;quot;이 되고, 모두 1로만 되어 있으면 압축 결과는 &amp;ldquo;1&amp;quot;이 된다. 만약 0과 1이 섞여 있으면 전체를 한 번에 나타내지를 못한다.
+왼쪽 위, 오른쪽 위, 왼쪽 아래, 오른쪽 아래, 이렇게 4개의 영상으로 나누어 압축하게 된다.
+이 4개의 영역을 압축한 결과를 차례대로 괄호 안에 묶어서 표현. N 은 언제나 2의 제곱수로 주어지며, 1 ≤ N ≤ 64의 범위를 가진다.</description>
+    </item>
     <item>
       <title>[BOJ] 6603 로또 with Python</title>
       <link>https://jxun-h.github.io/posts/problem-solving/boj-6603-%EB%A1%9C%EB%98%90-with-python/</link>

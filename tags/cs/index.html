@@ -149,6 +149,37 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">[CS] 19.최소 비용 신장트리
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌최소 비용 신장트리 💡최소 비용 신장트리 정의
+가중치가 부여된 무방향 그래프에서 신장 트리의 비용
+가중치 : 두 vertex 사이의 거리 혹은 연결하는 비용
+= 신장트리를 구성하는 에지들의 비용의 합 최소 비용 신장트리 : 가장 비용이 적은 신장 트리 응용 분야
+도로 건설 : 도시를 모두 연결하면서 도로의 길이가 최소가 되도록 하는 문제
+ex) 통신, 배관 최소 비용 신장트리 알고리즘
+최소 비용 신장트리 알고리즘 그래프 내에 존재하는 Edge들만 사용한다. 정점의 개수가 n일 때, n - 1개의 Edge들만 사용한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-08-09 18:41:00 +0000 UTC'>August 9, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [CS] 19.최소 비용 신장트리" href="https://jxun-h.github.io/posts/data-structure/cs-19.%EC%B5%9C%EC%86%8C-%EB%B9%84%EC%9A%A9-%EC%8B%A0%EC%9E%A5%ED%8A%B8%EB%A6%AC/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[CS] 18.기초적인 그래프 연산들
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>📌 기초적인 그래프 연산들 💡깊이 우선 탐색(Depth First Search) DFS 알고리즘 출발 정점, v의 인접리스트부터 방문한다. v에 인접하면서 아직 방문하지 않은 정점 w를 선택한다. w를 시작점으로 하여 다시 DFS를 시작한다. 순환 알고리즘을 이용하여 구현한다.(재귀) 💡너비 우선 탐색(Breath First Search) BFS 알고리즘 출발 정점, v의 인접 리스트부터 방문한다. v에 인접한 모든 vertex부터 방문한다. 그 다음, v에 인접한 첫번째 vertex에 인접한 vertex 중에서
+아직 방문하지 않은 vertex 들을 차례대로 다시 방문한다....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-08-09 18:18:00 +0000 UTC'>August 9, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
+  <a class="entry-link" aria-label="post link to [CS] 18.기초적인 그래프 연산들" href="https://jxun-h.github.io/posts/data-structure/cs-18.%EA%B8%B0%EC%B4%88%EC%A0%81%EC%9D%B8-%EA%B7%B8%EB%9E%98%ED%94%84-%EC%97%B0%EC%82%B0%EB%93%A4/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">[CS] 17.그래프의 개념과 표현
     </h2>
   </header>
@@ -259,33 +290,6 @@ EX) 지하철 노선도 방향성 그래프(Directed Graph)
   </div>
   <footer class="entry-footer"><span title='2022-07-12 13:50:00 +0000 UTC'>July 12, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
   <a class="entry-link" aria-label="post link to [CS] 10.이중 연결 리스트" href="https://jxun-h.github.io/posts/data-structure/cs-10.%EC%9D%B4%EC%A4%91-%EC%97%B0%EA%B2%B0-%EB%A6%AC%EC%8A%A4%ED%8A%B8/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[CS] 9. 추가적인 리스트 연산
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>📌 추가적인 리스트 연산 💡 추가적인 리스트 연산들 단일 연결 리스트(Chain) 에 대한 연산
-체인의 방향을 반대로 : invert() 두 개의 체인을 통합 : concatenate() 원형 리스트에 대한 연산
-원형 연결리스트의 길이를 계산하는 연산 : length() 원형 연결리스트의 제일 앞에 새로운 노드 삽입 : insert_front() 💡 Invert 함수 포인터 3개를 사용해 가리키는 포인터를 변경해준다. lead, middle, tail 세 개의 포인터를 사용한다고 하면, return 값은 middle 이다. 💡 concatenate 함수 A 체인 혹은 B 체인이 NULL 일 경우, 나머지를 반환한다....</p>
-  </div>
-  <footer class="entry-footer"><span title='2022-07-12 13:31:00 +0000 UTC'>July 12, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [CS] 9. 추가적인 리스트 연산" href="https://jxun-h.github.io/posts/data-structure/cs-9.-%EC%B6%94%EA%B0%80%EC%A0%81%EC%9D%B8-%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%97%B0%EC%82%B0/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[CS] 8. 원형 연결리스트
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>
-📌 원형 연결리스트(Circular Linked List) 💡 원형 연결리스트의 개념 원형 연결리스트란? 마지막 노드의 link 가 처음 노드를 가리키는 연결리스트 chain : 마지막 노드의 link가 null 인 연결리스트 원형 연결리스트 체인 💡 헤드 노드 노드가 없는 원형 연결리스트 -&gt; Head Node 💡 다항식 더하기 (원형 연결 리스트) 지수를 비교하여 덧셈을 한다. 지수항이 둘 모두 -1이 된다면 연산을 종료한다. </p>
-  </div>
-  <footer class="entry-footer"><span title='2022-07-10 05:00:00 +0000 UTC'>July 10, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Jxun-h</footer>
-  <a class="entry-link" aria-label="post link to [CS] 8. 원형 연결리스트" href="https://jxun-h.github.io/posts/data-structure/cs-8.-%EC%9B%90%ED%98%95-%EC%97%B0%EA%B2%B0%EB%A6%AC%EC%8A%A4%ED%8A%B8/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
